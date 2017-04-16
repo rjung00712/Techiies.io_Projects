@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_chess"
+    tools:context=".ChessActivity"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="#f4a460"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <GridView
+            android:id="@+id/gridView"
+            android:background="#f4a460"
+            android:numColumns="8"
+            android:stretchMode="none"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/pieceImage"-->
+                <!--android:src="@drawable/black_bishop"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_width="wrap_content"/>-->
+
+    </FrameLayout>
+</LinearLayout>
