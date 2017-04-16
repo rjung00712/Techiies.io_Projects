@@ -1,0 +1,1 @@
+This is the official Techiies.io repository full of all our projects for our CS480 Software Engineering class. You can find all our projects here
