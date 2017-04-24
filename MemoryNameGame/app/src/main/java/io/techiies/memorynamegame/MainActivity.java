@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity
 
     public void playGameEasy(View v)
     {
-
+        Intent easyModeIntent = new Intent(MainActivity.this, EasyGameActivity.class);
+        startActivity(easyModeIntent);
     }
 
     public void playGameHard(View v)

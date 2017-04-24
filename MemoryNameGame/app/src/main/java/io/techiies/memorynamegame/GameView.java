@@ -9,11 +9,11 @@ import android.view.View;
  * Created by awing_000 on 4/23/2017.
  */
 
-public class HardGameView extends View
+public class GameView extends View
 {
     private Bitmap bitmap;
 
-    public HardGameView(Context context)
+    public GameView(Context context)
     {
         super(context);
         bitmap = null;
@@ -22,8 +22,10 @@ public class HardGameView extends View
     public void setView(Student student)
     {
         if(student != null)
+        {
             bitmap = student.getFace();
-        invalidate();
+            invalidate();
+        }
     }
 
     @Override

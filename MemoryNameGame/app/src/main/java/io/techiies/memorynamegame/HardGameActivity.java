@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class HardGameActivity extends AppCompatActivity
 {
-    private HardGameView hardGameView;
+    private GameView gameView;
     private Deck deck;
     private Student student;
     private int tries;
@@ -23,11 +23,11 @@ public class HardGameActivity extends AppCompatActivity
 
         tries = 0;
         correct = 0;
-        hardGameView = new HardGameView(this);
-        hardGameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
-        container.addView(hardGameView);
+        gameView = new GameView(this);
+        gameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
+        container.addView(gameView);
         ////////////////////////Load a Deck from the saved games////////////////////////////
-//        deck = new Deck();
+        deck = new Deck();
         showStudent();
     }
 
@@ -52,7 +52,7 @@ public class HardGameActivity extends AppCompatActivity
         {
             tries++;
             deck.addStudent(student, false);
-            Toast.makeText(HardGameActivity.this, "That is incorrect!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(HardGameActivity.this, "That is incorrect! The correct name is " + student.getName(), Toast.LENGTH_SHORT).show();
             showStudent();
         }
     }
@@ -60,7 +60,7 @@ public class HardGameActivity extends AppCompatActivity
     public void showStudent()
     {
         student = deck.getRandomStudent();
-        hardGameView.setView(student);
+        gameView.setView(student);
     }
 
     public void finishGame()

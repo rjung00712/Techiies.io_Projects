@@ -10,39 +10,55 @@ import java.util.Random;
 public class Deck
 {
     String className;
-    private ArrayList<Student> Students;
-    private ArrayList<Student> Correct;
+    private ArrayList<Student> students;
+    private ArrayList<Student> correct;
+    private ArrayList<String> names;
 
     public Deck()
     {
-        Students = new ArrayList<>();
-        Correct = new ArrayList<>();
-//        /////////////////////////////////////////////////////////Used for testing/////////////////////////////////////
+        students = new ArrayList<>();
+        correct = new ArrayList<>();
+        names = new ArrayList<>();
+        /////////////////////////////////////////////////////////Used for testing/////////////////////////////////////
 //        for(int i = 0; i < 3; i++)
 //        {
 //            Student student = new Student();
-//            student.setName("Name");
-//            Students.add(student);
+//            student.setName("Name" + i);
+//            students.add(student);
+//            names.add(student.getName());
 //        }
     }
 
     public Student getRandomStudent()
     {
         Random rand = new Random();
-        return Students.remove(rand.nextInt(Students.size()));
+        return students.remove(rand.nextInt(students.size()));
+    }
+
+    public String getRandomName()
+    {
+        Random rand = new Random();
+        return names.remove(rand.nextInt(names.size()));
     }
 
     public void addStudent(Student student, boolean correct)
     {
         if(correct)
-            Correct.add(student);
+            this.correct.add(student);
         else
-            Students.add(student);
+            students.add(student);
+    }
+
+    public void addName(String name)
+    {
+        names.add(name);
     }
 
     public void setClassName(String name) {className = name;}
 
     public String getClassName() {return className;}
 
-    public int getStudentsLength() {return Students.size();}
+    public int getStudentsLength() {return students.size();}
+
+    public int getNamesSize() {return names.size();}
 }
