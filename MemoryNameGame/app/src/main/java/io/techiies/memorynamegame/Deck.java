@@ -17,6 +17,13 @@ public class Deck
     {
         Students = new ArrayList<>();
         Correct = new ArrayList<>();
+//        /////////////////////////////////////////////////////////Used for testing/////////////////////////////////////
+//        for(int i = 0; i < 3; i++)
+//        {
+//            Student student = new Student();
+//            student.setName("Name");
+//            Students.add(student);
+//        }
     }
 
     public Student getRandomStudent()

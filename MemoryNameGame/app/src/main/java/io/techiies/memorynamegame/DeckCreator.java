@@ -36,8 +36,8 @@ public class DeckCreator extends AppCompatActivity
 
     public void done(View v)
     {
-        //Save the deck so that the game activities (hard and easy mode) can access it
-        super.finish();
+        ///////////////////////Save the deck so that the game activities (hard and easy mode) can access it//////////////////////
+        finish();
     }
 
     public void dispatchTakePictureIntent()
