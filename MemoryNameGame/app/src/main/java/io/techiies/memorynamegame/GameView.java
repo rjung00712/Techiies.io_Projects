@@ -9,25 +9,28 @@ import android.view.View;
  * Created by awing_000 on 4/23/2017.
  */
 
+//Used to print the picture to the screen
 public class GameView extends View
 {
-    private Bitmap bitmap;
+    private Bitmap bitmap;  //Holds the image of the student being the shown
 
     public GameView(Context context)
     {
         super(context);
-        bitmap = null;
+        bitmap = null;  //Initializes the image to null
     }
 
+    //Sets the image to teh student's image and prints the screen
     public void setView(Student student)
     {
-        if(student != null)
+        if(student != null) //Make sure that the student is not null
         {
             bitmap = student.getFace();
             invalidate();
         }
     }
 
+    //Draws the picture to the screen if the image is not null
     @Override
     protected void onDraw(Canvas canvas)
     {

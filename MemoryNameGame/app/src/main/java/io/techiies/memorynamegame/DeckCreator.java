@@ -14,38 +14,43 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//Activit to create a "Class" or "Deck" of students
 public class DeckCreator extends AppCompatActivity
 {
     static final int REQUEST_IMAGE_CAPTURE = 1;
-    private Student student;
-    private Deck deck;
+    private Student student;    //Used to hold an instance of a new student
+    private Deck deck;          //Used to hold all of the students in a class
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createAlertClass();
-        setContentView(R.layout.activity_deck_creator);
-        student = new Student();
-        deck = new Deck();
+        createAlertClass();     //This alert will get the name of the class
+        setContentView(R.layout.activity_deck_creator);     //Sets the view so there are new buttons
+        student = new Student();    //Creates a new student (No picture or name yet)
+        deck = new Deck();      //Creates an empty class
     }
 
+    //Method to get the picture of a new student. Executed when the "Add student" button is pressed
     public void makeNewStudent(View v)
     {
         dispatchTakePictureIntent();
     }
 
+    //Save the "Class" and finish the DeckCreator activity to open up the main activity
     public void done(View v)
     {
         ///////////////////////Save the deck so that the game activities (hard and easy mode) can access it//////////////////////
         finish();
     }
 
+    //Method to take a picture
     public void dispatchTakePictureIntent()
     {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
     }
 
+    //Method to handle what happens when a picture is taken
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -54,7 +59,8 @@ public class DeckCreator extends AppCompatActivity
         if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
 
-            student.setFace((Bitmap)extras.get("data"));
+            student.setFace((Bitmap)extras.get("data"));    //Sets the students picture to the picture that was just taken
+            //If the picture was taken and not cancelled, create an alert to get the name of the student
             if(student.getFace() != null)
                 createAlertStudent();
         }
@@ -78,18 +84,21 @@ public class DeckCreator extends AppCompatActivity
                     public void onClick(DialogInterface dialog, int id) {
                         student.setName(editText.getText().toString());
 
+                        //Make sure that a name was entered
                         if(student.getName().equals("")) {
                             Toast.makeText(DeckCreator.this, "Must enter a student name", Toast.LENGTH_LONG).show();
                             createAlertStudent();
                         }
                         else
                         {
+                            //Add the student to the "Class"
                             deck.addStudent(student, false);
                             Toast toast = Toast.makeText(DeckCreator.this, "Added new student. This class now has " + deck.getStudentsLength() + " students in it.", Toast.LENGTH_LONG);
                             toast.show();
                         }
                     }
                 });
+        //Create a cancel button so that the student is not added
         builder.setView(mView)
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -120,18 +129,20 @@ public class DeckCreator extends AppCompatActivity
                     public void onClick(DialogInterface dialog, int id) {
                         deck.setClassName(editText.getText().toString());
 
+                        //Make sure that a class name is entered
                         if(deck.getClassName().equals("")) {
                             Toast.makeText(DeckCreator.this, "Must enter a class name", Toast.LENGTH_LONG).show();
                             createAlertClass();
                         }
                     }
                 });
+        //Create a cancel button so that the user doesnt have to create the new "class"
         builder.setView(mView)
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        DeckCreator.super.finish();
+                        DeckCreator.super.finish();     //End the DeckCreator activity if the cancel button is pressed
                     }
                 });
         builder.setCancelable(false);
