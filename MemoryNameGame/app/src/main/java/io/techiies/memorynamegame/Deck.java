@@ -22,13 +22,13 @@ public class Deck
         correct = new ArrayList<>();    //Sets correct to a new ArrayList
         names = new ArrayList<>();      //Sets names to a new ArrayList
         /////////////////////////////////////////////////////////Used for testing/////////////////////////////////////
-        for(int i = 0; i < 3; i++)
-        {
-            Student student = new Student();
-            student.setName("Name" + i);
-            students.add(student);
-            names.add(student.getName());
-        }
+//        for(int i = 0; i < 3; i++)
+//        {
+//            Student student = new Student();
+//            student.setName("Name" + i);
+//            students.add(student);
+//            names.add(student.getName());
+//        }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
@@ -47,19 +47,24 @@ public class Deck
     }
 
     //Adds a student to the corresponding list based on if the user guessed correctly
-    public void addStudent(Student student, boolean correct)
+    public void addStudent(Student student, boolean correct, boolean newStudent)
     {
         if(correct)
             this.correct.add(student);
         else
             students.add(student);
+        if(newStudent)
+            names.add(student.getName());
     }
-
-    //Resets the students list to the correct list
-    public void resetClass() {students = correct;}
 
     //Sets the "class" name to the name passed to it
     public void setClassName(String name) {className = name;}
+
+    //Sets the list of students
+    public void setStudents(ArrayList<Student> students) {this.students = students;}
+
+    //Returns the list of students
+    public ArrayList<Student> getStudents() {return students;}
 
     //Returns the name of the "class"
     public String getClassName() {return className;}

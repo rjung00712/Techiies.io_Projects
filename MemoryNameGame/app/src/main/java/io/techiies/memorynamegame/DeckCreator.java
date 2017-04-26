@@ -14,20 +14,21 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//Activit to create a "Class" or "Deck" of students
+//Activity to create a "Class" or "Deck" of students
 public class DeckCreator extends AppCompatActivity
 {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private Student student;    //Used to hold an instance of a new student
     private Deck deck;          //Used to hold all of the students in a class
+    private MainActivity mainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createAlertClass();     //This alert will get the name of the class
         setContentView(R.layout.activity_deck_creator);     //Sets the view so there are new buttons
         student = new Student();    //Creates a new student (No picture or name yet)
         deck = new Deck();      //Creates an empty class
+        createAlertClass();     //This alert will get the name of the class
     }
 
     //Method to get the picture of a new student. Executed when the "Add student" button is pressed
@@ -40,12 +41,15 @@ public class DeckCreator extends AppCompatActivity
     public void done(View v)
     {
         ///////////////////////Save the deck so that the game activities (hard and easy mode) can access it//////////////////////
+        SaveLoad sv = new SaveLoad(deck.getClassName(), this);
+        sv.save(deck);
         finish();
     }
 
     //Method to take a picture
     public void dispatchTakePictureIntent()
     {
+        student = new Student();
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
     }
@@ -92,7 +96,7 @@ public class DeckCreator extends AppCompatActivity
                         else
                         {
                             //Add the student to the "Class"
-                            deck.addStudent(student, false);
+                            deck.addStudent(student, false, true);
                             Toast toast = Toast.makeText(DeckCreator.this, "Added new student. This class now has " + deck.getStudentsLength() + " students in it.", Toast.LENGTH_LONG);
                             toast.show();
                         }

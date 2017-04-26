@@ -1,13 +1,21 @@
 package io.techiies.memorynamegame;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 //Activity to play the game in easy mode
@@ -27,6 +35,7 @@ public class EasyGameActivity extends AppCompatActivity
         setContentView(R.layout.activity_easy_game);    //Sets the view to the easy game view
         ConstraintLayout container = (ConstraintLayout) findViewById(R.id.easy_game_container);
 
+        deck = new Deck();
         names = new String[3];  //Initializes the names array
         tries = 0;              //Initializes the number of tries to 0
         correct = 0;            //Initializes the number of correct responses to 0
@@ -34,8 +43,8 @@ public class EasyGameActivity extends AppCompatActivity
         gameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
         container.addView(gameView);    //Adds this GameView to the screen
         ////////////////////////Load a Deck from the saved games////////////////////////////
-        deck = new Deck();
-        showStudent();      //Shows a student with the three names
+        createAlertClass();
+        //showStudent();      //Shows a student with the three names
     }
 
     //Shows a student with the three names
@@ -135,7 +144,7 @@ public class EasyGameActivity extends AppCompatActivity
         {
             tries++;    //Increases the number of tries by 1
             correct++;  //Increases the number of correct tries by 1
-            deck.addStudent(student, true); //Adds the student back into the deck
+            deck.addStudent(student, true, false); //Adds the student back into the deck
             Toast.makeText(EasyGameActivity.this, "That is correct!", Toast.LENGTH_SHORT).show();
             btn.setBackgroundColor(Color.GREEN);    //Colors the button the user selected to green
             gameView.invalidate();  //Redraws the screen (for the buttons)
@@ -155,7 +164,7 @@ public class EasyGameActivity extends AppCompatActivity
         else
         {
             tries++;    //Increases the number of tries by 1
-            deck.addStudent(student, false);    //Adds the student back into the class
+            deck.addStudent(student, false, false);    //Adds the student back into the class
             Toast.makeText(EasyGameActivity.this, "That is incorrect! The correct name is " + student.getName(), Toast.LENGTH_SHORT).show();
             btn.setBackgroundColor(Color.RED);  //Colors the button the user pressed red
             if(((Button) findViewById(R.id.option1)).getText().toString().equals(student.getName()))
@@ -178,8 +187,60 @@ public class EasyGameActivity extends AppCompatActivity
     //Ends the game and returns back to the main activity, letting the user know how well they did
     public void finishGame()
     {
-        deck.resetClass();
         Toast.makeText(EasyGameActivity.this, "Congradulations, you completed the game with " + ((double)correct/ tries) * 100 + "% accuracy!", Toast.LENGTH_LONG).show();
         finish();
+    }
+
+    // creates custom alert dialog box for class name input
+    public void createAlertClass()
+    {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // get the layout inflater
+        LayoutInflater inflater = this.getLayoutInflater();
+
+        View mView = inflater.inflate(R.layout.class_name, null);
+        final EditText editText = (EditText) mView.findViewById(R.id.name);
+
+        // inflate and set the layout for the dialog
+        // pass null as a parent view because its going in the dialog layout
+        builder.setView(mView)
+                .setPositiveButton("enter", new DialogInterface.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        deck.setClassName(editText.getText().toString());
+
+                        //Make sure that a class name is entered
+                        if(deck.getClassName().equals("")) {
+                            Toast.makeText(EasyGameActivity.this, "Must enter a class name", Toast.LENGTH_LONG).show();
+                            createAlertClass();
+                        }
+                        createDeck();
+                    }
+                });
+        //Create a cancel button so that the user doesnt have to create the new "class"
+        builder.setView(mView)
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        EasyGameActivity.super.finish();     //End the DeckCreator activity if the cancel button is pressed
+                    }
+                });
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    public void createDeck()
+    {
+        SaveLoad sv = new SaveLoad(deck.getClassName(), this);
+        deck = sv.load(deck.getClassName());
+        if(deck == null)
+        {
+            Toast.makeText(EasyGameActivity.this, "That class does not exist", Toast.LENGTH_LONG).show();
+            finish();
+        }
+        else
+            showStudent();
     }
 }
