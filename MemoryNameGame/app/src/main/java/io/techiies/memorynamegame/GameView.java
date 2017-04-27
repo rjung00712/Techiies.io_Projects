@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 /**
  * Created by awing_000 on 4/23/2017.
@@ -35,7 +37,9 @@ public class GameView extends View
     protected void onDraw(Canvas canvas)
     {
         super.onDraw(canvas);
-        if(bitmap != null)
-            canvas.drawBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), null);
+//        if(bitmap != null)
+//        {
+//            canvas.drawBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), null);
+//        }
     }
 }

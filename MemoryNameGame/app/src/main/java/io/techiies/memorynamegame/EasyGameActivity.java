@@ -2,8 +2,10 @@ package io.techiies.memorynamegame;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
+import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -72,6 +76,9 @@ public class EasyGameActivity extends AppCompatActivity
         setButton(1);   //Sets the text for button 1
         setButton(2);   //Sets the text for button 2
         setButton(3);   //Sets the text for button 3
+        Bitmap bitmap = student.getFace();
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageView.setImageBitmap(bitmap);
         gameView.setView(student);  //Adds the student to the gameView so the picture can be drawn
     }
 

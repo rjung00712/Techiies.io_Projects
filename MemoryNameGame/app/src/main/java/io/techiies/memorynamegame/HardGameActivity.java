@@ -2,6 +2,7 @@ package io.techiies.memorynamegame;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 //Activity to play the game in hard mode
@@ -124,6 +126,9 @@ public class HardGameActivity extends AppCompatActivity
     public void showStudent()
     {
         student = deck.getRandomStudent();  //Gets a new student
+        Bitmap bitmap = student.getFace();
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageView.setImageBitmap(bitmap);
         gameView.setView(student);  //Adds this student to the gameView so the picture prints
     }
 
