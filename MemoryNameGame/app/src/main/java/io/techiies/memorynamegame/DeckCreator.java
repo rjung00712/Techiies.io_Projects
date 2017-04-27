@@ -1,6 +1,7 @@
 package io.techiies.memorynamegame;
 
 import android.app.AlertDialog;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -29,6 +30,8 @@ public class DeckCreator extends AppCompatActivity
         student = new Student();    //Creates a new student (No picture or name yet)
         deck = new Deck();      //Creates an empty class
         createAlertClass();     //This alert will get the name of the class
+
+        ContextWrapper wrapper = new ContextWrapper(getApplication());
     }
 
     //Method to get the picture of a new student. Executed when the "Add student" button is pressed
@@ -43,6 +46,11 @@ public class DeckCreator extends AppCompatActivity
         ///////////////////////Save the deck so that the game activities (hard and easy mode) can access it//////////////////////
         SaveLoad sv = new SaveLoad(deck.getClassName(), this);
         sv.save(deck);
+
+//        SaverLoader sv = new SaverLoader();
+
+//        sv.saveImageToInternalStorage(this, student);
+
         finish();
     }
 
