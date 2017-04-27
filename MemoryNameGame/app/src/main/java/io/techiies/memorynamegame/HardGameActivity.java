@@ -136,8 +136,22 @@ public class HardGameActivity extends AppCompatActivity
     public void showStudent()
     {
         student = deck.getRandomStudent();  //Gets a new student
-        Bitmap bitmap = student.getFace();
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        final Bitmap bitmap = student.getFace();
+        final ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageView.setScaleX(.01f);
+        imageView.setScaleY(.01f);
+        for(int i = 0; i < 1100; i++)   //Used to make the image look as if it is growing (make it "animated")
+        {
+            android.os.Handler handler = new android.os.Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    imageView.setScaleX(imageView.getScaleX() + 0.001f);
+                    imageView.setScaleY(imageView.getScaleY() + 0.001f);
+                    imageView.setImageBitmap(bitmap);
+                }
+            }, 150);   //After 150 milliseconds do the run method above
+        }
         imageView.setImageBitmap(bitmap);   //Used to print the image to the screen
         gameView.setView(student);  //Adds this student to the gameView so the picture prints
     }
