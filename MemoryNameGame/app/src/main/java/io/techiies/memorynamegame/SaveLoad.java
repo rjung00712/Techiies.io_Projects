@@ -18,25 +18,28 @@ import java.util.ArrayList;
 public class SaveLoad
 {
     Activity activity;
-    private String imageName;
-    private String studentName;
-    private ArrayList<byte[]> images;
-    private ArrayList<String> names;
-    private ArrayList<Student> students;
+    private String imageName;   //Used to name the file for the images
+    private String studentName;     //Used to name the file for the names
+    private ArrayList<byte[]> images;   //Holds the images as byte[] in an ArrayList
+    private ArrayList<String> names;    //Holds the names in an ArrayList
+    private ArrayList<Student> students;    //Holds the students of the deck in an ArrayList
 
+    //Constructor to make a SaveLoad object
     public SaveLoad(String name, Activity activity)
     {
         this.activity = activity;
-        this.imageName = name + " in";
-        this.studentName = name + " sn";
+        this.imageName = name + " in";  //makes the file name for the images with the name of the class
+        this.studentName = name + " sn";    //makes the file name for the names with the name of the class
     }
 
+    //Saves the deck
     public void save(Deck deck)
     {
-        images = new ArrayList<>();
-        names = new ArrayList<>();
-        students = deck.getStudents();
+        images = new ArrayList<>(); //Initializes the images
+        names = new ArrayList<>();  //Initializes the names
+        students = deck.getStudents();  //Gets the students of the deck
 
+        //Saves all of teh students in the appropriate ArrayLists
         for(int i = 0; i < students.size(); i++)
         {
             Student student = students.get(i);
@@ -45,34 +48,42 @@ public class SaveLoad
             names.add(student.getName());
         }
 
+        //Used to save
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
 
+        //Saves the images
         String json = gson.toJson(images);
         editor.putString(imageName, json);
+        //Saves the names
         json = gson.toJson(names);
         editor.putString(studentName, json);
         editor.commit();
     }
 
+    //Used to load a class
     public Deck load (String name)
     {
-        Deck deck = new Deck();
-        deck.setClassName(name);
+        Deck deck = new Deck(); //Creates a new class
+        deck.setClassName(name);    //Sets the name of the class
 
+        //Used to load
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
         Gson gson = new Gson();
+        //Loads the images
         String json = sharedPreferences.getString(imageName, "");
         Type type = new TypeToken<ArrayList<byte[]>>() {}.getType();
-        if(json != null)
+        if(json != null)    //Checks to see if it exists
             images = gson.fromJson(json, type);
         if(images != null) {
+            //Loads the names
             json = sharedPreferences.getString(studentName, "");
             type = new TypeToken<ArrayList<String>>() {}.getType();
-            if (json != null)
+            if (json != null)   //Checks to see if it exists
                 names = gson.fromJson(json, type);
             if (names != null) {
+                //Creates students based off the images and names and adds them to the deck
                 for (int i = 0; i < images.size(); i++) {
                     Student student = new Student();
                     Bitmap face = BitmapUtility.getImage(images.get(i));
@@ -82,10 +93,10 @@ public class SaveLoad
                 }
             }
             else
-                deck = null;
+                deck = null;    //The deck doesn't exist
         }
         else
-            deck = null;
+            deck = null;    //The deck doesn't exist
         return deck;
     }
 }

@@ -52,12 +52,20 @@ public class HardGameActivity extends AppCompatActivity
             correct++;  //Increases the number of correct tries by 1
             deck.addStudent(student, true, false); //Adds the student back to the deck
             Toast.makeText(HardGameActivity.this, "That is correct!", Toast.LENGTH_SHORT).show();
-            editText.setText("");   //Resets the text box where the user enters names
             //Checks to see if there are still students the user hasn't named
-            if(deck.getStudentsLength() > 0)
-                showStudent();  //Shows a new student the user has yet to name
-            else
-                finishGame();   //Ends the Hard Mode activity
+
+            android.os.Handler handler = new android.os.Handler();  //Used to pause the activity to give the user a chance to see the correct name
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    editText.setText("");   //Resets the text box where the user enters names
+                    if(deck.getStudentsLength() > 0)
+                        showStudent();  //Shows a new student the user has yet to name
+                    else
+                        finishGame();   //Ends the Hard Mode activity
+                }
+            }, 2000);   //After 2 seconds (2000 milliseconds) do the run method above
+
         }
         //The user entered the wrong name
         else
@@ -96,7 +104,7 @@ public class HardGameActivity extends AppCompatActivity
                         createDeck();
                     }
                 });
-        //Create a cancel button so that the user doesnt have to create the new "class"
+        //Create a cancel button so that the user doesn't have to create the new "class"
         builder.setView(mView)
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -109,14 +117,16 @@ public class HardGameActivity extends AppCompatActivity
         builder.show();
     }
 
+    //Loads a deck specified by the user
     public void createDeck()
     {
         SaveLoad sv = new SaveLoad(deck.getClassName(), this);
-        deck = sv.load(deck.getClassName());
+        deck = sv.load(deck.getClassName());    //Gets the deck the user wants
+        //If the deck doesn't exist then it lets the user know
         if(deck == null)
         {
             Toast.makeText(HardGameActivity.this, "That class does not exist", Toast.LENGTH_LONG).show();
-            finish();
+            finish();   //Ends the activity so the user has to try again
         }
         else
             showStudent();
@@ -128,14 +138,16 @@ public class HardGameActivity extends AppCompatActivity
         student = deck.getRandomStudent();  //Gets a new student
         Bitmap bitmap = student.getFace();
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        imageView.setImageBitmap(bitmap);
+        imageView.setImageBitmap(bitmap);   //Used to print the image to the screen
         gameView.setView(student);  //Adds this student to the gameView so the picture prints
     }
 
     //Ends the Hard Mode activity and returns to the main screen letting the user know how well they did
     public void finishGame()
     {
-        Toast.makeText(HardGameActivity.this, "Congradulations, you completed the game with " + ((double)correct/ tries) * 100 + "% accuracy!", Toast.LENGTH_LONG).show();
+        float percent = ((float)correct / tries) * 100;
+        String percentage = String.format("%.02f", percent);        //Used to format the percentage to have two decimal places
+        Toast.makeText(HardGameActivity.this, "Congratulations, you completed the game with " + percentage + "% accuracy!", Toast.LENGTH_LONG).show();
         finish();
     }
 }
