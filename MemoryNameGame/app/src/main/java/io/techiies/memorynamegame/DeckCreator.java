@@ -43,7 +43,7 @@ public class DeckCreator extends AppCompatActivity
     //Save the "Class" and finish the DeckCreator activity to open up the main activity
     public void done(View v)
     {
-        ///////////////////////Save the deck so that the game activities (hard and easy mode) can access it//////////////////////
+        //Save the deck so that the game activities (hard and easy mode) can access it
         SaveLoad sv = new SaveLoad(deck.getClassName(), this);
         sv.save(deck);
 

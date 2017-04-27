@@ -5,15 +5,18 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+<<<<<<< HEAD
+import android.widget.LinearLayout;
+=======
+>>>>>>> 19476bd3bdb8cec80ff368e00fcb669e4ce94d20
 import android.widget.Toast;
 
 import java.util.Random;
@@ -28,21 +31,39 @@ public class EasyGameActivity extends AppCompatActivity
     private int correct;            //Keeps track of how many times the user gets a student's name correct
     private String[] names;         //Holds the three names that will be used for the buttons
 
+
+    private ImageView faceImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy_game);    //Sets the view to the easy game view
-        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.easy_game_container);
+//        ConstraintLayout container = (ConstraintLayout) findViewById(R.id.easy_game_container);
+
+        LinearLayout container = (LinearLayout) findViewById(R.id.easy_game_container);
+
+        ImageView im = new ImageView();
 
         deck = new Deck();
         names = new String[3];  //Initializes the names array
         tries = 0;              //Initializes the number of tries to 0
         correct = 0;            //Initializes the number of correct responses to 0
         gameView = new GameView(this);  //Creates a new Game View
+<<<<<<< HEAD
+
+        gameView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+
+
+//        faceImage = (ImageView) findViewById(R.id.studentFace);
+
+//        container.addView(gameView);    //Adds this GameView to the screen
+        ////////////////////////Load a Deck from the saved games////////////////////////////
+=======
         gameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
         container.addView(gameView);    //Adds this GameView to the screen
         //Load a Deck from the saved games
+>>>>>>> 19476bd3bdb8cec80ff368e00fcb669e4ce94d20
         createAlertClass();
     }
 
@@ -71,9 +92,15 @@ public class EasyGameActivity extends AppCompatActivity
         setButton(1);   //Sets the text for button 1
         setButton(2);   //Sets the text for button 2
         setButton(3);   //Sets the text for button 3
+<<<<<<< HEAD
+
+
+
+=======
         Bitmap bitmap = student.getFace();
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setImageBitmap(bitmap);       //Sets the picture to the student
+>>>>>>> 19476bd3bdb8cec80ff368e00fcb669e4ce94d20
         gameView.setView(student);  //Adds the student to the gameView so the picture can be drawn
     }
 
@@ -239,8 +266,18 @@ public class EasyGameActivity extends AppCompatActivity
     public void createDeck()
     {
         SaveLoad sv = new SaveLoad(deck.getClassName(), this);
+<<<<<<< HEAD
+        deck = sv.load(deck.getClassName());
+
+//        SaverLoader sv = new SaverLoader();
+//        sv.loadImageFromInternalStorage(this, deck.getClassName());
+
+//        Picasso.with(this).load(getDir("computer",Context.MODE_PRIVATE)).into(faceImage);
+
+=======
         deck = sv.load(deck.getClassName());    //Loads the correct deck
         //Checks to see if the deck actually exists
+>>>>>>> 19476bd3bdb8cec80ff368e00fcb669e4ce94d20
         if(deck == null)
         {
             Toast.makeText(EasyGameActivity.this, "That class does not exist", Toast.LENGTH_LONG).show();

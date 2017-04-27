@@ -35,7 +35,5 @@ public class GameView extends View
     protected void onDraw(Canvas canvas)
     {
         super.onDraw(canvas);
-        if(bitmap != null)
-            canvas.drawBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), null);
     }
 }
