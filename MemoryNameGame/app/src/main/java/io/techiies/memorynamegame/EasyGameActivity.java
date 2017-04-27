@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -71,8 +72,22 @@ public class EasyGameActivity extends AppCompatActivity
         setButton(1);   //Sets the text for button 1
         setButton(2);   //Sets the text for button 2
         setButton(3);   //Sets the text for button 3
-        Bitmap bitmap = student.getFace();
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        final Bitmap bitmap = student.getFace();
+        final ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageView.setScaleX(.01f);
+        imageView.setScaleY(.01f);
+        for(int i = 0; i < 1100; i++)   //Used to make the image look as if it is growing (make it "animated")
+        {
+            android.os.Handler handler = new android.os.Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    imageView.setScaleX(imageView.getScaleX() + 0.001f);
+                    imageView.setScaleY(imageView.getScaleY() + 0.001f);
+                    imageView.setImageBitmap(bitmap);   //Sets the picture to the student
+                }
+            }, 150);   //After 150 milliseconds do the run method above
+        }
         imageView.setImageBitmap(bitmap);       //Sets the picture to the student
         gameView.setView(student);  //Adds the student to the gameView so the picture can be drawn
     }
