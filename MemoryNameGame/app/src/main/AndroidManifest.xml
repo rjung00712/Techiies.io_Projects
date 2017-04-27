@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HardGameActivity" />
-        <activity android:name=".DeckCreator"></activity>
+        <activity android:name=".DeckCreator" />
+        <activity android:name=".EasyGameActivity"></activity>
     </application>
 
 </manifest>

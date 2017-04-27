@@ -8,45 +8,55 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
-    tools:context="io.techiies.memorynamegame.HardGameActivity"
-    android:id="@+id/hard_game_container">
+    tools:context="io.techiies.memorynamegame.EasyGameActivity"
+    android:id="@+id/easy_game_container">
 
     <Button
-        android:id="@+id/btnCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Answer"
-        android:onClick="check"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/option1"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintVertical_bias="0.97"
+        android:layout_marginRight="8dp"
+        android:text="Button 1"
+        android:onClick="selected1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 
-    <EditText
-        android:id="@+id/name_guess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/option2"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Student Name"
-        android:inputType="none|text"
+        android:text="Button 2"
+        android:onClick="selected2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintVertical_bias="0.875" />
+
+    <Button
+        android:id="@+id/option3"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Button 3"
+        android:onClick="selected3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="431dp"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -65,5 +75,5 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/transparent" />
 
-</android.support.constraint.ConstraintLayout>
 
+</android.support.constraint.ConstraintLayout>
