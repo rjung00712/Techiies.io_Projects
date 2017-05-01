@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,24 +14,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 //Activity to play the game in hard mode
-public class HardGameActivity extends AppCompatActivity
+public class HardGameActivity extends GameActivity
 {
-    private GameView gameView;      //Used to print the picture of a student
-    private Deck deck;              //Used to hold the students in the selected "Class"
-    private Student student;        //Used to hold the current student the user should be guessing
-    private int tries;              //Keeps track of how many times it takes the user to complete the "Class"
-    private int correct;            //Keeps track of how many times the user gets a student's name correct
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hard_game);    //Sets the view to the hard game view
         ConstraintLayout container = (ConstraintLayout) findViewById(R.id.hard_game_container);
 
-        deck = new Deck();
-        tries = 0;      //Initializes the number of tries to 0
-        correct = 0;    //Initializes the number of correct tries to 0
-        gameView = new GameView(this);  //Creates a new gameView instance
         gameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
         container.addView(gameView);    //Adds this view to the screen
         //Load a Deck from the saved games
@@ -48,7 +37,7 @@ public class HardGameActivity extends AppCompatActivity
         //Checks to see if the user entered the students name
         if(userGuess.equals(student.getName()))
         {
-            tries++;    //Increases the number of tries by 1
+            attempts++;    //Increases the number of tries by 1
             correct++;  //Increases the number of correct tries by 1
             deck.addStudent(student, true, false); //Adds the student back to the deck
             Toast.makeText(HardGameActivity.this, "That is correct!", Toast.LENGTH_SHORT).show();
@@ -64,16 +53,24 @@ public class HardGameActivity extends AppCompatActivity
                     else
                         finishGame();   //Ends the Hard Mode activity
                 }
-            }, 2000);   //After 2 seconds (2000 milliseconds) do the run method above
+            }, 1500);   //After 1.5 seconds (1500 milliseconds) do the run method above
 
         }
         //The user entered the wrong name
         else
         {
-            tries++;    //Increases the number of tries by 1
+            attempts++;    //Increases the number of tries by 1
             deck.addStudent(student, false, false);    //Adds the student back to the deck
             Toast.makeText(HardGameActivity.this, "That is incorrect! The correct name is " + student.getName(), Toast.LENGTH_SHORT).show();    //Tells the user the student's name
-            showStudent();  //Shows a new student the user has yet to name
+
+            android.os.Handler handler = new android.os.Handler();  //Used to pause the activity to give the user a chance to see the correct name
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    editText.setText("");   //Resets the text box where the user enters names
+                    showStudent();  //Shows a new student the user has yet to name
+                }
+            }, 1500);   //After 1.5 seconds (1500 milliseconds) do the run method above
         }
     }
 
@@ -153,15 +150,6 @@ public class HardGameActivity extends AppCompatActivity
             }, 150);   //After 150 milliseconds do the run method above
         }
         imageView.setImageBitmap(bitmap);   //Used to print the image to the screen
-        gameView.setView(student);  //Adds this student to the gameView so the picture prints
-    }
-
-    //Ends the Hard Mode activity and returns to the main screen letting the user know how well they did
-    public void finishGame()
-    {
-        float percent = ((float)correct / tries) * 100;
-        String percentage = String.format("%.02f", percent);        //Used to format the percentage to have two decimal places
-        Toast.makeText(HardGameActivity.this, "Congratulations, you completed the game with " + percentage + "% accuracy!", Toast.LENGTH_LONG).show();
-        finish();
+        gameView.invalidate();
     }
 }
