@@ -8,7 +8,6 @@ import android.preference.PreferenceManager;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -60,9 +59,12 @@ public class SaveLoad
         String json = sharedPreferences.getString("classesList", "");
         Type type = new TypeToken<ArrayList<String>>() {
         }.getType();
-        if (!json.equals(null))    //Checks to see if it exists
+        if (!json.equals(null)) {    //Checks to see if it exists
             classList = gson.fromJson(json, type);
-        classList.add(deck.getClassName());
+        } else {
+            classList.add(deck.getClassName());
+        }
+
         json = gson.toJson(classList);
         editor.putString("classesList", json);
         //Saves the images
@@ -112,7 +114,7 @@ public class SaveLoad
         return deck;
     }
 
-    public ArrayList<String> loadClassesList()
+    public String[] loadClassesList()
     {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
         Gson gson = new Gson();
@@ -120,6 +122,8 @@ public class SaveLoad
         Type type = new TypeToken<ArrayList<String>>() {}.getType();
         if(!json.equals(null))    //Checks to see if it exists
             classList = gson.fromJson(json, type);
-        return classList;
+
+        String[] list = classList.toArray(new String[classList.size()]);
+        return list;
     }
 }

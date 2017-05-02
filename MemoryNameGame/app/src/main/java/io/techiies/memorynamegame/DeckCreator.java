@@ -6,14 +6,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 //Activity to create a "Class" or "Deck" of students
 public class DeckCreator extends AppCompatActivity
@@ -46,10 +47,6 @@ public class DeckCreator extends AppCompatActivity
         //Save the deck so that the game activities (hard and easy mode) can access it
         SaveLoad sv = new SaveLoad(deck.getClassName(), this);
         sv.save(deck);
-
-//        SaverLoader sv = new SaverLoader();
-
-//        sv.saveImageToInternalStorage(this, student);
 
         finish();
     }
