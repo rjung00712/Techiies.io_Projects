@@ -5,10 +5,8 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,13 +18,8 @@ import android.widget.Toast;
 import java.util.Random;
 
 //Activity to play the game in easy mode
-public class EasyGameActivity extends AppCompatActivity
+public class EasyGameActivity extends GameActivity
 {
-    private GameView gameView;      //Used to print the picture of a student
-    private Deck deck;              //Used to hold the students in the selected "Class"
-    private Student student;        //Used to hold the current student the user should be guessing
-    private int tries;              //Keeps track of how many times it takes the user to complete the "Class"
-    private int correct;            //Keeps track of how many times the user gets a student's name correct
     private String[] names;         //Holds the three names that will be used for the buttons
 
     @Override
@@ -36,11 +29,7 @@ public class EasyGameActivity extends AppCompatActivity
         setContentView(R.layout.activity_easy_game);    //Sets the view to the easy game view
         ConstraintLayout container = (ConstraintLayout) findViewById(R.id.easy_game_container);
 
-        deck = new Deck();
         names = new String[3];  //Initializes the names array
-        tries = 0;              //Initializes the number of tries to 0
-        correct = 0;            //Initializes the number of correct responses to 0
-        gameView = new GameView(this);  //Creates a new Game View
         gameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
         container.addView(gameView);    //Adds this GameView to the screen
         //Load a Deck from the saved games
@@ -52,6 +41,15 @@ public class EasyGameActivity extends AppCompatActivity
     {
         Random rand = new Random();
         student = deck.getRandomStudent();  //Gets a random student from the class
+        if(deck.getStudentsLength() > 1)
+        {
+            //Makes sure not to show the same student two times in a row
+            while(student == lastStudent)
+            {
+                student = deck.getRandomStudent();
+            }
+        }
+        lastStudent = student;
         names[0] = student.getName();       //Sets the name of this student to the first element of the names array
         //If there are at least 3 students in the class it makes sure that no duplicate names are selected
         if(deck.getNamesSize() >= 3)
@@ -89,7 +87,7 @@ public class EasyGameActivity extends AppCompatActivity
             }, 150);   //After 150 milliseconds do the run method above
         }
         imageView.setImageBitmap(bitmap);       //Sets the picture to the student
-        gameView.setView(student);  //Adds the student to the gameView so the picture can be drawn
+        gameView.invalidate();
     }
 
     //Sets the text of the buttons based off of the number passed to it
@@ -159,7 +157,7 @@ public class EasyGameActivity extends AppCompatActivity
         //Checks if the user selected the name of the student shown
         if(userGuess.equals(student.getName()))
         {
-            tries++;    //Increases the number of tries by 1
+            attempts++;    //Increases the number of tries by 1
             correct++;  //Increases the number of correct tries by 1
             deck.addStudent(student, true, false); //Adds the student back into the deck
             Toast.makeText(EasyGameActivity.this, "That is correct!", Toast.LENGTH_SHORT).show();
@@ -175,12 +173,12 @@ public class EasyGameActivity extends AppCompatActivity
                     else
                         finishGame();   //Finishes the game if there are no new students
                 }
-            }, 2000);   //After 2 seconds (2000 milliseconds) do the run method above
+            }, 1500);   //After 1.5 seconds (1500 milliseconds) do the run method above
         }
         //The user guessed wrong
         else
         {
-            tries++;    //Increases the number of tries by 1
+            attempts++;    //Increases the number of tries by 1
             deck.addStudent(student, false, false);    //Adds the student back into the class
             Toast.makeText(EasyGameActivity.this, "That is incorrect! The correct name is " + student.getName(), Toast.LENGTH_SHORT).show();
             btn.setBackgroundColor(Color.RED);  //Colors the button the user pressed red
@@ -197,17 +195,8 @@ public class EasyGameActivity extends AppCompatActivity
                 public void run() {
                     showStudent();
                 }
-            }, 2000);   //After 2 seconds (2000 milliseconds) do the run method above
+            }, 1500);   //After 1.5 seconds (1500 milliseconds) do the run method above
         }
-    }
-
-    //Ends the game and returns back to the main activity, letting the user know how well they did
-    public void finishGame()
-    {
-        float percent = ((float)correct / tries) * 100;
-        String percentage = String.format("%.02f", percent);    //Format the percentage to have two decimal points
-        Toast.makeText(EasyGameActivity.this, "Congratulations, you completed the game with " + percentage + "% accuracy!", Toast.LENGTH_LONG).show();
-        finish();
     }
 
     // creates custom alert dialog box for class name input
