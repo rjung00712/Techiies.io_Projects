@@ -64,7 +64,9 @@ public class SaveLoad
 //        } else {
 //            classList.add(deck.getClassName());
 //        }
-        if(!classList.contains(deck.getClassName()))
+        if(classList == null)
+            classList = new ArrayList<>();
+        if(classList != null && !classList.contains(deck.getClassName()))
             classList.add(deck.getClassName());
 
         json = gson.toJson(classList);
@@ -125,7 +127,10 @@ public class SaveLoad
         if(json != null)    //Checks to see if it exists
             classList = gson.fromJson(json, type);
 
-        String[] list = classList.toArray(new String[classList.size()]);
-        return list;
+        if(classList != null) {
+            String[] list = classList.toArray(new String[classList.size()]);
+            return list;
+        }
+        return null;
     }
 }

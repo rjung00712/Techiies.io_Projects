@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 public class ClassSelector extends AppCompatActivity {
 
@@ -20,6 +21,11 @@ public class ClassSelector extends AppCompatActivity {
     {
         SaveLoad sv = new SaveLoad(null, this);
         final String[] classList = sv.loadClassesList();
+        if(classList == null)
+        {
+            Toast.makeText(this, "There are no Classes to play the game!", Toast.LENGTH_SHORT).show();
+            finish();
+        }
         GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new GridViewAdapter(this, classList, mode));
 

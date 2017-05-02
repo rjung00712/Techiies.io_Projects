@@ -26,6 +26,8 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if(classList == null)
+            return 0;
         return classList.length;
     }
 
