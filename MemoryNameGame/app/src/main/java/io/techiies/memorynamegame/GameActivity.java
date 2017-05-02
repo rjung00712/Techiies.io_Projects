@@ -1,11 +1,10 @@
 package io.techiies.memorynamegame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-//import android.R;
 
 
 public class GameActivity extends AppCompatActivity
@@ -125,14 +124,17 @@ public class GameActivity extends AppCompatActivity
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                et.setText(temp + percentage);
+                et.setText(temp + percentage + "%");
             }
         }, 1500);   //After 500 milliseconds do the run method above
     }
 
     public void endGame(View view)
     {
-        finish();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXIT", true);
+        startActivity(intent);
     }
 
     //Used to load the deck that the user wants
