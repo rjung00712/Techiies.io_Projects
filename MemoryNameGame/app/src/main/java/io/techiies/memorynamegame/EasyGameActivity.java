@@ -41,6 +41,15 @@ public class EasyGameActivity extends GameActivity
     {
         Random rand = new Random();
         student = deck.getRandomStudent();  //Gets a random student from the class
+        if(deck.getStudentsLength() > 1)
+        {
+            //Makes sure not to show the same student two times in a row
+            while(student == lastStudent)
+            {
+                student = deck.getRandomStudent();
+            }
+        }
+        lastStudent = student;
         names[0] = student.getName();       //Sets the name of this student to the first element of the names array
         //If there are at least 3 students in the class it makes sure that no duplicate names are selected
         if(deck.getNamesSize() >= 3)

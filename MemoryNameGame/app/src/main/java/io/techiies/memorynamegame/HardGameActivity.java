@@ -133,6 +133,15 @@ public class HardGameActivity extends GameActivity
     public void showStudent()
     {
         student = deck.getRandomStudent();  //Gets a new student
+        if(deck.getStudentsLength() > 1)
+        {
+            //Makes sure not to show the same student two times in a row
+            while(student == lastStudent)
+            {
+                student = deck.getRandomStudent();
+            }
+        }
+        lastStudent = student;
         final Bitmap bitmap = student.getFace();
         final ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setScaleX(.01f);

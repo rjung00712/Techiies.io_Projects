@@ -1,15 +1,9 @@
 package io.techiies.memorynamegame;
 
-import android.graphics.Color;
-import android.os.Handler;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import java.util.Random;
 
 public class GameActivity extends AppCompatActivity
 {
@@ -18,6 +12,7 @@ public class GameActivity extends AppCompatActivity
     protected Student student;        //Used to hold the current student the user should be guessing
     protected int attempts;           //Keeps track of how many times it takes the user to complete the "Class"
     protected int correct;            //Keeps track of how many times the user gets a student's name correct
+    protected Student lastStudent;    //Keeps track of the last student shown
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +22,7 @@ public class GameActivity extends AppCompatActivity
         attempts = 0;      //Initializes the number of attempts to 0
         correct = 0;    //Initializes the number of correct attempts to 0
         gameView = new GameView(this);  //Creates a new gameView instance
+        lastStudent = null;
     }
 
     public Deck getDeck() {
@@ -47,6 +43,14 @@ public class GameActivity extends AppCompatActivity
 
     public Student getStudent() {
         return student;
+    }
+
+    public Student getLastStudent() {
+        return lastStudent;
+    }
+
+    public void setLastStudent(Student lastStudent) {
+        this.lastStudent = lastStudent;
     }
 
     public void setAttempts(int attempts) {
