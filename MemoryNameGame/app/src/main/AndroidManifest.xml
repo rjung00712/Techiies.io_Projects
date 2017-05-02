@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".HardGameActivity" />
         <activity android:name=".DeckCreator" />
-        <activity android:name=".EasyGameActivity"></activity>
+        <activity android:name=".EasyGameActivity" />
+        <activity android:name=".GameActivity"></activity>
     </application>
 
 </manifest>
