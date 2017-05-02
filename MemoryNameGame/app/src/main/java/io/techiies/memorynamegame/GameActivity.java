@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 //import android.R;
 
 
@@ -20,7 +21,8 @@ public class GameActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        deck = new Deck();
+        String name = getIntent().getExtras().getString("Class Name");
+        createDeck(name);
         attempts = 0;      //Initializes the number of attempts to 0
         correct = 0;    //Initializes the number of correct attempts to 0
         gameView = new GameView(this);  //Creates a new gameView instance
@@ -86,29 +88,57 @@ public class GameActivity extends AppCompatActivity
 
     public void updateCorrect()
     {
-        EditText et = (EditText) findViewById(R.id.CorrectText);
-        String temp = et.getText().toString();
-        et.setText(temp + correct);
+        final EditText et = (EditText) findViewById(R.id.CorrectText);
+        final String temp = et.getText().toString();
+
+        android.os.Handler handler = new android.os.Handler();  //Used to pause the activity to give the user a chance to see the correct name
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+            et.setText(temp + correct);
+            }
+        }, 500);   //After 500 milliseconds do the run method above
     }
 
     public void updateAttempts()
     {
-        EditText et = (EditText) findViewById(R.id.AttemptsText);
-        String temp = et.getText().toString();
-        et.setText(temp + attempts);
+        final EditText et = (EditText) findViewById(R.id.AttemptsText);
+        final String temp = et.getText().toString();
+
+        android.os.Handler handler = new android.os.Handler();  //Used to pause the activity to give the user a chance to see the correct name
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                et.setText(temp + attempts);
+            }
+        }, 1000);   //After 1000 milliseconds do the run method above
     }
 
     public void updatePercent()
     {
-        EditText et = (EditText) findViewById(R.id.PercentText);
-        String temp = et.getText().toString();
+        final EditText et = (EditText) findViewById(R.id.PercentText);
+        final String temp = et.getText().toString();
         float percent = ((float) correct / attempts) * 100;
-        String percentage = String.format("%.02f", percent);
-        et.setText(temp + percentage + "%");
+        final String percentage = String.format("%.02f", percent);
+
+        android.os.Handler handler = new android.os.Handler();  //Used to pause the activity to give the user a chance to see the correct name
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                et.setText(temp + percentage);
+            }
+        }, 1500);   //After 500 milliseconds do the run method above
     }
 
     public void endGame(View view)
     {
         finish();
+    }
+
+    //Used to load the deck that the user wants
+    public void createDeck(String name)
+    {
+        SaveLoad sv = new SaveLoad(name, this);
+        deck = sv.load(name);    //Loads the correct deck
     }
 }

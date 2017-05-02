@@ -8,37 +8,22 @@
     tools:context="io.techiies.memorynamegame.MainActivity">
 
     <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
-
-        <GridView
-            android:id="@+id/gridView"
-            android:numColumns="auto_fit"
-            android:gravity="center"
-            android:horizontalSpacing="5dp"
-            android:verticalSpacing="20dp"
-            android:stretchMode="columnWidth"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </GridView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="0.57"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
 
         <Button
-            android:layout_gravity="center"
             android:id="@+id/btnNewClass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="12dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:onClick="createNewClass"
             android:text="New Class"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,17 +31,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            app:layout_constraintVertical_bias="0.4" />
 
         <Button
-            android:layout_gravity="center"
             android:id="@+id/btnPlayEasy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:onClick="playGameEasy"
             android:text="Play on Easy"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -64,22 +49,20 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <Button
-            android:layout_gravity="center"
             android:id="@+id/btnPlayHard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
             android:onClick="playGameHard"
             android:text="Play on Hard"
-            android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="8dp"
             app:layout_constraintVertical_bias="0.6" />
     </LinearLayout>
 

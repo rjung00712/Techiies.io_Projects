@@ -33,7 +33,7 @@ public class EasyGameActivity extends GameActivity
         gameView.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT));
         container.addView(gameView);    //Adds this GameView to the screen
         //Load a Deck from the saved games
-        createAlertClass();
+        showStudent();
     }
 
     //Shows a student with the three names
@@ -197,60 +197,5 @@ public class EasyGameActivity extends GameActivity
                 }
             }, 1500);   //After 1.5 seconds (1500 milliseconds) do the run method above
         }
-    }
-
-    // creates custom alert dialog box for class name input
-    public void createAlertClass()
-    {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // get the layout inflater
-        LayoutInflater inflater = this.getLayoutInflater();
-
-        View mView = inflater.inflate(R.layout.class_name, null);
-        final EditText editText = (EditText) mView.findViewById(R.id.name);
-
-        // inflate and set the layout for the dialog
-        // pass null as a parent view because its going in the dialog layout
-        builder.setView(mView)
-                .setPositiveButton("enter", new DialogInterface.OnClickListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.N)
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        deck.setClassName(editText.getText().toString());
-
-                        //Make sure that a class name is entered
-                        if(deck.getClassName().equals("")) {
-                            Toast.makeText(EasyGameActivity.this, "Must enter a class name", Toast.LENGTH_LONG).show();
-                            createAlertClass();
-                        }
-                        createDeck();
-                    }
-                });
-        //Create a cancel button so that the user doesnt have to create the new "class"
-        builder.setView(mView)
-                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        EasyGameActivity.super.finish();     //End the DeckCreator activity if the cancel button is pressed
-                    }
-                });
-        builder.setCancelable(false);
-        builder.show();
-    }
-
-    //Used to load the deck that the user wants
-    public void createDeck()
-    {
-        SaveLoad sv = new SaveLoad(deck.getClassName(), this);
-        deck = sv.load(deck.getClassName());    //Loads the correct deck
-        //Checks to see if the deck actually exists
-        if(deck == null)
-        {
-            Toast.makeText(EasyGameActivity.this, "That class does not exist", Toast.LENGTH_LONG).show();
-            finish();   //Ends the activity so the user must try again
-        }
-        else
-            showStudent();
     }
 }
