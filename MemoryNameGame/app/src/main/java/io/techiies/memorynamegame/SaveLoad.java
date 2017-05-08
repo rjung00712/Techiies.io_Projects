@@ -29,7 +29,7 @@ public class SaveLoad
     public SaveLoad(String name, Activity activity)
     {
         this.activity = activity;
-        if(!name.equals(null)) {
+        if(name != null) {
             this.imageName = name + " in";  //makes the file name for the images with the name of the class
             this.studentName = name + " sn";    //makes the file name for the names with the name of the class
         }
@@ -59,11 +59,15 @@ public class SaveLoad
         String json = sharedPreferences.getString("classesList", "");
         Type type = new TypeToken<ArrayList<String>>() {
         }.getType();
-        if (!json.equals(null)) {    //Checks to see if it exists
+        if (json != null)     //Checks to see if it exists
             classList = gson.fromJson(json, type);
-        } else {
+//        } else {
+//            classList.add(deck.getClassName());
+//        }
+        if(classList == null)
+            classList = new ArrayList<>();
+        if(classList != null && !classList.contains(deck.getClassName()))
             classList.add(deck.getClassName());
-        }
 
         json = gson.toJson(classList);
         editor.putString("classesList", json);
@@ -88,13 +92,13 @@ public class SaveLoad
         //Loads the images
         String json = sharedPreferences.getString(imageName, "");
         Type type = new TypeToken<ArrayList<byte[]>>() {}.getType();
-        if(!json.equals(null))    //Checks to see if it exists
+        if(json != null)    //Checks to see if it exists
             images = gson.fromJson(json, type);
         if(images != null) {
             //Loads the names
             json = sharedPreferences.getString(studentName, "");
             type = new TypeToken<ArrayList<String>>() {}.getType();
-            if (!json.equals(null))   //Checks to see if it exists
+            if (json != null)   //Checks to see if it exists
                 names = gson.fromJson(json, type);
             if (names != null) {
                 //Creates students based off the images and names and adds them to the deck
@@ -118,12 +122,15 @@ public class SaveLoad
     {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(imageName, "");
+        String json = sharedPreferences.getString("classesList", "");
         Type type = new TypeToken<ArrayList<String>>() {}.getType();
-        if(!json.equals(null))    //Checks to see if it exists
+        if(json != null)    //Checks to see if it exists
             classList = gson.fromJson(json, type);
 
-        String[] list = classList.toArray(new String[classList.size()]);
-        return list;
+        if(classList != null) {
+            String[] list = classList.toArray(new String[classList.size()]);
+            return list;
+        }
+        return null;
     }
 }

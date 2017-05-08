@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CPPMapBx</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoicmljaGFyZGp1bmciLCJhIjoiY2oyOTdma3EwMDA2cTJxbXgwMGt1MWI1aCJ9.d2pGP-GfbVszdIzT-CdJHA</string>
+</resources>
