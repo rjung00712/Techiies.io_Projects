@@ -1,0 +1,215 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University Park",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820923,
+          34.056567
+        ],
+        "type": "Point"
+      },
+      "id": "06b8938edd8e98f0fbae9c887c58fe61"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Union Plaza Horseshoe Hill",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.81981,
+          34.057093
+        ],
+        "type": "Point"
+      },
+      "id": "08617510d19ae420ca551bcfbabcbced"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pumpkin Field",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818254,
+          34.049524
+        ],
+        "type": "Point"
+      },
+      "id": "1dd036358886644ab5ba9a03bfa7188a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BioTrek Ethnobotany Garden",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826549,
+          34.057068
+        ],
+        "type": "Point"
+      },
+      "id": "44c54ced2a9cacd3441a8e4747469fe6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kellogg Track and infield",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817066,
+          34.052208
+        ],
+        "type": "Point"
+      },
+      "id": "61ddaf8b2a9da64a5aae3be497878770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arabian Horse Center Arena",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815514,
+          34.058501
+        ],
+        "type": "Point"
+      },
+      "id": "72c2da78737075e3b4e2a62386ed4d32"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Soccer Field",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817875,
+          34.053554
+        ],
+        "type": "Point"
+      },
+      "id": "79303da0b83227f3ae4bcbc055adaf2d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University Quad",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823724,
+          34.058543
+        ],
+        "type": "Point"
+      },
+      "id": "853ff38b5dec79719bf0645a6d45df59"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voorhis Park",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818599,
+          34.060023
+        ],
+        "type": "Point"
+      },
+      "id": "887a3c09da0b4803ed3f613ecb59b12e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Scolinos Baseball Field",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816073,
+          34.054143
+        ],
+        "type": "Point"
+      },
+      "id": "8b2572bee39f1b7462f3b97201b72f95"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tennis Courts",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820306,
+          34.052862
+        ],
+        "type": "Point"
+      },
+      "id": "e5543a08cc16b8c354271a432b481132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Japanese Garden",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820385,
+          34.05969
+        ],
+        "type": "Point"
+      },
+      "id": "eee1f33b7f365f16716a719ac64135df"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rose Garden",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820338,
+          34.060832
+        ],
+        "type": "Point"
+      },
+      "id": "f89b6edf24e894d97aef8e089539332a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Meadow",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821303,
+          34.059168
+        ],
+        "type": "Point"
+      },
+      "id": "fc5582b2fc3d43b219d7248612a76d8f"
+    }
+  ],
+  "type": "FeatureCollection"
+}

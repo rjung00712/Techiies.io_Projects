@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Icon;
+import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
@@ -34,14 +36,16 @@ import com.mapbox.services.api.directions.v5.DirectionsCriteria;
 import com.mapbox.services.api.directions.v5.MapboxDirections;
 import com.mapbox.services.api.directions.v5.models.DirectionsResponse;
 import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
+import com.mapbox.services.commons.geojson.FeatureCollection;
+import com.mapbox.services.commons.geojson.GeoJSON;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.parser.Parser;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.InputStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -166,14 +170,17 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 map = mapboxMap;
 
                 // Add origin and destination to the map
-                map.addMarker(new MarkerOptions()
-                        .position(new LatLng(defaultPoint.getLatitude(), defaultPoint.getLongitude()))
-                        .title("Origin")
-                        .snippet("University Quad"));
-                map.addMarker(new MarkerOptions()
-                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
-                        .title("Destination")
-                        .snippet("Panda Express"));
+//                map.addMarker(new MarkerOptions()
+//                        .position(new LatLng(defaultPoint.getLatitude(), defaultPoint.getLongitude()))
+//                        .title("Origin")
+//                        .snippet("University Quad"));
+//                map.addMarker(new MarkerOptions()
+//                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
+//                        .title("Destination")
+//                        .snippet("Panda Express"));
+                addMarkers("parking.geojson");
+                addMarkers("landmarks.geojson");
+                addMarkers("cpp_buildings.geojson");
                 // Get route from API
 //                try {
 //                    getRoute(origin, destination);
@@ -181,8 +188,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                    servicesException.printStackTrace();
 //                }
             }
-
-            ;
         });
 
 
@@ -196,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
     }
-//        parseKML();
 
 
     private void getRoute(Position origin, Position destination) throws ServicesException {
@@ -231,7 +235,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                System.out.println(currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction());
 //
 //                StepManeuver stepManeuver = new StepManeuver();
-
 
                 Toast.makeText(
                         MainActivity.this,
@@ -327,6 +330,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                             // listener is registered again and will adjust the camera once again.
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
                             locationEngine.removeLocationEngineListener(this);
+                            try {
+                                Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+                                getRoute(origin, destination);
+                            } catch (ServicesException se) {
+                                se.printStackTrace();
+                            }
                         }
                     }
                 };
@@ -340,31 +349,56 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         map.setMyLocationEnabled(enabled);
     }
 
-    private void parseKML() {
-        String kmlData = null;
+    private void addMarkers(String name) {
+        String json = null;
         try {
 
-//            InputStream is = getAssets().open(BUILDINGS_KML);
-//
-//            int size = is.available();
-//
-//            byte[] buffer = new byte[size];
-//
-//            is.read(buffer);
-//
-//            is.close();
-//
-//            kmlData = new String(buffer, "UTF-8");
+            InputStream is = getAssets().open(name);
 
+            int size = is.available();
 
-            String inputFileContents = kmlData; // find a way to read the file and store it in a string
-            String xmlContent = inputFileContents;
-            Document doc = Jsoup.parse(BUILDINGS_KML, kmlData, Parser.xmlParser());
+            byte[] buffer = new byte[size];
 
-            for(Element e : doc.select("LineString").select("coordinates")) {
-                // the contents
-                System.out.println(e.text());
+            is.read(buffer);
+
+            is.close();
+
+            json = new String(buffer, "UTF-8");
+
+            if(json != null)
+            {
+                IconFactory iconFactory = IconFactory.getInstance(MainActivity.this);
+                Icon icon = null;
+                if(name.equals("parking.geojson"))
+                    icon = iconFactory.fromResource(R.drawable.blue_marker);
+                else if(name.equals("landmarks.geojson"))
+                    icon = iconFactory.fromResource(R.drawable.green_marker);
+                JSONObject jsonObject = new JSONObject(json);
+                JSONArray features = jsonObject.getJSONArray("features");
+                for(int i = 0; i < features.length(); i++)
+                {
+                    JSONObject feature = features.getJSONObject(i);
+                    JSONObject properties = feature.getJSONObject("properties");
+                    JSONObject geometry = feature.getJSONObject("geometry");
+                    JSONArray coords = geometry.getJSONArray("coordinates");
+                    MarkerOptions m = new MarkerOptions();
+                    m.setTitle(properties.getString("name"));
+                    m.setSnippet(properties.getString("description"));
+                    m.setPosition(new LatLng(coords.getDouble(1), coords.getDouble(0)));
+                    if(icon != null)
+                        m.setIcon(icon);
+                    map.addMarker(m);
+                }
             }
+//
+//            String inputFileContents = ""; // find a way to read the file and store it in a string
+//            String xmlContent = inputFileContents;
+//            Document doc = Jsoup.parse(BUILDINGS_KML, "", Parser.xmlParser());
+//
+//            for(Element e : doc.select("LinearRing").select("coordinates")) {
+//                // the contents
+//                System.out.println(e.text());
+//            }
 
 
         } catch (Exception ex) {
@@ -372,7 +406,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                return null;
         }
 //        return kmlData;
-
     }
 
 
