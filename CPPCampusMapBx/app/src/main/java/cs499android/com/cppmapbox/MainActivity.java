@@ -15,8 +15,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
-import com.mapbox.mapboxsdk.annotations.Icon;
-import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
@@ -37,14 +35,8 @@ import com.mapbox.services.api.directions.v5.DirectionsCriteria;
 import com.mapbox.services.api.directions.v5.MapboxDirections;
 import com.mapbox.services.api.directions.v5.models.DirectionsResponse;
 import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
-import com.mapbox.services.commons.geojson.FeatureCollection;
-import com.mapbox.services.commons.geojson.GeoJSON;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.List;
@@ -74,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private MarkerCluster buildings;
     private MarkerCluster landmarks;
     private MarkerCluster parking;
-    private Polyline route;
+    private Polyline curRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                    Log.e(TAG, "No routes found");
 //                    return;
 //                }
-//                // Print some info about the route
+//                // Print some info about the curRoute
 //                currentRoute = response.body().getRoutes().get(0);
 //                Log.d(TAG, "Distance: " + currentRoute.getDistance());
 //
@@ -137,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //
 ////                RouteProgress routeProgress = new RouteProgress(currentRoute, origin, currentRoute.getLegs().get(0), currentRoute.);
 //
-////                RouteProgress(DirectionsRoute route, Position userSnappedPosition, int currentLegIndex,
+////                RouteProgress(DirectionsRoute curRoute, Position userSnappedPosition, int currentLegIndex,
 ////                int currentStepIndex, int alertUserLevel)
 //            }
 //
@@ -179,6 +171,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 createMarkers(landmarks);
                 parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
                 createMarkers(parking);
+                map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(@NonNull Marker marker) {
+                        destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                        return false;
+                    }
+                });
             }
         });
 
@@ -217,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     Log.e(TAG, "No routes found");
                     return;
                 }
-                // Print some info about the route
+                // Print some info about the curRoute
                 currentRoute = response.body().getRoutes().get(0);
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
 
@@ -233,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction(),
                         Toast.LENGTH_SHORT).show();
 
-                // Draw the route on the map
+                // Draw the curRoute on the map
                 drawRoute(currentRoute);
             }
 
@@ -259,7 +258,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         }
 
         // Draw Points on MapView
-        this.route = map.addPolyline(new PolylineOptions()
+        curRoute = map.addPolyline(new PolylineOptions()
                 .add(points)
                 .color(Color.parseColor("#009688"))
                 .width(5));
