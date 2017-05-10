@@ -1,12 +1,14 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -167,19 +169,21 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
 //                        .title("Destination")
 //                        .snippet("Panda Express"));
-                buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
-                createMarkers(buildings);
-                landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
-                createMarkers(landmarks);
-                parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
-                createMarkers(parking);
+//                buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
+//                createMarkers(buildings);
+//                landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
+//                createMarkers(landmarks);
+//                parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
+//                createMarkers(parking);
                 food = new MarkerCluster(MainActivity.this, "food_places.geojson", "yellow", map);
                 createMarkers(food);
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
-                        destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
-                        destinationMarker = marker;
+                        Intent MarkerSelectedIntent = new Intent(MainActivity.this, MarkerSelected.class);
+                        MarkerSelectedIntent.putExtra("Title", marker.getTitle());
+                        MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                        startActivity(MarkerSelectedIntent);
                         return false;
                     }
                 });

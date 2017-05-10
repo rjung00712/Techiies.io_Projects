@@ -13,9 +13,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by awing_000 on 5/8/2017.
@@ -57,7 +55,7 @@ public class MarkerCluster
                 JSONArray coords = geometry.getJSONArray("coordinates");
                 MarkerOptions m = new MarkerOptions();
                 m.setTitle(properties.getString("name"));
-                m.setSnippet(properties.getString("description"));
+                m.setSnippet(properties.getString("description") + "***" + properties.getString("picture"));
                 m.setPosition(new LatLng(coords.getDouble(1), coords.getDouble(0)));
                 if (icon != null)
                     m.setIcon(icon);
