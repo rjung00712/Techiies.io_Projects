@@ -76,11 +76,13 @@ public class MarkerCluster
         visible = true;
     }
 
-    public void removeMarkers()
+    public void removeMarkers(Marker marker)
     {
         if(visible)
-            for(int i = 0; i < markers.size(); i++)
-                map.removeMarker(markers.get(i));
+            for(int i = 0; i < markers.size(); i++){
+                if(!markers.get(i).equals(marker))
+                    map.removeMarker(markers.get(i));
+            }
         visible = false;
     }
 
@@ -93,6 +95,8 @@ public class MarkerCluster
             icon = iconFactory.fromResource(R.drawable.green_marker);
         else if(color.equals("red"))
             icon = iconFactory.fromResource(R.drawable.red_marker);
+        else if(color.equals("yellow"))
+            icon = iconFactory.fromResource(R.drawable.yellow_marker);
     }
 
     public String getColor() {return color;}

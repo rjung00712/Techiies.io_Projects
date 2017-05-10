@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private MarkerCluster buildings;
     private MarkerCluster landmarks;
     private MarkerCluster parking;
+    private MarkerCluster food;
+    private Marker destinationMarker;
     private Polyline curRoute;
 
     @Override
@@ -161,20 +163,23 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                        .position(new LatLng(defaultPoint.getLatitude(), defaultPoint.getLongitude()))
 //                        .title("Origin")
 //                        .snippet("University Quad"));
-                map.addMarker(new MarkerOptions()
-                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
-                        .title("Destination")
-                        .snippet("Panda Express"));
+//                destinationMarker = map.addMarker(new MarkerOptions()
+//                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
+//                        .title("Destination")
+//                        .snippet("Panda Express"));
                 buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
                 createMarkers(buildings);
                 landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
                 createMarkers(landmarks);
                 parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
                 createMarkers(parking);
+                food = new MarkerCluster(MainActivity.this, "food_places.geojson", "yellow", map);
+                createMarkers(food);
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
                         destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                        destinationMarker = marker;
                         return false;
                     }
                 });
@@ -271,9 +276,10 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             if (!PermissionsManager.areLocationPermissionsGranted(this)) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
-                buildings.removeMarkers();
-                landmarks.removeMarkers();
-                parking.removeMarkers();
+                buildings.removeMarkers(destinationMarker);
+                landmarks.removeMarkers(destinationMarker);
+                parking.removeMarkers(destinationMarker);
+                food.removeMarkers(destinationMarker);
                 enableLocation(true);
             }
         } else {
@@ -283,6 +289,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             buildings.addMarkers();
             landmarks.addMarkers();
             parking.addMarkers();
+            food.addMarkers();
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
