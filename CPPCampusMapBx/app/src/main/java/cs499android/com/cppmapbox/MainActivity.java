@@ -19,6 +19,7 @@ import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -54,16 +55,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import static cs499android.com.cppmapbox.Constants.MAPBOX_ACCESS_TOKEN;
+import static cs499android.com.cppmapbox.Constants.*;
 
-public class MainActivity extends AppCompatActivity implements PermissionsListener {
-
-    private static final String TAG = "MainActivity";
-    public static final int PERMISSIONS_REQUEST_LOCATION = 99;
-    private static final String BASE_URL = "https://api.mapbox.com";
-    private static final String BUILDINGS_KML = "buildings.kml";
-
-
+public class MainActivity extends AppCompatActivity implements PermissionsListener
+{
     private MapView mapView;
     private MapboxMap map;
     private DirectionsRoute currentRoute;
@@ -74,12 +69,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     private FloatingActionButton floatingActionButton;
 
-    private Marker featureMarker;
-
-    private com.mapbox.mapboxsdk.annotations.Polygon selectedBuilding;
-
     private Position destination;
 
+    private MarkerCluster buildings;
+    private MarkerCluster landmarks;
+    private MarkerCluster parking;
+    private Polyline route;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,23 +165,20 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 map = mapboxMap;
 
                 // Add origin and destination to the map
-//                map.addMarker(new MarkerOptions()
+//                Marker temp = map.addMarker(new MarkerOptions()
 //                        .position(new LatLng(defaultPoint.getLatitude(), defaultPoint.getLongitude()))
 //                        .title("Origin")
 //                        .snippet("University Quad"));
-//                map.addMarker(new MarkerOptions()
-//                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
-//                        .title("Destination")
-//                        .snippet("Panda Express"));
-                addMarkers("parking.geojson");
-                addMarkers("landmarks.geojson");
-                addMarkers("cpp_buildings.geojson");
-                // Get route from API
-//                try {
-//                    getRoute(origin, destination);
-//                } catch (ServicesException servicesException) {
-//                    servicesException.printStackTrace();
-//                }
+                map.addMarker(new MarkerOptions()
+                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
+                        .title("Destination")
+                        .snippet("Panda Express"));
+                buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
+                createMarkers(buildings);
+                landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
+                createMarkers(landmarks);
+                parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
+                createMarkers(parking);
             }
         });
 
@@ -203,8 +195,8 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     }
 
 
-    private void getRoute(Position origin, Position destination) throws ServicesException {
-
+    private void getRoute(Position origin, Position destination) throws ServicesException
+    {
         MapboxDirections client = new MapboxDirections.Builder()
                 .setOrigin(origin)
                 .setDestination(destination)
@@ -267,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         }
 
         // Draw Points on MapView
-        map.addPolyline(new PolylineOptions()
+        this.route = map.addPolyline(new PolylineOptions()
                 .add(points)
                 .color(Color.parseColor("#009688"))
                 .width(5));
@@ -280,9 +272,19 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             if (!PermissionsManager.areLocationPermissionsGranted(this)) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
+                buildings.removeMarkers();
+                landmarks.removeMarkers();
+                parking.removeMarkers();
                 enableLocation(true);
             }
         } else {
+            List<Polyline> list = map.getPolylines();
+            for(int i = 0; i < list.size(); i++)
+                map.removePolyline(list.get(i));
+            buildings.addMarkers();
+            landmarks.addMarkers();
+            parking.addMarkers();
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
     }
@@ -349,11 +351,11 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         map.setMyLocationEnabled(enabled);
     }
 
-    private void addMarkers(String name) {
+    private void createMarkers(MarkerCluster markerCluster) {
         String json = null;
         try {
 
-            InputStream is = getAssets().open(name);
+            InputStream is = getAssets().open(markerCluster.getName());
 
             int size = is.available();
 
@@ -367,45 +369,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
             if(json != null)
             {
-                IconFactory iconFactory = IconFactory.getInstance(MainActivity.this);
-                Icon icon = null;
-                if(name.equals("parking.geojson"))
-                    icon = iconFactory.fromResource(R.drawable.blue_marker);
-                else if(name.equals("landmarks.geojson"))
-                    icon = iconFactory.fromResource(R.drawable.green_marker);
-                JSONObject jsonObject = new JSONObject(json);
-                JSONArray features = jsonObject.getJSONArray("features");
-                for(int i = 0; i < features.length(); i++)
-                {
-                    JSONObject feature = features.getJSONObject(i);
-                    JSONObject properties = feature.getJSONObject("properties");
-                    JSONObject geometry = feature.getJSONObject("geometry");
-                    JSONArray coords = geometry.getJSONArray("coordinates");
-                    MarkerOptions m = new MarkerOptions();
-                    m.setTitle(properties.getString("name"));
-                    m.setSnippet(properties.getString("description"));
-                    m.setPosition(new LatLng(coords.getDouble(1), coords.getDouble(0)));
-                    if(icon != null)
-                        m.setIcon(icon);
-                    map.addMarker(m);
-                }
+                markerCluster.createMarkers(json);
+                markerCluster.addMarkers();
             }
-//
-//            String inputFileContents = ""; // find a way to read the file and store it in a string
-//            String xmlContent = inputFileContents;
-//            Document doc = Jsoup.parse(BUILDINGS_KML, "", Parser.xmlParser());
-//
-//            for(Element e : doc.select("LinearRing").select("coordinates")) {
-//                // the contents
-//                System.out.println(e.text());
-//            }
-
-
         } catch (Exception ex) {
             ex.printStackTrace();
-//                return null;
         }
-//        return kmlData;
     }
 
 
