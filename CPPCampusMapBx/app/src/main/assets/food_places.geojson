@@ -415,6 +415,21 @@
         "type": "Point"
       },
       "id": "fbb78ccef6c145f6b4cc2ac5c7aaf53d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Los Olivos Commons",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82158449726776,
+          34.06237143940383
+        ],
+        "type": "Point"
+      }
     }
   ],
   "type": "FeatureCollection"
