@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BudgetManager</string>
+    <string name="action_settings">Settings</string>
+</resources>
