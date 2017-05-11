@@ -29,7 +29,7 @@ public class MarkerSelected extends AppCompatActivity {
 
     public void setPicture(String description)
     {
-        String filename = description.substring(description.indexOf('*') + 3);
+        String filename = description.substring(description.indexOf("***") + 3);
         try {
             InputStream is = getAssets().open(filename);
             Bitmap bitmap = BitmapFactory.decodeStream(is);
@@ -43,7 +43,7 @@ public class MarkerSelected extends AppCompatActivity {
 
     public String getDescription(String description)
     {
-        return description.substring(0, description.indexOf('*'));
+        return description.substring(0, description.indexOf("***"));
     }
 
     public void cancel(View view)

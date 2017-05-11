@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
@@ -169,12 +170,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
 //                        .title("Destination")
 //                        .snippet("Panda Express"));
-//                buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
-//                createMarkers(buildings);
-//                landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
-//                createMarkers(landmarks);
-//                parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
-//                createMarkers(parking);
+                buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
+                createMarkers(buildings);
+                landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
+                createMarkers(landmarks);
+                parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
+                createMarkers(parking);
                 food = new MarkerCluster(MainActivity.this, "food_places.geojson", "yellow", map);
                 createMarkers(food);
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
@@ -184,6 +185,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         MarkerSelectedIntent.putExtra("Title", marker.getTitle());
                         MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
                         startActivity(MarkerSelectedIntent);
+                        map.setInfoWindowAdapter(new MapboxMap.InfoWindowAdapter() {
+                            @Nullable
+                            @Override
+                            public View getInfoWindow(@NonNull Marker marker) {
+                                return new LinearLayout(MainActivity.this);
+                            }
+                        });
                         return false;
                     }
                 });
