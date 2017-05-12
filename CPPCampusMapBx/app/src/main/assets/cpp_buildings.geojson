@@ -83,14 +83,14 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 62 - Residence Suites",
+        "name": "Building 63 - Residence Suites (Vista del Luna)",
         "description": "",
-        "picture": ""
+        "picture": "Bg_62.jpeg"
       },
       "geometry": {
         "coordinates": [
           -117.817559,
-          34.054344
+          34.054328
         ],
         "type": "Point"
       },
@@ -227,6 +227,22 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "",
+        "name": "Building 209W - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824467,
+          34.049816
+        ],
+        "type": "Point"
+      },
+      "id": "1f7fdd345b84d3e8fcb3b35f2581c0a9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Building 66 - Bronco Bookstore",
         "description": "The Bronco Bookstore is stocked with all the textbooks you need for classes as well as Cal Poly Pomona gear, school supplies, and computers, including the latest Apple products. If at all possible, the Bookstore tries to provide used textbook options for thrifty purchasing. To further their cost-conscious strategies, students can also rent books by the quarter at a fraction of the price.",
         "picture": "Bg_66.jpeg"
@@ -307,13 +323,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 52",
+        "name": "Building 52 - Vista Market",
         "description": "",
-        "picture": ""
+        "picture": "Bg_52.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.817922,
+          -117.817939,
           34.053962
         ],
         "type": "Point"
@@ -387,6 +403,22 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "",
+        "name": "Building 210 - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821636,
+          34.049663
+        ],
+        "type": "Point"
+      },
+      "id": "2cd459abc268b5542c1cb7637f29a6e5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Building 94 - University Office Building",
         "description": "",
         "picture": "Bg_94.jpeg"
@@ -451,6 +483,22 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "",
+        "name": "Building 90 - Medic-1",
+        "picture": "Bg_90.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816607,
+          34.061187
+        ],
+        "type": "Point"
+      },
+      "id": "355f0257519c63c2cb808251b93e9c05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Kellogg House Pomona",
         "description": "",
         "picture": ""
@@ -474,7 +522,7 @@
       "geometry": {
         "coordinates": [
           -117.824758,
-          34.062411
+          34.062412
         ],
         "type": "Point"
       },
@@ -527,6 +575,22 @@
         "type": "Point"
       },
       "id": "42fcd80b893e8cfe7b5cacb94f04d32f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 150 - MASA Building",
+        "picture": "Bg_150.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820856,
+          34.057264
+        ],
+        "type": "Point"
+      },
+      "id": "49b57b17b641c91eac34043145f26b51"
     },
     {
       "type": "Feature",
@@ -675,6 +739,22 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "",
+        "name": "Building 215 - Agriscapes",
+        "picture": "Bg_211.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818999,
+          34.047385
+        ],
+        "type": "Point"
+      },
+      "id": "5cdcc335d99e56383109f578408f2404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Building 95 - Cultural Centers",
         "description": "",
         "picture": "Bg_95.jpeg"
@@ -803,18 +883,34 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 76 - Kellogg West Education/Dining",
+        "name": "Building 76A - Kellogg West/Addition",
         "description": "",
         "picture": "Bg_76.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.824732,
-          34.056682
+          -117.824725,
+          34.056673
         ],
         "type": "Point"
       },
       "id": "6d26b6d1042f7944e04ded6d0df8c6aa"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 163 - College of Business Administration",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820199,
+          34.061241
+        ],
+        "type": "Point"
+      },
+      "id": "7011c3905de69158d2767b698a58ad91"
     },
     {
       "type": "Feature",
@@ -915,6 +1011,22 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "",
+        "name": "Building 26A - Student Orientation Center",
+        "picture": "Bg_26A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82057,
+          34.056713
+        ],
+        "type": "Point"
+      },
+      "id": "7d2df9caa4bc8c5c8f303ff6109c1564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Building 123",
         "description": "",
         "picture": ""
@@ -1007,6 +1119,22 @@
         "type": "Point"
       },
       "id": "8344b64fd91428821a30cac5c29601bf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 211 - Agriscapes/Farm Store",
+        "picture": "Bg_211.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819031,
+          34.048336
+        ],
+        "type": "Point"
+      },
+      "id": "84d1457ac3a80f594392a67246affe0e"
     },
     {
       "type": "Feature",
@@ -1107,6 +1235,22 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "",
+        "name": "Building 209C - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824149,
+          34.049694
+        ],
+        "type": "Point"
+      },
+      "id": "8b7b853c6dc5ad459e41cb0529deed68"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Building 60 - Residence Suites (Vista del Bonita)",
         "description": "",
         "picture": "Bg_60.jpeg"
@@ -1151,6 +1295,22 @@
         "type": "Point"
       },
       "id": "8fe971d687dcc36039a2e603e5d2e935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 209 - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824456,
+          34.04961
+        ],
+        "type": "Point"
+      },
+      "id": "90edc59012f971cd04f7c155559bd59e"
     },
     {
       "type": "Feature",
@@ -1252,6 +1412,22 @@
       "type": "Feature",
       "properties": {
         "description": "",
+        "name": "Building 209S - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82481,
+          34.049626
+        ],
+        "type": "Point"
+      },
+      "id": "9a745ecb366f1c38b0a9183648cffbb1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
         "name": "Building 82A - Carpenter Shop",
         "picture": "Bg_82A.jpeg"
       },
@@ -1263,6 +1439,22 @@
         "type": "Point"
       },
       "id": "9c46e0f9439c77009e3a7ee3cee79b1d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 209L - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824402,
+          34.049684
+        ],
+        "type": "Point"
+      },
+      "id": "9c8bc57553a7a1e494613c9ce7ca548f"
     },
     {
       "type": "Feature",
@@ -1429,12 +1621,12 @@
       "properties": {
         "name": "Building 54 - Residence Suites",
         "description": "",
-        "picture": ""
+        "picture": "Bg_54.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.818895,
-          34.055525
+          -117.818896,
+          34.055515
         ],
         "type": "Point"
       },
@@ -1651,14 +1843,14 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 55 - Foundation Administration Offices",
+        "name": "Building 78 - Kellogg West Addition",
         "description": "",
         "picture": "Bg_78.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.825713,
-          34.056791
+          -117.825715,
+          34.056786
         ],
         "type": "Point"
       },
@@ -1715,14 +1907,30 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 164",
         "description": "",
-        "picture": ""
+        "name": "Building 216 - Innovation Village SCE",
+        "picture": "Bg_216.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.819827,
-          34.061582
+          -117.813926,
+          34.051057
+        ],
+        "type": "Point"
+      },
+      "id": "dfebdafb16be30617e212db4fe22ce58"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 164 - College of Business Administration",
+        "description": "",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819814,
+          34.061566
         ],
         "type": "Point"
       },
@@ -1743,6 +1951,22 @@
         "type": "Point"
       },
       "id": "e8cd21370d349d1288b00cf532c96c35"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Buillding 218 - American Red Cross Headquarters",
+        "picture": "Bg_218.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.811408,
+          34.053671
+        ],
+        "type": "Point"
+      },
+      "id": "ea26672797113ac1dcc78434cddaeb08"
     },
     {
       "type": "Feature",
@@ -1779,14 +2003,14 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 63 - Residence Suites",
+        "name": "Building 63 - Residence Suites (Vista del Luna)",
         "description": "",
         "picture": ""
       },
       "geometry": {
         "coordinates": [
-          -117.816941,
-          34.053905
+          -117.816959,
+          34.053899
         ],
         "type": "Point"
       },
@@ -1807,6 +2031,22 @@
         "type": "Point"
       },
       "id": "efcfbe3720f74792a4288ff8b0881e7b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 209R - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824714,
+          34.049375
+        ],
+        "type": "Point"
+      },
+      "id": "f1cd55485e5719fe4d640649353859d1"
     },
     {
       "type": "Feature",
@@ -1875,14 +2115,30 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 128 - I Poly High School",
         "description": "",
-        "picture": ""
+        "name": "Building 162 - College of Business Administration",
+        "picture": "Bg_162.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.819533,
-          34.051009
+          -117.819627,
+          34.061295
+        ],
+        "type": "Point"
+      },
+      "id": "f55e5058539124d5345f9cbd6478bf05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 85 - I Poly High School",
+        "description": "",
+        "picture": "Bg_85.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819535,
+          34.05099
         ],
         "type": "Point"
       },
