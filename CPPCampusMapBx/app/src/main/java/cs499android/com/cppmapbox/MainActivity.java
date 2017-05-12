@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
-import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
@@ -41,7 +40,6 @@ import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
-import java.io.InputStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -55,7 +53,7 @@ import static cs499android.com.cppmapbox.Constants.*;
 public class MainActivity extends AppCompatActivity implements PermissionsListener
 {
     private MapView mapView;
-    private MapboxMap map;
+    protected static MapboxMap map;
     private DirectionsRoute currentRoute;
 
     private LocationEngine locationEngine;
@@ -66,10 +64,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     private Position destination;
 
-    private MarkerCluster buildings;
-    private MarkerCluster landmarks;
-    private MarkerCluster parking;
-    private MarkerCluster food;
     private Marker destinationMarker;
     private Polyline curRoute;
 
@@ -99,88 +93,27 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         locationEngine = LocationSource.getLocationEngine(this);
         locationEngine.activate();
 
-//        locationEngine = LostLocationEngine.getLocationEngine(this);
-//        navigation.setLocationEngine(locationEngine);
-
-
-//        final Position origin = Position.fromCoordinates(-117.823601, 34.058800);
-
         final Position defaultPoint = Position.fromCoordinates(-117.823601, 34.058800);
         destination = Position.fromCoordinates(-117.823332, 34.058031);
-
-//        navigation.getRoute(origin, destination, new Callback<DirectionsResponse>() {
-//            @Override
-//            public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-//                response.body();
-//
-//                // You can get the generic HTTP info about the response
-//                Log.d(TAG, "Response code: " + response.code());
-//                if (response.body() == null) {
-//                    Log.e(TAG, "No routes found, make sure you set the right user and access token.");
-//                    return;
-//                } else if (response.body().getRoutes().size() < 1) {
-//                    Log.e(TAG, "No routes found");
-//                    return;
-//                }
-//                // Print some info about the curRoute
-//                currentRoute = response.body().getRoutes().get(0);
-//                Log.d(TAG, "Distance: " + currentRoute.getDistance());
-//
-//
-//                System.out.println(response.body().getRoutes().get(0).getLegs().get(0).getSteps().get(0).getManeuver().getInstruction());
-//                System.out.println(response.body().getRoutes().get(0).getLegs().get(0).getSteps().get(1).getManeuver().getInstruction());
-//                System.out.println(response.body().getRoutes().get(0).getLegs().get(0).getSteps().get(2).getManeuver().getInstruction());
-//
-//
-////                RouteProgress routeProgress = new RouteProgress(currentRoute, origin, currentRoute.getLegs().get(0), currentRoute.);
-//
-////                RouteProgress(DirectionsRoute curRoute, Position userSnappedPosition, int currentLegIndex,
-////                int currentStepIndex, int alertUserLevel)
-//            }
-//
-//            @Override
-//            public void onFailure(Call<DirectionsResponse> call, Throwable t) {
-//
-//            }
-//        });
-
-//        navigation.addProgressChangeListener(new ProgressChangeListener() {
-//            @Override
-//            public void onProgressChange(Location location, RouteProgress routeProgress) {
-//                System.out.println("yo" + routeProgress.getCurrentLegProgress().getUpComingStep().getManeuver().getInstruction());
-//            }
-//        });
-
 
         // Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
+
+        ClusterHolder.activity = MainActivity.this;
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
 
-                // Add origin and destination to the map
-//                Marker temp = map.addMarker(new MarkerOptions()
-//                        .position(new LatLng(defaultPoint.getLatitude(), defaultPoint.getLongitude()))
-//                        .title("Origin")
-//                        .snippet("University Quad"));
-//                destinationMarker = map.addMarker(new MarkerOptions()
-//                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
-//                        .title("Destination")
-//                        .snippet("Panda Express"));
-                buildings = new MarkerCluster(MainActivity.this, "cpp_buildings.geojson", "red", map);
-                createMarkers(buildings);
-                landmarks = new MarkerCluster(MainActivity.this, "landmarks.geojson", "green", map);
-                createMarkers(landmarks);
-                parking = new MarkerCluster(MainActivity.this, "parking.geojson", "blue", map);
-                createMarkers(parking);
-                food = new MarkerCluster(MainActivity.this, "food_places.geojson", "yellow", map);
-                createMarkers(food);
+                ClusterHolder.createMarkers();
+                ClusterHolder.addMarkers();
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
+                        destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                        destinationMarker = marker;
                         Intent MarkerSelectedIntent = new Intent(MainActivity.this, MarkerSelected.class);
                         MarkerSelectedIntent.putExtra("Title", marker.getTitle());
                         MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
@@ -288,20 +221,14 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             if (!PermissionsManager.areLocationPermissionsGranted(this)) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
-                buildings.removeMarkers(destinationMarker);
-                landmarks.removeMarkers(destinationMarker);
-                parking.removeMarkers(destinationMarker);
-                food.removeMarkers(destinationMarker);
+                ClusterHolder.removeMarkers(destinationMarker);
                 enableLocation(true);
             }
         } else {
             List<Polyline> list = map.getPolylines();
             for(int i = 0; i < list.size(); i++)
                 map.removePolyline(list.get(i));
-            buildings.addMarkers();
-            landmarks.addMarkers();
-            parking.addMarkers();
-            food.addMarkers();
+            ClusterHolder.addMarkers();
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
@@ -328,6 +255,9 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
                     try {
                         Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
+                        List<Polyline> list = map.getPolylines();
+                        for(int i = 0; i < list.size(); i++)
+                            map.removePolyline(list.get(i));
                         getRoute(origin, destination);
                     } catch (ServicesException se) {
                         se.printStackTrace();
@@ -349,9 +279,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                             // changes. When the user disables and then enables the location again, this
                             // listener is registered again and will adjust the camera once again.
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-                            locationEngine.removeLocationEngineListener(this);
+                            //locationEngine.removeLocationEngineListener(this);
                             try {
                                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+                                List<Polyline> list = map.getPolylines();
+                                for(int i = 0; i < list.size(); i++)
+                                    map.removePolyline(list.get(i));
                                 getRoute(origin, destination);
                             } catch (ServicesException se) {
                                 se.printStackTrace();
@@ -368,33 +301,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         // Enable or disable the location layer on the map
         map.setMyLocationEnabled(enabled);
     }
-
-    private void createMarkers(MarkerCluster markerCluster) {
-        String json = null;
-        try {
-
-            InputStream is = getAssets().open(markerCluster.getName());
-
-            int size = is.available();
-
-            byte[] buffer = new byte[size];
-
-            is.read(buffer);
-
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-
-            if(json != null)
-            {
-                markerCluster.createMarkers(json);
-                markerCluster.addMarkers();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
 
     // Add the mapView lifecycle to the activity's lifecycle methods
     @Override

@@ -1,14 +1,12 @@
 package cs499android.com.cppmapbox;
 
 import android.app.Activity;
-import android.content.Context;
 
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,22 +22,22 @@ public class MarkerCluster
     private ArrayList<Marker> markers;
     private ArrayList<MarkerOptions> markerOptions;
     private boolean visible;
+    private boolean selected;
     private String name;
     private Icon icon;
     private Activity activity;
     private String color;
-    private MapboxMap map;
 
-    public MarkerCluster(Activity activity, String name, String color, MapboxMap map)
+    public MarkerCluster(Activity activity, String name, String color)
     {
         this.activity = activity;
         this.name = name;
         this.color = color;
-        this.map = map;
         setIcon(color);
         markers = new ArrayList<>();
         markerOptions = new ArrayList<>();
         visible = false;
+        selected = true;
     }
 
     public void createMarkers(String json)
@@ -70,7 +68,7 @@ public class MarkerCluster
     {
         if(!visible)
             for (int i = 0; i < markerOptions.size(); i++)
-                markers.add(map.addMarker(markerOptions.get(i)));
+                markers.add(MainActivity.map.addMarker(markerOptions.get(i)));
         visible = true;
     }
 
@@ -79,7 +77,7 @@ public class MarkerCluster
         if(visible)
             for(int i = 0; i < markers.size(); i++){
                 if(!markers.get(i).equals(marker))
-                    map.removeMarker(markers.get(i));
+                    MainActivity.map.removeMarker(markers.get(i));
             }
         visible = false;
     }
@@ -103,6 +101,8 @@ public class MarkerCluster
 
     public boolean isVisible() {return visible;}
 
+    public boolean isSelected() {return selected;}
+
     public String getName() {return name;}
 
     public void setColor(String color) {this.color = color;}
@@ -110,4 +110,6 @@ public class MarkerCluster
     public void setName(String name) {this.name = name;}
 
     public void setVisible(boolean visible) {this.visible = visible;}
+
+    public void setSelected(boolean selected) {this.selected = selected;}
 }

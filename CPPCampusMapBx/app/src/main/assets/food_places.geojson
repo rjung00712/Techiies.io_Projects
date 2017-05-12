@@ -213,7 +213,7 @@
       "properties": {
         "name": "Jamba Juice - BRIC",
         "description": "With 2.5 to 3.5 servings of fruit in each drink, Jamba Juice smoothies are a healthy and tasty treat. Jamba Juice also offers all-natural baked goods, steel-cut oatmeal, sandwiches, and other delicious, healthy choices.  909.979.5740",
-        "picture": jamba_juice_bric.jpeg"
+        "picture": "jamba_juice_bric.jpeg"
       },
       "geometry": {
         "coordinates": [
