@@ -4,7 +4,8 @@
       "type": "Feature",
       "properties": {
         "name": "University Park",
-        "description": ""
+        "description": "",
+        "picture": "university_park.jpeg"
       },
       "geometry": {
         "coordinates": [
@@ -19,7 +20,8 @@
       "type": "Feature",
       "properties": {
         "name": "Union Plaza Horseshoe Hill",
-        "description": ""
+        "description": "",
+        "picture": "union_plaza.jpeg"
       },
       "geometry": {
         "coordinates": [
@@ -34,7 +36,8 @@
       "type": "Feature",
       "properties": {
         "name": "Pumpkin Field",
-        "description": ""
+        "description": "",
+        "picture": "pumpkin_field.jpeg"
       },
       "geometry": {
         "coordinates": [
@@ -49,7 +52,8 @@
       "type": "Feature",
       "properties": {
         "name": "BioTrek Ethnobotany Garden",
-        "description": ""
+        "description": "",
+        "picture": "biotrek.gif"
       },
       "geometry": {
         "coordinates": [
@@ -64,7 +68,8 @@
       "type": "Feature",
       "properties": {
         "name": "Kellogg Track and infield",
-        "description": ""
+        "description": "",
+        "picture": "track.jpeg"
       },
       "geometry": {
         "coordinates": [
@@ -79,7 +84,8 @@
       "type": "Feature",
       "properties": {
         "name": "Arabian Horse Center Arena",
-        "description": ""
+        "description": "",
+        "picture": "horse_center.jpeg"
       },
       "geometry": {
         "coordinates": [
@@ -94,7 +100,8 @@
       "type": "Feature",
       "properties": {
         "name": "Soccer Field",
-        "description": ""
+        "description": "",
+        "picture": "soccer_field.jpeg"
       },
       "geometry": {
         "coordinates": [
@@ -109,7 +116,8 @@
       "type": "Feature",
       "properties": {
         "name": "University Quad",
-        "description": ""
+        "description": "",
+        "picture": "university_quad.gif"
       },
       "geometry": {
         "coordinates": [
@@ -124,7 +132,8 @@
       "type": "Feature",
       "properties": {
         "name": "Voorhis Park",
-        "description": ""
+        "description": "",
+        "picture": "voorhis_park.gif"
       },
       "geometry": {
         "coordinates": [
@@ -139,7 +148,8 @@
       "type": "Feature",
       "properties": {
         "name": "Scolinos Baseball Field",
-        "description": ""
+        "description": "",
+        "picture": "scolinos_field.gif"
       },
       "geometry": {
         "coordinates": [
@@ -154,7 +164,8 @@
       "type": "Feature",
       "properties": {
         "name": "Tennis Courts",
-        "description": ""
+        "description": "",
+        "picture": ""
       },
       "geometry": {
         "coordinates": [
@@ -169,7 +180,8 @@
       "type": "Feature",
       "properties": {
         "name": "Japanese Garden",
-        "description": ""
+        "description": "",
+        "picture": "japanese_garden.gif"
       },
       "geometry": {
         "coordinates": [
@@ -184,7 +196,8 @@
       "type": "Feature",
       "properties": {
         "name": "Rose Garden",
-        "description": ""
+        "description": "",
+        "picture": "rose_garden.gif"
       },
       "geometry": {
         "coordinates": [
@@ -199,7 +212,8 @@
       "type": "Feature",
       "properties": {
         "name": "Meadow",
-        "description": ""
+        "description": "",
+        "picture": "meadow.gif"
       },
       "geometry": {
         "coordinates": [

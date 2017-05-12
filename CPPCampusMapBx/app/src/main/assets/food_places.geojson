@@ -1,0 +1,436 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Innovation Brew Works",
+        "description": "Innovation Brew Works offers fresh, made-to-order pizzas, sandwiches, salads, and desserts. Beers produced at Innovation Brew Works are original recipes made with ingredients grown on the Cal Poly Pomona campus. All beers are named after Cal Poly Pomona and Pomona Valley historical figures and places.  909.869.2925",
+        "picture": "innovation_brew_works.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814949,
+          34.049858
+        ],
+        "type": "Point"
+      },
+      "id": "04ad1ce201e1982522004d1fbfbd750b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Subway",
+        "description": "The combination of fiber, complex carbohydrates, protein, minerals, and vitamins make Subway's low-fat sandwiches ideal for customers looking to make balanced food choices. Begin with your choice of bread, fresh baked daily right here in our restaurant, topped with fresh meats, cheeses, and vegetables. We also offer salads that are equal to five servings of vegetables.  909.869.6751",
+        "picture": "subway.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821059,
+          34.056001
+        ],
+        "type": "Point"
+      },
+      "id": "0659170b61249a8655bbb45d6d1db0e1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Qdoba",
+        "description": "Qdoba Mexican Grill is a Mexican kitchen where anyone can come to enjoy a fresh, handcrafted meal prepared right in front of them. Qdoba showcases food that celebrates its passion for high-quality ingredients, a menu full of innovative flavors, handcrafted preparation and inviting service.  909.869.6751",
+        "picture": "qdoba.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821124,
+          34.056084
+        ],
+        "type": "Point"
+      },
+      "id": "23d53bdee514dd61a4aaed6bb57e2b1f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Starbucks",
+        "description": "Starbucks at the University Library serves up your favorite gourmet coffee, espressos, lattes, and seasonal beverages. The Starbucks menu includes hot breakfast favorites, bakery items, yogurt parfaits, fruit medleys, and a variety of sandwiches.  909.869.4744",
+        "picture": "starbucks_library.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821452,
+          34.057525
+        ],
+        "type": "Point"
+      },
+      "id": "4bf3342d47cbab5ed4fca7fac1678def"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pony Express - CBA",
+        "description": "Pony Express is a convenience store with a wide variety of grab-n-go items, including sandwiches, sushi, beverages, and other snacks. School supplies, health and beauty aids, and various other personal items are also sold at Pony Express.  909.979.6004",
+        "picture": "pony_express_cba.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820183,
+          34.061519
+        ],
+        "type": "Point"
+      },
+      "id": "53309406d817444156be009247220c74"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pony Express - CLA",
+        "description": "Pony Express is a convenience store with a wide variety of grab-n-go items, including sandwiches, sushi, beverages, and other snacks. School supplies, health and beauty aids, and various other personal items are also sold at Pony Express.  909.869.6928",
+        "picture": "pony_express_cla.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.81982,
+          34.059696
+        ],
+        "type": "Point"
+      },
+      "id": "563cacff3a7db56fd73d387e4f94a9dc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "H-Cafe",
+        "description": "H Café is a small convenience store serving grab-and-go snacks, beverages, and self-serve Starbucks coffee.  909.869.6928",
+        "picture": "h_cafe.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824211,
+          34.055312
+        ],
+        "type": "Point"
+      },
+      "id": "563d6f3f5d3ce00cc7e5aad7f0edad06"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kellogg West Dining",
+        "description": "Kellogg West offers a spacious dining room for breakfast, lunch, and dinner (reservations required) as well as catering for any campus meeting or event. Call for Hours.  909.869.2222",
+        "picture": "kellogg_west.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824727,
+          34.056671
+        ],
+        "type": "Point"
+      },
+      "id": "687e4c3b9977f61d4bbf5f9854c7c815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fresh Escapes",
+        "description": "Fresh Escape offers an array of fresh vegetables and toppings to create a delicious custom-made salad. Gluten-free pita pizzas, oven-baked potatoes, bread bowls with home-style soups or chili, and seasonal fresh fruits are also available.  909-869-5269",
+        "picture": "fresh_escapes.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823036,
+          34.057772
+        ],
+        "type": "Point"
+      },
+      "id": "7dc23a3943a4791ab68b1a98ddebd302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "International Grounds",
+        "description": "International Grounds offers the \"We Proudly Serve\" Starbucks concept, which is an abridged version of Starbucks' most popular hot and cold beverages, including five Frappuccino flavors. Fresh baked goods, such as muffins and bagels, are also available.  909.869.5377",
+        "picture": "international_grounds.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823023,
+          34.057863
+        ],
+        "type": "Point"
+      },
+      "id": "84108f0111aa07f8693a3db556fdf5e3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Round Table Pizza",
+        "description": "Round Table Pizza has always been known for quality ingredients. Our dough is rolled fresh each day. Our zesty red sauce is made from scratch with eleven herbs and spices and our three cheese blend is made with the best whole milk mozzarella, provolone and cheddar cheeses. Add juicy premium meats and fresh gourmet veggies on top of our World-class crust and you will have the best pizza in all the land.  909.869.5411",
+        "picture": "round_table_pizza.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821218,
+          34.056344
+        ],
+        "type": "Point"
+      },
+      "id": "873a3877c6264b15802bca22297ef85c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Carl's Jr.",
+        "description": "Carl's Jr. features items such as charbroiled hamburgers, chicken sandwiches, turkey burgers, fish sandwiches, French fries, fresh salads, and breakfast items.  909.869.5269",
+        "picture": "carls_jr.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823177,
+          34.057782
+        ],
+        "type": "Point"
+      },
+      "id": "87f97c8381c8e1edd9d35b2a4edb6f6e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Farm Store",
+        "description": "The Farm Store, located at AGRIscapes, features an enhanced line of products from the campus farm, orchards, and nursery.  909.869.4906",
+        "picture": "farm_store.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819028,
+          34.048342
+        ],
+        "type": "Point"
+      },
+      "id": "8a67e8dfc554d71ba6fd27622ad8c629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jamba Juice - BRIC",
+        "description": "With 2.5 to 3.5 servings of fruit in each drink, Jamba Juice smoothies are a healthy and tasty treat. Jamba Juice also offers all-natural baked goods, steel-cut oatmeal, sandwiches, and other delicious, healthy choices.  909.979.5740",
+        "picture": "jamba_juice_bric.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82055,
+          34.054185
+        ],
+        "type": "Point"
+      },
+      "id": "912628d8afeb54c9a64d7541d746f30a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hibachi San",
+        "description": "Hibachi-San is a blend of traditional Japanese food like teriyaki, tempura, and sushi and newer concepts such as poke bowls. Using only the freshest ingredients, Hibachi-San prepares all of its entrées on site and features mouthwatering original recipes.  909.869.4602",
+        "picture": "hibachi_san.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821095,
+          34.056037
+        ],
+        "type": "Point"
+      },
+      "id": "966d803c244a0ae2631290f9104b3583"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Poly Fresh Market",
+        "description": "Poly Fresh makes it convenient for you to keep your commitment to eating healthy. From fresh fruit to salads, from Farm Store snacks to refreshing beverages, Poly Fresh provides numerous options for a healthy lifestyle.  909.869.2925",
+        "picture": "poly_fresh.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821125,
+          34.056135
+        ],
+        "type": "Point"
+      },
+      "id": "9a71eba33d6c0177936065971117e097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Panda Express",
+        "description": "From world-famous orange chicken to delicious chow mein, Panda Express defines American-Chinese cuisine with bold flavors and fresh ingredients. Panda Express entrees and sides contain zero grams of trans fat per serving and adds no MSG in their food.  909.869.5099",
+        "picture": "panda_express.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823492,
+          34.057574
+        ],
+        "type": "Point"
+      },
+      "id": "9d38d2d9857e5719991749d6ff05a212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Den",
+        "description": "Come in and you'll see that is not your dad's diner. This is a place with a vibe. Where you step right up to the counter and order a hand-smashed burger. For breakfast. Or a Grand Slamwich®. At midnight. This is the local hang-out where friends meet up to chow down. Whenever. Whyever. The look is lounge. The feel is easy-chair communal comfort zone. The menu is breakfast all-day, plus sandwiches, burritos, salads—all made the way we eat today. Saucy, spicy, slightly unruly, proudly old-schooley. (Hand-mixed shakes, anyone?) This is \"The Den.\" The next milestone in American dining from the people who invented American dining.  909.869.2425",
+        "picture": "the_den_and_vista_market.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818089,
+          34.054055
+        ],
+        "type": "Point"
+      },
+      "id": "9d74e733ed024a06111c20c980095bd9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Einstein Bros. Bagels",
+        "description": "Einstein Bros. Bagels is proud to provide our guests with freshly baked bagels, breakfast sandwiches, lunch sandwiches, salads, parfaits, smoothies, coffee, and catering. Stop on in!  909.979.6003",
+        "picture": "einstein_bros_bagels.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820159,
+          34.06152
+        ],
+        "type": "Point"
+      },
+      "id": "aace310ab9d47dc200552ad8a5cdbd03"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Faculty Staff Cafe",
+        "description": "Faculty & Staff Café offers an array of fresh vegetables and toppings to create a delicious custom-made salad. Gluten-free pita pizzas, oven-baked potatoes, bread bowls with home-style soups or chili, and seasonal fresh fruits are also available.  909.869.6928",
+        "picture": "faculty_staff_cafe.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823719,
+          34.057728
+        ],
+        "type": "Point"
+      },
+      "id": "b0cbb3643248105347186d99f4b6d51a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jamba Juice Express",
+        "description": "With 2.5 to 3.5 servings of fruit in each drink, Jamba Juice smoothies are a healthy and tasty treat. Jamba Juice also offers all-natural baked goods, steel-cut oatmeal, sandwiches, and other delicious, healthy choices.",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82311,
+          34.0578
+        ],
+        "type": "Point"
+      },
+      "id": "bfeecb14606a9b0dc9fdb2b4f1f048af"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ENV Cafe",
+        "description": "Pair our fresh baked goodies with your favorite Starbucks coffee beverage. We offer sandwiches, pastries, beverages, and delicious snack items. We are located in building 7.  909.869.3592",
+        "picture": "pony_express_env.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827371,
+          34.057389
+        ],
+        "type": "Point"
+      },
+      "id": "d72bdfe1ebf50ca6c2742d0da6bae65c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pony Express - CCMP",
+        "description": "Pony Express is a convenience store with a wide variety of grab-n-go items, including sandwiches, sushi, beverages, and other snacks. School supplies, health and beauty aids, and various other personal items are also sold at Pony Express.  909.869.3186",
+        "picture": "pony_express_ccmp.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823071,
+          34.057913
+        ],
+        "type": "Point"
+      },
+      "id": "e6a22d438a7408900da7d9cec9907c73"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Peets/Freshens",
+        "description": "Peets - Since 1966, Peet's Coffee & Tea has offered superior coffees and teas by sourcing the best quality coffee beans and tea leaves in the world, and adhering to strict high quality and taste standards.  Freshëns truly delivers fuel for the body and mind. Freshëns smoothies are enriched with antioxidants, new fruits, invigorating vitamins and minerals, healthy omegas, and high energy recipes.  909.869.6751",
+        "picture": "peets_coffee.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821017,
+          34.055982
+        ],
+        "type": "Point"
+      },
+      "id": "eac072c8ce7dde735caa3faed3f0b4d4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vista Market",
+        "description": "We are a fully stocked, one-stop-shop neighborhood store with a fun community vibe that offers personal items and the staples needed to prepare home-cooked meals  909.869.5111",
+        "picture": "the_den_and_vista_market.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818059,
+          34.053921
+        ],
+        "type": "Point"
+      },
+      "id": "f351302b11d496650fe85afeea88af8e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Taco Bell",
+        "description": "From classic bean burritos to specialties, such as nacho cheese Doritos locos tacos, Taco Bell Express offers a variety of flavors to satisfy your craving. Live Más®!  909.869.2925",
+        "picture": "taco_bell.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822999,
+          34.05772
+        ],
+        "type": "Point"
+      },
+      "id": "fbb78ccef6c145f6b4cc2ac5c7aaf53d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Los Olivos Commons",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82158449726776,
+          34.06237143940383
+        ],
+        "type": "Point"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}

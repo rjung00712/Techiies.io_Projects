@@ -1,24 +1,25 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
-import com.mapbox.mapboxsdk.annotations.Icon;
-import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
-import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -36,16 +37,9 @@ import com.mapbox.services.api.directions.v5.DirectionsCriteria;
 import com.mapbox.services.api.directions.v5.MapboxDirections;
 import com.mapbox.services.api.directions.v5.models.DirectionsResponse;
 import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
-import com.mapbox.services.commons.geojson.FeatureCollection;
-import com.mapbox.services.commons.geojson.GeoJSON;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.InputStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -54,32 +48,24 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import static cs499android.com.cppmapbox.Constants.MAPBOX_ACCESS_TOKEN;
+import static cs499android.com.cppmapbox.Constants.*;
 
-public class MainActivity extends AppCompatActivity implements PermissionsListener {
-
-    private static final String TAG = "MainActivity";
-    public static final int PERMISSIONS_REQUEST_LOCATION = 99;
-    private static final String BASE_URL = "https://api.mapbox.com";
-    private static final String BUILDINGS_KML = "buildings.kml";
-
-
+public class MainActivity extends AppCompatActivity implements PermissionsListener
+{
     private MapView mapView;
-    private MapboxMap map;
+    protected static MapboxMap map;
     private DirectionsRoute currentRoute;
 
     private LocationEngine locationEngine;
     private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
 
-    private FloatingActionButton floatingActionButton;
-
-    private Marker featureMarker;
-
-    private com.mapbox.mapboxsdk.annotations.Polygon selectedBuilding;
+    private android.support.design.widget.FloatingActionButton floatingActionButton;
 
     private Position destination;
 
+    private Marker destinationMarker;
+    private Polyline curRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,91 +93,85 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         locationEngine = LocationSource.getLocationEngine(this);
         locationEngine.activate();
 
-//        locationEngine = LostLocationEngine.getLocationEngine(this);
-//        navigation.setLocationEngine(locationEngine);
-
-
-//        final Position origin = Position.fromCoordinates(-117.823601, 34.058800);
-
         final Position defaultPoint = Position.fromCoordinates(-117.823601, 34.058800);
         destination = Position.fromCoordinates(-117.823332, 34.058031);
-
-//        navigation.getRoute(origin, destination, new Callback<DirectionsResponse>() {
-//            @Override
-//            public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-//                response.body();
-//
-//                // You can get the generic HTTP info about the response
-//                Log.d(TAG, "Response code: " + response.code());
-//                if (response.body() == null) {
-//                    Log.e(TAG, "No routes found, make sure you set the right user and access token.");
-//                    return;
-//                } else if (response.body().getRoutes().size() < 1) {
-//                    Log.e(TAG, "No routes found");
-//                    return;
-//                }
-//                // Print some info about the route
-//                currentRoute = response.body().getRoutes().get(0);
-//                Log.d(TAG, "Distance: " + currentRoute.getDistance());
-//
-//
-//                System.out.println(response.body().getRoutes().get(0).getLegs().get(0).getSteps().get(0).getManeuver().getInstruction());
-//                System.out.println(response.body().getRoutes().get(0).getLegs().get(0).getSteps().get(1).getManeuver().getInstruction());
-//                System.out.println(response.body().getRoutes().get(0).getLegs().get(0).getSteps().get(2).getManeuver().getInstruction());
-//
-//
-////                RouteProgress routeProgress = new RouteProgress(currentRoute, origin, currentRoute.getLegs().get(0), currentRoute.);
-//
-////                RouteProgress(DirectionsRoute route, Position userSnappedPosition, int currentLegIndex,
-////                int currentStepIndex, int alertUserLevel)
-//            }
-//
-//            @Override
-//            public void onFailure(Call<DirectionsResponse> call, Throwable t) {
-//
-//            }
-//        });
-
-//        navigation.addProgressChangeListener(new ProgressChangeListener() {
-//            @Override
-//            public void onProgressChange(Location location, RouteProgress routeProgress) {
-//                System.out.println("yo" + routeProgress.getCurrentLegProgress().getUpComingStep().getManeuver().getInstruction());
-//            }
-//        });
-
 
         // Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
+
+        ClusterHolder.activity = MainActivity.this;
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
 
-                // Add origin and destination to the map
-//                map.addMarker(new MarkerOptions()
-//                        .position(new LatLng(defaultPoint.getLatitude(), defaultPoint.getLongitude()))
-//                        .title("Origin")
-//                        .snippet("University Quad"));
-//                map.addMarker(new MarkerOptions()
-//                        .position(new LatLng(destination.getLatitude(), destination.getLongitude()))
-//                        .title("Destination")
-//                        .snippet("Panda Express"));
-                addMarkers("parking.geojson");
-                addMarkers("landmarks.geojson");
-                addMarkers("cpp_buildings.geojson");
-                // Get route from API
-//                try {
-//                    getRoute(origin, destination);
-//                } catch (ServicesException servicesException) {
-//                    servicesException.printStackTrace();
-//                }
+                ClusterHolder.createMarkers();
+                ClusterHolder.buildings.setSelected(false);
+                ClusterHolder.food.setSelected(false);
+                ClusterHolder.parking.setSelected(false);
+                ClusterHolder.addMarkers();
+                map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(@NonNull Marker marker) {
+                        destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                        destinationMarker = marker;
+                        Intent MarkerSelectedIntent = new Intent(MainActivity.this, MarkerSelected.class);
+                        MarkerSelectedIntent.putExtra("Title", marker.getTitle());
+                        MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                        startActivity(MarkerSelectedIntent);
+                        map.setInfoWindowAdapter(new MapboxMap.InfoWindowAdapter() {
+                            @Nullable
+                            @Override
+                            public View getInfoWindow(@NonNull Marker marker) {
+                                return new LinearLayout(MainActivity.this);
+                            }
+                        });
+                        return false;
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleBuildingsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_buildings);
+                toggleBuildingsFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.buildings.setSelected(!ClusterHolder.buildings.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleParkingFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_parking);
+                toggleParkingFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.parking.setSelected(!ClusterHolder.parking.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleLandmarksFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_landmarks);
+                toggleLandmarksFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.landmarks.setSelected(!ClusterHolder.landmarks.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleFoodFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_food);
+                toggleFoodFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.food.setSelected(!ClusterHolder.food.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
             }
         });
 
 
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.location_toggle_fab);
+        floatingActionButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.location_toggle_fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -203,8 +183,8 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     }
 
 
-    private void getRoute(Position origin, Position destination) throws ServicesException {
-
+    private void getRoute(Position origin, Position destination) throws ServicesException
+    {
         MapboxDirections client = new MapboxDirections.Builder()
                 .setOrigin(origin)
                 .setDestination(destination)
@@ -225,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     Log.e(TAG, "No routes found");
                     return;
                 }
-                // Print some info about the route
+                // Print some info about the curRoute
                 currentRoute = response.body().getRoutes().get(0);
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
 
@@ -241,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction(),
                         Toast.LENGTH_SHORT).show();
 
-                // Draw the route on the map
+                // Draw the curRoute on the map
                 drawRoute(currentRoute);
             }
 
@@ -267,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         }
 
         // Draw Points on MapView
-        map.addPolyline(new PolylineOptions()
+        curRoute = map.addPolyline(new PolylineOptions()
                 .add(points)
                 .color(Color.parseColor("#009688"))
                 .width(5));
@@ -280,9 +260,15 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             if (!PermissionsManager.areLocationPermissionsGranted(this)) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
+                ClusterHolder.removeMarkers(destinationMarker);
                 enableLocation(true);
             }
         } else {
+            List<Polyline> list = map.getPolylines();
+            for(int i = 0; i < list.size(); i++)
+                map.removePolyline(list.get(i));
+            ClusterHolder.addMarkers();
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
     }
@@ -308,6 +294,9 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
                     try {
                         Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
+                        List<Polyline> list = map.getPolylines();
+                        for(int i = 0; i < list.size(); i++)
+                            map.removePolyline(list.get(i));
                         getRoute(origin, destination);
                     } catch (ServicesException se) {
                         se.printStackTrace();
@@ -329,9 +318,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                             // changes. When the user disables and then enables the location again, this
                             // listener is registered again and will adjust the camera once again.
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-                            locationEngine.removeLocationEngineListener(this);
+                            //locationEngine.removeLocationEngineListener(this);
                             try {
                                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+                                List<Polyline> list = map.getPolylines();
+                                for(int i = 0; i < list.size(); i++)
+                                    map.removePolyline(list.get(i));
                                 getRoute(origin, destination);
                             } catch (ServicesException se) {
                                 se.printStackTrace();
@@ -348,66 +340,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         // Enable or disable the location layer on the map
         map.setMyLocationEnabled(enabled);
     }
-
-    private void addMarkers(String name) {
-        String json = null;
-        try {
-
-            InputStream is = getAssets().open(name);
-
-            int size = is.available();
-
-            byte[] buffer = new byte[size];
-
-            is.read(buffer);
-
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-
-            if(json != null)
-            {
-                IconFactory iconFactory = IconFactory.getInstance(MainActivity.this);
-                Icon icon = null;
-                if(name.equals("parking.geojson"))
-                    icon = iconFactory.fromResource(R.drawable.blue_marker);
-                else if(name.equals("landmarks.geojson"))
-                    icon = iconFactory.fromResource(R.drawable.green_marker);
-                JSONObject jsonObject = new JSONObject(json);
-                JSONArray features = jsonObject.getJSONArray("features");
-                for(int i = 0; i < features.length(); i++)
-                {
-                    JSONObject feature = features.getJSONObject(i);
-                    JSONObject properties = feature.getJSONObject("properties");
-                    JSONObject geometry = feature.getJSONObject("geometry");
-                    JSONArray coords = geometry.getJSONArray("coordinates");
-                    MarkerOptions m = new MarkerOptions();
-                    m.setTitle(properties.getString("name"));
-                    m.setSnippet(properties.getString("description"));
-                    m.setPosition(new LatLng(coords.getDouble(1), coords.getDouble(0)));
-                    if(icon != null)
-                        m.setIcon(icon);
-                    map.addMarker(m);
-                }
-            }
-//
-//            String inputFileContents = ""; // find a way to read the file and store it in a string
-//            String xmlContent = inputFileContents;
-//            Document doc = Jsoup.parse(BUILDINGS_KML, "", Parser.xmlParser());
-//
-//            for(Element e : doc.select("LinearRing").select("coordinates")) {
-//                // the contents
-//                System.out.println(e.text());
-//            }
-
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-//                return null;
-        }
-//        return kmlData;
-    }
-
 
     // Add the mapView lifecycle to the activity's lifecycle methods
     @Override
