@@ -3,1458 +3,18 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 111 - Manor House",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822957,
-          34.060518
-        ],
-        "type": "Point"
-      },
-      "id": "0371568f26f7ff06d39baa59f28a7ff8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 6 - College of Education and Integrative Studies",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822829,
-          34.058617
-        ],
-        "type": "Point"
-      },
-      "id": "0386cfb684801a14f609b1843f8086fa"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 29 - W.K. Kellogg Arabian Horse Center",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814646,
-          34.058646
-        ],
-        "type": "Point"
-      },
-      "id": "039880459358b2290306f7f6885849ce"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 31",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828368,
-          34.054639
-        ],
-        "type": "Point"
-      },
-      "id": "059b35c0c9ffc5cac6a9ce135906acff"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 75A",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807877,
-          34.059337
-        ],
-        "type": "Point"
-      },
-      "id": "087652c28451af4b1097d2bc5a17fe6f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 23 - Aliso Residence Hall",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817717,
-          34.06294
-        ],
-        "type": "Point"
-      },
-      "id": "0c66201eb1e5f9e25c19762b9d4997ff"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 123",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817226,
-          34.052881
-        ],
-        "type": "Point"
-      },
-      "id": "13bcd6b8124877d2e7dd33d86e29487a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 31A - Poultry",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.829008,
-          34.054739
-        ],
-        "type": "Point"
-      },
-      "id": "15ed9b9469d06ce6c3f3f3cf7943a69f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 138",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807867,
-          34.059621
-        ],
-        "type": "Point"
-      },
-      "id": "194030d21245e66292bc2b5ca904f7fc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 128 - I Poly High School",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819533,
-          34.051009
-        ],
-        "type": "Point"
-      },
-      "id": "1a3a49b5a7baa95702209a07f33fd595"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 86",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.81971,
-          34.053369
-        ],
-        "type": "Point"
-      },
-      "id": "1f0059c14a35a19924853f8f5e1788b2"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "WHAT IS THIS?",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820807,
-          34.054609
-        ],
-        "type": "Point"
-      },
-      "id": "23413499d7d43daea9b2afdcd7cba2cb"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 8 - College of Science",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824789,
-          34.058441
-        ],
-        "type": "Point"
-      },
-      "id": "27d42a34ce38507999783bece8c1cf52"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 50",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808554,
-          34.060052
-        ],
-        "type": "Point"
-      },
-      "id": "2ae9e4a1a6aadeddebda376b4d20e12e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 89 - Interim Design Center",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.812351,
-          34.060526
-        ],
-        "type": "Point"
-      },
-      "id": "2e3fc9d80de0c4f7a6ed8708b92fd737"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 3 - Science Laboratory",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.826444,
-          34.057688
-        ],
-        "type": "Point"
-      },
-      "id": "307988782960f6d747da1d9a23ef8704"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 54 - Residence Suites",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818895,
-          34.055525
-        ],
-        "type": "Point"
-      },
-      "id": "30bbeb8807bbe0b22de9bda2db5256e3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 2 - College of Agriculture",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.826444,
-          34.057685
-        ],
-        "type": "Point"
-      },
-      "id": "3589b944b569c359177ccc3c42a8803f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 26 - Union Plaza",
-        "description": ".K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
-        "picture": "union_plaza.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820012,
-          34.056998
-        ],
-        "type": "Point"
-      },
-      "id": "3874a41517ba5397050a97d3c9df0357"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 13 - Art Department and Engineering Annex",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820798,
-          34.058812
-        ],
-        "type": "Point"
-      },
-      "id": "3bcdd33d09da4bc8f7102ebeb49457e5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 86B",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820092,
-          34.053514
-        ],
-        "type": "Point"
-      },
-      "id": "3cbf0ab1791a3a1fe82c09bf809d5dae"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 78 - Kellogg West Addition",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82532,
-          34.057494
-        ],
-        "type": "Point"
-      },
-      "id": "489f5d6e80e22dd7a00140e3b0e8d449"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 21 - Montecito Residence Hall",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819326,
-          34.062208
-        ],
-        "type": "Point"
-      },
-      "id": "4feaceae92e77a18e595610e53a9a191"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 95 - Cultural Centers",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822662,
-          34.057991
-        ],
-        "type": "Point"
-      },
-      "id": "54230b5c22206e6c87916437bda2e5bd"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 87",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807377,
-          34.060604
-        ],
-        "type": "Point"
-      },
-      "id": "5c43d07c8f66d1749a76543602a40260"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 55",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819943,
-          34.056254
-        ],
-        "type": "Point"
-      },
-      "id": "5fcba09f1dcaeaa8234927767a9b8ea6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 115",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809397,
-          34.059654
-        ],
-        "type": "Point"
-      },
-      "id": "63c5fa5253b9009051169758bac7b852"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Scolinos Field",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815901,
-          34.053954
-        ],
-        "type": "Point"
-      },
-      "id": "68505b8a4272a0fd6aeb2abf54ebbecd"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Kellogg Polytechnic Elementary School",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807609,
-          34.057265
-        ],
-        "type": "Point"
-      },
-      "id": "6d4135f6e3a049a08ee68aba0664daaa"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building One",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824146,
-          34.059761
-        ],
-        "type": "Point"
-      },
-      "id": "71b9239144d27d8ed39ac5d65a83af6f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 68 - Hay Barn",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827713,
-          34.054217
-        ],
-        "type": "Point"
-      },
-      "id": "72ee2d400a915c64d37237435cb999a1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 52",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817922,
-          34.053962
-        ],
-        "type": "Point"
-      },
-      "id": "73ecccfd39e3d3bc87e39e2522ff3935"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 99 - Storage",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.811026,
-          34.061842
-        ],
-        "type": "Point"
-      },
-      "id": "7a42248c99e054936cba43b0740b11e6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 71 - Recreation and Maintenance",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816825,
-          34.063045
-        ],
-        "type": "Point"
-      },
-      "id": "7aebde9ab39c264045dad33d2704b103"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 79B - Collins College of Hospitality Management",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82486,
-          34.055062
-        ],
-        "type": "Point"
-      },
-      "id": "7c82ad6e50053ce1417f16dc7e3f52fc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 15 - Library",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820798,
-          34.058267
-        ],
-        "type": "Point"
-      },
-      "id": "7e3e9664ebfa34e89c5422b8f5b754c9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 105",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809358,
-          34.06045
-        ],
-        "type": "Point"
-      },
-      "id": "806e182542018bf56ed387796da39235"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 7 - College of Environmental Design",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827393,
-          34.057257
-        ],
-        "type": "Point"
-      },
-      "id": "82189c8cbf1b9539a13b7b8069c16779"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 43 - Kellogg Gymnasium",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819253,
-          34.054223
-        ],
-        "type": "Point"
-      },
-      "id": "8961213c1986de92b2c378ae84f491ae"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 77 - Kellogg West Main Lodge",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825953,
-          34.056284
-        ],
-        "type": "Point"
-      },
-      "id": "8ac824dcc156d49ad9eaca1949840726"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 34 - Meat Laboratory",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828106,
-          34.053891
-        ],
-        "type": "Point"
-      },
-      "id": "8cd00ef0fbfa5a27ed192ed862f4485a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 58 - Cedritos Residence Hall",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821229,
-          34.06155
-        ],
-        "type": "Point"
-      },
-      "id": "9168cbcf9534f49b8b9efd9addfeebf5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "???????????",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820004,
-          34.059394
-        ],
-        "type": "Point"
-      },
-      "id": "9308c06db2c8305b92ebc1682568a27e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 35A - Art Gallery",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82177,
-          34.05695
-        ],
-        "type": "Point"
-      },
-      "id": "943d34ce0608854a0a143ace818e9769"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 114",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.810418,
-          34.060409
-        ],
-        "type": "Point"
-      },
-      "id": "94f1fcd6f8444e37255f910ba8670786"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 70 - Los Olivos Commons",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821583,
-          34.062379
-        ],
-        "type": "Point"
-      },
-      "id": "9547544514ff1d96d4234200ff77f983"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 28",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.810859,
-          34.060019
-        ],
-        "type": "Point"
-      },
-      "id": "957a6185b894e6f80e6922ef8aca4102"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 5 - College of Letters, Arts, and Social Sciences",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824472,
-          34.05778
-        ],
-        "type": "Point"
-      },
-      "id": "95f886aaa4e713b647750b725e5f43ef"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 60 - Residence Suites",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818621,
-          34.054884
-        ],
-        "type": "Point"
-      },
-      "id": "9781087930463be8d4144712f5101cf7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "California State Polytechnic University, Pomona",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.823105,
-          34.055816
-        ],
-        "type": "Point"
-      },
-      "id": "9fe1cd9174d789b29512988a78b90a96"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24 - Music",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822985,
-          34.056711
-        ],
-        "type": "Point"
-      },
-      "id": "a2c9cc5ff89a5972d8fa966a1ddd708e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "BRIC",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82128,
-          34.05403
-        ],
-        "type": "Point"
-      },
-      "id": "a50e2e400d17f060c19b0c24173ca61d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 17 - Engineering Laboratories",
-        "description": "f you cross over Olive Lane Walk from the Rose Garden, you will find yourself here in the Engineering Laboratories, which are part of the College of Engineering. Cal Poly Pomona runs the second largest civil engineering\\r\\nprogram in the country, with 1,000 students enrolled at any given time. It also boasts the largest engineering program in all of California and the College is consistently ranked very high by the U.S. News & World Report, when it comes to rating institutions of higher education.",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821326,
-          34.060065
-        ],
-        "type": "Point"
-      },
-      "id": "a56884fa9d0b823977641cb1b012082f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 79A - Collins College of Hospitality Management",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824454,
-          34.055298
-        ],
-        "type": "Point"
-      },
-      "id": "a6c4b68145ac9884aefc781361bb4a91"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 91",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.81862,
-          34.061355
-        ],
-        "type": "Point"
-      },
-      "id": "a9b4103d07eecb9176567210c132150e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 112",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824418,
-          34.06272
-        ],
-        "type": "Point"
-      },
-      "id": "ae1b274f85c54d08b18918c0089c9439"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 78 - Kellogg West Addition",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825718,
-          34.056808
-        ],
-        "type": "Point"
-      },
-      "id": "ae76a6e7b88bda22b4658e1fbaf7c65a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 4A - BioTrek Learning Center",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.826096,
-          34.057243
-        ],
-        "type": "Point"
-      },
-      "id": "b2358f230e27d5c3d8011d6cf63682ca"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 164",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819827,
-          34.061582
-        ],
-        "type": "Point"
-      },
-      "id": "b297d9ded345ebbd31e27d77279a1e8a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 47",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808191,
-          34.05984
-        ],
-        "type": "Point"
-      },
-      "id": "b78cf82d307b16aae35eebe6da2e26b1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 76 - Kellogg West Education/Dining",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824732,
-          34.056682
-        ],
-        "type": "Point"
-      },
-      "id": "b807e4a2a7786ab9cd5c7ae58e99daa6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 109 - Police and Parking Services",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815765,
-          34.060762
-        ],
-        "type": "Point"
-      },
-      "id": "b80b0e043931cd12e2dceb46c3bd2d87"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 37 - Swine Unit",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.8229,
-          34.052191
-        ],
-        "type": "Point"
-      },
-      "id": "baea99a3053db0c1c1551efc7a809ea1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 97 - Campus Center",
-        "description": "The Campus Center is a multipurpose building for dining, relaxing in front of the big screen television, using the free wireless internet, meeting up with friends, and studying. There are both tables inside and outside, and its close proximity to many other campus buildings makes it a convenient stop on your way to and from wherever you're going. Its Marketplace acts as a food court and is Cal Poly Pomona's most frequented dining facility, with six different dining options such as Taco Bell, Carl's Jr and Panda Express.",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.823332,
-          34.057712
-        ],
-        "type": "Point"
-      },
-      "id": "bb9aae5e2d7431d49a7f941380974b74"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 39",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822944,
-          34.051858
-        ],
-        "type": "Point"
-      },
-      "id": "bc009152ca5039bc1f0ad1fc777f67d7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 63 - Residence Suites",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816941,
-          34.053905
-        ],
-        "type": "Point"
-      },
-      "id": "bce8f9160e0090925a497a8c46806a08"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 48",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808456,
-          34.059028
-        ],
-        "type": "Point"
-      },
-      "id": "bf8968a4dd6801c63f680fc4e1910c3c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 45 - Agricultural Engineering",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.811164,
-          34.061087
-        ],
-        "type": "Point"
-      },
-      "id": "c61fea6e3f2ed5df973a1e1debeedd79"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 67 - Equine Research Facility",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814195,
-          34.05964
-        ],
-        "type": "Point"
-      },
-      "id": "c82664e5a0b308229267d6e21a3145a1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 31B - Poultry",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.829016,
-          34.055163
-        ],
-        "type": "Point"
-      },
-      "id": "c849f97a92c3d40db538d6f65fac2412"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 30 - Agricultural Unit",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828453,
-          34.05513
-        ],
-        "type": "Point"
-      },
-      "id": "cd3e2348f1f638f828cf63b1902d9265"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 95 - University Offices",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.823222,
-          34.059169
-        ],
-        "type": "Point"
-      },
-      "id": "d68e2638cac25f058550f4331bf2eb1f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 62 - Residence Suites",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817559,
-          34.054344
-        ],
-        "type": "Point"
-      },
-      "id": "da1b2684a889dda9a1a9ac609a37c210"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 33 - Feedmill",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827528,
-          34.053955
-        ],
-        "type": "Point"
-      },
-      "id": "da3d92d9c340721f4d21a7c2d313028e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 59 - La Cienega Center and Housing Services",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821936,
-          34.061022
-        ],
-        "type": "Point"
-      },
-      "id": "da98d8510acfa309ee74b1dd2b4c0cdf"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 68A",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827605,
-          34.054588
-        ],
-        "type": "Point"
-      },
-      "id": "dc7d1a2b04b8db635dd58630e58f6cc5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 124",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816196,
-          34.052547
-        ],
-        "type": "Point"
-      },
-      "id": "e4797d595244f03ce2f7335a4ab663fe"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 15 - Library",
-        "description": "What began as a single reading room has grown into an impressive six-story repository for 2.4 million books and 3,000 periodicals. The University Library underwent a $58.5 million renovation in 2008 to supports its mission to be \\\"the central intellectual and cultural resource of the campus community.\\\" The Library is equipped with many computers and group study rooms, including a 24-hour lab with plenty of tables. It also features classrooms and a large lecture hall, as well as a Starbucks, Media Collections section, and the University Writing Center.",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821297,
-          34.057783
-        ],
-        "type": "Point"
-      },
-      "id": "e5166fdb1b3fbd6a5ac13d8012716969"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Kellogg House Pomona",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824153,
-          34.062363
-        ],
-        "type": "Point"
-      },
-      "id": "e6c64cb5ac1352448ce62f5ac83481eb"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 22 - Alamitos Residence Hall",
         "description": "",
-        "picture": ""
+        "picture": "Bg_22.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.81812,
-          34.062233
+          -117.818106,
+          34.062226
         ],
         "type": "Point"
       },
-      "id": "e7d54cf4f444ff668648bc559a0040b5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 46 - Health Services",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828086,
-          34.057808
-        ],
-        "type": "Point"
-      },
-      "id": "e8fc03e5a4fc663d31c066e97cfa04fc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 193 - Chilled Water Center Plant",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.829562,
-          34.057089
-        ],
-        "type": "Point"
-      },
-      "id": "ebfec015d1b43bb7ca1e128d7c8666af"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 102",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809339,
-          34.060198
-        ],
-        "type": "Point"
-      },
-      "id": "ec1615821052d5e2a30bc223e347d18f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 3 - Science Laboratory",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825841,
-          34.058179
-        ],
-        "type": "Point"
-      },
-      "id": "ec377349226085b8161f4d39e35d632a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 79 - Collins College of Hospitality Management",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824196,
-          34.055013
-        ],
-        "type": "Point"
-      },
-      "id": "f0a402e1e8018377e947ec120b7b0cc0"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24D",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822523,
-          34.055984
-        ],
-        "type": "Point"
-      },
-      "id": "f2502ca8fbaf89f0f492f9cf55f3d00d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "CLA Building",
-        "description": "The Administration Building, officially called the CLA Building and referred to on campus as the “pointy building,” is a unique structure that stands out with its open triangular top. Not only has it become a familiar symbol of Cal Poly Pomona and now part of the school’s logo, but the eight- story CLA Building has also been featured in films and commercials, since Hollywood is not all that far away from campus. The CLA stands for “Classroom/Laboratory/Administration,” as it is used for a variety of departments and services such as Campus Tour Information, Development, Financial Aid and Scholarships, National Student Exchange, Photo ID, and the Registrars Office.\"",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819999,
-          34.059399
-        ],
-        "type": "Point"
-      },
-      "id": "f3df454e70c109c44d6dc991639d2787"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 9 - College of Engineering",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822231,
-          34.059129
-        ],
-        "type": "Point"
-      },
-      "id": "f41e9198b92e3811da730d2d9fbbc19c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 32 - Beef Unit",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827612,
-          34.055443
-        ],
-        "type": "Point"
-      },
-      "id": "f67c5e54cb9e0eb019e87cc752c374a1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 96",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808554,
-          34.059678
-        ],
-        "type": "Point"
-      },
-      "id": "f8514638ebb97f2e618c36f5dc3e885a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 66 - Bronco Bookstore",
-        "description": "The Bronco Bookstore is stocked with all the textbooks you need for classes as well as Cal Poly Pomona gear, school supplies, and computers, including the latest Apple products. If at all possible, the Bookstore tries to provide used textbook options for thrifty purchasing. To further their cost-conscious strategies, students can also rent books by the quarter at a fraction of the price.",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820465,
-          34.05596
-        ],
-        "type": "Point"
-      },
-      "id": "fa0c14466004a079431d06802415ecb8"
+      "id": "011b621b442e710dc38236381d71d953"
     },
     {
       "type": "Feature",
@@ -1470,7 +30,1927 @@
         ],
         "type": "Point"
       },
-      "id": "fa8ea445b68eaf393e3dfad63e56043e"
+      "id": "02d5c517371150041a8754ea86c169db"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
+        "description": "",
+        "picture": "Bg_42.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820793,
+          34.054597
+        ],
+        "type": "Point"
+      },
+      "id": "03af579f5274a212fe1770a92ede3288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 96",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808554,
+          34.059678
+        ],
+        "type": "Point"
+      },
+      "id": "041cebf488fc0c7321107321185e0f0d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 29 - W.K. Kellogg Arabian Horse Center",
+        "description": "",
+        "picture": "Bg_29.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814642,
+          34.058614
+        ],
+        "type": "Point"
+      },
+      "id": "047735564152158a47f450378fdaf3c1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 62 - Residence Suites",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817559,
+          34.054344
+        ],
+        "type": "Point"
+      },
+      "id": "06dcd451191830a5812398a87e8358a2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 21 - Montecito Residence Hall",
+        "description": "",
+        "picture": "Bg_21.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819307,
+          34.062194
+        ],
+        "type": "Point"
+      },
+      "id": "076434f662a3c7a2465f25ab64055ae8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 9 - College of Engineering",
+        "description": "",
+        "picture": "Bg_9.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822243,
+          34.059102
+        ],
+        "type": "Point"
+      },
+      "id": "0a0fba280496b807f24d45f96a9711ae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 32 - Beef Unit",
+        "description": "",
+        "picture": "Bg_32.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827613,
+          34.055427
+        ],
+        "type": "Point"
+      },
+      "id": "1224b910257dafb886832abc18e4760d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 50",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808554,
+          34.060052
+        ],
+        "type": "Point"
+      },
+      "id": "12438d511025599b06278f8e341cded9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 200 - University Village",
+        "description": "",
+        "picture": "Bg_200.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815083,
+          34.04838
+        ],
+        "type": "Point"
+      },
+      "id": "1459f54b1815c0c7d0e8566e55da35cc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 91 - Student Affairs Information Technology Services",
+        "description": "",
+        "picture": "Bg_91.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818629,
+          34.061341
+        ],
+        "type": "Point"
+      },
+      "id": "1c53398cc02dc44d1e034e9db534fd90"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 87",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.807377,
+          34.060604
+        ],
+        "type": "Point"
+      },
+      "id": "1d9addac1a3878195e617d17cb21e192"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13B - Army ROTC",
+        "description": "",
+        "picture": "Bg_13BCD.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820784,
+          34.058242
+        ],
+        "type": "Point"
+      },
+      "id": "1f40c7cdc6ca3eb03f32c25792e5d67b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 66 - Bronco Bookstore",
+        "description": "The Bronco Bookstore is stocked with all the textbooks you need for classes as well as Cal Poly Pomona gear, school supplies, and computers, including the latest Apple products. If at all possible, the Bookstore tries to provide used textbook options for thrifty purchasing. To further their cost-conscious strategies, students can also rent books by the quarter at a fraction of the price.",
+        "picture": "Bg_66.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820465,
+          34.05596
+        ],
+        "type": "Point"
+      },
+      "id": "21b1ed9d410c29c6e947c1623d9940f1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 28 - Fruit/Crops Unit",
+        "description": "",
+        "picture": "Bg_28.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.81086,
+          34.060009
+        ],
+        "type": "Point"
+      },
+      "id": "225953ac84b94478160c0c15478b20d1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79B - Collins College of Hospitality Management",
+        "description": "",
+        "picture": "Bg_79B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824454,
+          34.055298
+        ],
+        "type": "Point"
+      },
+      "id": "235b2e4a97a0d839afbc9c911b8cb89e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 34 - Meat Laboratory",
+        "description": "",
+        "picture": "Bg_34.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828116,
+          34.05388
+        ],
+        "type": "Point"
+      },
+      "id": "2516e48b33827f80e2320330ddcbe452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 37 - Swine Unit",
+        "description": "",
+        "picture": "Bg_37.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822909,
+          34.052188
+        ],
+        "type": "Point"
+      },
+      "id": "278905df23662072a44ebe11b7b2a8b9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 52",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817922,
+          34.053962
+        ],
+        "type": "Point"
+      },
+      "id": "2825be8b86d7a33592dc55c45c289401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 75 - Procurement/Receiving",
+        "picture": "Bg_75.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808085,
+          34.059471
+        ],
+        "type": "Point"
+      },
+      "id": "29a10680e0849e7d3cd3d01b38373e2a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13C - Army ROTC",
+        "description": "",
+        "picture": "Bg_13BCD.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820679,
+          34.058349
+        ],
+        "type": "Point"
+      },
+      "id": "2bb1f27921214f42e39c014d124577d4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 55 - Foundation Administration Offices",
+        "description": "",
+        "picture": "Bg_79.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824196,
+          34.055013
+        ],
+        "type": "Point"
+      },
+      "id": "2bd1e46caa308129861c950d9f91794e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24C - Temporary Classroom C",
+        "description": "",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822402,
+          34.055913
+        ],
+        "type": "Point"
+      },
+      "id": "2c03027a29d8ffd879358b0238027dc5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 94 - University Office Building",
+        "description": "",
+        "picture": "Bg_94.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823214,
+          34.059154
+        ],
+        "type": "Point"
+      },
+      "id": "2cf2d8d596fb089ef2c804111c03fed8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 220C: Center for Training, Technology and Incubation",
+        "description": "",
+        "picture": "Bg_220C.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814786,
+          34.050203
+        ],
+        "type": "Point"
+      },
+      "id": "2de86e950f2f332f59d7e801a33c6645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24B - Temporary Classroom B",
+        "description": "",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822404,
+          34.056168
+        ],
+        "type": "Point"
+      },
+      "id": "2e26097bb5ed4b49a9ceb2afbe847d5d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 64 - Rose Float Laboratory",
+        "picture": "Bg_64.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.80825,
+          34.060089
+        ],
+        "type": "Point"
+      },
+      "id": "2ef0e87140adfbc5a9f3641ae55e67a8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kellogg House Pomona",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824133,
+          34.062335
+        ],
+        "type": "Point"
+      },
+      "id": "37597faedd928db4dc77adf48b47cac1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 113 - Guest House",
+        "picture": "Bg_113.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824758,
+          34.062411
+        ],
+        "type": "Point"
+      },
+      "id": "38ef9eb5962f33aa388673f368d45768"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "California State Polytechnic University, Pomona",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823105,
+          34.055816
+        ],
+        "type": "Point"
+      },
+      "id": "39a335740236dbfea7f83b73f400f2ec"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kellogg Polytechnic Elementary School",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.807609,
+          34.057265
+        ],
+        "type": "Point"
+      },
+      "id": "428ee4413a876f8a8d50de79c1279e62"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 92 - Laboratory Facility",
+        "description": "",
+        "picture": "Bg_59.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821933,
+          34.061008
+        ],
+        "type": "Point"
+      },
+      "id": "42fcd80b893e8cfe7b5cacb94f04d32f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24A - Temporary Classroom A",
+        "description": "",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822481,
+          34.056289
+        ],
+        "type": "Point"
+      },
+      "id": "4b092d9eb8b5fbd7dbc13e4dbcae2d80"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 109 - Police and Parking Services",
+        "description": "",
+        "picture": "Bg_109.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815759,
+          34.060733
+        ],
+        "type": "Point"
+      },
+      "id": "4c7e3b43db7129a5cd66ce0b13ca8cac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 97 - Campus Center",
+        "description": "The Campus Center is a multipurpose building for dining, relaxing in front of the big screen television, using the free wireless internet, meeting up with friends, and studying. There are both tables inside and outside, and its close proximity to many other campus buildings makes it a convenient stop on your way to and from wherever you're going. Its Marketplace acts as a food court and is Cal Poly Pomona's most frequented dining facility, with six different dining options such as Taco Bell, Carl's Jr and Panda Express.",
+        "picture": "Bg_97.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823339,
+          34.057707
+        ],
+        "type": "Point"
+      },
+      "id": "4f750db121ca37ed5a56148d9350c6f3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 114",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810418,
+          34.060409
+        ],
+        "type": "Point"
+      },
+      "id": "501e85f0d25fb344d25c16d674f841ff"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 124",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816196,
+          34.052547
+        ],
+        "type": "Point"
+      },
+      "id": "50ba38f8ce64df42a02f14013c0a8971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 92 - Laboratory Facility",
+        "description": "",
+        "picture": "Bg_92.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826212,
+          34.057873
+        ],
+        "type": "Point"
+      },
+      "id": "529a9b5bc5de2627866b99902809f190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 77 - Kellogg West Main Lodge",
+        "description": "",
+        "picture": "Bg_77.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825967,
+          34.056257
+        ],
+        "type": "Point"
+      },
+      "id": "52d75523d964465599125b5742f53b7f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24E - Temporary Classroom E",
+        "description": "",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822625,
+          34.056178
+        ],
+        "type": "Point"
+      },
+      "id": "53bd6acfce3e1e2ceebf5bd1dc606592"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 68 - Hay Barn",
+        "description": "",
+        "picture": "Bg_68.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827713,
+          34.054217
+        ],
+        "type": "Point"
+      },
+      "id": "58c1bc6b6a2ba9740cba3b14fedd5a4f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 95 - Cultural Centers",
+        "description": "",
+        "picture": "Bg_95.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822662,
+          34.057949
+        ],
+        "type": "Point"
+      },
+      "id": "5ced6d2a1b1557360f020d9b89c6ad5b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 48 - Custodial Offices",
+        "description": "",
+        "picture": "Bg_48.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808456,
+          34.059017
+        ],
+        "type": "Point"
+      },
+      "id": "5eaa60372574d08c00b56ff532e2b10c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 30 - Agricultural Unit",
+        "description": "",
+        "picture": "Bg_30.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828459,
+          34.05512
+        ],
+        "type": "Point"
+      },
+      "id": "5ffc03db5c8ae8b66d99ebf63c24ca36"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 20 - Residence Hall, Encinitas",
+        "description": "",
+        "picture": "Bg_20.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820687,
+          34.062323
+        ],
+        "type": "Point"
+      },
+      "id": "61bec38f220adb97d1c4748344261692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 38 - Sheep/Wool Unit",
+        "description": "",
+        "picture": "Bg_38.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822424,
+          34.052235
+        ],
+        "type": "Point"
+      },
+      "id": "6319e1d4b28505956ef7462b809f2a0d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 115",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.809397,
+          34.059639
+        ],
+        "type": "Point"
+      },
+      "id": "637da875c8c110e789bc91f25e8715ce"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 112 - Kellogg House Pomona",
+        "description": "",
+        "picture": "Bg_112.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82441,
+          34.062684
+        ],
+        "type": "Point"
+      },
+      "id": "69acdf4a42d82e7de6c2d0f4a42603b4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 15 - Library",
+        "description": "What began as a single reading room has grown into an impressive six-story repository for 2.4 million books and 3,000 periodicals. The University Library underwent a $58.5 million renovation in 2008 to supports its mission to be \\\"the central intellectual and cultural resource of the campus community.\\\" The Library is equipped with many computers and group study rooms, including a 24-hour lab with plenty of tables. It also features classrooms and a large lecture hall, as well as a Starbucks, Media Collections section, and the University Writing Center.",
+        "picture": "Bg_15.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821299,
+          34.057771
+        ],
+        "type": "Point"
+      },
+      "id": "6b124bf075ce0496412205c196b2586a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 76 - Kellogg West Education/Dining",
+        "description": "",
+        "picture": "Bg_76.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824732,
+          34.056682
+        ],
+        "type": "Point"
+      },
+      "id": "6d26b6d1042f7944e04ded6d0df8c6aa"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13D - Pre-College TRIO Programs",
+        "description": "",
+        "picture": "Bg_13BCD.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82046,
+          34.058493
+        ],
+        "type": "Point"
+      },
+      "id": "71db2d8fb1c0da9f5a871f4ae9eb1ef2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 17 - Engineering Laboratories",
+        "description": "f you cross over Olive Lane Walk from the Rose Garden, you will find yourself here in the Engineering Laboratories, which are part of the College of Engineering. Cal Poly Pomona runs the second largest civil engineering\\r\\nprogram in the country, with 1,000 students enrolled at any given time. It also boasts the largest engineering program in all of California and the College is consistently ranked very high by the U.S. News & World Report, when it comes to rating institutions of higher education.",
+        "picture": "Bg_17.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821318,
+          34.060045
+        ],
+        "type": "Point"
+      },
+      "id": "73809ebb27e020215abd8a24bf33e33e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 4A - BioTrek Learning Center",
+        "description": "",
+        "picture": "Bg_4A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.8261,
+          34.057235
+        ],
+        "type": "Point"
+      },
+      "id": "744e692d4fe571c0a1919b733a5c1add"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86A: English Language Institute",
+        "description": "",
+        "picture": "Bg_86A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819994,
+          34.053239
+        ],
+        "type": "Point"
+      },
+      "id": "79b1ce811793ad5d1a32b04759004b66"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 7 - College of Environmental Design",
+        "description": "",
+        "picture": "Bg_7.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827408,
+          34.057256
+        ],
+        "type": "Point"
+      },
+      "id": "7bf5f40ecc32023da4a809809ba4b805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86 - English Language Institute",
+        "description": "",
+        "picture": "Bg_86.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819704,
+          34.053353
+        ],
+        "type": "Point"
+      },
+      "id": "7d046374498f91a6002d724be0551668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 123",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817226,
+          34.052881
+        ],
+        "type": "Point"
+      },
+      "id": "7db8bdd80e552e6e6dffb504f7c0ddae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 35A - Art Gallery",
+        "description": "",
+        "picture": "Bg_35A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821779,
+          34.056953
+        ],
+        "type": "Point"
+      },
+      "id": "7ed8cb60b8c825febfb9513601174761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 23 - Aliso Residence Hall",
+        "description": "",
+        "picture": "Bg_23.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817699,
+          34.062928
+        ],
+        "type": "Point"
+      },
+      "id": "7ff164aa9227ab917c22c9ecb40fa6c7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 68A",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827605,
+          34.054588
+        ],
+        "type": "Point"
+      },
+      "id": "81cae8c2cf60cc4a4568f03215449b4b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 111 - Manor House",
+        "description": "",
+        "picture": "Bg_111.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822939,
+          34.06051
+        ],
+        "type": "Point"
+      },
+      "id": "833450d6b929bdc48e21ba5522d88a96"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 99 - Storage",
+        "description": "",
+        "picture": "Bg_99.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.811018,
+          34.061828
+        ],
+        "type": "Point"
+      },
+      "id": "8344b64fd91428821a30cac5c29601bf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 31 - Poultry",
+        "description": "",
+        "picture": "Bg_31.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828353,
+          34.054628
+        ],
+        "type": "Point"
+      },
+      "id": "8515e197da95a0434817592e2e28da3a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79A - Collins College of Hospitality Management",
+        "description": "",
+        "picture": "Bg_79A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824871,
+          34.055055
+        ],
+        "type": "Point"
+      },
+      "id": "875c904ec3398d667ddd9d3a325258a3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13 - Art Department and Engineering Annex",
+        "description": "",
+        "picture": "Bg_13.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820798,
+          34.058812
+        ],
+        "type": "Point"
+      },
+      "id": "878898f1f96d0d44d0d5ca782d65789f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24E - Temporary Classroom E",
+        "description": "",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822525,
+          34.055979
+        ],
+        "type": "Point"
+      },
+      "id": "87d6729de1dd4210e55b83070ed47a1f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 35 - Bronco Student Center (BSC)",
+        "description": "",
+        "picture": "Bg_35.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821298,
+          34.056182
+        ],
+        "type": "Point"
+      },
+      "id": "885b01c6f3012dadaa9105943273a858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 105",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.809358,
+          34.06045
+        ],
+        "type": "Point"
+      },
+      "id": "8898ecb4858af8aacef8d27f5e9d5fb2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 60 - Residence Suites (Vista del Bonita)",
+        "description": "",
+        "picture": "Bg_60.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818602,
+          34.054868
+        ],
+        "type": "Point"
+      },
+      "id": "8c01a48541b5e1eea654d060e090c6b1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24F - Temporary Classroom F",
+        "description": "",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822655,
+          34.056034
+        ],
+        "type": "Point"
+      },
+      "id": "8cd9f240fb5131509bfcac739ec1add6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 43 - Kellogg Gymnasium",
+        "description": "",
+        "picture": "Bg_43.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819253,
+          34.054223
+        ],
+        "type": "Point"
+      },
+      "id": "8fe971d687dcc36039a2e603e5d2e935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 61 - Residence Suites (Vista del Sol)",
+        "description": "",
+        "picture": "Bg_60.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817943,
+          34.05472
+        ],
+        "type": "Point"
+      },
+      "id": "91817525c003907b4ad1bb00d4c4f6be"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 89 - Interim Design Center",
+        "description": "",
+        "picture": "Bg_89.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.812327,
+          34.06052
+        ],
+        "type": "Point"
+      },
+      "id": "94a3c6ceeebe6435da8ba2b5c56e3730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 65 - Pesticide Building",
+        "description": "",
+        "picture": "Bg_65.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810785,
+          34.061619
+        ],
+        "type": "Point"
+      },
+      "id": "950a8c816f76d8b59feafd8565d6e891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Scolinos Field",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815901,
+          34.053954
+        ],
+        "type": "Point"
+      },
+      "id": "98880730c5506ff2491b7c9f8ad8c3dc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 116 - Child Care Center",
+        "description": "",
+        "picture": "Bg_116.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819536,
+          34.056042
+        ],
+        "type": "Point"
+      },
+      "id": "9897b8c016b5abdc7ec09b6101608ff7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 58 - Cedritos Residence Hall",
+        "description": "",
+        "picture": "Bg_58.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821236,
+          34.061534
+        ],
+        "type": "Point"
+      },
+      "id": "98d9a21bbb05a5230309666d2512ddcf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 82A - Carpenter Shop",
+        "picture": "Bg_82A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808973,
+          34.060038
+        ],
+        "type": "Point"
+      },
+      "id": "9c46e0f9439c77009e3a7ee3cee79b1d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 45 - Agricultural Engineering",
+        "description": "",
+        "picture": "Bg_45.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.811145,
+          34.061079
+        ],
+        "type": "Point"
+      },
+      "id": "9cd8338a25bc9fcab61468ea8b3b0ae9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 100 - Storage",
+        "description": "",
+        "picture": "Bg_100.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810831,
+          34.062021
+        ],
+        "type": "Point"
+      },
+      "id": "9ed08db78df4ff0cebd3f826db2f1983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 91 - Student Affairs Information Technology Services",
+        "description": "",
+        "picture": "Bg_3.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825847,
+          34.058163
+        ],
+        "type": "Point"
+      },
+      "id": "a0fd1e02ee9236ce9e7e9b9ac24f113f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 75A",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.807877,
+          34.059337
+        ],
+        "type": "Point"
+      },
+      "id": "a16dd6251f7a0a84bfafa54bc226943e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 2 - College of Agriculture",
+        "description": "",
+        "picture": "Bg_2.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826436,
+          34.057678
+        ],
+        "type": "Point"
+      },
+      "id": "a301f90f227e11b9342f5379f7cdc17d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building One",
+        "description": "",
+        "picture": "Bg_1.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824144,
+          34.059754
+        ],
+        "type": "Point"
+      },
+      "id": "a3aebfa1d8f4f52b9d9526e33965f793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CLA Building",
+        "description": "The Administration Building, officially called the CLA Building and referred to on campus as the “pointy building,” is a unique structure that stands out with its open triangular top. Not only has it become a familiar symbol of Cal Poly Pomona and now part of the school’s logo, but the eight- story CLA Building has also been featured in films and commercials, since Hollywood is not all that far away from campus. The CLA stands for “Classroom/Laboratory/Administration,” as it is used for a variety of departments and services such as Campus Tour Information, Development, Financial Aid and Scholarships, National Student Exchange, Photo ID, and the Registrars Office.\"",
+        "picture": "Bg_98.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820007,
+          34.059366
+        ],
+        "type": "Point"
+      },
+      "id": "a514beb747abeefd933de4a748780a5a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 8 - College of Science",
+        "description": "",
+        "picture": "Bg_8.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824799,
+          34.058432
+        ],
+        "type": "Point"
+      },
+      "id": "a745fc875a677937c3e205c054721ec9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 71 - Recreation and Maintenance",
+        "description": "",
+        "picture": "Bg_71.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816822,
+          34.063027
+        ],
+        "type": "Point"
+      },
+      "id": "a945fcc868f6de45e2abe0d646b2d6e7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 5 - College of Letters, Arts, and Social Sciences",
+        "description": "",
+        "picture": "Bg_5.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824464,
+          34.057758
+        ],
+        "type": "Point"
+      },
+      "id": "ac64504b6b617bb7db685562199a197a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 54 - Residence Suites",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818895,
+          34.055525
+        ],
+        "type": "Point"
+      },
+      "id": "b1f2f763dbd79f7e9991ce756f1ddb39"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86B - English Language Institute",
+        "description": "",
+        "picture": "Bg_86B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820074,
+          34.053503
+        ],
+        "type": "Point"
+      },
+      "id": "b34906165fd2dae4705919252f013de8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 31B - Poultry",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829016,
+          34.055163
+        ],
+        "type": "Point"
+      },
+      "id": "b7af8e1febf3cab3d8d0d773a06e3896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 81 - Facilities Mangament",
+        "picture": "Bg_81.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808915,
+          34.059376
+        ],
+        "type": "Point"
+      },
+      "id": "b81e3b6523a3b06ec01b2b0a2ae98331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 31A - Poultry",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829008,
+          34.054739
+        ],
+        "type": "Point"
+      },
+      "id": "b9f3dee526db99a4defc240e97a7793a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 138",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.807867,
+          34.059621
+        ],
+        "type": "Point"
+      },
+      "id": "badba3112331cd9cda277120eab1cf72"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 39",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822944,
+          34.051858
+        ],
+        "type": "Point"
+      },
+      "id": "bcfc13af48255811c0dfc334c893a68a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 56 - Storage",
+        "description": "",
+        "picture": "Bg_56.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810908,
+          34.061916
+        ],
+        "type": "Point"
+      },
+      "id": "be9d853c17ff6daeb63358747ebea0f5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 25 - Drama Department/Theater",
+        "description": "",
+        "picture": "Bg_25.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822107,
+          34.056442
+        ],
+        "type": "Point"
+      },
+      "id": "c0c55e82e962b038d11e34ee8989f58f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 49 - Training Center",
+        "description": "",
+        "picture": "Bg_49.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.809271,
+          34.059923
+        ],
+        "type": "Point"
+      },
+      "id": "c15c626a9b47bd0b6352e855acf035ad"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 82 - Facilities Mangament Warehouse",
+        "picture": "Bg_82.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808688,
+          34.059773
+        ],
+        "type": "Point"
+      },
+      "id": "c85942501d1e35b47de7ebc44ab8e04d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 47 - Agricultural Engineering Tractor Shop",
+        "description": "",
+        "picture": "Bg_47.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808188,
+          34.05983
+        ],
+        "type": "Point"
+      },
+      "id": "c905a894e02bcce0355f22cb5dcb552d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 67 - Equine Research Facility",
+        "description": "",
+        "picture": "Bg_67.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814176,
+          34.059623
+        ],
+        "type": "Point"
+      },
+      "id": "d0c2bfe12a47cc3655874cae7b338d74"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 220A: Center for Training, Technology and Incubation",
+        "description": "",
+        "picture": "Bg_220A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815184,
+          34.050005
+        ],
+        "type": "Point"
+      },
+      "id": "d5d2d519b7de4281b9018bd19017cb23"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 55 - Foundation Administration Offices",
+        "description": "",
+        "picture": "Bg_78.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825713,
+          34.056791
+        ],
+        "type": "Point"
+      },
+      "id": "d7db3c446c7fce159c9c05316167622a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 220B: Center for Training, Technology and Incubation",
+        "description": "",
+        "picture": "Bg_220B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815249,
+          34.050432
+        ],
+        "type": "Point"
+      },
+      "id": "daa2146e67da43c6035d666f4d8437cb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 33 - Feedmill",
+        "description": "",
+        "picture": "Bg_33.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827517,
+          34.053937
+        ],
+        "type": "Point"
+      },
+      "id": "db40a42a4533883b18ed0a75ffc2ac05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Building 83 - Auto Shop",
+        "picture": "Bg_83.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808377,
+          34.059327
+        ],
+        "type": "Point"
+      },
+      "id": "db7939275ff6c451bfadc867e252f107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 164",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819827,
+          34.061582
+        ],
+        "type": "Point"
+      },
+      "id": "e54374b11b7a1c6e3d47bac0f6d93b70"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 20 - Residence Hall, Palmitas",
+        "description": "",
+        "picture": "Bg_57.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822393,
+          34.06053
+        ],
+        "type": "Point"
+      },
+      "id": "e8cd21370d349d1288b00cf532c96c35"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 193 - Chilled Water Center Plant",
+        "description": "",
+        "picture": "Bg_193.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829562,
+          34.057089
+        ],
+        "type": "Point"
+      },
+      "id": "ebb8a236318f39401d026b43945cd712"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 6 - College of Education and Integrative Studies",
+        "description": "",
+        "picture": "Bg_6.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822848,
+          34.058592
+        ],
+        "type": "Point"
+      },
+      "id": "eeed2b24f268553ee1400e65bd5bd0f0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 63 - Residence Suites",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816941,
+          34.053905
+        ],
+        "type": "Point"
+      },
+      "id": "ef14cb3238e3917b58236b98049e8587"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 102",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.809339,
+          34.060198
+        ],
+        "type": "Point"
+      },
+      "id": "efcfbe3720f74792a4288ff8b0881e7b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 55 - Foundation Administration Offices",
+        "description": "",
+        "picture": "Bg_55.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819922,
+          34.056219
+        ],
+        "type": "Point"
+      },
+      "id": "f380e7452d040a580404a00b4a43d745"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 70 - Los Olivos Commons",
+        "description": "",
+        "picture": "Bg_70.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821583,
+          34.062368
+        ],
+        "type": "Point"
+      },
+      "id": "f49e25fcdf91bf9362ccf20bb9dffe1b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 46 - Health Services",
+        "description": "",
+        "picture": "Bg_46.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828086,
+          34.057808
+        ],
+        "type": "Point"
+      },
+      "id": "f526ba00c51a084f81136364a848dbef"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 41 - Darlene May Gymnasium",
+        "description": "",
+        "picture": "Bg_41.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821249,
+          34.054018
+        ],
+        "type": "Point"
+      },
+      "id": "f5567d6d606051a8a74346be69979a48"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 128 - I Poly High School",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819533,
+          34.051009
+        ],
+        "type": "Point"
+      },
+      "id": "f7345afebdd122fc67a25677316687e5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 26 - Union Plaza",
+        "description": ".K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
+        "picture": "union_plaza.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820021,
+          34.05699
+        ],
+        "type": "Point"
+      },
+      "id": "f734f5c528e546d5424266b2c3d15e3f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86C: English Language Institute",
+        "description": "",
+        "picture": "Bg_86C.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820163,
+          34.053324
+        ],
+        "type": "Point"
+      },
+      "id": "f764e7d493151d125b685618cc6bcc4a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 4 - Biotechnology Building",
+        "description": "",
+        "picture": "Bg_4.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825321,
+          34.057482
+        ],
+        "type": "Point"
+      },
+      "id": "f884c42cc113f853bdfefc6980de8d93"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24 - Music",
+        "description": "",
+        "picture": "Bg_24.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822987,
+          34.056697
+        ],
+        "type": "Point"
+      },
+      "id": "fcd2eed7b6f6e83099e023ff9e3b01e8"
     }
   ],
   "type": "FeatureCollection"
