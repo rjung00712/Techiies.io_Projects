@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,4 +27,55 @@
         mapbox:mapbox_cameraTargetLng="-117.823601"
         mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"
         mapbox:mapbox_cameraZoom="14"/>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
+        fab:fab_addButtonColorNormal="#e80d18"
+        fab:fab_addButtonColorPressed="#FFFFFF"
+        fab:fab_addButtonPlusIconColor="#FFFFFF">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_buildings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#e80d18"
+            fab:fab_colorPressed="#FFFFFF"
+            fab:fab_size="mini"
+            fab:fab_title="buildings"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_parking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#2128ff"
+            fab:fab_colorPressed="#FFFFFF"
+            fab:fab_size="mini"
+            fab:fab_title="Parking Lots"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_landmarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#44e80d"
+            fab:fab_colorPressed="#FFFFFF"
+            fab:fab_size="mini"
+            fab:fab_title="Landmarks"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#fff346"
+            fab:fab_colorPressed="#FFFFFF"
+            fab:fab_size="mini"
+            fab:fab_title="Food Places"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
 </android.support.design.widget.CoordinatorLayout>
+
+

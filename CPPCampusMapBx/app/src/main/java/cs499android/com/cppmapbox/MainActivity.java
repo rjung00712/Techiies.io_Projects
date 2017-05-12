@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
 
-    private FloatingActionButton floatingActionButton;
+    private android.support.design.widget.FloatingActionButton floatingActionButton;
 
     private Position destination;
 
@@ -108,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 map = mapboxMap;
 
                 ClusterHolder.createMarkers();
+                ClusterHolder.buildings.setSelected(false);
+                ClusterHolder.food.setSelected(false);
+                ClusterHolder.parking.setSelected(false);
                 ClusterHolder.addMarkers();
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
@@ -128,11 +131,47 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         return false;
                     }
                 });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleBuildingsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_buildings);
+                toggleBuildingsFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.buildings.setSelected(!ClusterHolder.buildings.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleParkingFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_parking);
+                toggleParkingFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.parking.setSelected(!ClusterHolder.parking.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleLandmarksFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_landmarks);
+                toggleLandmarksFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.landmarks.setSelected(!ClusterHolder.landmarks.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
+
+                com.getbase.floatingactionbutton.FloatingActionButton toggleFoodFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_food);
+                toggleFoodFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ClusterHolder.food.setSelected(!ClusterHolder.food.isSelected());
+                        ClusterHolder.updateMarkers();
+                    }
+                });
             }
         });
 
 
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.location_toggle_fab);
+        floatingActionButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.location_toggle_fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

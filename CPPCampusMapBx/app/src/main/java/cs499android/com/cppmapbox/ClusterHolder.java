@@ -85,4 +85,10 @@ public abstract class ClusterHolder
             ex.printStackTrace();
         }
     }
+
+    protected static void updateMarkers()
+    {
+        removeMarkers(null);
+        addMarkers();
+    }
 }
