@@ -36,22 +36,23 @@
         android:layout_margin="8dp"
         fab:fab_addButtonColorNormal="#e80d18"
         fab:fab_addButtonColorPressed="#FFFFFF"
-        fab:fab_addButtonPlusIconColor="#FFFFFF">
+        fab:fab_addButtonPlusIconColor="#FFFFFF"
+        fab:fab_labelStyle="@style/menu_labels_style">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_toggle_buildings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="#e80d18"
+            fab:fab_colorNormal="#EA0D0D"
             fab:fab_colorPressed="#FFFFFF"
             fab:fab_size="mini"
-            fab:fab_title="buildings"/>
+            fab:fab_title="Buildings"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_toggle_parking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="#2128ff"
+            fab:fab_colorNormal="#2980B9"
             fab:fab_colorPressed="#FFFFFF"
             fab:fab_size="mini"
             fab:fab_title="Parking Lots"/>
@@ -60,7 +61,7 @@
             android:id="@+id/fab_toggle_landmarks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="#44e80d"
+            fab:fab_colorNormal="#1CCC13"
             fab:fab_colorPressed="#FFFFFF"
             fab:fab_size="mini"
             fab:fab_title="Landmarks"/>
@@ -69,7 +70,7 @@
             android:id="@+id/fab_toggle_food"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="#fff346"
+            fab:fab_colorNormal="#F1C40F"
             fab:fab_colorPressed="#FFFFFF"
             fab:fab_size="mini"
             fab:fab_title="Food Places"/>
