@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,17 +17,20 @@ import java.util.Locale;
 public class MarkerSelected extends AppCompatActivity
 {
     private TextToSpeech textToSpeech;
+    private String title;
+    private String description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marker_selected);
-        final String title = getIntent().getExtras().getString("Title");
-        final String description = getIntent().getExtras().getString("Description");
+        title = getIntent().getExtras().getString("Title");
+        description = getIntent().getExtras().getString("Description");
         EditText editText = (EditText) findViewById(R.id.title);
         editText.setText(title);
         editText = (EditText) findViewById(R.id.description);
         editText.setText(getDescription(description));
+        editText.setAutoLinkMask(Linkify.PHONE_NUMBERS);
         setPicture(description);
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -71,5 +75,28 @@ public class MarkerSelected extends AppCompatActivity
 //            textToSpeech.stop();
 //            textToSpeech.shutdown();
 //        }
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        if(textToSpeech.isSpeaking()) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                textToSpeech.setLanguage(Locale.US);
+                textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
     }
 }

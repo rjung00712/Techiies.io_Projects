@@ -36,7 +36,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
-        "description": "",
+        "description": "Located in Building 42, the Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
         "picture": "Bg_42.jpeg"
       },
       "geometry": {
@@ -1204,7 +1204,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 35 - Bronco Student Center (BSC)",
-        "description": "",
+        "description": "The Bronco Student Center (BSC) is the social hub for all things student-related. The BSC is where students are able to eat, meet, study, and play! Whether students need to unwind in the Games Room Etc., grab a bite at the food court, complete homework in the study lounges, or simply hang out with friends, the BSC is the perfect place for all student needs. Indoor and outdoor seating is available. ",
         "picture": "Bg_35.jpeg"
       },
       "geometry": {
@@ -1907,7 +1907,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "The Center for Training, Technology, and Incubation (CTTi) at Innovation Village houses office and wet lab space for emerging to medium-size companies looking to grow their business. CTTi is also home to the award-winning Innovation Brew Works.",
         "name": "Building 216 - Innovation Village SCE",
         "picture": "Bg_216.jpeg"
       },
