@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private Position destination;
 
     private Marker destinationMarker;
-    private Polyline curRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -247,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         }
 
         // Draw Points on MapView
-        curRoute = map.addPolyline(new PolylineOptions()
+        map.addPolyline(new PolylineOptions()
                 .add(points)
                 .color(Color.parseColor("#009688"))
                 .width(5));

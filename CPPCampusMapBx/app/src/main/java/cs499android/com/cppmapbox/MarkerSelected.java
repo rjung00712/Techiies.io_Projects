@@ -31,6 +31,7 @@ public class MarkerSelected extends AppCompatActivity
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
+                textToSpeech.setLanguage(Locale.US);
                 textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
             }
         });
@@ -57,13 +58,18 @@ public class MarkerSelected extends AppCompatActivity
 
     public void cancel(View view)
     {
-        if(textToSpeech.isSpeaking())
+        if(textToSpeech.isSpeaking()) {
             textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
         finish();
     }
 
     public void navigate(View view)
     {
-
+//        if(textToSpeech.isSpeaking()) {
+//            textToSpeech.stop();
+//            textToSpeech.shutdown();
+//        }
     }
 }
