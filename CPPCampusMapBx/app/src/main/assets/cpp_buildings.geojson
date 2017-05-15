@@ -116,7 +116,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 32 - Beef Unit",
-        "description": "",
+        "description": "Section of farmland used for raising cows",
         "picture": "Bg_32.jpeg"
       },
       "geometry": {
@@ -244,7 +244,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 34 - Meat Laboratory",
-        "description": "",
+        "description": "A fully functioning plant with the capabilities to involve students in all stages of meat processing from harvesting to packaging. Designed to supplement students’ classroom instruction, the center will give them the opportunity to apply learned principles to industry-like practices and experience.",
         "picture": "Bg_34.jpeg"
       },
       "geometry": {
@@ -260,7 +260,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 37 - Swine Unit",
-        "description": "",
+        "description": "Section of farmland used for raising pigs",
         "picture": "Bg_37.jpeg"
       },
       "geometry": {
@@ -740,7 +740,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 30 - Agricultural Unit",
-        "description": "",
+        "description": "West of Beef Unit/Feed Shed (Bldg. 32). Used for storing seeds and equipment.",
         "picture": "Bg_30.jpeg"
       },
       "geometry": {
@@ -772,7 +772,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 38 - Sheep/Wool Unit",
-        "description": "",
+        "description": "Section of farmland used for raising sheep",
         "picture": "Bg_38.jpeg"
       },
       "geometry": {
@@ -996,7 +996,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 35A - Art Gallery",
-        "description": "",
+        "description": "The W. Keith & Janet Kellogg Gallery was built by the John L. and Helen Kellogg Foundation with support from W. Keith and Janet “Jean” Kellogg in 1988.  This gift was in the spirit of W. Keith’s grandfather, cereal magnate W.K. Kellogg, who donated his land to the State of California for use by Cal Poly in 1949.",
         "picture": "Bg_35A.jpeg"
       },
       "geometry": {
@@ -1076,7 +1076,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 31 - Poultry",
-        "description": "",
+        "description": "Section of farmland used for raising chicken",
         "picture": "Bg_31.jpeg"
       },
       "geometry": {
@@ -1428,7 +1428,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 3 - Science Laboratory",
-        "description": "",
+        "description": "A special facility where students and faculty from the College of Science conduct experiments",
         "picture": "Bg_3.jpeg"
       },
       "geometry": {
@@ -1572,7 +1572,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 31B - Poultry",
-        "description": "",
+        "description": "Section of farmland used for raising chicken",
         "picture": ""
       },
       "geometry": {
@@ -1604,7 +1604,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 31A - Poultry",
-        "description": "",
+        "description": "Section of farmland used for raising chicken",
         "picture": ""
       },
       "geometry": {
@@ -1631,22 +1631,6 @@
         "type": "Point"
       },
       "id": "badba3112331cd9cda277120eab1cf72"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 39",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822944,
-          34.051858
-        ],
-        "type": "Point"
-      },
-      "id": "bcfc13af48255811c0dfc334c893a68a"
     },
     {
       "type": "Feature",
@@ -1796,7 +1780,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 33 - Feedmill",
-        "description": "",
+        "description": "Used processing grains, vegetables, meats, and other raw ingeredients into animal feed",
         "picture": "Bg_33.jpeg"
       },
       "geometry": {
