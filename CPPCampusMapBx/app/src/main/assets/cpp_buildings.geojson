@@ -4,7 +4,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 22 - Alamitos Residence Hall",
-        "description": "",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
         "picture": "Bg_22.jpeg"
       },
       "geometry": {
@@ -83,8 +83,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 63 - Residence Suites (Vista del Luna)",
-        "description": "",
+        "name": "Building 62 - Residence Suites (Vista de las Montanas)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
         "picture": "Bg_62.jpeg"
       },
       "geometry": {
@@ -100,7 +100,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 21 - Montecito Residence Hall",
-        "description": "",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
         "picture": "Bg_21.jpeg"
       },
       "geometry": {
@@ -227,7 +227,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209W - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -403,7 +403,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 210 - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -804,7 +804,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 20 - Residence Hall, Encinitas",
-        "description": "",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
         "picture": "Bg_20.jpeg"
       },
       "geometry": {
@@ -1060,7 +1060,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 23 - Aliso Residence Hall",
-        "description": "",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
         "picture": "Bg_23.jpeg"
       },
       "geometry": {
@@ -1235,7 +1235,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209C - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -1251,8 +1251,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 60 - Residence Suites (Vista del Bonita)",
-        "description": "",
+        "name": "Building 60 - Residence Suites (Vista Bonita)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
         "picture": "Bg_60.jpeg"
       },
       "geometry": {
@@ -1299,7 +1299,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209 - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -1316,7 +1316,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 61 - Residence Suites (Vista del Sol)",
-        "description": "",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
         "picture": "Bg_60.jpeg"
       },
       "geometry": {
@@ -1396,7 +1396,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 58 - Cedritos Residence Hall",
-        "description": "",
+        "description": "Accommodates approximately 185 students and staffed by five student Resident Advisors (RA) and a professional live-in Hall Coordinator. Each room measures approximately 12' x 14' and has five walls.",
         "picture": "Bg_58.jpeg"
       },
       "geometry": {
@@ -1411,7 +1411,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209S - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -1443,7 +1443,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209L - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -1619,8 +1619,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 54 - Residence Suites",
-        "description": "",
+        "name": "Building 54 - Residence Suites (Vista de las Estrellas",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
         "picture": "Bg_54.jpeg"
       },
       "geometry": {
@@ -1940,7 +1940,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 20 - Residence Hall, Palmitas",
-        "description": "",
+        "description": "Accommodates approximately 185 students and staffed by five student Resident Advisors (RA) and a professional live-in Hall Coordinator. Each room measures approximately 12' x 14' and has five walls.",
         "picture": "Bg_57.jpeg"
       },
       "geometry": {
@@ -2003,8 +2003,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 63 - Residence Suites (Vista del Luna)",
-        "description": "",
+        "name": "Building 63 - Residence Suites (Vista de la Luna)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
         "picture": ""
       },
       "geometry": {
@@ -2035,7 +2035,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209R - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
       },
@@ -2068,7 +2068,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 70 - Los Olivos Commons",
-        "description": "",
+        "description": "Los Olivos, located in Building 70, is an all-you-care-to-eat dining venue with a large indoor eating area, an outside patio, and numerous choices for any diet including The Mongolian Grill, Vegan Corner, a Deli and many more. Los Olivos hosts special events several times during the academic year, including Cinco de Mayo and Chinese New Year.",
         "picture": "Bg_70.jpeg"
       },
       "geometry": {
@@ -2084,7 +2084,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 46 - Health Services",
-        "description": "",
+        "description": "Health Services is an ambulatory care facility (you have to be able to walk in on your own) offering visits with medical providers by appointment or through Urgent Care for non-life threatening sudden accidents or injuries. 909-869-4000. After-Hours Nurse Advice Line: 855-272-1723. ",
         "picture": "Bg_46.jpeg"
       },
       "geometry": {

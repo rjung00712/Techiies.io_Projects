@@ -420,7 +420,7 @@
       "type": "Feature",
       "properties": {
         "name": "Los Olivos Commons",
-        "description": "Los Olivos, located in Building 70, is an all-you-care-to-eat dining venue with a large indoor eating area, an outside patio, and numerous choices for any diet including The Mongolian Grill, Vegan Corner, a Deli and many more. Los Olivos hosts special events several times during the academic year, including Cinco de Mayo and Chinese New Year.",
+        "description": "Los Olivos, located in Building 70, is an all-you-care-to-eat dining venue with a large indoor eating area, an outside patio, and numerous choices for any diet including The Mongolian Grill, Vegan Corner, a Deli and much more. Los Olivos hosts special events several times during the academic year, including Cinco de Mayo and Chinese New Year.",
         "picture": "Los_Olivos.jpeg"
       },
       "geometry": {
@@ -434,7 +434,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "The Restaurant at Kellogg Ranch is operated and managed by students, serving both lunch and dinner. The restaurant embodies Cal Poly Pomona’s learn-by-doing tradition and is a central component to The Collins College of Hospitality Management’s curriculum. The menu often features fruits, vegetables and herbs from the restaurant's cullinary garden that can be seen while the guests eat.",
+        "description": "The Restaurant at Kellogg Ranch is operated and managed by students, serving both lunch and dinner. The restaurant embodies Cal Poly Pomona’s learn-by-doing tradition and is a central component to The Collins College of Hospitality Management’s curriculum. The menu often features fruits, vegetables and herbs from the restaurant's cullinary garden that can be seen while the guests eat. 909-869-4700",
         "name": "The Restaurant at Kellogg Ranch",
         "picture": "kellogg_ranch.jpeg"
       },
