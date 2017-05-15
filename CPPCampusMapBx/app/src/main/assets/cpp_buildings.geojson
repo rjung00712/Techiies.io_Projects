@@ -100,7 +100,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 32 - Beef Unit",
-        "description": "",
+        "description": "Section of farmland used for raising cows",
         "picture": "Bg_32.jpeg"
       },
       "geometry": {
@@ -148,7 +148,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 13B - Army ROTC",
-        "description": "East of Library (Bldg. 15) and Southeast of Art Department and Engineering Annex (Bldg. 13).",
+        "description": "East of Library (Building 15) and Southeast of Art Department and Engineering Annex (Building 13).",
         "picture": "Bg_13BCD.jpeg"
       },
       "geometry": {
@@ -228,7 +228,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 34 - Meat Laboratory",
-        "description": "",
+        "description": "A fully functioning plant with the capabilities to involve students in all stages of meat processing from harvesting to packaging. Designed to supplement students’ classroom instruction, the center will give them the opportunity to apply learned principles to industry-like practices and experience.",
         "picture": "Bg_34.jpeg"
       },
       "geometry": {
@@ -244,7 +244,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 37 - Swine Unit",
-        "description": "",
+        "description": "Section of farmland used for raising pigs",
         "picture": "Bg_37.jpeg"
       },
       "geometry": {
@@ -292,7 +292,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 13C - Army ROTC",
-        "description": "East of Library (Bldg. 15) and Southeast of Art Department and Engineering Annex (Bldg. 13).",
+        "description": "East of Library (Building 15) and Southeast of Art Department and Engineering Annex (Building 13).",
         "picture": "Bg_13BCD.jpeg"
       },
       "geometry": {
@@ -324,7 +324,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24C - Temporary Classroom C",
-        "description": "West of Drama Department/Theater (Bldg. 25).",
+        "description": "West of Drama Department/Theater (Building 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -388,7 +388,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24B - Temporary Classroom B",
-        "description": "West of Drama Department/Theater (Bldg. 25).",
+        "description": "West of Drama Department/Theater (Building 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -435,23 +435,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Kellogg House Pomona",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824133,
-          34.062335
-        ],
-        "type": "Point"
-      },
-      "id": "37597faedd928db4dc77adf48b47cac1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "West of Kellogg House Pomona (Bldg. 112).",
+        "description": "West of Kellogg House Pomona (Building 112).",
         "name": "Building 113 - Guest House",
         "picture": "Bg_113.jpeg"
       },
@@ -532,7 +516,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24A - Temporary Classroom A",
-        "description": "West of Drama Department/Theater (Bldg. 25).",
+        "description": "West of Drama Department/Theater (Building 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -548,7 +532,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 109 - Police and Parking Services",
-        "description": "East of Parking Structure (Bldg. 106). Contains the Rideshare office, a program gives priority parking to students who carpool.",
+        "description": "East of Parking Structure (Building 106). Contains the Rideshare office, a program gives priority parking to students who carpool.",
         "picture": "Bg_109.jpeg"
       },
       "geometry": {
@@ -612,7 +596,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24E - Temporary Classroom E",
-        "description": "West of Drama Department/Theater (Bldg. 25).",
+        "description": "West of Drama Department/Theater (Building 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -692,7 +676,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 30 - Agricultural Unit",
-        "description": "",
+        "description": "West of Beef Unit/Feed Shed (Building 32). Used for storing seeds and equipment.",
         "picture": "Bg_30.jpeg"
       },
       "geometry": {
@@ -724,7 +708,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 38 - Sheep/Wool Unit",
-        "description": "",
+        "description": "Section of farmland used for raising sheep",
         "picture": "Bg_38.jpeg"
       },
       "geometry": {
@@ -740,7 +724,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 112 - Kellogg House Pomona",
-        "description": "North of Manor House (Bldg. 111)",
+        "description": "North of Manor House (Building 111)",
         "picture": "Bg_112.jpeg"
       },
       "geometry": {
@@ -916,7 +900,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 35A - Art Gallery",
-        "description": "",
+        "description": "The W. Keith & Janet Kellogg Gallery was built by the John L. and Helen Kellogg Foundation with support from W. Keith and Janet “Jean” Kellogg in 1988.  This gift was in the spirit of W. Keith’s grandfather, cereal magnate W.K. Kellogg, who donated his land to the State of California for use by Cal Poly in 1949.",
         "picture": "Bg_35A.jpeg"
       },
       "geometry": {
@@ -996,7 +980,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 31 - Poultry",
-        "description": "",
+        "description": "Section of farmland used for raising chicken",
         "picture": "Bg_31.jpeg"
       },
       "geometry": {
@@ -1044,7 +1028,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24E - Temporary Classroom E",
-        "description": "West of Drama Department/Theater (Bldg. 25).",
+        "description": "West of Drama Department/Theater (Building 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -1108,7 +1092,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24F - Temporary Classroom F",
-        "description": "West of Drama Department/Theater (Bldg. 25).",
+        "description": "West of Drama Department/Theater (Building 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -1316,7 +1300,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 100 - Storage",
-        "description": "NorthEast of Interim Design Center (Bldg. 89).",
+        "description": "NorthEast of Interim Design Center (Building 89).",
         "picture": "Bg_100.jpeg"
       },
       "geometry": {
@@ -1332,7 +1316,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 3 - Science Laboratory",
-        "description": "",
+        "description": "A special facility where students and faculty from the College of Science conduct experiments",
         "picture": "Bg_3.jpeg"
       },
       "geometry": {
@@ -1364,7 +1348,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building One",
-        "description": "",
+        "description": "There is the Advertising Office, Admissions & Enrollment Services, Communications Department, Cooperative Education, the International Center, Economic Department, the Kellogg Honors College, Office of Research, Philosophy Department, and The Poly Post located in Building One",
         "picture": "Bg_1.jpeg"
       },
       "geometry": {
@@ -1476,7 +1460,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 31B - Poultry",
-        "description": "",
+        "description": "Section of farmland used for raising chicken",
         "picture": ""
       },
       "geometry": {
@@ -1508,7 +1492,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 31A - Poultry",
-        "description": "",
+        "description": "Section of farmland used for raising chicken",
         "picture": ""
       },
       "geometry": {
@@ -1519,22 +1503,6 @@
         "type": "Point"
       },
       "id": "b9f3dee526db99a4defc240e97a7793a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 39",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822944,
-          34.051858
-        ],
-        "type": "Point"
-      },
-      "id": "bcfc13af48255811c0dfc334c893a68a"
     },
     {
       "type": "Feature",
@@ -1684,7 +1652,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 33 - Feedmill",
-        "description": "",
+        "description": "Used processing grains, vegetables, meats, and other raw ingeredients into animal feed",
         "picture": "Bg_33.jpeg"
       },
       "geometry": {
@@ -1780,7 +1748,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 193 - Chilled Water Center Plant",
-        "description": "East of Health Services (Bldg. 46).",
+        "description": "East of Health Services (Building 46).",
         "picture": "Bg_193.jpeg"
       },
       "geometry": {
