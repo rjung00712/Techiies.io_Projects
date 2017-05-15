@@ -131,44 +131,48 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     }
                 });
 
-                com.getbase.floatingactionbutton.FloatingActionButton toggleBuildingsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_buildings);
-                toggleBuildingsFab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        ClusterHolder.buildings.setSelected(!ClusterHolder.buildings.isSelected());
-                        ClusterHolder.updateMarkers();
-                    }
-                });
+                setFloatingButtons();
+            }
+        });
+    }
 
-                com.getbase.floatingactionbutton.FloatingActionButton toggleParkingFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_parking);
-                toggleParkingFab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        ClusterHolder.parking.setSelected(!ClusterHolder.parking.isSelected());
-                        ClusterHolder.updateMarkers();
-                    }
-                });
-
-                com.getbase.floatingactionbutton.FloatingActionButton toggleLandmarksFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_landmarks);
-                toggleLandmarksFab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        ClusterHolder.landmarks.setSelected(!ClusterHolder.landmarks.isSelected());
-                        ClusterHolder.updateMarkers();
-                    }
-                });
-
-                com.getbase.floatingactionbutton.FloatingActionButton toggleFoodFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_food);
-                toggleFoodFab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        ClusterHolder.food.setSelected(!ClusterHolder.food.isSelected());
-                        ClusterHolder.updateMarkers();
-                    }
-                });
+    private void setFloatingButtons()
+    {
+        com.getbase.floatingactionbutton.FloatingActionButton toggleBuildingsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_buildings);
+        toggleBuildingsFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClusterHolder.buildings.setSelected(!ClusterHolder.buildings.isSelected());
+                ClusterHolder.updateMarkers();
             }
         });
 
+        com.getbase.floatingactionbutton.FloatingActionButton toggleParkingFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_parking);
+        toggleParkingFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClusterHolder.parking.setSelected(!ClusterHolder.parking.isSelected());
+                ClusterHolder.updateMarkers();
+            }
+        });
+
+        com.getbase.floatingactionbutton.FloatingActionButton toggleLandmarksFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_landmarks);
+        toggleLandmarksFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClusterHolder.landmarks.setSelected(!ClusterHolder.landmarks.isSelected());
+                ClusterHolder.updateMarkers();
+            }
+        });
+
+        com.getbase.floatingactionbutton.FloatingActionButton toggleFoodFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_food);
+        toggleFoodFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClusterHolder.food.setSelected(!ClusterHolder.food.isSelected());
+                ClusterHolder.updateMarkers();
+            }
+        });
 
         floatingActionButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.location_toggle_fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +184,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
     }
-
 
     private void getRoute(Position origin, Position destination) throws ServicesException
     {
@@ -259,14 +262,14 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             if (!PermissionsManager.areLocationPermissionsGranted(this)) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
-                ClusterHolder.removeMarkers(destinationMarker);
+                //ClusterHolder.removeMarkers(destinationMarker);
                 enableLocation(true);
             }
         } else {
             List<Polyline> list = map.getPolylines();
             for(int i = 0; i < list.size(); i++)
                 map.removePolyline(list.get(i));
-            ClusterHolder.addMarkers();
+            //ClusterHolder.addMarkers();
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
@@ -296,7 +299,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         List<Polyline> list = map.getPolylines();
                         for(int i = 0; i < list.size(); i++)
                             map.removePolyline(list.get(i));
-                        getRoute(origin, destination);
+                        //getRoute(origin, destination);
                     } catch (ServicesException se) {
                         se.printStackTrace();
                     }
@@ -323,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                                 List<Polyline> list = map.getPolylines();
                                 for(int i = 0; i < list.size(); i++)
                                     map.removePolyline(list.get(i));
-                                getRoute(origin, destination);
+                                //getRoute(origin, destination);
                             } catch (ServicesException se) {
                                 se.printStackTrace();
                             }

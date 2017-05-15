@@ -163,24 +163,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Tennis Courts",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820306,
-          34.052862
-        ],
-        "type": "Point"
-      },
-      "id": "e5543a08cc16b8c354271a432b481132"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Japanese Garden",
-        "description": "",
+        "description": "This beautiful garden is located right next to the CLA, outside the Student Cashiering Services. It is a very tranquil place, full of lovely flowers and trees. There is koi pond where you can see many beautiful Koi fish and adorable turtles",
         "picture": "japanese_garden.gif"
       },
       "geometry": {
@@ -196,7 +180,7 @@
       "type": "Feature",
       "properties": {
         "name": "Rose Garden",
-        "description": "",
+        "description": "On the far right of campus is a circular garden, where there are only roses, as the name suggest. There is a gazebo in the center of the garden. The Rose garden was given to Mr. Kellogg's wife from Mr. Kellogg himself and there are seven rings and seven different",
         "picture": "rose_garden.gif"
       },
       "geometry": {

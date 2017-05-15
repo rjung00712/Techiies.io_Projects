@@ -51,22 +51,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 96",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808554,
-          34.059678
-        ],
-        "type": "Point"
-      },
-      "id": "041cebf488fc0c7321107321185e0f0d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 29 - W.K. Kellogg Arabian Horse Center",
         "description": "The W. K. Kellogg Arabian Horse Center is an Arabian breeding facility located on the Cal Poly Pomona. The W.K. Kellogg Arabian Horse Center was established in 1925 by the cereal magnate Will Keith Kellogg of Battle Creek, Michigan.",
         "picture": "Bg_29.jpeg"
@@ -116,7 +100,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 9 - College of Engineering",
-        "description": "",
+        "description": "Inside Building 9 you can find the College of Engineering Department, the Testing Coordinator, a Study Center, the Maintenance Depot and much more. There are many Engineering Electrical and Computer Engineering Labs along with the office for the Maximizing Engineering Potential program.",
         "picture": "Bg_9.jpeg"
       },
       "geometry": {
@@ -147,22 +131,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 50",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808554,
-          34.060052
-        ],
-        "type": "Point"
-      },
-      "id": "12438d511025599b06278f8e341cded9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 200 - University Village",
         "description": "The University Village is housing owned by the University that is available for rent. The Village is conveniently located across South from the campus. They have shuttle transportation that will take you to and from school. There's a computer lab, pool, and basketball court.",
         "picture": "Bg_200.jpeg"
@@ -180,7 +148,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 91 - Student Affairs Information Technology Services",
-        "description": "",
+        "description": "South of Residence Hall, Montecito (Building 21) and SouthWest of Residence Hall, Alamitos (Building 22).",
         "picture": "Bg_91.jpeg"
       },
       "geometry": {
@@ -191,22 +159,6 @@
         "type": "Point"
       },
       "id": "1c53398cc02dc44d1e034e9db534fd90"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 87",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807377,
-          34.060604
-        ],
-        "type": "Point"
-      },
-      "id": "1d9addac1a3878195e617d17cb21e192"
     },
     {
       "type": "Feature",
@@ -276,7 +228,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 79B - Collins College of Hospitality Management",
-        "description": "",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
         "picture": "Bg_79B.jpeg"
       },
       "geometry": {
@@ -324,7 +276,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 52 - Vista Market",
-        "description": "",
+        "description": "We are a fully stocked, one-stop-shop neighborhood store with a fun community vibe that offers personal items and the staples needed to prepare home-cooked meals  909-869-5111",
         "picture": "Bg_52.jpeg"
       },
       "geometry": {
@@ -339,7 +291,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "NorthEast of Auto Shop (Building 83).",
         "name": "Building 75 - Procurement/Receiving",
         "picture": "Bg_75.jpeg"
       },
@@ -371,8 +323,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 55 - Foundation Administration Offices",
-        "description": "",
+        "name": "Building 79 - Collins College of Hospitality Management",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
         "picture": "Bg_79.jpeg"
       },
       "geometry": {
@@ -420,7 +372,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 94 - University Office Building",
-        "description": "",
+        "description": "Building 94 is home to the Ethnic & Women's Studies Department, Liberal Studies Department, Political Science Department, Peermentoring Department, and the Undeclared Major Advising center. Along with these departments, there is the E-Business Program and Educational Opportunity Program (EOP).",
         "picture": "Bg_94.jpeg"
       },
       "geometry": {
@@ -467,7 +419,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "This is the location at which Cal Poly students partake in building and designing the Rose Float for the Rose Parade every year.",
         "name": "Building 64 - Rose Float Laboratory",
         "picture": "Bg_64.jpeg"
       },
@@ -483,7 +435,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Located off of Cypress Lane and Magnolia Lane and North of the Parking Structure (Building 106)",
         "name": "Building 90 - Medic-1",
         "picture": "Bg_90.jpeg"
       },
@@ -563,8 +515,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 92 - Laboratory Facility",
-        "description": "",
+        "name": "Building 59 - La Cienega Center (University Housing Services)",
+        "description": "La Cienega Center is the main office of the University Housing services. Students can go here to have questions and concerns about housing answered. Students who live on campus can go here to pick up packages or get help when they get locked out of their rooms. Main number: 909-869-3307",
         "picture": "Bg_59.jpeg"
       },
       "geometry": {
@@ -676,7 +628,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 92 - Laboratory Facility",
-        "description": "",
+        "description": "East of College of Agriculture (Building 2) and West of Science Laboratory (Building 3).",
         "picture": "Bg_92.jpeg"
       },
       "geometry": {
@@ -692,7 +644,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 77 - Kellogg West Main Lodge",
-        "description": "",
+        "description": "West of Kellogg West Education/Dining (Building 76) and SouthWest of Kellogg West Addition (Building 78).",
         "picture": "Bg_77.jpeg"
       },
       "geometry": {
@@ -724,7 +676,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 68 - Hay Barn",
-        "description": "",
+        "description": "South the Beef Unit/Feed Shed (Building 32) and North of the Feedmill (Building 33).",
         "picture": "Bg_68.jpeg"
       },
       "geometry": {
@@ -756,7 +708,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 95 - Cultural Centers",
-        "description": "",
+        "description": "East of Campus Center (Building 97) and South of College of Education and Integrative Studies (Building 6).",
         "picture": "Bg_95.jpeg"
       },
       "geometry": {
@@ -884,7 +836,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 76A - Kellogg West/Addition",
-        "description": "",
+        "description": "Northeast of Kellogg West Main Lodge (Building 77) and Northwest of Kellogg West Education/Dining (Building 76).",
         "picture": "Bg_76.jpeg"
       },
       "geometry": {
@@ -964,7 +916,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 86A: English Language Institute",
-        "description": "",
+        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
         "picture": "Bg_86A.jpeg"
       },
       "geometry": {
@@ -980,7 +932,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 7 - College of Environmental Design",
-        "description": "",
+        "description": "Building 7 is where the Architecture Department, Food, Nutrition & Consumer Science Department, Human Nutrition and Food Science Department, Landscape Architecture Department and Urban & Regional Planning Department are located.",
         "picture": "Bg_7.jpeg"
       },
       "geometry": {
@@ -996,7 +948,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 86 - English Language Institute",
-        "description": "",
+        "description": "Building 86 is where the Cal Poly English Language Institute and ELS are located.",
         "picture": "Bg_86.jpeg"
       },
       "geometry": {
@@ -1075,22 +1027,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 68A",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827605,
-          34.054588
-        ],
-        "type": "Point"
-      },
-      "id": "81cae8c2cf60cc4a4568f03215449b4b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 111 - Manor House",
         "description": "Home to the University President and his family.",
         "picture": "Bg_111.jpeg"
@@ -1108,7 +1044,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 99 - Storage",
-        "description": "",
+        "description": "NorthEast of Interim Design Center (Building 89).",
         "picture": "Bg_99.jpeg"
       },
       "geometry": {
@@ -1156,7 +1092,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 79A - Collins College of Hospitality Management",
-        "description": "",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
         "picture": "Bg_79A.jpeg"
       },
       "geometry": {
@@ -1332,7 +1268,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 89 - Interim Design Center",
-        "description": "",
+        "description": "East of Agricultural Engineering (Builidng 45).",
         "picture": "Bg_89.jpeg"
       },
       "geometry": {
@@ -1348,7 +1284,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 65 - Pesticide Building",
-        "description": "",
+        "description": "South of Storage Building (Building 100) and NorthEast of Agricultural Engineering (Building 45).",
         "picture": "Bg_65.jpeg"
       },
       "geometry": {
@@ -1427,7 +1363,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "East of Training Center (Building 49) and North of Facilities Management (Building 81).",
         "name": "Building 82A - Carpenter Shop",
         "picture": "Bg_82A.jpeg"
       },
@@ -1491,7 +1427,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 91 - Student Affairs Information Technology Services",
+        "name": "Building 3 - Science Laboratory",
         "description": "",
         "picture": "Bg_3.jpeg"
       },
@@ -1503,22 +1439,6 @@
         "type": "Point"
       },
       "id": "a0fd1e02ee9236ce9e7e9b9ac24f113f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 75A",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807877,
-          34.059337
-        ],
-        "type": "Point"
-      },
-      "id": "a16dd6251f7a0a84bfafa54bc226943e"
     },
     {
       "type": "Feature",
@@ -1572,7 +1492,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 8 - College of Science",
-        "description": "",
+        "description": "Building 8 has department offices for Biologiccal Sciences, Chemistry & Biochemistry, Computer Science, Mathematics and Statistics, Geological Sciences, and Physics and Astronomy. In addition, you can find the McNair Scholars Program and the Instructional Support Center (ISC) all in Building 8.",
         "picture": "Bg_8.jpeg"
       },
       "geometry": {
@@ -1588,7 +1508,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 71 - Recreation and Maintenance",
-        "description": "",
+        "description": "East of Residence Hall, Alamitos (Building 22) and SouthEast of Residence Hall, Aliso (Building 23).",
         "picture": "Bg_71.jpeg"
       },
       "geometry": {
@@ -1604,7 +1524,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 5 - College of Letters, Arts, and Social Sciences",
-        "description": "",
+        "description": "Building 5 is home to the Department of Education, Geography & Anthropology Department, Psychology and Sociology Department, and the M.A. in Education Department. In addition, there are Quick Print Services and Graphic Communications Services.",
         "picture": "Bg_5.jpeg"
       },
       "geometry": {
@@ -1636,7 +1556,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 86B - English Language Institute",
-        "description": "",
+        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
         "picture": "Bg_86B.jpeg"
       },
       "geometry": {
@@ -1667,8 +1587,8 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
-        "name": "Building 81 - Facilities Mangament",
+        "description": "Building 81 is where Logistics & Recycling and the Mechanical & Engineering Services are located.",
+        "name": "Building 81 - Facilities Management",
         "picture": "Bg_81.jpeg"
       },
       "geometry": {
@@ -1732,7 +1652,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 56 - Storage",
-        "description": "",
+        "description": "NorthEast of Interim Design Center (Building 89).",
         "picture": "Bg_56.jpeg"
       },
       "geometry": {
@@ -1779,7 +1699,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "NorthEast of Facilities Management (Building 81).",
         "name": "Building 82 - Facilities Mangament Warehouse",
         "picture": "Bg_82.jpeg"
       },
@@ -1812,7 +1732,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 67 - Equine Research Facility",
-        "description": "",
+        "description": "NorthEast of W.K. Kellogg Arabian Horse Center (Building 29) and is where the Equine Outreach Program is located",
         "picture": "Bg_67.jpeg"
       },
       "geometry": {
@@ -1844,7 +1764,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 78 - Kellogg West Addition",
-        "description": "",
+        "description": "NorthEast of Kellogg West Main Lodge (Building 77) and NorthWest of Kellogg West Education/Dining (Building 76).",
         "picture": "Bg_78.jpeg"
       },
       "geometry": {
@@ -1891,7 +1811,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "East of Facilities Management (Building 81).",
         "name": "Building 83 - Auto Shop",
         "picture": "Bg_83.jpeg"
       },
@@ -1988,7 +1908,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 6 - College of Education and Integrative Studies",
-        "description": "",
+        "description": "Building 6 is where students can find the Credential Office, Four Year Graduation Pledge office, MBA, and the Micro Lab.",
         "picture": "Bg_6.jpeg"
       },
       "geometry": {
@@ -2052,7 +1972,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 55 - Foundation Administration Offices",
-        "description": "",
+        "description": "East of Bronco Bookstore (Building 66) and South of University Plaza (Building 26).",
         "picture": "Bg_55.jpeg"
       },
       "geometry": {
@@ -2132,7 +2052,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 85 - I Poly High School",
-        "description": "",
+        "description": "Off of Temple Avenue and University Drive and Southwest of Parking Lot K",
         "picture": "Bg_85.jpeg"
       },
       "geometry": {
@@ -2164,7 +2084,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 86C: English Language Institute",
-        "description": "",
+        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
         "picture": "Bg_86C.jpeg"
       },
       "geometry": {
