@@ -19,24 +19,8 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 125",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818032,
-          34.051602
-        ],
-        "type": "Point"
-      },
-      "id": "02d5c517371150041a8754ea86c169db"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
-        "description": "Located in Building 42, the Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
+        "description": "The Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
         "picture": "Bg_42.jpeg"
       },
       "geometry": {
@@ -595,38 +579,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 114",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.810418,
-          34.060409
-        ],
-        "type": "Point"
-      },
-      "id": "501e85f0d25fb344d25c16d674f841ff"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 124",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816196,
-          34.052547
-        ],
-        "type": "Point"
-      },
-      "id": "50ba38f8ce64df42a02f14013c0a8971"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 92 - Laboratory Facility",
         "description": "East of College of Agriculture (Building 2) and West of Science Laboratory (Building 3).",
         "picture": "Bg_92.jpeg"
@@ -724,7 +676,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 48 - Custodial Offices",
-        "description": "",
+        "description": "South of Auto Shop (Building 83).",
         "picture": "Bg_48.jpeg"
       },
       "geometry": {
@@ -783,22 +735,6 @@
         "type": "Point"
       },
       "id": "6319e1d4b28505956ef7462b809f2a0d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 115",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809397,
-          34.059639
-        ],
-        "type": "Point"
-      },
-      "id": "637da875c8c110e789bc91f25e8715ce"
     },
     {
       "type": "Feature",
@@ -884,7 +820,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 17 - Engineering Laboratories",
-        "description": "f you cross over Olive Lane Walk from the Rose Garden, you will find yourself here in the Engineering Laboratories, which are part of the College of Engineering. Cal Poly Pomona runs the second largest civil engineering\\r\\nprogram in the country, with 1,000 students enrolled at any given time. It also boasts the largest engineering program in all of California and the College is consistently ranked very high by the U.S. News & World Report, when it comes to rating institutions of higher education.",
+        "description": "If you cross over Olive Lane Walk from the Rose Garden, you will find yourself here in the Engineering Laboratories, which are part of the College of Engineering. Cal Poly Pomona runs the second largest civil engineering\\r\\nprogram in the country, with 1,000 students enrolled at any given time. It also boasts the largest engineering program in all of California and the College is consistently ranked very high by the U.S. News & World Report, when it comes to rating institutions of higher education.",
         "picture": "Bg_17.jpeg"
       },
       "geometry": {
@@ -900,7 +836,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 4A - BioTrek Learning Center",
-        "description": "",
+        "description": "South of College of Agriculture (Building 2) and West of Biotechnology Building (Building 4).",
         "picture": "Bg_4A.jpeg"
       },
       "geometry": {
@@ -975,22 +911,6 @@
         "type": "Point"
       },
       "id": "7d2df9caa4bc8c5c8f303ff6109c1564"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 123",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817226,
-          34.052881
-        ],
-        "type": "Point"
-      },
-      "id": "7db8bdd80e552e6e6dffb504f7c0ddae"
     },
     {
       "type": "Feature",
@@ -1155,22 +1075,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 105",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809358,
-          34.06045
-        ],
-        "type": "Point"
-      },
-      "id": "8898ecb4858af8aacef8d27f5e9d5fb2"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209C - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
@@ -1204,7 +1108,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24F - Temporary Classroom F",
-        "description": "",
+        "description": "West of Drama Department/Theater (Bldg. 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -1220,7 +1124,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 43 - Kellogg Gymnasium",
-        "description": "",
+        "description": "The Kellogg Gymnasium is where the Cal Poly Basketball and Volleyball teams play their games. It also is where the Athletics Department is located, along with all of the offices of the sports coaches at Cal Poly.",
         "picture": "Bg_43.jpeg"
       },
       "geometry": {
@@ -1396,7 +1300,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 45 - Agricultural Engineering",
-        "description": "",
+        "description": "The Apparel Technology & Research Center, Apparel Merchandising & Management Department and the Center for Turf, Irrigation & Landscape Technology are all located here in Building 45.",
         "picture": "Bg_45.jpeg"
       },
       "geometry": {
@@ -1619,22 +1523,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 138",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807867,
-          34.059621
-        ],
-        "type": "Point"
-      },
-      "id": "badba3112331cd9cda277120eab1cf72"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 39",
         "description": "",
         "picture": ""
@@ -1684,7 +1572,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 49 - Training Center",
-        "description": "",
+        "description": "East of Fruit/Crops Unit (Building 28) and NorthWest of Facilities Management (Building 81).",
         "picture": "Bg_49.jpeg"
       },
       "geometry": {
@@ -1716,7 +1604,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 47 - Agricultural Engineering Tractor Shop",
-        "description": "",
+        "description": "North of Auto Shop (Building 83).",
         "picture": "Bg_47.jpeg"
       },
       "geometry": {
@@ -1859,7 +1747,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 20 - Residence Hall, Palmitas",
+        "name": "Building 57 - Residence Hall, Palmitas",
         "description": "Accommodates approximately 185 students and staffed by five student Resident Advisors (RA) and a professional live-in Hall Coordinator. Each room measures approximately 12' x 14' and has five walls.",
         "picture": "Bg_57.jpeg"
       },
@@ -1939,22 +1827,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 102",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809339,
-          34.060198
-        ],
-        "type": "Point"
-      },
-      "id": "efcfbe3720f74792a4288ff8b0881e7b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
         "name": "Building 209R - Center for Regenerative Studies",
         "picture": "Bg_209.jpeg"
@@ -2020,7 +1892,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 41 - Darlene May Gymnasium",
-        "description": "",
+        "description": "Here in the Darlene May Gymnasium, there is a women's locker room and training room in addition to the Volleyball Office.",
         "picture": "Bg_41.jpeg"
       },
       "geometry": {
@@ -2100,7 +1972,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 4 - Biotechnology Building",
-        "description": "",
+        "description": "Building 4 holds the Center for Excellence in Mathematics and Science Teaching (CEMaST) and the Institute for Cellular & Molecular Biology.",
         "picture": "Bg_4.jpeg"
       },
       "geometry": {
