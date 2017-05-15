@@ -68,7 +68,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 29 - W.K. Kellogg Arabian Horse Center",
-        "description": "",
+        "description": "The W. K. Kellogg Arabian Horse Center is an Arabian breeding facility located on the Cal Poly Pomona. The W.K. Kellogg Arabian Horse Center was established in 1925 by the cereal magnate Will Keith Kellogg of Battle Creek, Michigan.",
         "picture": "Bg_29.jpeg"
       },
       "geometry": {
@@ -164,7 +164,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 200 - University Village",
-        "description": "",
+        "description": "The University Village is housing owned by the University that is available for rent. The Village is conveniently located across South from the campus. They have shuttle transportation that will take you to and from school. There's a computer lab, pool, and basketball court.",
         "picture": "Bg_200.jpeg"
       },
       "geometry": {
@@ -212,7 +212,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 13B - Army ROTC",
-        "description": "",
+        "description": "East of Library (Bldg. 15) and Southeast of Art Department and Engineering Annex (Bldg. 13).",
         "picture": "Bg_13BCD.jpeg"
       },
       "geometry": {
@@ -260,7 +260,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 28 - Fruit/Crops Unit",
-        "description": "",
+        "description": "The Crops Unit has 70 acres of productive citrus, avocados, grapes, deciduous orchard, and berries. Additional nonbearing acreage for instructional use exists and new plantings are underway. Part of the land is certified organic. Students are encouraged to gain experience and earn income by participation in the enterprise project program or by working for the campus farm.",
         "picture": "Bg_28.jpeg"
       },
       "geometry": {
@@ -356,7 +356,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 13C - Army ROTC",
-        "description": "",
+        "description": "East of Library (Bldg. 15) and Southeast of Art Department and Engineering Annex (Bldg. 13).",
         "picture": "Bg_13BCD.jpeg"
       },
       "geometry": {
@@ -388,7 +388,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24C - Temporary Classroom C",
-        "description": "",
+        "description": "West of Drama Department/Theater (Bldg. 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -436,7 +436,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 220C: Center for Training, Technology and Incubation",
-        "description": "",
+        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
         "picture": "Bg_220C.jpeg"
       },
       "geometry": {
@@ -452,7 +452,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24B - Temporary Classroom B",
-        "description": "",
+        "description": "West of Drama Department/Theater (Bldg. 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -515,7 +515,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "West of Kellogg House Pomona (Bldg. 112).",
         "name": "Building 113 - Guest House",
         "picture": "Bg_113.jpeg"
       },
@@ -579,7 +579,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "The Mexican American Student Association (MASA) was founded in 1965 as a community outreach and tutorial service organization. The Mexican-American Student Association is an I.R.A funded.  Instructionally Related Activities aka (I.R.A.) fee funding support is allocated to certain programs, clubs, and organizations, one of the organizations being M.A.S.A.",
         "name": "Building 150 - MASA Building",
         "picture": "Bg_150.jpeg"
       },
@@ -596,7 +596,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24A - Temporary Classroom A",
-        "description": "",
+        "description": "West of Drama Department/Theater (Bldg. 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -612,7 +612,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 109 - Police and Parking Services",
-        "description": "",
+        "description": "East of Parking Structure (Bldg. 106). Contains the Rideshare office, a program gives priority parking to students who carpool.",
         "picture": "Bg_109.jpeg"
       },
       "geometry": {
@@ -708,7 +708,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24E - Temporary Classroom E",
-        "description": "",
+        "description": "West of Drama Department/Theater (Bldg. 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -739,7 +739,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
         "name": "Building 215 - Agriscapes",
         "picture": "Bg_211.jpeg"
       },
@@ -852,7 +852,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 112 - Kellogg House Pomona",
-        "description": "",
+        "description": "North of Manor House (Bldg. 111)",
         "picture": "Bg_112.jpeg"
       },
       "geometry": {
@@ -899,7 +899,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
         "name": "Building 163 - College of Business Administration",
         "picture": "Bg_162.jpeg"
       },
@@ -916,7 +916,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 13D - Pre-College TRIO Programs",
-        "description": "",
+        "description": "The Federal TRIO Programs (TRIO) are Federal outreach and student services programs designed to identify and provide services for individuals from disadvantaged backgrounds. TRIO includes eight programs targeted to serve and assist low-income individuals, first-generation college students, and individuals with disabilities to progress through the academic pipeline from middle school to postbaccalaureate programs.",
         "picture": "Bg_13BCD.jpeg"
       },
       "geometry": {
@@ -1011,7 +1011,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "Orientation promotes academic achievement and personal development through academic advising, class registration and an introduction to student services and resources.",
         "name": "Building 26A - Student Orientation Center",
         "picture": "Bg_26A.jpeg"
       },
@@ -1092,7 +1092,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 111 - Manor House",
-        "description": "",
+        "description": "Home to the University President and his family.",
         "picture": "Bg_111.jpeg"
       },
       "geometry": {
@@ -1123,7 +1123,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
         "name": "Building 211 - Agriscapes/Farm Store",
         "picture": "Bg_211.jpeg"
       },
@@ -1172,7 +1172,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 13 - Art Department and Engineering Annex",
-        "description": "",
+        "description": "The Art Department's primary mission is teaching excellence and program quality. Educators are committed to building a foundation of creativity to support self-expression and individual intellectual development while meeting career goals and curriculum structure for a competitive student body.",
         "picture": "Bg_13.jpeg"
       },
       "geometry": {
@@ -1188,7 +1188,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24E - Temporary Classroom E",
-        "description": "",
+        "description": "West of Drama Department/Theater (Bldg. 25).",
         "picture": "Bg_24A_E.jpeg"
       },
       "geometry": {
@@ -1380,7 +1380,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 116 - Child Care Center",
-        "description": "",
+        "description": "The Children’s Center is designed to create an atmosphere where children can grow emotionally, intellectually, socially, and physically.Our children are regularly provided with opportunities for early literacy, math, and science through various types of books, songs and activities.",
         "picture": "Bg_116.jpeg"
       },
       "geometry": {
@@ -1476,7 +1476,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 100 - Storage",
-        "description": "",
+        "description": "NorthEast of Interim Design Center (Bldg. 89).",
         "picture": "Bg_100.jpeg"
       },
       "geometry": {
@@ -1524,7 +1524,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 2 - College of Agriculture",
-        "description": "",
+        "description": "The College of Agriculture prepares students for careers in a wide variety of positions throughout the agricultural, food, apparel/textile industries, environment, science, and healthcare fields.",
         "picture": "Bg_2.jpeg"
       },
       "geometry": {
@@ -1748,7 +1748,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 25 - Drama Department/Theater",
-        "description": "",
+        "description": "The Mission of the Department of Theatre and New Dance at Cal Poly Pomona is to prepare students to be current and relevant artists for the 21st century. Students develop critical thinking and disciplinary excellence through a collaborative and interactive learning process that embraces diversity, and interdisciplinary work.",
         "picture": "Bg_25.jpeg"
       },
       "geometry": {
@@ -1828,7 +1828,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 220A: Center for Training, Technology and Incubation",
-        "description": "",
+        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
         "picture": "Bg_220A.jpeg"
       },
       "geometry": {
@@ -1860,7 +1860,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 220B: Center for Training, Technology and Incubation",
-        "description": "",
+        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
         "picture": "Bg_220B.jpeg"
       },
       "geometry": {
@@ -1907,7 +1907,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "The Center for Training, Technology, and Incubation (CTTi) at Innovation Village houses office and wet lab space for emerging to medium-size companies looking to grow their business. CTTi is also home to the award-winning Innovation Brew Works.",
+        "description": "Innovation Village at Cal Poly Pomona is a premier corporate research and technology park in the Southern California region.  It is a unique environment that provides opportunity for collaboration with university researchers, students, and administration in an environment that promotes excellence.",
         "name": "Building 216 - Innovation Village SCE",
         "picture": "Bg_216.jpeg"
       },
@@ -1924,7 +1924,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 164 - College of Business Administration",
-        "description": "",
+        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
         "picture": "Bg_162.jpeg"
       },
       "geometry": {
@@ -1972,7 +1972,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 193 - Chilled Water Center Plant",
-        "description": "",
+        "description": "East of Health Services (Bldg. 46).",
         "picture": "Bg_193.jpeg"
       },
       "geometry": {
@@ -2115,7 +2115,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "",
+        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
         "name": "Building 162 - College of Business Administration",
         "picture": "Bg_162.jpeg"
       },
@@ -2148,7 +2148,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 26 - Union Plaza",
-        "description": ".K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
+        "description": "W.K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
         "picture": "union_plaza.jpeg"
       },
       "geometry": {
@@ -2196,7 +2196,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 24 - Music",
-        "description": "",
+        "description": "The Music Department introduces a student to the role of music in today’s world, helps form personal goals, and provides the discipline, skills and knowledge to accomplish those goals.",
         "picture": "Bg_24.jpeg"
       },
       "geometry": {
