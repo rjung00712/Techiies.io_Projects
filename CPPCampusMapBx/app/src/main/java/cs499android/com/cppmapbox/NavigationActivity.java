@@ -5,14 +5,18 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
+import android.speech.tts.TextToSpeech;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
@@ -23,6 +27,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.services.android.telemetry.location.LocationEngine;
 import com.mapbox.services.android.telemetry.location.LocationEngineListener;
+import com.mapbox.services.android.telemetry.permissions.PermissionsListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsManager;
 import com.mapbox.services.api.ServicesException;
 import com.mapbox.services.api.directions.v5.DirectionsCriteria;
@@ -33,17 +38,16 @@ import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static cs499android.com.cppmapbox.Constants.PERMISSIONS_REQUEST_LOCATION;
-import static cs499android.com.cppmapbox.Constants.TAG;
+import static cs499android.com.cppmapbox.Constants.*;
 import static cs499android.com.cppmapbox.MainActivity.userLocationEnabeld;
 
-
-public class NavigationActivity extends AppCompatActivity
+public class NavigationActivity extends AppCompatActivity implements PermissionsListener
 {
     private MapView mapView;
     private MapboxMap map;
@@ -53,6 +57,7 @@ public class NavigationActivity extends AppCompatActivity
     private LocationEngine locationEngine;
     private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
+    private TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +70,18 @@ public class NavigationActivity extends AppCompatActivity
         mapView = (MapView) findViewById(R.id.navigationMapView);
         mapView.onCreate(savedInstanceState);
 
+        setPermissions();
+
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
                 locationEngine = LocationSource.getLocationEngine(NavigationActivity.this);
                 locationEngine.activate();
+                map.addMarker(new MarkerOptions().position(MainActivity.destinationMarker.getPosition())
+                        .title(MainActivity.destinationMarker.getTitle())
+                        .snippet(MainActivity.destinationMarker.getSnippet())
+                        .icon(MainActivity.destinationMarker.getIcon()));
                 startRouteGuide();
             }
         });
@@ -174,6 +185,7 @@ public class NavigationActivity extends AppCompatActivity
 
                 // Draw the curRoute on the map
                 drawRoute(currentRoute);
+                updateDirections();
             }
 
             @Override
@@ -203,9 +215,79 @@ public class NavigationActivity extends AppCompatActivity
         if(oldLine != null)
             map.removePolyline(oldLine);
         oldLine = currentLine;
+    }
 
-        EditText directions = (EditText) findViewById(R.id.directionsText);
-        directions.setText(currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction());
-        Toast.makeText(this, currentRoute.getDistance() + "????", Toast.LENGTH_SHORT).show();
+    private void updateDirections()
+    {
+        try {
+//            String[] instructions = new String[currentRoute.getLegs().get(0).getSteps().size()];
+//            for(int i = 0; i < currentRoute.getLegs().get(0).getSteps().size(); i++) {
+//                instructions[i] = currentRoute.getLegs().get(0).getSteps().get(i).getManeuver().getInstruction();
+//            }
+            String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();
+            double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();
+            final EditText directions = (EditText) findViewById(R.id.directionsText);
+            directions.setText(instruction + " in " + distance + "ft.");
+            ImageView imageView = (ImageView) findViewById(R.id.directionPic);
+            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    textToSpeech.setLanguage(Locale.US);
+                    textToSpeech.speak(directions.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+                }
+            });
+
+            if(instruction.toLowerCase().contains("destination"))
+                imageView.setImageResource(R.drawable.destination_reached);
+            else if(instruction.toLowerCase().contains("left")) {
+                if (instruction.toLowerCase().contains("turn left"))
+                    imageView.setImageResource(R.drawable.left_turn);
+                else
+                    imageView.setImageResource(R.drawable.slight_left);
+            }
+            else if(instruction.toLowerCase().contains("right")) {
+                if (instruction.toLowerCase().equals("turn right"))
+                    imageView.setImageResource(R.drawable.right_turn);
+                else
+                    imageView.setImageResource(R.drawable.slight_right);
+            }
+        }catch (ArrayIndexOutOfBoundsException ex)
+        {
+            EditText directions = (EditText) findViewById(R.id.directionsText);
+            directions.setText(currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction());
+            ImageView imageView = (ImageView) findViewById(R.id.directionPic);
+            imageView.setImageResource(R.drawable.destination_reached);
+        }
+    }
+
+    public void setPermissions() {
+        permissionsManager = new PermissionsManager(this);
+        if (!PermissionsManager.areLocationPermissionsGranted(this)) {
+            permissionsManager.requestLocationPermissions(this);
+        } else {
+            MainActivity.userLocationEnabeld = true;
+        }
+    }
+
+    @Override
+    public void onExplanationNeeded(List<String> permissionsToExplain) {
+        Toast.makeText(this, "This app needs location permissions in order to show its functionality.",
+                Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    public void onPermissionResult(boolean granted) {
+        if (granted) {
+            MainActivity.userLocationEnabeld = true;
+        } else {
+            Toast.makeText(this, "You didn't grant location permissions.",
+                    Toast.LENGTH_LONG).show();
+            finish();
+        }
     }
 }
