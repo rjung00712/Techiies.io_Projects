@@ -44,9 +44,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static cs499android.com.cppmapbox.Constants.*;
-import static cs499android.com.cppmapbox.MainActivity.userLocationEnabeld;
+import static cs499android.com.cppmapbox.StaticVariables.*;
 
+@SuppressWarnings( {"MissingPermission"})
 public class NavigationActivity extends AppCompatActivity implements PermissionsListener
 {
     private MapView mapView;
@@ -70,25 +70,25 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         mapView = (MapView) findViewById(R.id.navigationMapView);
         mapView.onCreate(savedInstanceState);
 
+        locationEngine = LocationSource.getLocationEngine(NavigationActivity.this);
+
         setPermissions();
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
-                locationEngine = LocationSource.getLocationEngine(NavigationActivity.this);
-                locationEngine.activate();
-                map.addMarker(new MarkerOptions().position(MainActivity.destinationMarker.getPosition())
-                        .title(MainActivity.destinationMarker.getTitle())
-                        .snippet(MainActivity.destinationMarker.getSnippet())
-                        .icon(MainActivity.destinationMarker.getIcon()));
+                map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
+                        .title(StaticVariables.destinationMarker.getTitle())
+                        .snippet(StaticVariables.destinationMarker.getSnippet())
+                        .icon(StaticVariables.destinationMarker.getIcon()));
                 startRouteGuide();
             }
         });
     }
 
     private void startRouteGuide() {
-        if (!userLocationEnabeld) {
+        if (!StaticVariables.userLocationEnabeld) {
             permissionsManager.requestLocationPermissions(this);
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -121,7 +121,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 locationEngineListener = new LocationEngineListener() {
                     @Override
                     public void onConnected() {
-                        // No action needed here.
+                        locationEngine.requestLocationUpdates();
                     }
 
                     @Override
@@ -132,7 +132,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                             // changes. When the user disables and then enables the location again, this
                             // listener is registered again and will adjust the camera once again.
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-                            //locationEngine.removeLocationEngineListener(this);
+                            locationEngine.removeLocationEngineListener(this);
                             try {
                                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
 //                                List<Polyline> list = map.getPolylines();
@@ -153,7 +153,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 
     private void getRoute(Position origin) throws ServicesException
     {
-        Position destination = MainActivity.destination;
+        Position destination = StaticVariables.destination;
         MapboxDirections client = new MapboxDirections.Builder()
                 .setOrigin(origin)
                 .setDestination(destination)
@@ -177,11 +177,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 // Print some info about the curRoute
                 currentRoute = response.body().getRoutes().get(0);
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
-
-//                Toast.makeText(
-//                        MainActivity.this,
-//                        currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction(),
-//                        Toast.LENGTH_SHORT).show();
 
                 // Draw the curRoute on the map
                 drawRoute(currentRoute);
@@ -227,18 +222,22 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();
             double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();
             final EditText directions = (EditText) findViewById(R.id.directionsText);
-            directions.setText(instruction + " in " + distance + "ft.");
+            directions.setText(instruction + " in " + distance + " feet.");
             ImageView imageView = (ImageView) findViewById(R.id.directionPic);
-            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                @Override
-                public void onInit(int status) {
-                    textToSpeech.setLanguage(Locale.US);
-                    textToSpeech.speak(directions.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
-                }
-            });
+            if(StaticVariables.speakDirections) {
+                textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
+                        textToSpeech.setLanguage(Locale.US);
+                        textToSpeech.speak(directions.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                });
+            }
 
             if(instruction.toLowerCase().contains("destination"))
                 imageView.setImageResource(R.drawable.destination_reached);
+            else if(instruction.toLowerCase().contains("straight"))
+                imageView.setImageResource(R.drawable.straight);
             else if(instruction.toLowerCase().contains("left")) {
                 if (instruction.toLowerCase().contains("turn left"))
                     imageView.setImageResource(R.drawable.left_turn);
@@ -265,7 +264,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         if (!PermissionsManager.areLocationPermissionsGranted(this)) {
             permissionsManager.requestLocationPermissions(this);
         } else {
-            MainActivity.userLocationEnabeld = true;
+            StaticVariables.userLocationEnabeld = true;
         }
     }
 
@@ -283,11 +282,33 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     @Override
     public void onPermissionResult(boolean granted) {
         if (granted) {
-            MainActivity.userLocationEnabeld = true;
+            StaticVariables.userLocationEnabeld = true;
         } else {
             Toast.makeText(this, "You didn't grant location permissions.",
                     Toast.LENGTH_LONG).show();
             finish();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mapView.onStart();
+        if (locationEngine != null && locationEngineListener != null) {
+            locationEngine.activate();
+            locationEngine.requestLocationUpdates();
+            locationEngine.addLocationEngineListener(locationEngineListener);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mapView.onStop();
+        if (locationEngine != null && locationEngineListener != null) {
+            locationEngine.removeLocationEngineListener(locationEngineListener);
+            locationEngine.removeLocationUpdates();
+            locationEngine.deactivate();
         }
     }
 }

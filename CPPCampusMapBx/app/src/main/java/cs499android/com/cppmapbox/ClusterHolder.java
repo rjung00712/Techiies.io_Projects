@@ -3,7 +3,6 @@ package cs499android.com.cppmapbox;
 import android.app.Activity;
 
 import com.mapbox.mapboxsdk.annotations.Marker;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
 
 import java.io.InputStream;
 
