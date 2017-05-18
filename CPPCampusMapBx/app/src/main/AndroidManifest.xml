@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MarkerSelected" />
-        <activity android:name=".NavigationActivity"></activity>
+        <activity android:name=".NavigationActivity" />
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>
