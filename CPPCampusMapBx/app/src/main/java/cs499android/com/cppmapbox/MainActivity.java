@@ -62,9 +62,10 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     private android.support.design.widget.FloatingActionButton floatingActionButton;
 
-    private Position destination;
+    protected static Position destination;
 
-    private Marker destinationMarker;
+    protected static Marker destinationMarker;
+    protected static boolean userLocationEnabeld;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,19 +88,16 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         // This contains the MapView in XML and needs to be called after the account manager
         setContentView(R.layout.activity_main);
 
-
         // Get the location engine object for later use.
         locationEngine = LocationSource.getLocationEngine(this);
         locationEngine.activate();
-
-        final Position defaultPoint = Position.fromCoordinates(-117.823601, 34.058800);
-        destination = Position.fromCoordinates(-117.823332, 34.058031);
 
         // Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
 
         ClusterHolder.activity = MainActivity.this;
+        setPermissions();
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -211,13 +209,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 currentRoute = response.body().getRoutes().get(0);
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
 
-
-//                currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction();
-
-//                System.out.println(currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction());
-//
-//                StepManeuver stepManeuver = new StepManeuver();
-
                 Toast.makeText(
                         MainActivity.this,
                         currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction(),
@@ -226,8 +217,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 // Draw the curRoute on the map
                 drawRoute(currentRoute);
             }
-
-
 
             @Override
             public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
@@ -258,8 +247,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private void toggleGps(boolean enableGps) {
         if (enableGps) {
             // Check if user has granted location permission
-            permissionsManager = new PermissionsManager(this);
-            if (!PermissionsManager.areLocationPermissionsGranted(this)) {
+            if (!userLocationEnabeld) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
                 //ClusterHolder.removeMarkers(destinationMarker);
@@ -269,7 +257,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             List<Polyline> list = map.getPolylines();
             for(int i = 0; i < list.size(); i++)
                 map.removePolyline(list.get(i));
-            //ClusterHolder.addMarkers();
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
@@ -295,15 +282,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 16));
 
                     try {
-                        Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
                         List<Polyline> list = map.getPolylines();
                         for(int i = 0; i < list.size(); i++)
                             map.removePolyline(list.get(i));
-                        //getRoute(origin, destination);
                     } catch (ServicesException se) {
                         se.printStackTrace();
                     }
-
                 }
 
                 locationEngineListener = new LocationEngineListener() {
@@ -326,7 +310,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                                 List<Polyline> list = map.getPolylines();
                                 for(int i = 0; i < list.size(); i++)
                                     map.removePolyline(list.get(i));
-                                //getRoute(origin, destination);
+                                getRoute(origin, destination);
                             } catch (ServicesException se) {
                                 se.printStackTrace();
                             }
@@ -392,6 +376,15 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         mapView.onSaveInstanceState(outState);
     }
 
+    public void setPermissions() {
+        permissionsManager = new PermissionsManager(this);
+        if (!PermissionsManager.areLocationPermissionsGranted(this)) {
+            permissionsManager.requestLocationPermissions(this);
+        } else {
+            userLocationEnabeld = true;
+        }
+    }
+
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {
         Toast.makeText(this, "This app needs location permissions in order to show its functionality.",
@@ -406,7 +399,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     @Override
     public void onPermissionResult(boolean granted) {
         if (granted) {
-            enableLocation(true);
+            userLocationEnabeld = true;
         } else {
             Toast.makeText(this, "You didn't grant location permissions.",
                     Toast.LENGTH_LONG).show();

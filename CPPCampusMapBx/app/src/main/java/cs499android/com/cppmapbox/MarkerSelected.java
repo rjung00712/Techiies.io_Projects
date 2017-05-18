@@ -1,5 +1,6 @@
 package cs499android.com.cppmapbox;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.speech.tts.TextToSpeech;
@@ -71,10 +72,13 @@ public class MarkerSelected extends AppCompatActivity
 
     public void navigate(View view)
     {
-//        if(textToSpeech.isSpeaking()) {
-//            textToSpeech.stop();
-//            textToSpeech.shutdown();
-//        }
+        if(textToSpeech.isSpeaking()) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        Intent NavigationIntent = new Intent(MarkerSelected.this, NavigationActivity.class);
+        startActivity(NavigationIntent);
+        finish();
     }
 
     @Override
