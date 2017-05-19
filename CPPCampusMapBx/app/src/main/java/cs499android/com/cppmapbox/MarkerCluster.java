@@ -93,6 +93,8 @@ public class MarkerCluster
             icon = iconFactory.fromResource(R.drawable.red_marker);
         else if(color.equals("yellow"))
             icon = iconFactory.fromResource(R.drawable.yellow_marker);
+        else
+            icon = iconFactory.defaultMarker();
     }
 
     public String getColor() {return color;}

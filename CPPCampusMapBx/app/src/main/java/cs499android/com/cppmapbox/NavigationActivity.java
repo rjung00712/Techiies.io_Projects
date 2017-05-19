@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -58,6 +59,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
     private TextToSpeech textToSpeech;
+    private boolean navigating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         locationEngine = LocationSource.getLocationEngine(NavigationActivity.this);
 
         setPermissions();
+        CheckNearby.init();
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -82,12 +85,30 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
                         .icon(StaticVariables.destinationMarker.getIcon()));
-                startRouteGuide();
+                navigating = true;
+                getPermissions();
             }
         });
     }
 
-    private void startRouteGuide() {
+    private void updateRoute()
+    {
+        if(!navigating)
+            return;
+        else
+        {
+            android.os.Handler handler = new android.os.Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startRouteCalc();
+                    updateRoute();
+                }
+            }, 5000);   //After 5 seconds do the run method above
+        }
+    }
+
+    private void getPermissions() {
         if (!StaticVariables.userLocationEnabeld) {
             permissionsManager.requestLocationPermissions(this);
         } else {
@@ -103,52 +124,57 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.INTERNET}, PERMISSIONS_REQUEST_LOCATION);
                 //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
             } else {
-                Location lastLocation = locationEngine.getLastLocation();
-                if (lastLocation != null) {
-                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 16));
+                updateRoute();
+            }
+        }
+        map.setMyLocationEnabled(true);
+    }
 
-                    try {
-                        Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
+    private void startRouteCalc()
+    {
+        Location lastLocation = locationEngine.getLastLocation();
+        if (lastLocation != null) {
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 16));
+
+            try {
+                Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
 //                        List<Polyline> list = map.getPolylines();
 //                        for (int i = 0; i < list.size(); i++)
 //                            map.removePolyline(list.get(i));
+                getRoute(origin);
+            } catch (ServicesException se) {
+                se.printStackTrace();
+            }
+        }
+
+        locationEngineListener = new LocationEngineListener() {
+            @Override
+            public void onConnected() {
+                locationEngine.requestLocationUpdates();
+            }
+
+            @Override
+            public void onLocationChanged(Location location) {
+                if (location != null) {
+                    // Move the map camera to where the user location is and then remove the
+                    // listener so the camera isn't constantly updating when the user location
+                    // changes. When the user disables and then enables the location again, this
+                    // listener is registered again and will adjust the camera once again.
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
+                    locationEngine.removeLocationEngineListener(this);
+                    try {
+                        Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+//                                List<Polyline> list = map.getPolylines();
+//                                for (int i = 0; i < list.size(); i++)
+//                                    map.removePolyline(list.get(i));
                         getRoute(origin);
                     } catch (ServicesException se) {
                         se.printStackTrace();
                     }
                 }
-
-                locationEngineListener = new LocationEngineListener() {
-                    @Override
-                    public void onConnected() {
-                        locationEngine.requestLocationUpdates();
-                    }
-
-                    @Override
-                    public void onLocationChanged(Location location) {
-                        if (location != null) {
-                            // Move the map camera to where the user location is and then remove the
-                            // listener so the camera isn't constantly updating when the user location
-                            // changes. When the user disables and then enables the location again, this
-                            // listener is registered again and will adjust the camera once again.
-                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-                            locationEngine.removeLocationEngineListener(this);
-                            try {
-                                Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
-//                                List<Polyline> list = map.getPolylines();
-//                                for (int i = 0; i < list.size(); i++)
-//                                    map.removePolyline(list.get(i));
-                                getRoute(origin);
-                            } catch (ServicesException se) {
-                                se.printStackTrace();
-                            }
-                        }
-                    }
-                };
-                locationEngine.addLocationEngineListener(locationEngineListener);
             }
-        }
-        map.setMyLocationEnabled(true);
+        };
+        locationEngine.addLocationEngineListener(locationEngineListener);
     }
 
     private void getRoute(Position origin) throws ServicesException
@@ -160,6 +186,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .setProfile(DirectionsCriteria.PROFILE_WALKING)
                 .setAccessToken(Mapbox.getAccessToken())
                 .setSteps(true)
+                .setContinueStraight(true)
                 .build();
 
         client.enqueueCall(new Callback<DirectionsResponse>() {
