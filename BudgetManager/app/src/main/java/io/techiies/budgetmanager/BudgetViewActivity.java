@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 public class BudgetViewActivity extends AppCompatActivity
 {
-    private static final String TAG = "BudgetWatch";
+    private static final String TAG = "Budget Manager";
     private DBHelper _db;
 
     private EditText _budgetNameEdit;

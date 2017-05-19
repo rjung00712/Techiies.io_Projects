@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "io.techiies.budgetmanager"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
     }
 }
 
@@ -32,7 +34,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.google.guava:guava-collections:r03'
     testCompile 'junit:junit:4.12'
-    testCompile "org.robolectric:robolectric:3.2.2"
+    testCompile 'org.robolectric:robolectric:3.2.2'
 }
 
 task findbugs(type: FindBugs, dependsOn: 'assembleDebug') {

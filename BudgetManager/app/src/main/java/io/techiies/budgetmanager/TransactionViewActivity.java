@@ -51,7 +51,7 @@ import java.util.UUID;
 
 public class TransactionViewActivity extends AppCompatActivity
 {
-    private static final String TAG = "BudgetWatch";
+    private static final String TAG = "Budget Manager";
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int PERMISSIONS_REQUEST_CAMERA = 2;
 
@@ -323,28 +323,6 @@ public class TransactionViewActivity extends AppCompatActivity
 
         _captureButton.setOnClickListener(captureCallback);
         _updateButton.setOnClickListener(captureCallback);
-
-        _viewButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent i = new Intent(v.getContext(), ReceiptViewActivity.class);
-                final Bundle b = new Bundle();
-
-                final TextView receiptField = (TextView) findViewById(R.id.receiptLocation);
-
-                String receipt = receiptField.getText().toString();
-                if(capturedUncommittedReceipt != null)
-                {
-                    receipt = capturedUncommittedReceipt;
-                }
-
-                b.putString("receipt", receipt);
-                i.putExtras(b);
-                startActivity(i);
-            }
-        });
     }
 
     private void doSave()
