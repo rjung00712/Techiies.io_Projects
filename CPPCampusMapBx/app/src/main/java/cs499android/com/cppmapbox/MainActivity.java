@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -48,7 +47,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import static cs499android.com.cppmapbox.Constants.*;
+import static cs499android.com.cppmapbox.Constants.BASE_URL;
+import static cs499android.com.cppmapbox.Constants.MAPBOX_ACCESS_TOKEN;
+import static cs499android.com.cppmapbox.Constants.PERMISSIONS_REQUEST_LOCATION;
+import static cs499android.com.cppmapbox.Constants.TAG;
 
 public class MainActivity extends AppCompatActivity implements PermissionsListener
 {
