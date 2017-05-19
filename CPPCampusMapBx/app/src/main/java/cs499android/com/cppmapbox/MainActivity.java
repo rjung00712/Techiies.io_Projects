@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -48,7 +47,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import static cs499android.com.cppmapbox.Constants.*;
+import static cs499android.com.cppmapbox.Constants.BASE_URL;
+import static cs499android.com.cppmapbox.Constants.MAPBOX_ACCESS_TOKEN;
+import static cs499android.com.cppmapbox.Constants.PERMISSIONS_REQUEST_LOCATION;
+import static cs499android.com.cppmapbox.Constants.TAG;
 
 public class MainActivity extends AppCompatActivity implements PermissionsListener
 {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private Position destination;
 
     private Marker destinationMarker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,13 +90,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         // This contains the MapView in XML and needs to be called after the account manager
         setContentView(R.layout.activity_main);
 
-
         // Get the location engine object for later use.
         locationEngine = LocationSource.getLocationEngine(this);
         locationEngine.activate();
 
         final Position defaultPoint = Position.fromCoordinates(-117.823601, 34.058800);
-        destination = Position.fromCoordinates(-117.823332, 34.058031);
+        destination = Position.fromCoordinates(-118.823278, 34.057959);
 
         // Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
@@ -185,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         });
     }
 
-    private void getRoute(Position origin, Position destination) throws ServicesException
+    private void getRoute(final Position origin, final Position destination) throws ServicesException
     {
         MapboxDirections client = new MapboxDirections.Builder()
                 .setOrigin(origin)
@@ -212,6 +214,8 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
 
 
+                Log.d("location: ", origin + " " + destination);
+
 //                currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction();
 
 //                System.out.println(currentRoute.getLegs().get(0).getSteps().get(0).getManeuver().getInstruction());
@@ -226,8 +230,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 // Draw the curRoute on the map
                 drawRoute(currentRoute);
             }
-
-
 
             @Override
             public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
@@ -296,10 +298,15 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
                     try {
                         Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
+
+                        System.out.println(origin);
+
                         List<Polyline> list = map.getPolylines();
                         for(int i = 0; i < list.size(); i++)
                             map.removePolyline(list.get(i));
-                        //getRoute(origin, destination);
+                        getRoute(origin, destination);
+
+
                     } catch (ServicesException se) {
                         se.printStackTrace();
                     }
@@ -310,6 +317,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     @Override
                     public void onConnected() {
                         // No action needed here.
+
                     }
 
                     @Override
@@ -320,13 +328,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                             // changes. When the user disables and then enables the location again, this
                             // listener is registered again and will adjust the camera once again.
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-                            //locationEngine.removeLocationEngineListener(this);
+                            locationEngine.removeLocationEngineListener(this);
                             try {
                                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
                                 List<Polyline> list = map.getPolylines();
                                 for(int i = 0; i < list.size(); i++)
                                     map.removePolyline(list.get(i));
-                                //getRoute(origin, destination);
+                                    getRoute(origin, destination);
                             } catch (ServicesException se) {
                                 se.printStackTrace();
                             }
@@ -334,6 +342,9 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     }
                 };
                 locationEngine.addLocationEngineListener(locationEngineListener);
+                locationEngine.requestLocationUpdates();
+                locationEngine.setInterval(2000);
+
                 floatingActionButton.setImageResource(R.drawable.ic_location_disabled_24dp);
             }
         } else {
