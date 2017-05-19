@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cs499android.com.cppmapbox.NavigationActivity"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/directionPic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="false" />
+        <EditText
+            android:id="@+id/directionsText"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#00ffffff"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:clickable="false"
+            android:editable="false" />
+    </LinearLayout>
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/navigationMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="34.058800"
+        mapbox:mapbox_cameraTargetLng="-117.823601"
+        mapbox:mapbox_cameraZoom="14"
+        mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
+</LinearLayout>

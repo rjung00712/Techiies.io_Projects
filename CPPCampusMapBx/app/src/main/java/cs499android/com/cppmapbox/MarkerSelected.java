@@ -1,5 +1,6 @@
 package cs499android.com.cppmapbox;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.speech.tts.TextToSpeech;
@@ -32,13 +33,15 @@ public class MarkerSelected extends AppCompatActivity
         editText.setText(getDescription(description));
         editText.setAutoLinkMask(Linkify.PHONE_NUMBERS);
         setPicture(description);
-        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                textToSpeech.setLanguage(Locale.US);
-                textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
-            }
-        });
+        if(StaticVariables.speakDescriptions) {
+            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    textToSpeech.setLanguage(Locale.US);
+                    textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
+                }
+            });
+        }
     }
 
     public void setPicture(String description)
@@ -62,28 +65,37 @@ public class MarkerSelected extends AppCompatActivity
 
     public void cancel(View view)
     {
-        if(textToSpeech.isSpeaking()) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
+        if(StaticVariables.speakDescriptions) {
+            if (textToSpeech.isSpeaking()) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
         }
         finish();
     }
 
     public void navigate(View view)
     {
-//        if(textToSpeech.isSpeaking()) {
-//            textToSpeech.stop();
-//            textToSpeech.shutdown();
-//        }
+        if(StaticVariables.speakDescriptions) {
+            if (textToSpeech.isSpeaking()) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
+        }
+        Intent NavigationIntent = new Intent(MarkerSelected.this, NavigationActivity.class);
+        startActivity(NavigationIntent);
+        finish();
     }
 
     @Override
     public void onPause()
     {
         super.onPause();
-        if(textToSpeech.isSpeaking()) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
+        if(StaticVariables.speakDescriptions) {
+            if (textToSpeech.isSpeaking()) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
         }
     }
 
@@ -91,12 +103,14 @@ public class MarkerSelected extends AppCompatActivity
     public void onResume()
     {
         super.onResume();
-        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                textToSpeech.setLanguage(Locale.US);
-                textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
-            }
-        });
+        if(StaticVariables.speakDescriptions) {
+            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    textToSpeech.setLanguage(Locale.US);
+                    textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
+                }
+            });
+        }
     }
 }

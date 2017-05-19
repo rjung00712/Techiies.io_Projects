@@ -191,6 +191,21 @@
         "type": "Point"
       },
       "id": "fc5582b2fc3d43b219d7248612a76d8f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Watch your step! This pond and the walkways surrounding it are full of ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
+        "name": "Duck Pond",
+        "picture": "duck_pond.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.8216176488178,
+          34.06101653819981
+        ],
+        "type": "Point"
+      }
     }
   ],
   "type": "FeatureCollection"

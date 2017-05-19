@@ -68,7 +68,7 @@ public class MarkerCluster
     {
         if(!visible)
             for (int i = 0; i < markerOptions.size(); i++)
-                markers.add(MainActivity.map.addMarker(markerOptions.get(i)));
+                markers.add(StaticVariables.map.addMarker(markerOptions.get(i)));
         visible = true;
     }
 
@@ -77,7 +77,7 @@ public class MarkerCluster
         if(visible)
             for(int i = 0; i < markers.size(); i++){
                 if(!markers.get(i).equals(marker))
-                    MainActivity.map.removeMarker(markers.get(i));
+                    StaticVariables.map.removeMarker(markers.get(i));
             }
         visible = false;
     }
