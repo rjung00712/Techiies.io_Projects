@@ -242,7 +242,7 @@ public class TransactionViewActivity extends AppCompatActivity
                 // field if a receipt is captured
                 if(transaction.receipt.isEmpty() == false)
                 {
-                    _receiptLayout.setVisibility(View.VISIBLE);
+                    _receiptLayout.setVisibility(View.GONE);
                     _endingDivider.setVisibility(View.VISIBLE);
                     _hasReceiptButtonLayout.setVisibility(View.VISIBLE);
                 }
@@ -262,7 +262,7 @@ public class TransactionViewActivity extends AppCompatActivity
                 _dateView.setVisibility(View.GONE);
 
                 // If editing a transaction, always list the receipt field
-                _receiptLayout.setVisibility(View.VISIBLE);
+                _receiptLayout.setVisibility(View.GONE);
                 _endingDivider.setVisibility(View.VISIBLE);
                 if(transaction.receipt.isEmpty() && capturedUncommittedReceipt == null)
                 {
@@ -287,7 +287,7 @@ public class TransactionViewActivity extends AppCompatActivity
             _dateView.setVisibility(View.GONE);
 
             // If adding a transaction, always list the receipt field
-            _receiptLayout.setVisibility(View.VISIBLE);
+            _receiptLayout.setVisibility(View.GONE);
             _endingDivider.setVisibility(View.VISIBLE);
             if(capturedUncommittedReceipt == null)
             {
@@ -302,27 +302,27 @@ public class TransactionViewActivity extends AppCompatActivity
             }
         }
 
-        View.OnClickListener captureCallback = new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (ContextCompat.checkSelfPermission(TransactionViewActivity.this,
-                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
-                {
-                    captureReceipt();
-                }
-                else
-                {
-                    ActivityCompat.requestPermissions(TransactionViewActivity.this,
-                            new String[]{Manifest.permission.CAMERA},
-                            PERMISSIONS_REQUEST_CAMERA);
-                }
-            }
-        };
+//        View.OnClickListener captureCallback = new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                if (ContextCompat.checkSelfPermission(TransactionViewActivity.this,
+//                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
+//                {
+//                    captureReceipt();
+//                }
+//                else
+//                {
+//                    ActivityCompat.requestPermissions(TransactionViewActivity.this,
+//                            new String[]{Manifest.permission.CAMERA},
+//                            PERMISSIONS_REQUEST_CAMERA);
+//                }
+//            }
+//        };
 
-        _captureButton.setOnClickListener(captureCallback);
-        _updateButton.setOnClickListener(captureCallback);
+//        _captureButton.setOnClickListener(captureCallback);
+//        _updateButton.setOnClickListener(captureCallback);
     }
 
     private void doSave()
