@@ -1,6 +1,7 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
@@ -97,7 +99,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             return;
         else
         {
-            android.os.Handler handler = new android.os.Handler();
+            Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -164,9 +166,15 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                     locationEngine.removeLocationEngineListener(this);
                     try {
                         Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
-//                                List<Polyline> list = map.getPolylines();
-//                                for (int i = 0; i < list.size(); i++)
-//                                    map.removePolyline(list.get(i));
+                        Marker marker = CheckNearby.check(origin);
+                        if(marker != null)
+                        {
+                            Intent MarkerSelectedIntent = new Intent(NavigationActivity.this, MarkerSelected.class);
+                            MarkerSelectedIntent.putExtra("Title", marker.getTitle());
+                            MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                            MarkerSelectedIntent.putExtra("Type", "Nearby");
+                            startActivity(MarkerSelectedIntent);
+                        }
                         getRoute(origin);
                     } catch (ServicesException se) {
                         se.printStackTrace();
@@ -266,13 +274,13 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             else if(instruction.toLowerCase().contains("straight"))
                 imageView.setImageResource(R.drawable.straight);
             else if(instruction.toLowerCase().contains("left")) {
-                if (instruction.toLowerCase().contains("turn left"))
+                if (instruction.toLowerCase().contains("turn left") || instruction.toLowerCase().contains("sharp left"))
                     imageView.setImageResource(R.drawable.left_turn);
                 else
                     imageView.setImageResource(R.drawable.slight_left);
             }
             else if(instruction.toLowerCase().contains("right")) {
-                if (instruction.toLowerCase().equals("turn right"))
+                if (instruction.toLowerCase().equals("turn right") || instruction.toLowerCase().contains("sharp right"))
                     imageView.setImageResource(R.drawable.right_turn);
                 else
                     imageView.setImageResource(R.drawable.slight_right);
@@ -337,5 +345,24 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             locationEngine.removeLocationUpdates();
             locationEngine.deactivate();
         }
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        if(StaticVariables.speakDescriptions) {
+            if (textToSpeech != null && textToSpeech.isSpeaking()) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
+        }
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        startRouteCalc();
     }
 }

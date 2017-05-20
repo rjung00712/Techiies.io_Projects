@@ -27,13 +27,13 @@ public abstract class ClusterHolder
         parking = new MarkerCluster(activity, "parking.geojson", "blue");
         food = new MarkerCluster(activity, "food_places.geojson", "yellow");
         //bathrooms = new MarkerCluster(activity, "", "");
-        //nearby = new MarkerCluster(activity, "", "");
+        nearby = new MarkerCluster(activity, "nearby.geojson", "");
         createMarkers(buildings);
         createMarkers(landmarks);
         createMarkers(parking);
         createMarkers(food);
         //createMarkers(bathrooms);
-        //createMarkers(nearby);
+        createMarkers(nearby);
     }
 
     private static void createMarkers(MarkerCluster markerCluster) {
@@ -74,8 +74,7 @@ public abstract class ClusterHolder
                 food.addMarkers();
 //            if(bathrooms.isSelected())
 //                bathrooms.addMarkers();
-//            if(nearby.isSelected())
-//                nearby.addMarkers();
+            nearby.addMarkers();
         }catch (NullPointerException ex)
         {
             ex.printStackTrace();
