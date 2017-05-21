@@ -94,13 +94,13 @@ public class MarkerCluster
     {
         IconFactory iconFactory = IconFactory.getInstance(activity);
         if(color.toLowerCase().equals("blue"))
-            icon = iconFactory.fromResource(R.drawable.blue_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_blue_18dp);
         else if(color.equals("green"))
-            icon = iconFactory.fromResource(R.drawable.green_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_green_18dp);
         else if(color.equals("red"))
-            icon = iconFactory.fromResource(R.drawable.red_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_red_18dp);
         else if(color.equals("yellow"))
-            icon = iconFactory.fromResource(R.drawable.yellow_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_yellow_18dp);
         else
             icon = iconFactory.defaultMarker();
     }
