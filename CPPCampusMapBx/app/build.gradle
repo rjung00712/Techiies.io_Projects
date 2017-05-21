@@ -52,7 +52,13 @@ dependencies {
     compile 'com.mapbox.mapboxsdk:mapbox-java-geojson:2.1.0'
     compile 'com.mapbox.mapboxsdk:mapbox-java-services:2.1.0'
     compile 'com.mapbox.mapboxsdk:mapbox-java-services-rx:2.1.0'
-    compile 'org.jsoup:jsoup:1.8.1'
+
+
+
+    compile 'com.google.android.gms:play-services:10.2.6'
+
+
+
     testCompile 'junit:junit:4.12'
 }
 
