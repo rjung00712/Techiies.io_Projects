@@ -66,10 +66,18 @@ public class MarkerCluster
 
     public void addMarkers()
     {
-        if(!visible)
+        if(name.equals("nearby.geojson"))
+        {
+            if(markers.size() == 0) {
+                for (int i = 0; i < markerOptions.size(); i++)
+                    markers.add(new Marker(markerOptions.get(i)));
+            }
+        }
+        else if(!visible) {
             for (int i = 0; i < markerOptions.size(); i++)
                 markers.add(StaticVariables.map.addMarker(markerOptions.get(i)));
-        visible = true;
+            visible = true;
+        }
     }
 
     public void removeMarkers(Marker marker)
@@ -93,6 +101,8 @@ public class MarkerCluster
             icon = iconFactory.fromResource(R.drawable.red_marker);
         else if(color.equals("yellow"))
             icon = iconFactory.fromResource(R.drawable.yellow_marker);
+        else
+            icon = iconFactory.defaultMarker();
     }
 
     public String getColor() {return color;}

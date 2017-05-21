@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".MarkerSelected" />
         <activity android:name=".NavigationActivity" />
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".Settings" />
     </application>
 
 </manifest>

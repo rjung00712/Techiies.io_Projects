@@ -69,7 +69,7 @@
         android:background="@android:color/transparent"/>
 
     <Button
-        android:id="@+id/directions"
+        android:id="@+id/buttonL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Directions"
@@ -82,11 +82,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.2"
-        android:onClick="navigate"/>
+        app:layout_constraintHorizontal_bias="0.2"/>
 
     <Button
-        android:id="@+id/cancel"
+        android:id="@+id/buttonR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
@@ -96,10 +95,9 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toBottomOf="@+id/description"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/directions"
+        app:layout_constraintLeft_toRightOf="@id/buttonL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias=".20"
-        android:onClick="cancel"/>
+        app:layout_constraintHorizontal_bias=".20"/>
 
 </android.support.constraint.ConstraintLayout>

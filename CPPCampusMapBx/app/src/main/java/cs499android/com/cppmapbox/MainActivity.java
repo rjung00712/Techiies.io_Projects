@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         Intent MarkerSelectedIntent = new Intent(MainActivity.this, MarkerSelected.class);
                         MarkerSelectedIntent.putExtra("Title", marker.getTitle());
                         MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                        MarkerSelectedIntent.putExtra("Type", "Navigate");
                         startActivity(MarkerSelectedIntent);
                         StaticVariables.map.setInfoWindowAdapter(new MapboxMap.InfoWindowAdapter() {
                             @Nullable

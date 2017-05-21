@@ -1,6 +1,7 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.icu.text.DateFormat;
@@ -24,6 +25,7 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
@@ -67,6 +69,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
     private TextToSpeech textToSpeech;
+    private boolean navigating;
 
 
     ///////////////////////////////////////////////////
@@ -105,6 +108,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 
 
         setPermissions();
+        CheckNearby.init();
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -114,10 +118,32 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
                         .icon(StaticVariables.destinationMarker.getIcon()));
-//                startRouteGuide();
+                navigating = true;
             }
         });
     }
+
+//     private void getPermissions() {
+//         if (!StaticVariables.userLocationEnabeld) {
+//             permissionsManager.requestLocationPermissions(this);
+//         } else {
+//             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//                 // TODO: Consider calling
+//                 //    ActivityCompat#requestPermissions
+//                 // here to request the missing permissions, and then overriding
+//                 //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//                 //                                          int[] grantResults)
+//                 // to handle the case where the user grants the permission. See the documentation
+//                 // for ActivityCompat#requestPermissions for more details.
+
+//                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.INTERNET}, PERMISSIONS_REQUEST_LOCATION);
+//                 //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
+//             } else {
+//                 updateRoute();
+//             }
+//         }
+//         map.setMyLocationEnabled(true);
+//     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -136,6 +162,15 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
             try {
                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+                Marker marker = CheckNearby.check(origin);
+                if(marker != null)
+                {
+                    Intent MarkerSelectedIntent = new Intent(NavigationActivity.this, MarkerSelected.class);
+                    MarkerSelectedIntent.putExtra("Title", marker.getTitle());
+                    MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                    MarkerSelectedIntent.putExtra("Type", "Nearby");
+                    startActivity(MarkerSelectedIntent);
+                }
 //                                List<Polyline> list = map.getPolylines();
 //                                for (int i = 0; i < list.size(); i++)
 //                                    map.removePolyline(list.get(i));
@@ -144,7 +179,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 se.printStackTrace();
             }
         }
-        map.setMyLocationEnabled(true);
     }
 
 //    private void startRouteGuide() {
@@ -220,6 +254,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .setProfile(DirectionsCriteria.PROFILE_WALKING)
                 .setAccessToken(Mapbox.getAccessToken())
                 .setSteps(true)
+                .setContinueStraight(true)
                 .build();
 
         client.enqueueCall(new Callback<DirectionsResponse>() {
@@ -299,13 +334,13 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             else if(instruction.toLowerCase().contains("straight"))
                 imageView.setImageResource(R.drawable.straight);
             else if(instruction.toLowerCase().contains("left")) {
-                if (instruction.toLowerCase().contains("turn left"))
+                if (instruction.toLowerCase().contains("turn left") || instruction.toLowerCase().contains("sharp left"))
                     imageView.setImageResource(R.drawable.left_turn);
                 else
                     imageView.setImageResource(R.drawable.slight_left);
             }
             else if(instruction.toLowerCase().contains("right")) {
-                if (instruction.toLowerCase().equals("turn right"))
+                if (instruction.toLowerCase().equals("turn right") || instruction.toLowerCase().contains("sharp right"))
                     imageView.setImageResource(R.drawable.right_turn);
                 else
                     imageView.setImageResource(R.drawable.slight_right);
@@ -446,5 +481,23 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 "onConnectionFailed: \n" + connectionResult.toString(),
                 Toast.LENGTH_LONG).show();
     }
-    /////////////////////////////////////////////////////////////////////
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        if(StaticVariables.speakDescriptions) {
+            if (textToSpeech != null && textToSpeech.isSpeaking()) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
+        }
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        startRouteCalc();
+    }
 }
