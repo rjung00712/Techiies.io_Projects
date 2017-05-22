@@ -1,4 +1,151 @@
 <resources>
     <string name="app_name">CPPMapBx</string>
     <string name="mapbox_access_token">pk.eyJ1IjoicmljaGFyZGp1bmciLCJhIjoiY2oyOTdma3EwMDA2cTJxbXgwMGt1MWI1aCJ9.d2pGP-GfbVszdIzT-CdJHA</string>
+    <string name="administration">Administration</string>
+    <string name="buildings">Buildings</string>
+    <string name="residential_hall_suite">Residential Hall/Suite</string>
+    <string name="food_and_activity">Food and Activity</string>
+    <string name="parking">Parking</string>
+    <string name="landmarks">Landmarks</string>
+    <string name="hint">Search...</string>
+
+    <string-array name="admi">
+    <item>CLA, 98</item>
+    <item>Building One, 1</item>
+    <item>University Plaza, 26</item>
+    <item>Orientation Services, 26A</item>
+    <item>W.K. Kellogg Arabian Horse Center, 29</item>
+    <item>BioTrek Learning Center, 4A</item>
+    <item>Bronco Student Center, 35</item>
+    <item>Health Services, 46</item>
+    <item>Foundation Administration Offices, 55</item>
+    <item>La Cienega Center (University Housing Services), 59</item>
+    <item>Interim Design Center, 89</item>
+    <item>Student Affairs Information Technology Services , 91</item>
+    <item>University Office Building, 94</item>
+    <item>Cultural Centers, 95</item>
+    <item>Campus Center, 97</item>
+    <item>Police and Parking Services, 109</item>
+    <item>Manor House, 111</item>
+    <item>Kellogg House Pomona, 112</item>
+    <item>Child Care Center, 116</item>
+    <item>Lyle Center for Regenerative Studies, 209</item>
+    <item>Center for Training, Technology and Incubation, 220A-220B-220C</item>
+    </string-array>
+
+    <string-array name="bldg">
+        <item>College of Agriculture, 2</item>
+        <item>Science Laboratory, 3</item>
+        <item>Biotechnology Buildings, 4</item>
+        <item>College of Education and Integrative Studies, 5</item>
+        <item>College of Letters, Arts and Social Sciences, 6</item>
+        <item>College of Environmental Design, 7</item>
+        <item>College of Science, 8</item>
+        <item>College of Engineering, 9</item>
+        <item>Collins College of Hospitality Management, 79-79A-79B-80</item>
+        <item>College of Business Administration , 162-163-164</item>
+        <item>English Language Institute , 86</item>
+        <item>I Poly High Schoo, 128</item>
+        <item>Classrooms, 6</item>
+        <item>Art Department/Engineering Annex, 13</item>
+        <item>LRC; ASI Tutoring; McNair Scholars, 13</item>
+        <item>Library, 13</item>
+        <item>Engineering Laboratories, 17</item>
+        <item>Music, 24</item>
+        <item>Temporary Classrooms, 24A-F</item>
+        <item>Drama Department/Theatre, 25</item>
+        <item>Agricultural Engineering, 45</item>
+        <item>Bronco Bookstore, 66</item>
+        <item>Equine Research Facility , 67</item>
+        <item>English Language Institute , 86</item>
+        <item>Laboratory Facility, 92</item>
+        <item>Classroom / Laboratory / Administration, 98</item>
+        <item>Kellogg West Education/Dining, 76</item>
+        <item>Kellogg West Main Lodge, 77</item>
+        <item>Kellogg West Addition, 78</item>
+        <item>W. Keith and Janet Kellogg University Art Gallery, 35A</item>
+        <item>Swine Unit/Shelters, 37</item>
+        <item>Sheep/Wool Unit, 38</item>
+
+    </string-array>
+
+    <string-array name="res">
+        <item>Residence Hall, Encinitas , 20</item>
+        <item>Residence Hall, Montecito, 21</item>
+        <item>Residence Hall, Alamitos , 22</item>
+        <item>Residence Hall, Aliso, 23</item>
+        <item>Residence Hall, Palmitas, 57</item>
+        <item>Residence Hall, Cedritos, 58</item>
+        <item>Residence Suites , 60</item>
+        <item>Residence Suites , 61</item>
+        <item>University Village, 200</item>
+    </string-array>
+
+    <string-array name="food">
+        <item>Los Olivos Commons, 70</item>
+        <item>Market Place, 97</item>
+        <item>Vista Market, 52</item>
+        <item>Food court in the BSC, 35</item>
+        <item>Kellogg Gymnasium, 43</item>
+        <item>Darlene May Gymnasium , 41</item>
+        <item>Recreation/Maintenance , 71</item>
+        <item>Swimming Pool, 44</item>
+        <item>Bronco Recreation Intramural Complex (BRIC), 42</item>
+    </string-array>
+
+    <string-array name="park">
+        <item>Police and Parking Services, 109</item>
+        <item>Parking Information Booth, 133</item>
+        <item>Parking Structure 1, 106</item>
+        <item>Parking Structure 2</item>
+        <item>Parking Lot A</item>
+        <item>Parking Lot B</item>
+        <item>Parking Lot C</item>
+        <item>Parking Lot D</item>
+        <item>Parking Lot E1</item>
+        <item>Parking Lot E2</item>
+        <item>Parking Lot F1 – F5</item>
+        <item>Parking Lot F5 – F10</item>
+        <item>Parking Lot G</item>
+        <item>Parking Lot H</item>
+        <item>Parking Lot I</item>
+        <item>Parking Lot J1 – J8</item>
+        <item>Parking Lot K</item>
+        <item>Parking Lot K Annex</item>
+        <item>Parking Lot L</item>
+        <item>Parking Lot M</item>
+        <item>Parking Lot N</item>
+        <item>Parking Lot O</item>
+        <item>Parking Lot P</item>
+        <item>Parking Lot Q</item>
+        <item>Parking Lot R</item>
+
+    </string-array>
+
+    <string-array name="land">
+        <item>Arabian Horse Center Arena </item>
+        <item>BioTrek Ethnobotany Garden</item>
+        <item>CLA Paseo</item>
+        <item>CLA Technopolis </item>
+        <item>Japanese Garden</item>
+        <item>Kellogg Track and Infield</item>
+        <item>Meadow</item>
+        <item>Outdoor Basketball Courts</item>
+        <item>Pumpkin Field</item>
+        <item>Rose Garden</item>
+        <item>Scolinos Baseball Field</item>
+        <item>Soccer Field</item>
+        <item>Starbucks Library Patio</item>
+        <item>Tennis Courts</item>
+        <item>University Park</item>
+        <item>Union Plaza Horseshoe Hill</item>
+        <item>Voorhis Ecological Preserve</item>
+        <item>Voorhis Park</item>
+
+
+    </string-array>
+
+
+
+
 </resources>

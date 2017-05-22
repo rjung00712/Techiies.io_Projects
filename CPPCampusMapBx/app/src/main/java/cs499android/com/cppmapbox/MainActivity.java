@@ -1,6 +1,8 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -11,10 +13,16 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
@@ -65,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private Position destination;
 
     private Marker destinationMarker;
+
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -412,5 +422,84 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     Toast.LENGTH_LONG).show();
             finish();
         }
+    }
+
+    //implementing a search bar
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+
+        //Handle the search bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+
+
+        Log.w("myApp", "onCreateOptionsMenu -started- ");
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item); //item.getActionView();
+
+        searchView.setSearchableInfo( searchManager.getSearchableInfo(getComponentName()));
+        searchView.setQueryHint(getResources().getString(R.string.hint));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.w("myApp", "onQueryTextSubmit ");
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adapter.getFilter().filter(newText);
+                Log.w("myApp", "onQueryTextChange ");
+                return false;
+            }
+        });
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.nav_admin) {
+            Intent intent = new Intent(MainActivity.this, Admini.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_build) {
+            Intent intent = new Intent(MainActivity.this, Buildings.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_dorm) {
+            Intent intent = new Intent(MainActivity.this, Dorm.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_food) {
+            Intent intent = new Intent(MainActivity.this, Food.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_land) {
+            Intent intent = new Intent(MainActivity.this, Land.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_park) {
+            Intent intent = new Intent(MainActivity.this, Park.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
