@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private void toggleGps(boolean enableGps) {
         if (enableGps) {
             // Check if user has granted location permission
-            if (!StaticVariables.userLocationEnabeld) {
+            if (!StaticVariables.userLocationEnabled) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
                 //ClusterHolder.removeMarkers(destinationMarker);
@@ -362,7 +362,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         if (!PermissionsManager.areLocationPermissionsGranted(this)) {
             permissionsManager.requestLocationPermissions(this);
         } else {
-            StaticVariables.userLocationEnabeld = true;
+            StaticVariables.userLocationEnabled = true;
         }
     }
 
@@ -380,7 +380,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     @Override
     public void onPermissionResult(boolean granted) {
         if (granted) {
-            StaticVariables.userLocationEnabeld = true;
+            StaticVariables.userLocationEnabled = true;
         } else {
             Toast.makeText(this, "You didn't grant location permissions.",
                     Toast.LENGTH_LONG).show();

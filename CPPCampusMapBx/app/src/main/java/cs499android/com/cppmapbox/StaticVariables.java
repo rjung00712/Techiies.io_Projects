@@ -15,7 +15,7 @@ public abstract class StaticVariables {
     protected static final String BASE_URL = "https://api.mapbox.com";
     protected static Position destination;
     protected static Marker destinationMarker;
-    protected static boolean userLocationEnabeld;
+    protected static boolean userLocationEnabled;
     protected static boolean speakDescriptions = true;
     protected static boolean speakDirections = true;
     protected static MapboxMap map;

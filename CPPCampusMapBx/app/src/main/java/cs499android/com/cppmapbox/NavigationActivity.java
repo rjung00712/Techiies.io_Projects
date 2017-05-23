@@ -1,21 +1,25 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.icu.text.DateFormat;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -24,9 +28,11 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationSource;
@@ -42,6 +48,7 @@ import com.mapbox.services.api.directions.v5.DirectionsCriteria;
 import com.mapbox.services.api.directions.v5.MapboxDirections;
 import com.mapbox.services.api.directions.v5.models.DirectionsResponse;
 import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
+import com.mapbox.services.api.directions.v5.models.StepManeuver;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
@@ -56,7 +63,7 @@ import static cs499android.com.cppmapbox.StaticVariables.TAG;
 
 @SuppressWarnings( {"MissingPermission"})
 public class NavigationActivity extends AppCompatActivity implements PermissionsListener,
-        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
+        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, SensorEventListener
 {
     private MapView mapView;
     private MapboxMap map;
@@ -64,17 +71,26 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private Polyline currentLine;
     private Polyline oldLine;
     private LocationEngine locationEngine;
-    private LocationEngineListener locationEngineListener;
     private PermissionsManager permissionsManager;
     private TextToSpeech textToSpeech;
+    private StepManeuver nextManeuver;
+    private boolean speak;
 
+    private SensorManager sensorManager;
+    private Sensor accelerometer;
+    private Sensor magneticField;
+    private float[] accelValues;
+    private float[] magnetValues;
+    private float[] matrixR;
+    private float[] matrixI;
+    private float[] matrixValues;
+    private double azimuth;
 
     ///////////////////////////////////////////////////
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
     static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     ///////////////////////////////////////////////////
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +105,10 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 
         locationEngine = LocationSource.getLocationEngine(NavigationActivity.this);
 
-
         ///////////////////////////////////////////////
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(5000);
-        mLocationRequest.setFastestInterval(5000);
+        mLocationRequest.setInterval(3000);
+        mLocationRequest.setFastestInterval(3000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -102,7 +117,16 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .build();
         //////////////////////////////////////////////
 
+        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        magneticField = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
+        accelValues = new float[3];
+        magnetValues = new float[3];
+
+        matrixR = new float[9];
+        matrixI = new float[9];
+        matrixValues = new float[3];
 
         setPermissions();
 
@@ -114,31 +138,36 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
                         .icon(StaticVariables.destinationMarker.getIcon()));
-//                startRouteGuide();
+                speak = true;
+                map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(@NonNull Marker marker) {
+                        map.setInfoWindowAdapter(new MapboxMap.InfoWindowAdapter() {
+                            @Nullable
+                            @Override
+                            public View getInfoWindow(@NonNull Marker marker) {
+                                return new LinearLayout(NavigationActivity.this);
+                            }
+                        });
+                        return false;
+                    }
+                });
             }
         });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
-            String strLocation =
-                    DateFormat.getTimeInstance().format(location.getTime()) + "\n" +
-                            "Latitude=" + location.getLatitude() + "\n" +
-                            "Longitude=" + location.getLongitude();
-            Log.d("update: ", strLocation);
 
             // Move the map camera to where the user location is and then remove the
             // listener so the camera isn't constantly updating when the user location
             // changes. When the user disables and then enables the location again, this
             // listener is registered again and will adjust the camera once again.
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
+            updateCamera(location);
             try {
                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
-//                                List<Polyline> list = map.getPolylines();
-//                                for (int i = 0; i < list.size(); i++)
-//                                    map.removePolyline(list.get(i));
                 getRoute(origin);
             } catch (ServicesException se) {
                 se.printStackTrace();
@@ -147,69 +176,92 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         map.setMyLocationEnabled(true);
     }
 
-//    private void startRouteGuide() {
-//        if (!StaticVariables.userLocationEnabeld) {
-//            permissionsManager.requestLocationPermissions(this);
-//        } else {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                // TODO: Consider calling
-//                //    ActivityCompat#requestPermissions
-//                // here to request the missing permissions, and then overriding
-//                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                //                                          int[] grantResults)
-//                // to handle the case where the user grants the permission. See the documentation
-//                // for ActivityCompat#requestPermissions for more details.
-//
-//                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.INTERNET}, PERMISSIONS_REQUEST_LOCATION);
-//                //After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
-//            } else {
-//                Location lastLocation = locationEngine.getLastLocation();
-//                if (lastLocation != null) {
-//                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 16));
-//
-//                    try {
-//                        Position origin = Position.fromLngLat(lastLocation.getLongitude(), lastLocation.getLatitude());
-////                        List<Polyline> list = map.getPolylines();
-////                        for (int i = 0; i < list.size(); i++)
-////                            map.removePolyline(list.get(i));
-//                        getRoute(origin);
-//                    } catch (ServicesException se) {
-//                        se.printStackTrace();
-//                    }
-//                }
-//
-////                locationEngineListener = new LocationEngineListener() {
-//                    @Override
-//                    public void onConnected() {
-////                        locationEngine.requestLocationUpdates();
-//                    }
-//
-//                    @Override
-//                    public void onLocationChanged(Location location) {
-//                        if (location != null) {
-//                            // Move the map camera to where the user location is and then remove the
-//                            // listener so the camera isn't constantly updating when the user location
-//                            // changes. When the user disables and then enables the location again, this
-//                            // listener is registered again and will adjust the camera once again.
-//                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-//                            locationEngine.removeLocationEngineListener(this);
-//                            try {
-//                                Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
-////                                List<Polyline> list = map.getPolylines();
-////                                for (int i = 0; i < list.size(); i++)
-////                                    map.removePolyline(list.get(i));
-//                                getRoute(origin);
-//                            } catch (ServicesException se) {
-//                                se.printStackTrace();
-//                            }
-//                        }
-//                    }
-//                };
-//                locationEngine.addLocationEngineListener(locationEngineListener);
-//            }
-//        }
-//        map.setMyLocationEnabled(true);
-//    }
+    private void updateCamera(Location location)
+    {
+        CameraPosition position = new CameraPosition.Builder()
+                .target(new LatLng(location))
+                .tilt(50)
+                .bearing(azimuth)
+                .zoom(18)
+                .build();
+        map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        // TODO Auto-generated method stub
+
+        switch(event.sensor.getType()){
+            case Sensor.TYPE_ACCELEROMETER:
+                for(int i =0; i < 3; i++){
+                    accelValues[i] = event.values[i];
+                }
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                for(int i =0; i < 3; i++){
+                    magnetValues[i] = event.values[i];
+                }
+                break;
+        }
+
+        boolean success = SensorManager.getRotationMatrix(
+                matrixR,
+                matrixI,
+                accelValues,
+                magnetValues);
+
+        if(success){
+            SensorManager.getOrientation(matrixR, matrixValues);
+
+            double temp = Math.toDegrees(matrixValues[0]);
+            Log.d("Matrix value: ", "" + temp);
+            //2% error for movement
+            if(temp >= azimuth + 10.8 || temp <= azimuth - 10.8) {
+                azimuth = temp;
+                Location location = locationEngine.getLastLocation();
+                if(location != null)
+                    updateCamera(location);
+            }
+        }
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    private void updateSpeaking(StepManeuver newManeuver)
+    {
+        //Same direction
+        if(equal(newManeuver))
+        {
+            double distance = currentRoute.getLegs().get(0).getSteps().get(1).getDistance();
+            //Check how far the user is from the next maneuver
+            if(distance <= 5)
+                speak = true;
+            else
+                speak = false;
+        }
+        else    //New direction
+        {
+            nextManeuver = newManeuver;
+            speak = true;
+        }
+    }
+
+    private boolean equal(StepManeuver newManeuver)
+    {
+        if(nextManeuver == null)
+            return false;
+        if((newManeuver.getLocation()[0] != nextManeuver.getLocation()[0]) || (newManeuver.getLocation()[1] != nextManeuver.getLocation()[1]))
+            return false;
+        if(!newManeuver.getInstruction().equals(nextManeuver.getInstruction()))
+            return false;
+        if(newManeuver.getBearingAfter() != nextManeuver.getBearingAfter())
+            return false;
+        return true;
+    }
 
     private void getRoute(Position origin) throws ServicesException
     {
@@ -279,12 +331,14 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 //            for(int i = 0; i < currentRoute.getLegs().get(0).getSteps().size(); i++) {
 //                instructions[i] = currentRoute.getLegs().get(0).getSteps().get(i).getManeuver().getInstruction();
 //            }
+            StepManeuver newManeuver = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver();
+            updateSpeaking(newManeuver);
             String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();
             double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();
             final EditText directions = (EditText) findViewById(R.id.directionsText);
             directions.setText(instruction + " in " + distance + " feet.");
             ImageView imageView = (ImageView) findViewById(R.id.directionPic);
-            if(StaticVariables.speakDirections) {
+            if(StaticVariables.speakDirections && speak) {
                 textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                     @Override
                     public void onInit(int status) {
@@ -299,13 +353,13 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             else if(instruction.toLowerCase().contains("straight"))
                 imageView.setImageResource(R.drawable.straight);
             else if(instruction.toLowerCase().contains("left")) {
-                if (instruction.toLowerCase().contains("turn left"))
+                if (instruction.toLowerCase().contains("turn left") || instruction.toLowerCase().contains("sharp left"))
                     imageView.setImageResource(R.drawable.left_turn);
                 else
                     imageView.setImageResource(R.drawable.slight_left);
             }
             else if(instruction.toLowerCase().contains("right")) {
-                if (instruction.toLowerCase().equals("turn right"))
+                if (instruction.toLowerCase().equals("turn right") || instruction.toLowerCase().contains("sharp right"))
                     imageView.setImageResource(R.drawable.right_turn);
                 else
                     imageView.setImageResource(R.drawable.slight_right);
@@ -324,7 +378,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         if (!PermissionsManager.areLocationPermissionsGranted(this)) {
             permissionsManager.requestLocationPermissions(this);
         } else {
-            StaticVariables.userLocationEnabeld = true;
+            StaticVariables.userLocationEnabled = true;
         }
     }
 
@@ -334,15 +388,10 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 Toast.LENGTH_LONG).show();
     }
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//    }
-
     @Override
     public void onPermissionResult(boolean granted) {
         if (granted) {
-            StaticVariables.userLocationEnabeld = true;
+            StaticVariables.userLocationEnabled = true;
         } else {
             Toast.makeText(this, "You didn't grant location permissions.",
                     Toast.LENGTH_LONG).show();
@@ -354,11 +403,12 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStart() {
         super.onStart();
         mapView.onStart();
-//        if (locationEngine != null && locationEngineListener != null) {
-//            locationEngine.activate();
-//            locationEngine.requestLocationUpdates();
-//            locationEngine.addLocationEngineListener(locationEngineListener);
-//        }
+        sensorManager.registerListener(this,
+                accelerometer,
+                SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this,
+                magneticField,
+                SensorManager.SENSOR_DELAY_NORMAL);
 
         ///////////////////////////////////////////
         mGoogleApiClient.connect();
@@ -398,12 +448,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStop() {
         super.onStop();
         mapView.onStop();
-//        if (locationEngine != null && locationEngineListener != null) {
-//            locationEngine.removeLocationEngineListener(locationEngineListener);
-//            locationEngine.removeLocationUpdates();
-//            locationEngine.deactivate();
-//        }
-
         /////////////////////////////
         mGoogleApiClient.disconnect();
         ///////////////////////////////

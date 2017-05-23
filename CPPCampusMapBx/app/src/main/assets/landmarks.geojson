@@ -132,7 +132,7 @@
       "type": "Feature",
       "properties": {
         "name": "Scolinos Baseball Field",
-        "description": "Scolinos Baseball Field is hodt to the Cal Poly Baseball team the is nationally ranked and competes in the national tournament each year. It is a beautiful field and a great place to go catch a game or two after classes.",
+        "description": "Scolinos Baseball Field is home to the Cal Poly Baseball team the is nationally ranked and competes in the national tournament each year. It is a beautiful field and a great place to go catch a game or two after classes.",
         "picture": "scolinos_field.gif"
       },
       "geometry": {
@@ -195,7 +195,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "Watch your step! This pond and the walkways surrounding it are full of ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
+        "description": "This pond and the walkways surrounding it are full of ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
         "name": "Duck Pond",
         "picture": "duck_pond.jpeg"
       },
@@ -203,6 +203,21 @@
         "coordinates": [
           -117.8216176488178,
           34.06101653819981
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "West of Soccer Field and NorthWest of Parking Lot K.",
+        "name": "Tennis Courts",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819874,
+          34.053
         ],
         "type": "Point"
       }
