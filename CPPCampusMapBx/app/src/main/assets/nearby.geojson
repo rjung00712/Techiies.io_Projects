@@ -1,0 +1,196 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BioTrek Ethnobotany Garden",
+        "description": "South of College of Agriculture (Building 2).",
+        "picture": "biotrek.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826549,
+          34.057068
+        ],
+        "type": "Point"
+      },
+      "id": "44c54ced2a9cacd3441a8e4747469fe6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Japanese Garden",
+        "description": "This beautiful garden is located right next to the CLA, outside the Student Cashiering Services. It is a very tranquil place, full of lovely flowers and trees. There is koi pond where you can see many beautiful Koi fish and adorable turtles",
+        "picture": "japanese_garden.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820385,
+          34.05969
+        ],
+        "type": "Point"
+      },
+      "id": "eee1f33b7f365f16716a719ac64135df"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rose Garden",
+        "description": "On the far right of campus is a circular garden, where there are only roses, as the name suggest. There is a gazebo in the center of the garden. The Rose garden was given to Mr. Kellogg's wife from Mr. Kellogg himself and there are seven rings and seven different types of roses because Mr. Kellogg's favorite number was 7.",
+        "picture": "rose_garden.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820338,
+          34.060832
+        ],
+        "type": "Point"
+      },
+      "id": "f89b6edf24e894d97aef8e089539332a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Watch your step! This pond and the walkways surrounding it are full of ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
+        "name": "Duck Pond",
+        "picture": "duck_pond.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.8216176488178,
+          34.06101653819981
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 35 - Bronco Student Center (BSC)",
+        "description": "The Bronco Student Center (BSC) is the social hub for all things student-related. The BSC is where students are able to eat, meet, study, and play! Whether students need to unwind in the Games Room Etc., grab a bite at the food court, complete homework in the study lounges, or simply hang out with friends, the BSC is the perfect place for all student needs. Indoor and outdoor seating is available. ",
+        "picture": "Bg_35.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821298,
+          34.056182
+        ],
+        "type": "Point"
+      },
+      "id": "885b01c6f3012dadaa9105943273a858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
+        "description": "The Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
+        "picture": "Bg_42.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820793,
+          34.054597
+        ],
+        "type": "Point"
+      },
+      "id": "03af579f5274a212fe1770a92ede3288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 15 - Library",
+        "description": "What began as a single reading room has grown into an impressive six-story repository for 2.4 million books and 3,000 periodicals. The University Library underwent a $58.5 million renovation in 2008 to supports its mission to be \\\"the central intellectual and cultural resource of the campus community.\\\" The Library is equipped with many computers and group study rooms, including a 24-hour lab with plenty of tables. It also features classrooms and a large lecture hall, as well as a Starbucks, Media Collections section, and the University Writing Center.",
+        "picture": "Bg_15.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821299,
+          34.057771
+        ],
+        "type": "Point"
+      },
+      "id": "6b124bf075ce0496412205c196b2586a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 111 - Manor House",
+        "description": "Home to the University President and his family.",
+        "picture": "Bg_111.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822939,
+          34.06051
+        ],
+        "type": "Point"
+      },
+      "id": "833450d6b929bdc48e21ba5522d88a96"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
+        "name": "Building 211 - Agriscapes/Farm Store",
+        "picture": "Bg_211.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819031,
+          34.048336
+        ],
+        "type": "Point"
+      },
+      "id": "84d1457ac3a80f594392a67246affe0e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Innovation Brew Works",
+        "description": "Innovation Brew Works offers fresh, made-to-order pizzas, sandwiches, salads, and desserts. Beers produced at Innovation Brew Works are original recipes made with ingredients grown on the Cal Poly Pomona campus. All beers are named after Cal Poly Pomona and Pomona Valley historical figures and places.  909-869-2925",
+        "picture": "innovation_brew_works.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814949,
+          34.049858
+        ],
+        "type": "Point"
+      },
+      "id": "04ad1ce201e1982522004d1fbfbd750b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 97 - Campus Center",
+        "description": "The Campus Center is a multipurpose building for dining, relaxing in front of the big screen television, using the free wireless internet, meeting up with friends, and studying. There are both tables inside and outside, and its close proximity to many other campus buildings makes it a convenient stop on your way to and from wherever you're going. Its Marketplace acts as a food court and is Cal Poly Pomona's most frequented dining facility, with six different dining options such as Taco Bell, Carl's Jr and Panda Express.",
+        "picture": "Bg_97.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823339,
+          34.057707
+        ],
+        "type": "Point"
+      },
+      "id": "4f750db121ca37ed5a56148d9350c6f3"
+    },
+     {
+       "type": "Feature",
+       "properties": {
+         "name": "Building 62 - Residence Suites (Vista de las Montanas)",
+         "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+         "picture": "Bg_62.jpeg"
+       },
+       "geometry": {
+         "coordinates": [
+           -117.817559,
+           34.054328
+         ],
+         "type": "Point"
+       },
+       "id": "06dcd451191830a5812398a87e8358a2"
+     }
+  ],
+  "type": "FeatureCollection"
+}

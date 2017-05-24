@@ -1,6 +1,7 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -24,6 +25,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -39,6 +44,7 @@ import com.mapbox.mapboxsdk.location.LocationSource;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 import com.mapbox.services.android.telemetry.location.LocationEngine;
 import com.mapbox.services.android.telemetry.location.LocationEngineListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsListener;
@@ -52,8 +58,10 @@ import com.mapbox.services.api.directions.v5.models.StepManeuver;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,7 +71,7 @@ import static cs499android.com.cppmapbox.StaticVariables.TAG;
 
 @SuppressWarnings( {"MissingPermission"})
 public class NavigationActivity extends AppCompatActivity implements PermissionsListener,
-        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, SensorEventListener
+        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, SensorEventListener, ResultCallback<Status>
 {
     private MapView mapView;
     private MapboxMap map;
@@ -85,6 +93,8 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private float[] matrixI;
     private float[] matrixValues;
     private double azimuth;
+
+    private ArrayList<Geofence> mGeofenceList;
 
     ///////////////////////////////////////////////////
     GoogleApiClient mGoogleApiClient;
@@ -128,7 +138,11 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         matrixI = new float[9];
         matrixValues = new float[3];
 
+        mGeofenceList = new ArrayList<>();
+        Geofences.init();
+
         setPermissions();
+        populateGeofenceList();
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -156,6 +170,34 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         });
     }
 
+    private void populateGeofenceList()
+    {
+        for (Map.Entry<String, LatLng> entry : Geofences.nearby.entrySet()) {
+            mGeofenceList.add(new Geofence.Builder()
+                    .setRequestId(entry.getKey())
+                    .setCircularRegion(
+                            entry.getValue().getLatitude(),
+                            entry.getValue().getLongitude(),
+                            Geofences.RADIUS
+                    )
+                    .setExpirationDuration(Geofences.EXPIRATION_TIME)
+                    .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
+                    .build());
+        }
+    }
+
+    private GeofencingRequest getGeofencingRequest() {
+        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
+        builder.addGeofences(mGeofenceList);
+        return builder.build();
+    }
+
+    private PendingIntent getGeofencePendingIntent() {
+        Intent intent = new Intent(this, GeofenceTransitionsIntentService.class);
+        // We use FLAG_UPDATE_CURRENT so that we get the same pending intent back when calling addgeoFences()
+        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
 
     @Override
     public void onLocationChanged(Location location) {
@@ -336,7 +378,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();
             double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();
             final EditText directions = (EditText) findViewById(R.id.directionsText);
-            directions.setText(instruction + " in " + distance + " feet.");
+            directions.setText(instruction + " in " + distance + " meters.");
             ImageView imageView = (ImageView) findViewById(R.id.directionPic);
             if(StaticVariables.speakDirections && speak) {
                 textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -477,6 +519,12 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(
                 mGoogleApiClient, mLocationRequest, this);
+
+        LocationServices.GeofencingApi.addGeofences(
+                mGoogleApiClient,
+                getGeofencingRequest(),
+                getGeofencePendingIntent()
+        ).setResultCallback(this);
     }
 
     @Override
@@ -489,6 +537,11 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         Toast.makeText(NavigationActivity.this,
                 "onConnectionFailed: \n" + connectionResult.toString(),
                 Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onResult(@NonNull Status status) {
+
     }
     /////////////////////////////////////////////////////////////////////
 }

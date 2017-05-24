@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         Intent MarkerSelectedIntent = new Intent(MainActivity.this, MarkerSelected.class);
                         MarkerSelectedIntent.putExtra("Title", marker.getTitle());
                         MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                        MarkerSelectedIntent.putExtra("Type", "Navigate");
                         startActivity(MarkerSelectedIntent);
                         StaticVariables.map.setInfoWindowAdapter(new MapboxMap.InfoWindowAdapter() {
                             @Nullable
@@ -167,62 +168,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         });
     }
 
-//    private void getRoute(Position origin, Position destination) throws ServicesException
-//    {
-//        MapboxDirections client = new MapboxDirections.Builder()
-//                .setOrigin(origin)
-//                .setDestination(destination)
-//                .setProfile(DirectionsCriteria.PROFILE_WALKING)
-//                .setAccessToken(Mapbox.getAccessToken())
-//                .setSteps(true)
-//                .build();
-//
-//        client.enqueueCall(new Callback<DirectionsResponse>() {
-//            @Override
-//            public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-//                // You can get the generic HTTP info about the response
-//                Log.d(TAG, "Response code: " + response.code());
-//                if (response.body() == null) {
-//                    Log.e(TAG, "No routes found, make sure you set the right user and access token.");
-//                    return;
-//                } else if (response.body().getRoutes().size() < 1) {
-//                    Log.e(TAG, "No routes found");
-//                    return;
-//                }
-//                // Print some info about the curRoute
-//                currentRoute = response.body().getRoutes().get(0);
-//                Log.d(TAG, "Distance: " + currentRoute.getDistance());
-//
-//                // Draw the curRoute on the map
-//                drawRoute(currentRoute);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
-//                Log.e(TAG, "Error: " + throwable.getMessage());
-//                Toast.makeText(MainActivity.this, "Error: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
-//
-//    private void drawRoute(DirectionsRoute route) {
-//        // Convert LineString coordinates into LatLng[]
-//        LineString lineString = LineString.fromPolyline(route.getGeometry(), 6);
-//        List<Position> coordinates = lineString.getCoordinates();
-//        LatLng[] points = new LatLng[coordinates.size()];
-//        for (int i = 0; i < coordinates.size(); i++) {
-//            points[i] = new LatLng(
-//                    coordinates.get(i).getLatitude(),
-//                    coordinates.get(i).getLongitude());
-//        }
-//
-//        // Draw Points on MapView
-//        StaticVariables.map.addPolyline(new PolylineOptions()
-//                .add(points)
-//                .color(Color.parseColor("#009688"))
-//                .width(5));
-//    }
-
     private void toggleGps(boolean enableGps) {
         if (enableGps) {
             // Check if user has granted location permission
@@ -233,9 +178,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 enableLocation(true);
             }
         } else {
-//            List<Polyline> list = StaticVariables.map.getPolylines();
-//            for(int i = 0; i < list.size(); i++)
-//                StaticVariables.map.removePolyline(list.get(i));
             StaticVariables.map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(34.058800, -117.823601), 14));
             enableLocation(false);
         }
@@ -261,9 +203,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     StaticVariables.map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastLocation), 16));
 
                     try {
-//                        List<Polyline> list = StaticVariables.map.getPolylines();
-//                        for(int i = 0; i < list.size(); i++)
-//                            StaticVariables.map.removePolyline(list.get(i));
                     } catch (ServicesException se) {
                         se.printStackTrace();
                     }
