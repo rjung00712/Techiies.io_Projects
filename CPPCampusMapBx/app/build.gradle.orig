@@ -10,7 +10,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -53,13 +52,7 @@ dependencies {
     compile 'com.mapbox.mapboxsdk:mapbox-java-geojson:2.1.0'
     compile 'com.mapbox.mapboxsdk:mapbox-java-services:2.1.0'
     compile 'com.mapbox.mapboxsdk:mapbox-java-services-rx:2.1.0'
-
-
-
-    compile 'com.google.android.gms:play-services:10.2.6'
-
-
-
+    compile 'org.jsoup:jsoup:1.8.1'
     testCompile 'junit:junit:4.12'
 }
 

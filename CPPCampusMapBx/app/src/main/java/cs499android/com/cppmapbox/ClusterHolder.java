@@ -3,7 +3,6 @@ package cs499android.com.cppmapbox;
 import android.app.Activity;
 
 import com.mapbox.mapboxsdk.annotations.Marker;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
 
 import java.io.InputStream;
 
@@ -19,6 +18,7 @@ public abstract class ClusterHolder
     protected static MarkerCluster parking;
     protected static MarkerCluster food;
     //private MarkerCluster bathrooms;
+    protected static MarkerCluster nearby;
 
     protected static void createMarkers()
     {
@@ -26,10 +26,12 @@ public abstract class ClusterHolder
         landmarks = new MarkerCluster(activity, "landmarks.geojson", "green");
         parking = new MarkerCluster(activity, "parking.geojson", "blue");
         food = new MarkerCluster(activity, "food_places.geojson", "yellow");
+        nearby = new MarkerCluster(activity, "nearby.geojson", "");
         createMarkers(buildings);
         createMarkers(landmarks);
         createMarkers(parking);
         createMarkers(food);
+        createMarkers(nearby);
     }
     private static void createMarkers(MarkerCluster markerCluster) {
         String json = null;
@@ -67,6 +69,7 @@ public abstract class ClusterHolder
                 parking.addMarkers();
             if(food.isSelected())
                 food.addMarkers();
+            nearby.addMarkers();
         }catch (NullPointerException ex)
         {
             ex.printStackTrace();

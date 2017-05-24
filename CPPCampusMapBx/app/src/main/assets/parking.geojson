@@ -355,22 +355,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Unpaved Overflow Lot",
-        "description": "Student",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.81364,
-          34.049725
-        ],
-        "type": "Point"
-      },
-      "id": "952b73c9f6803d72cedb020230519122"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Parking Lot Q",
         "description": "Faculty and Staff. Resident. Disabled Parking",
         "picture": "Pk_Q.jpeg"

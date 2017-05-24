@@ -66,10 +66,18 @@ public class MarkerCluster
 
     public void addMarkers()
     {
-        if(!visible)
+        if(name.equals("nearby.geojson"))
+        {
+            if(markers.size() == 0) {
+                for (int i = 0; i < markerOptions.size(); i++)
+                    markers.add(new Marker(markerOptions.get(i)));
+            }
+        }
+        else if(!visible) {
             for (int i = 0; i < markerOptions.size(); i++)
-                markers.add(MainActivity.map.addMarker(markerOptions.get(i)));
-        visible = true;
+                markers.add(StaticVariables.map.addMarker(markerOptions.get(i)));
+            visible = true;
+        }
     }
 
     public void removeMarkers(Marker marker)
@@ -77,7 +85,7 @@ public class MarkerCluster
         if(visible)
             for(int i = 0; i < markers.size(); i++){
                 if(!markers.get(i).equals(marker))
-                    MainActivity.map.removeMarker(markers.get(i));
+                    StaticVariables.map.removeMarker(markers.get(i));
             }
         visible = false;
     }
@@ -86,13 +94,15 @@ public class MarkerCluster
     {
         IconFactory iconFactory = IconFactory.getInstance(activity);
         if(color.toLowerCase().equals("blue"))
-            icon = iconFactory.fromResource(R.drawable.blue_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_blue_18dp);
         else if(color.equals("green"))
-            icon = iconFactory.fromResource(R.drawable.green_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_green_18dp);
         else if(color.equals("red"))
-            icon = iconFactory.fromResource(R.drawable.red_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_red_18dp);
         else if(color.equals("yellow"))
-            icon = iconFactory.fromResource(R.drawable.yellow_marker);
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_yellow_18dp);
+        else
+            icon = iconFactory.defaultMarker();
     }
 
     public String getColor() {return color;}

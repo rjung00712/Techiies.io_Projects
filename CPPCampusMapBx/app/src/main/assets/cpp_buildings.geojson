@@ -1187,22 +1187,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Scolinos Field",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815901,
-          34.053954
-        ],
-        "type": "Point"
-      },
-      "id": "98880730c5506ff2491b7c9f8ad8c3dc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Building 116 - Child Care Center",
         "description": "The Children’s Center is designed to create an atmosphere where children can grow emotionally, intellectually, socially, and physically.Our children are regularly provided with opportunities for early literacy, math, and science through various types of books, songs and activities.",
         "picture": "Bg_116.jpeg"
