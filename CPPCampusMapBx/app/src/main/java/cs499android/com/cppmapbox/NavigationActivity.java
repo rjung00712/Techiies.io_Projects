@@ -5,10 +5,6 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -39,14 +35,14 @@ import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.constants.MyBearingTracking;
+import com.mapbox.mapboxsdk.constants.MyLocationTracking;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationSource;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
-import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 import com.mapbox.services.android.telemetry.location.LocationEngine;
-import com.mapbox.services.android.telemetry.location.LocationEngineListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsManager;
 import com.mapbox.services.api.ServicesException;
@@ -71,28 +67,17 @@ import static cs499android.com.cppmapbox.StaticVariables.TAG;
 
 @SuppressWarnings( {"MissingPermission"})
 public class NavigationActivity extends AppCompatActivity implements PermissionsListener,
-        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, SensorEventListener, ResultCallback<Status>
+        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, ResultCallback<Status>
 {
     private MapView mapView;
     private MapboxMap map;
     private DirectionsRoute currentRoute;
     private Polyline currentLine;
     private Polyline oldLine;
-    private LocationEngine locationEngine;
     private PermissionsManager permissionsManager;
     private TextToSpeech textToSpeech;
     private StepManeuver nextManeuver;
     private boolean speak;
-
-    private SensorManager sensorManager;
-    private Sensor accelerometer;
-    private Sensor magneticField;
-    private float[] accelValues;
-    private float[] magnetValues;
-    private float[] matrixR;
-    private float[] matrixI;
-    private float[] matrixValues;
-    private double azimuth;
 
     private ArrayList<Geofence> mGeofenceList;
 
@@ -113,8 +98,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         mapView = (MapView) findViewById(R.id.navigationMapView);
         mapView.onCreate(savedInstanceState);
 
-        locationEngine = LocationSource.getLocationEngine(NavigationActivity.this);
-
         ///////////////////////////////////////////////
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(3000);
@@ -126,17 +109,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .addApi(LocationServices.API)
                 .build();
         //////////////////////////////////////////////
-
-        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        magneticField = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-
-        accelValues = new float[3];
-        magnetValues = new float[3];
-
-        matrixR = new float[9];
-        matrixI = new float[9];
-        matrixValues = new float[3];
 
         mGeofenceList = new ArrayList<>();
         Geofences.init();
@@ -166,6 +138,16 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         return false;
                     }
                 });
+                map.setMyLocationEnabled(true);
+                map.getTrackingSettings().setDismissAllTrackingOnGesture(false);
+                map.getTrackingSettings().setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW);
+                map.getTrackingSettings().setMyBearingTrackingMode(MyBearingTracking.COMPASS);
+                CameraPosition position = new CameraPosition.Builder()
+                        .target(new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude()))
+                        .zoom(18)
+                        .tilt(50)
+                        .build();
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
             }
         });
     }
@@ -207,7 +189,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             // listener so the camera isn't constantly updating when the user location
             // changes. When the user disables and then enables the location again, this
             // listener is registered again and will adjust the camera once again.
-            updateCamera(location);
             try {
                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
                 getRoute(origin);
@@ -215,62 +196,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 se.printStackTrace();
             }
         }
-        map.setMyLocationEnabled(true);
-    }
-
-    private void updateCamera(Location location)
-    {
-        CameraPosition position = new CameraPosition.Builder()
-                .target(new LatLng(location))
-                .tilt(50)
-                .bearing(azimuth)
-                .zoom(18)
-                .build();
-        map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        // TODO Auto-generated method stub
-
-        switch(event.sensor.getType()){
-            case Sensor.TYPE_ACCELEROMETER:
-                for(int i =0; i < 3; i++){
-                    accelValues[i] = event.values[i];
-                }
-                break;
-            case Sensor.TYPE_MAGNETIC_FIELD:
-                for(int i =0; i < 3; i++){
-                    magnetValues[i] = event.values[i];
-                }
-                break;
-        }
-
-        boolean success = SensorManager.getRotationMatrix(
-                matrixR,
-                matrixI,
-                accelValues,
-                magnetValues);
-
-        if(success){
-            SensorManager.getOrientation(matrixR, matrixValues);
-
-            double temp = Math.toDegrees(matrixValues[0]);
-            Log.d("Matrix value: ", "" + temp);
-            //2% error for movement
-            if(temp >= azimuth + 10.8 || temp <= azimuth - 10.8) {
-                azimuth = temp;
-                Location location = locationEngine.getLastLocation();
-                if(location != null)
-                    updateCamera(location);
-            }
-        }
-
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
 
     private void updateSpeaking(StepManeuver newManeuver)
@@ -369,16 +294,13 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private void updateDirections()
     {
         try {
-//            String[] instructions = new String[currentRoute.getLegs().get(0).getSteps().size()];
-//            for(int i = 0; i < currentRoute.getLegs().get(0).getSteps().size(); i++) {
-//                instructions[i] = currentRoute.getLegs().get(0).getSteps().get(i).getManeuver().getInstruction();
-//            }
             StepManeuver newManeuver = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver();
             updateSpeaking(newManeuver);
             String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();
             double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();
+            int distanceInFeet = convertToFeet(distance);
             final EditText directions = (EditText) findViewById(R.id.directionsText);
-            directions.setText(instruction + " in " + distance + " meters.");
+            directions.setText(instruction + " in " + distanceInFeet + " feet.");
             ImageView imageView = (ImageView) findViewById(R.id.directionPic);
             if(StaticVariables.speakDirections && speak) {
                 textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -415,6 +337,14 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         }
     }
 
+    private int convertToFeet(double distance)
+    {
+        if((distance * 10) % 10 < 5)
+            return (int)(distance * 3.28084);
+        else
+            return (int)(distance * 3.28084) + 1;
+    }
+
     public void setPermissions() {
         permissionsManager = new PermissionsManager(this);
         if (!PermissionsManager.areLocationPermissionsGranted(this)) {
@@ -445,12 +375,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStart() {
         super.onStart();
         mapView.onStart();
-        sensorManager.registerListener(this,
-                accelerometer,
-                SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this,
-                magneticField,
-                SensorManager.SENSOR_DELAY_NORMAL);
 
         ///////////////////////////////////////////
         mGoogleApiClient.connect();
