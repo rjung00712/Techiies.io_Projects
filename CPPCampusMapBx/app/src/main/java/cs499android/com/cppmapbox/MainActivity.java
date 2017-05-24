@@ -2,10 +2,12 @@ package cs499android.com.cppmapbox;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
@@ -258,12 +261,18 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     protected void onStart() {
         super.onStart();
         mapView.onStart();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        StaticVariables.speakDescriptions = sharedPreferences.getBoolean("speakDescriptions", true);
+        StaticVariables.speakDirections = sharedPreferences.getBoolean("speakDirections", true);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         mapView.onStop();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.edit().putBoolean("speakDescriptions", StaticVariables.speakDescriptions).commit();
+        sharedPreferences.edit().putBoolean("speakDirections", StaticVariables.speakDirections).commit();
     }
 
     @Override

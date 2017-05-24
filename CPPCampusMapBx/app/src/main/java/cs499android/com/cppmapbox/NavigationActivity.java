@@ -154,7 +154,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 floatingActionButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(StaticVariables.speakDescriptions) {
+                        if(StaticVariables.speakDescriptions && textToSpeech != null) {
                             if (textToSpeech.isSpeaking()) {
                                 textToSpeech.stop();
                                 textToSpeech.shutdown();
