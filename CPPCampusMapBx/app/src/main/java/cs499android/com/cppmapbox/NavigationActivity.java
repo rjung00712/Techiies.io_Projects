@@ -81,6 +81,8 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 
     private ArrayList<Geofence> mGeofenceList;
 
+    private android.support.design.widget.FloatingActionButton floatingActionButton;
+
     ///////////////////////////////////////////////////
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
@@ -148,6 +150,19 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         .tilt(50)
                         .build();
                 map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
+                floatingActionButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.navigation_cancel_fab);
+                floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(StaticVariables.speakDescriptions) {
+                            if (textToSpeech.isSpeaking()) {
+                                textToSpeech.stop();
+                                textToSpeech.shutdown();
+                            }
+                        }
+                        finish();
+                    }
+                });
             }
         });
     }
@@ -414,6 +429,12 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStop() {
         super.onStop();
         mapView.onStop();
+        if(StaticVariables.speakDescriptions) {
+            if (textToSpeech.isSpeaking()) {
+                textToSpeech.stop();
+                textToSpeech.shutdown();
+            }
+        }
         /////////////////////////////
         mGoogleApiClient.disconnect();
         ///////////////////////////////
