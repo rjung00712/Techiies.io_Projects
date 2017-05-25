@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.mapbox.services.commons.models.Position;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
@@ -141,7 +139,6 @@ public class MarkerSelected extends AppCompatActivity
                 textToSpeech.shutdown();
             }
         }
-        GeofenceTransitionsIntentService.marker = null;
         finish();
     }
 
@@ -153,10 +150,6 @@ public class MarkerSelected extends AppCompatActivity
                 textToSpeech.shutdown();
             }
         }
-        StaticVariables.destinationMarker = GeofenceTransitionsIntentService.marker;
-        StaticVariables.destination = Position.fromCoordinates(StaticVariables.destinationMarker.getPosition().getLongitude(),
-                                                               StaticVariables.destinationMarker.getPosition().getLatitude());
-        GeofenceTransitionsIntentService.marker = null;
         finish();
     }
 

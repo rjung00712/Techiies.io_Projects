@@ -175,22 +175,22 @@
       },
       "id": "4f750db121ca37ed5a56148d9350c6f3"
     },
-     {
-       "type": "Feature",
-       "properties": {
-         "name": "Building 62 - Residence Suites (Vista de las Montanas)",
-         "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
-         "picture": "Bg_62.jpeg"
-       },
-       "geometry": {
-         "coordinates": [
-           -117.817559,
-           34.054328
-         ],
-         "type": "Point"
-       },
-       "id": "06dcd451191830a5812398a87e8358a2"
-     }
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 63 - Residence Suites (Vista de la Luna)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+        "picture": "Bg_63.jpg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816959,
+          34.053899
+        ],
+        "type": "Point"
+      },
+      "id": "eb152ad366854cd7ecf3dbb09e849c9b"
+    }
   ],
   "type": "FeatureCollection"
 }

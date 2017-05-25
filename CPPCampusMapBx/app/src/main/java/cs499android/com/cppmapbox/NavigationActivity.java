@@ -1,8 +1,6 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
-import android.app.PendingIntent;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -21,10 +19,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.Geofence;
-import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -38,11 +32,9 @@ import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.constants.MyBearingTracking;
 import com.mapbox.mapboxsdk.constants.MyLocationTracking;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.location.LocationSource;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
-import com.mapbox.services.android.telemetry.location.LocationEngine;
 import com.mapbox.services.android.telemetry.permissions.PermissionsListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsManager;
 import com.mapbox.services.api.ServicesException;
@@ -54,10 +46,8 @@ import com.mapbox.services.api.directions.v5.models.StepManeuver;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -67,7 +57,7 @@ import static cs499android.com.cppmapbox.StaticVariables.TAG;
 
 @SuppressWarnings( {"MissingPermission"})
 public class NavigationActivity extends AppCompatActivity implements PermissionsListener,
-        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, ResultCallback<Status>
+        LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
 {
     private MapView mapView;
     private MapboxMap map;
@@ -78,8 +68,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private TextToSpeech textToSpeech;
     private StepManeuver nextManeuver;
     private boolean speak;
-
-    private ArrayList<Geofence> mGeofenceList;
 
     private android.support.design.widget.FloatingActionButton floatingActionButton;
 
@@ -103,7 +91,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         ///////////////////////////////////////////////
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(3000);
-        mLocationRequest.setFastestInterval(3000);
+        mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -112,11 +100,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .build();
         //////////////////////////////////////////////
 
-        mGeofenceList = new ArrayList<>();
-        Geofences.init();
-
         setPermissions();
-        populateGeofenceList();
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -167,35 +151,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         });
     }
 
-    private void populateGeofenceList()
-    {
-        for (Map.Entry<String, LatLng> entry : Geofences.nearby.entrySet()) {
-            mGeofenceList.add(new Geofence.Builder()
-                    .setRequestId(entry.getKey())
-                    .setCircularRegion(
-                            entry.getValue().getLatitude(),
-                            entry.getValue().getLongitude(),
-                            Geofences.RADIUS
-                    )
-                    .setExpirationDuration(Geofences.EXPIRATION_TIME)
-                    .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
-                    .build());
-        }
-    }
-
-    private GeofencingRequest getGeofencingRequest() {
-        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
-        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
-        builder.addGeofences(mGeofenceList);
-        return builder.build();
-    }
-
-    private PendingIntent getGeofencePendingIntent() {
-        Intent intent = new Intent(this, GeofenceTransitionsIntentService.class);
-        // We use FLAG_UPDATE_CURRENT so that we get the same pending intent back when calling addgeoFences()
-        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-    }
-
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
@@ -206,6 +161,10 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             // listener is registered again and will adjust the camera once again.
             try {
                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+                CameraPosition position = new CameraPosition.Builder()
+                        .target(new LatLng(origin.getLatitude(), origin.getLongitude()))
+                        .build();
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
                 getRoute(origin);
             } catch (ServicesException se) {
                 se.printStackTrace();
@@ -464,12 +423,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(
                 mGoogleApiClient, mLocationRequest, this);
-
-        LocationServices.GeofencingApi.addGeofences(
-                mGoogleApiClient,
-                getGeofencingRequest(),
-                getGeofencePendingIntent()
-        ).setResultCallback(this);
     }
 
     @Override
@@ -483,10 +436,4 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 "onConnectionFailed: \n" + connectionResult.toString(),
                 Toast.LENGTH_LONG).show();
     }
-
-    @Override
-    public void onResult(@NonNull Status status) {
-
-    }
-    /////////////////////////////////////////////////////////////////////
 }
