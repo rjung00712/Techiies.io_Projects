@@ -1,0 +1,325 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 9 - College of Engineering",
+        "description": "Entering through the entrance next to the "9," make a left, restrooms are on the right side.",
+        "picture": "Bg_9.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822243,
+          34.059102
+        ],
+        "type": "Point"
+      },
+      "id": "0a0fba280496b807f24d45f96a9711ae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79B - Collins College of Hospitality Management",
+        "description": "From the main entrance go straight into the corridor and go straight. The bathrooms are located near the red chairs.",
+        "picture": "Bg_79B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824454,
+          34.055298
+        ],
+        "type": "Point"
+      },
+      "id": "235b2e4a97a0d839afbc9c911b8cb89e"
+    },
+    {
+      "type": "Feature",
+        "properties": {
+          "name": "Building 80 - Collins College of Hospitality Management, Marriott Learning Center",
+          "description": "Restrooms are located behind the building to the right of the main entrance",
+          "picture": "Bg_80.png"
+          },
+          "geometry": {
+            "coordinates": [
+              -117.825449,
+              34.054834
+            ],
+            "type": "Point"
+          },
+          "id": "83b0267ec158dd74d0b0461daed8f0f2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79 - Collins College of Hospitality Management",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
+        "picture": "Bg_79.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824196,
+          34.055013
+        ],
+        "type": "Point"
+      },
+      "id": "2bd1e46caa308129861c950d9f91794e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 97 - Campus Center",
+        "description": "Bathrooms are located at both side entrances.",
+        "picture": "Bg_97.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823339,
+          34.057707
+        ],
+        "type": "Point"
+      },
+      "id": "4f750db121ca37ed5a56148d9350c6f3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 15 - Library",
+        "description": "Waking though the entrance (with Starbucks on the left), the restrooms are located to the right in the classroom hallway",
+        "picture": "Bg_15.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821299,
+          34.057771
+        ],
+        "type": "Point"
+      },
+      "id": "6b124bf075ce0496412205c196b2586a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "From the South Entrance, continue straight until classroom 1015, then the bathrooms will be on the right.",
+        "name": "Building 163 - College of Business Administration",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820199,
+          34.061241
+        ],
+        "type": "Point"
+      },
+      "id": "7011c3905de69158d2767b698a58ad91"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 7 - College of Environmental Design",
+        "description": "Go straight until you reach an open area. The bathrooms will be on the left.",
+        "picture": "Bg_7.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827408,
+          34.057256
+        ],
+        "type": "Point"
+      },
+      "id": "7bf5f40ecc32023da4a809809ba4b805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79A - Collins College of Hospitality Management",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
+        "picture": "Bg_79A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824871,
+          34.055055
+        ],
+        "type": "Point"
+      },
+      "id": "875c904ec3398d667ddd9d3a325258a3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 35 - Bronco Student Center (BSC)",
+        "description": "Enter from the main entrance, head straight and then take a left. The bathrooms will be on the left.",
+        "picture": "Bg_35.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821298,
+          34.056182
+        ],
+        "type": "Point"
+      },
+      "id": "885b01c6f3012dadaa9105943273a858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 3 - Science Laboratory",
+        "description": "Restrooms are on the second floor, in the hallway farthest from Building 8.",
+        "picture": "Bg_3.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825847,
+          34.058163
+        ],
+        "type": "Point"
+      },
+      "id": "a0fd1e02ee9236ce9e7e9b9ac24f113f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 2 - College of Agriculture",
+        "description": "From the main entrance, head straight and the bathroom will be on the left.",
+        "picture": "Bg_2.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826436,
+          34.057678
+        ],
+        "type": "Point"
+      },
+      "id": "a301f90f227e11b9342f5379f7cdc17d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building One",
+        "description": "Through the main entrance, make a left. Restrooms are on the right.",
+        "picture": "Bg_1.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824144,
+          34.059754
+        ],
+        "type": "Point"
+      },
+      "id": "a3aebfa1d8f4f52b9d9526e33965f793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CLA Building",
+        "description": "From the entrance to the Admissions and Enrollment Planning, take a left and the bathrooms will be on both sides.",
+        "picture": "Bg_98.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820007,
+          34.059366
+        ],
+        "type": "Point"
+      },
+      "id": "a514beb747abeefd933de4a748780a5a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 8 - College of Science",
+        "description": "Entering through the main entrance on the ground floor, head straight to the end of the hallway, make a left. Restrooms are on the right.",
+        "picture": "Bg_8.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824799,
+          34.058432
+        ],
+        "type": "Point"
+      },
+      "id": "a745fc875a677937c3e205c054721ec9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 5 - College of Letters, Arts, and Social Sciences",
+        "description": "Entering through the main entrance, make an immediate left, then right. Bathrooms are on the lefthand side.",
+        "picture": "Bg_5.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824464,
+          34.057758
+        ],
+        "type": "Point"
+      },
+      "id": "ac64504b6b617bb7db685562199a197a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 164 - College of Business Administration",
+        "description": "From the main entrance, head left and the bathrooms will be on the right",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819814,
+          34.061566
+        ],
+        "type": "Point"
+      },
+      "id": "e54374b11b7a1c6e3d47bac0f6d93b70"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 6 - College of Education and Integrative Studies",
+        "description": "Entering through the entrance closest to the Marketplace, men's restrooms are on the left. Women's restrooms are same location on the second floor.",
+        "picture": "Bg_6.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822848,
+          34.058592
+        ],
+        "type": "Point"
+      },
+      "id": "eeed2b24f268553ee1400e65bd5bd0f0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Bathrooms are located on the outside, next to the main entrance",
+        "name": "Building 162 - College of Business Administration",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819627,
+          34.061295
+        ],
+        "type": "Point"
+      },
+      "id": "f55e5058539124d5345f9cbd6478bf05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 4 - Biotechnology Building",
+        "description": "Bathrooms are located on the outside near the west entrance",
+        "picture": "Bg_4.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825321,
+          34.057482
+        ],
+        "type": "Point"
+      },
+      "id": "f884c42cc113f853bdfefc6980de8d93"
+    },
+  ],
+  "type": "FeatureCollection"
+}

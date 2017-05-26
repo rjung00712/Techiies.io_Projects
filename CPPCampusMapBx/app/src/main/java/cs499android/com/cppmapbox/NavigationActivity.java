@@ -80,7 +80,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
     static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    ///////////////////////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +91,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         // Setup the MapView
         mapView = (MapView) findViewById(R.id.navigationMapView);
         mapView.onCreate(savedInstanceState);
-
-        ///////////////////////////////////////////////
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(3000);
         mLocationRequest.setFastestInterval(1000);
@@ -412,10 +409,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStart() {
         super.onStart();
         mapView.onStart();
-
-        ///////////////////////////////////////////
         mGoogleApiClient.connect();
-        ////////////////////////////////////////////////
     }
 
     @Override
@@ -457,12 +451,9 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 textToSpeech.shutdown();
             }
         }
-        /////////////////////////////
         mGoogleApiClient.disconnect();
-        ///////////////////////////////
     }
 
-    /////////////////////////////////////////////////////////////////
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         if (ActivityCompat.checkSelfPermission(this,
