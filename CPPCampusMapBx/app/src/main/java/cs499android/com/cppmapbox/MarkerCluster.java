@@ -101,6 +101,8 @@ public class MarkerCluster
             icon = iconFactory.fromResource(R.drawable.ic_location_on_red_18dp);
         else if(color.equals("yellow"))
             icon = iconFactory.fromResource(R.drawable.ic_location_on_yellow_18dp);
+        else if(color.equals("white"))
+            icon = iconFactory.fromResource(R.drawable.ic_location_on_white_18dp);
         else
             icon = iconFactory.defaultMarker();
     }

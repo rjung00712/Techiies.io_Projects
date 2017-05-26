@@ -4,7 +4,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 9 - College of Engineering",
-        "description": "Entering through the entrance next to the "9," make a left, restrooms are on the right side.",
+        "description": "Entering through the entrance next to the \"9,\" make a left, restrooms are on the right side.",
         "picture": "Bg_9.jpeg"
       },
       "geometry": {
@@ -319,7 +319,7 @@
         "type": "Point"
       },
       "id": "f884c42cc113f853bdfefc6980de8d93"
-    },
+    }
   ],
   "type": "FeatureCollection"
 }

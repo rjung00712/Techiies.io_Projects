@@ -17,7 +17,7 @@ public abstract class ClusterHolder
     protected static MarkerCluster landmarks;
     protected static MarkerCluster parking;
     protected static MarkerCluster food;
-    //private MarkerCluster bathrooms;
+    protected static MarkerCluster bathrooms;
     protected static MarkerCluster nearby;
 
     protected static void createMarkers()
@@ -26,11 +26,13 @@ public abstract class ClusterHolder
         landmarks = new MarkerCluster(activity, "landmarks.geojson", "green");
         parking = new MarkerCluster(activity, "parking.geojson", "blue");
         food = new MarkerCluster(activity, "food_places.geojson", "yellow");
+        bathrooms = new MarkerCluster(activity, "bathrooms.geojson", "white");
         nearby = new MarkerCluster(activity, "nearby.geojson", "");
         createMarkers(buildings);
         createMarkers(landmarks);
         createMarkers(parking);
         createMarkers(food);
+        createMarkers(bathrooms);
         createMarkers(nearby);
     }
     private static void createMarkers(MarkerCluster markerCluster) {
@@ -69,6 +71,8 @@ public abstract class ClusterHolder
                 parking.addMarkers();
             if(food.isSelected())
                 food.addMarkers();
+            if(bathrooms.isSelected())
+                bathrooms.addMarkers();
             nearby.addMarkers();
         }catch (NullPointerException ex)
         {
@@ -83,6 +87,7 @@ public abstract class ClusterHolder
             landmarks.removeMarkers(marker);
             parking.removeMarkers(marker);
             food.removeMarkers(marker);
+            bathrooms.removeMarkers(marker);
         }catch(Exception ex)
         {
             ex.printStackTrace();
