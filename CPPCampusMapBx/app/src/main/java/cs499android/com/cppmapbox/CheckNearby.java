@@ -34,8 +34,8 @@ public abstract class CheckNearby
     {
         for(Marker m : nearby)
         {
-            if(checked.contains(m))
-                break;
+            if(checkedContains(m))
+                continue;
             double distance = getDistance(m.getPosition());
             if(distance <= MAX_DISTANCE) {
                 if (!equals(m, StaticVariables.destinationMarker)) {
@@ -45,6 +45,16 @@ public abstract class CheckNearby
             }
         }
         return null;
+    }
+
+    private static boolean checkedContains(Marker m)
+    {
+        for(Marker mark : checked)
+        {
+            if(equals(m, mark))
+                return true;
+        }
+        return false;
     }
 
     private static boolean equals(Marker one, Marker two)

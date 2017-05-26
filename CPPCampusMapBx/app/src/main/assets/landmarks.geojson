@@ -212,7 +212,7 @@
       "properties": {
         "description": "West of Soccer Field and NorthWest of Parking Lot K.",
         "name": "Tennis Courts",
-        "picture": ""
+        "picture": "tennis_courts.jpg"
       },
       "geometry": {
         "coordinates": [

@@ -319,6 +319,22 @@
         "type": "Point"
       },
       "id": "f884c42cc113f853bdfefc6980de8d93"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 43 - Kellogg Gymnasium",
+        "description": "When you enter the gymnasium from the south side of the building, the restrooms are down the hallway to the right of the entrance.",
+        "picture": "Bg_43.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819253,
+          34.054223
+        ],
+        "type": "Point"
+      },
+      "id": "11dbaf1476b79cb74cad79b9eb2ff7e9"
     }
   ],
   "type": "FeatureCollection"
