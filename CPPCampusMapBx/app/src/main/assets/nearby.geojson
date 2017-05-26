@@ -51,7 +51,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "Watch your step! This pond and the walkways surrounding it are full of ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
+        "description": "This pond and the walkways surrounding it are filled with ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
         "name": "Duck Pond",
         "picture": "duck_pond.jpeg"
       },
@@ -130,7 +130,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
+        "description": "Agriscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
         "name": "Building 211 - Agriscapes/Farm Store",
         "picture": "Bg_211.jpeg"
       },
