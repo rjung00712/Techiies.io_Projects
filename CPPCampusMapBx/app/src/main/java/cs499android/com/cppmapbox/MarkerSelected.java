@@ -16,6 +16,7 @@ import com.mapbox.services.commons.models.Position;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class MarkerSelected extends AppCompatActivity
@@ -136,27 +137,27 @@ public class MarkerSelected extends AppCompatActivity
     public void goBack(View v)
     {
         if(StaticVariables.speakDescriptions) {
-            if (textToSpeech.isSpeaking()) {
+            if (textToSpeech != null && textToSpeech.isSpeaking()) {
                 textToSpeech.stop();
                 textToSpeech.shutdown();
             }
         }
-        GeofenceTransitionsIntentService.marker = null;
+        CheckNearby.update();
         finish();
     }
 
     public void goHere(View v)
     {
         if(StaticVariables.speakDescriptions) {
-            if (textToSpeech.isSpeaking()) {
+            if (textToSpeech != null && textToSpeech.isSpeaking()) {
                 textToSpeech.stop();
                 textToSpeech.shutdown();
             }
         }
-        StaticVariables.destinationMarker = GeofenceTransitionsIntentService.marker;
-        StaticVariables.destination = Position.fromCoordinates(StaticVariables.destinationMarker.getPosition().getLongitude(),
-                                                               StaticVariables.destinationMarker.getPosition().getLatitude());
-        GeofenceTransitionsIntentService.marker = null;
+        StaticVariables.destinationMarker = CheckNearby.marker;
+        StaticVariables.destination = Position.fromCoordinates(CheckNearby.marker.getPosition().getLongitude(),
+                                                               CheckNearby.marker.getPosition().getLatitude());
+        CheckNearby.init();
         finish();
     }
 

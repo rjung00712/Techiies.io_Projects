@@ -14,791 +14,7 @@
         ],
         "type": "Point"
       },
-      "id": "011b621b442e710dc38236381d71d953"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
-        "description": "The Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
-        "picture": "Bg_42.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820793,
-          34.054597
-        ],
-        "type": "Point"
-      },
-      "id": "03af579f5274a212fe1770a92ede3288"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 29 - W.K. Kellogg Arabian Horse Center",
-        "description": "The W. K. Kellogg Arabian Horse Center is an Arabian breeding facility located on the Cal Poly Pomona. The W.K. Kellogg Arabian Horse Center was established in 1925 by the cereal magnate Will Keith Kellogg of Battle Creek, Michigan.",
-        "picture": "Bg_29.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814642,
-          34.058614
-        ],
-        "type": "Point"
-      },
-      "id": "047735564152158a47f450378fdaf3c1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 62 - Residence Suites (Vista de las Montanas)",
-        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
-        "picture": "Bg_62.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817559,
-          34.054328
-        ],
-        "type": "Point"
-      },
-      "id": "06dcd451191830a5812398a87e8358a2"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 21 - Montecito Residence Hall",
-        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
-        "picture": "Bg_21.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819307,
-          34.062194
-        ],
-        "type": "Point"
-      },
-      "id": "076434f662a3c7a2465f25ab64055ae8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 9 - College of Engineering",
-        "description": "Inside Building 9 you can find the College of Engineering Department, the Testing Coordinator, a Study Center, the Maintenance Depot and much more. There are many Engineering Electrical and Computer Engineering Labs along with the office for the Maximizing Engineering Potential program.",
-        "picture": "Bg_9.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822243,
-          34.059102
-        ],
-        "type": "Point"
-      },
-      "id": "0a0fba280496b807f24d45f96a9711ae"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 32 - Beef Unit",
-        "description": "Section of farmland used for raising cows",
-        "picture": "Bg_32.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827613,
-          34.055427
-        ],
-        "type": "Point"
-      },
-      "id": "1224b910257dafb886832abc18e4760d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 200 - University Village",
-        "description": "The University Village is housing owned by the University that is available for rent. The Village is conveniently located across South from the campus. They have shuttle transportation that will take you to and from school. There's a computer lab, pool, and basketball court.",
-        "picture": "Bg_200.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815083,
-          34.04838
-        ],
-        "type": "Point"
-      },
-      "id": "1459f54b1815c0c7d0e8566e55da35cc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 91 - Student Affairs Information Technology Services",
-        "description": "South of Residence Hall, Montecito (Building 21) and SouthWest of Residence Hall, Alamitos (Building 22).",
-        "picture": "Bg_91.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818629,
-          34.061341
-        ],
-        "type": "Point"
-      },
-      "id": "1c53398cc02dc44d1e034e9db534fd90"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 13B - Army ROTC",
-        "description": "East of Library (Building 15) and Southeast of Art Department and Engineering Annex (Building 13).",
-        "picture": "Bg_13BCD.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820784,
-          34.058242
-        ],
-        "type": "Point"
-      },
-      "id": "1f40c7cdc6ca3eb03f32c25792e5d67b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
-        "name": "Building 209W - Center for Regenerative Studies",
-        "picture": "Bg_209.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824467,
-          34.049816
-        ],
-        "type": "Point"
-      },
-      "id": "1f7fdd345b84d3e8fcb3b35f2581c0a9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 66 - Bronco Bookstore",
-        "description": "The Bronco Bookstore is stocked with all the textbooks you need for classes as well as Cal Poly Pomona gear, school supplies, and computers, including the latest Apple products. If at all possible, the Bookstore tries to provide used textbook options for thrifty purchasing. To further their cost-conscious strategies, students can also rent books by the quarter at a fraction of the price.",
-        "picture": "Bg_66.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820465,
-          34.05596
-        ],
-        "type": "Point"
-      },
-      "id": "21b1ed9d410c29c6e947c1623d9940f1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 28 - Fruit/Crops Unit",
-        "description": "The Crops Unit has 70 acres of productive citrus, avocados, grapes, deciduous orchard, and berries. Additional nonbearing acreage for instructional use exists and new plantings are underway. Part of the land is certified organic. Students are encouraged to gain experience and earn income by participation in the enterprise project program or by working for the campus farm.",
-        "picture": "Bg_28.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.81086,
-          34.060009
-        ],
-        "type": "Point"
-      },
-      "id": "225953ac84b94478160c0c15478b20d1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 79B - Collins College of Hospitality Management",
-        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
-        "picture": "Bg_79B.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824454,
-          34.055298
-        ],
-        "type": "Point"
-      },
-      "id": "235b2e4a97a0d839afbc9c911b8cb89e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 34 - Meat Laboratory",
-        "description": "A fully functioning plant with the capabilities to involve students in all stages of meat processing from harvesting to packaging. Designed to supplement students’ classroom instruction, the center will give them the opportunity to apply learned principles to industry-like practices and experience.",
-        "picture": "Bg_34.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828116,
-          34.05388
-        ],
-        "type": "Point"
-      },
-      "id": "2516e48b33827f80e2320330ddcbe452"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 37 - Swine Unit",
-        "description": "Section of farmland used for raising pigs",
-        "picture": "Bg_37.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822909,
-          34.052188
-        ],
-        "type": "Point"
-      },
-      "id": "278905df23662072a44ebe11b7b2a8b9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 52 - Vista Market",
-        "description": "We are a fully stocked, one-stop-shop neighborhood store with a fun community vibe that offers personal items and the staples needed to prepare home-cooked meals  909-869-5111",
-        "picture": "Bg_52.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817939,
-          34.053962
-        ],
-        "type": "Point"
-      },
-      "id": "2825be8b86d7a33592dc55c45c289401"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "NorthEast of Auto Shop (Building 83).",
-        "name": "Building 75 - Procurement/Receiving",
-        "picture": "Bg_75.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808085,
-          34.059471
-        ],
-        "type": "Point"
-      },
-      "id": "29a10680e0849e7d3cd3d01b38373e2a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 13C - Army ROTC",
-        "description": "East of Library (Building 15) and Southeast of Art Department and Engineering Annex (Building 13).",
-        "picture": "Bg_13BCD.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820679,
-          34.058349
-        ],
-        "type": "Point"
-      },
-      "id": "2bb1f27921214f42e39c014d124577d4"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 79 - Collins College of Hospitality Management",
-        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
-        "picture": "Bg_79.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824196,
-          34.055013
-        ],
-        "type": "Point"
-      },
-      "id": "2bd1e46caa308129861c950d9f91794e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24C - Temporary Classroom C",
-        "description": "West of Drama Department/Theater (Building 25).",
-        "picture": "Bg_24A_E.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822402,
-          34.055913
-        ],
-        "type": "Point"
-      },
-      "id": "2c03027a29d8ffd879358b0238027dc5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
-        "name": "Building 210 - Center for Regenerative Studies",
-        "picture": "Bg_209.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821636,
-          34.049663
-        ],
-        "type": "Point"
-      },
-      "id": "2cd459abc268b5542c1cb7637f29a6e5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 94 - University Office Building",
-        "description": "Building 94 is home to the Ethnic & Women's Studies Department, Liberal Studies Department, Political Science Department, Peermentoring Department, and the Undeclared Major Advising center. Along with these departments, there is the E-Business Program and Educational Opportunity Program (EOP).",
-        "picture": "Bg_94.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.823214,
-          34.059154
-        ],
-        "type": "Point"
-      },
-      "id": "2cf2d8d596fb089ef2c804111c03fed8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 220C: Center for Training, Technology and Incubation",
-        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
-        "picture": "Bg_220C.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814786,
-          34.050203
-        ],
-        "type": "Point"
-      },
-      "id": "2de86e950f2f332f59d7e801a33c6645"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24B - Temporary Classroom B",
-        "description": "West of Drama Department/Theater (Building 25).",
-        "picture": "Bg_24A_E.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822404,
-          34.056168
-        ],
-        "type": "Point"
-      },
-      "id": "2e26097bb5ed4b49a9ceb2afbe847d5d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "This is the location at which Cal Poly students partake in building and designing the Rose Float for the Rose Parade every year.",
-        "name": "Building 64 - Rose Float Laboratory",
-        "picture": "Bg_64.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.80825,
-          34.060089
-        ],
-        "type": "Point"
-      },
-      "id": "2ef0e87140adfbc5a9f3641ae55e67a8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Located off of Cypress Lane and Magnolia Lane and North of the Parking Structure (Building 106)",
-        "name": "Building 90 - Medic-1",
-        "picture": "Bg_90.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816607,
-          34.061187
-        ],
-        "type": "Point"
-      },
-      "id": "355f0257519c63c2cb808251b93e9c05"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "West of Kellogg House Pomona (Building 112).",
-        "name": "Building 113 - Guest House",
-        "picture": "Bg_113.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824758,
-          34.062412
-        ],
-        "type": "Point"
-      },
-      "id": "38ef9eb5962f33aa388673f368d45768"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "California State Polytechnic University, Pomona",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.823105,
-          34.055816
-        ],
-        "type": "Point"
-      },
-      "id": "39a335740236dbfea7f83b73f400f2ec"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Kellogg Polytechnic Elementary School",
-        "description": "",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.807609,
-          34.057265
-        ],
-        "type": "Point"
-      },
-      "id": "428ee4413a876f8a8d50de79c1279e62"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 59 - La Cienega Center (University Housing Services)",
-        "description": "La Cienega Center is the main office of the University Housing services. Students can go here to have questions and concerns about housing answered. Students who live on campus can go here to pick up packages or get help when they get locked out of their rooms. Main number: 909-869-3307",
-        "picture": "Bg_59.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821933,
-          34.061008
-        ],
-        "type": "Point"
-      },
-      "id": "42fcd80b893e8cfe7b5cacb94f04d32f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "The Mexican American Student Association (MASA) was founded in 1965 as a community outreach and tutorial service organization. The Mexican-American Student Association is an I.R.A funded.  Instructionally Related Activities aka (I.R.A.) fee funding support is allocated to certain programs, clubs, and organizations, one of the organizations being M.A.S.A.",
-        "name": "Building 150 - MASA Building",
-        "picture": "Bg_150.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820856,
-          34.057264
-        ],
-        "type": "Point"
-      },
-      "id": "49b57b17b641c91eac34043145f26b51"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24A - Temporary Classroom A",
-        "description": "West of Drama Department/Theater (Building 25).",
-        "picture": "Bg_24A_E.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822481,
-          34.056289
-        ],
-        "type": "Point"
-      },
-      "id": "4b092d9eb8b5fbd7dbc13e4dbcae2d80"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 109 - Police and Parking Services",
-        "description": "East of Parking Structure (Building 106). Contains the Rideshare office, a program gives priority parking to students who carpool.",
-        "picture": "Bg_109.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815759,
-          34.060733
-        ],
-        "type": "Point"
-      },
-      "id": "4c7e3b43db7129a5cd66ce0b13ca8cac"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 97 - Campus Center",
-        "description": "The Campus Center is a multipurpose building for dining, relaxing in front of the big screen television, using the free wireless internet, meeting up with friends, and studying. There are both tables inside and outside, and its close proximity to many other campus buildings makes it a convenient stop on your way to and from wherever you're going. Its Marketplace acts as a food court and is Cal Poly Pomona's most frequented dining facility, with six different dining options such as Taco Bell, Carl's Jr and Panda Express.",
-        "picture": "Bg_97.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.823339,
-          34.057707
-        ],
-        "type": "Point"
-      },
-      "id": "4f750db121ca37ed5a56148d9350c6f3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 92 - Laboratory Facility",
-        "description": "East of College of Agriculture (Building 2) and West of Science Laboratory (Building 3).",
-        "picture": "Bg_92.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.826212,
-          34.057873
-        ],
-        "type": "Point"
-      },
-      "id": "529a9b5bc5de2627866b99902809f190"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 77 - Kellogg West Main Lodge",
-        "description": "West of Kellogg West Education/Dining (Building 76) and SouthWest of Kellogg West Addition (Building 78).",
-        "picture": "Bg_77.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825967,
-          34.056257
-        ],
-        "type": "Point"
-      },
-      "id": "52d75523d964465599125b5742f53b7f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24E - Temporary Classroom E",
-        "description": "West of Drama Department/Theater (Building 25).",
-        "picture": "Bg_24A_E.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822625,
-          34.056178
-        ],
-        "type": "Point"
-      },
-      "id": "53bd6acfce3e1e2ceebf5bd1dc606592"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 68 - Hay Barn",
-        "description": "South the Beef Unit/Feed Shed (Building 32) and North of the Feedmill (Building 33).",
-        "picture": "Bg_68.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827713,
-          34.054217
-        ],
-        "type": "Point"
-      },
-      "id": "58c1bc6b6a2ba9740cba3b14fedd5a4f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
-        "name": "Building 215 - Agriscapes",
-        "picture": "Bg_211.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818999,
-          34.047385
-        ],
-        "type": "Point"
-      },
-      "id": "5cdcc335d99e56383109f578408f2404"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 95 - Cultural Centers",
-        "description": "East of Campus Center (Building 97) and South of College of Education and Integrative Studies (Building 6).",
-        "picture": "Bg_95.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822662,
-          34.057949
-        ],
-        "type": "Point"
-      },
-      "id": "5ced6d2a1b1557360f020d9b89c6ad5b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 48 - Custodial Offices",
-        "description": "South of Auto Shop (Building 83).",
-        "picture": "Bg_48.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808456,
-          34.059017
-        ],
-        "type": "Point"
-      },
-      "id": "5eaa60372574d08c00b56ff532e2b10c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 30 - Agricultural Unit",
-        "description": "West of Beef Unit/Feed Shed (Building 32). Used for storing seeds and equipment.",
-        "picture": "Bg_30.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828459,
-          34.05512
-        ],
-        "type": "Point"
-      },
-      "id": "5ffc03db5c8ae8b66d99ebf63c24ca36"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 20 - Residence Hall, Encinitas",
-        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
-        "picture": "Bg_20.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820687,
-          34.062323
-        ],
-        "type": "Point"
-      },
-      "id": "61bec38f220adb97d1c4748344261692"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 38 - Sheep/Wool Unit",
-        "description": "Section of farmland used for raising sheep",
-        "picture": "Bg_38.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822424,
-          34.052235
-        ],
-        "type": "Point"
-      },
-      "id": "6319e1d4b28505956ef7462b809f2a0d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 112 - Kellogg House Pomona",
-        "description": "North of Manor House (Building 111)",
-        "picture": "Bg_112.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82441,
-          34.062684
-        ],
-        "type": "Point"
-      },
-      "id": "69acdf4a42d82e7de6c2d0f4a42603b4"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 15 - Library",
-        "description": "What began as a single reading room has grown into an impressive six-story repository for 2.4 million books and 3,000 periodicals. The University Library underwent a $58.5 million renovation in 2008 to supports its mission to be \\\"the central intellectual and cultural resource of the campus community.\\\" The Library is equipped with many computers and group study rooms, including a 24-hour lab with plenty of tables. It also features classrooms and a large lecture hall, as well as a Starbucks, Media Collections section, and the University Writing Center.",
-        "picture": "Bg_15.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821299,
-          34.057771
-        ],
-        "type": "Point"
-      },
-      "id": "6b124bf075ce0496412205c196b2586a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 76A - Kellogg West/Addition",
-        "description": "Northeast of Kellogg West Main Lodge (Building 77) and Northwest of Kellogg West Education/Dining (Building 76).",
-        "picture": "Bg_76.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824725,
-          34.056673
-        ],
-        "type": "Point"
-      },
-      "id": "6d26b6d1042f7944e04ded6d0df8c6aa"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
-        "name": "Building 163 - College of Business Administration",
-        "picture": "Bg_162.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820199,
-          34.061241
-        ],
-        "type": "Point"
-      },
-      "id": "7011c3905de69158d2767b698a58ad91"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 13D - Pre-College TRIO Programs",
-        "description": "The Federal TRIO Programs (TRIO) are Federal outreach and student services programs designed to identify and provide services for individuals from disadvantaged backgrounds. TRIO includes eight programs targeted to serve and assist low-income individuals, first-generation college students, and individuals with disabilities to progress through the academic pipeline from middle school to postbaccalaureate programs.",
-        "picture": "Bg_13BCD.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82046,
-          34.058493
-        ],
-        "type": "Point"
-      },
-      "id": "71db2d8fb1c0da9f5a871f4ae9eb1ef2"
+      "id": "022713b8d8fab684bb3218a18bd9cb2d"
     },
     {
       "type": "Feature",
@@ -814,775 +30,7 @@
         ],
         "type": "Point"
       },
-      "id": "73809ebb27e020215abd8a24bf33e33e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 4A - BioTrek Learning Center",
-        "description": "South of College of Agriculture (Building 2) and West of Biotechnology Building (Building 4).",
-        "picture": "Bg_4A.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.8261,
-          34.057235
-        ],
-        "type": "Point"
-      },
-      "id": "744e692d4fe571c0a1919b733a5c1add"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 86A: English Language Institute",
-        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
-        "picture": "Bg_86A.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819994,
-          34.053239
-        ],
-        "type": "Point"
-      },
-      "id": "79b1ce811793ad5d1a32b04759004b66"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 7 - College of Environmental Design",
-        "description": "Building 7 is where the Architecture Department, Food, Nutrition & Consumer Science Department, Human Nutrition and Food Science Department, Landscape Architecture Department and Urban & Regional Planning Department are located.",
-        "picture": "Bg_7.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827408,
-          34.057256
-        ],
-        "type": "Point"
-      },
-      "id": "7bf5f40ecc32023da4a809809ba4b805"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 86 - English Language Institute",
-        "description": "Building 86 is where the Cal Poly English Language Institute and ELS are located.",
-        "picture": "Bg_86.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819704,
-          34.053353
-        ],
-        "type": "Point"
-      },
-      "id": "7d046374498f91a6002d724be0551668"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Orientation promotes academic achievement and personal development through academic advising, class registration and an introduction to student services and resources.",
-        "name": "Building 26A - Student Orientation Center",
-        "picture": "Bg_26A.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82057,
-          34.056713
-        ],
-        "type": "Point"
-      },
-      "id": "7d2df9caa4bc8c5c8f303ff6109c1564"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 35A - Art Gallery",
-        "description": "The W. Keith & Janet Kellogg Gallery was built by the John L. and Helen Kellogg Foundation with support from W. Keith and Janet “Jean” Kellogg in 1988.  This gift was in the spirit of W. Keith’s grandfather, cereal magnate W.K. Kellogg, who donated his land to the State of California for use by Cal Poly in 1949.",
-        "picture": "Bg_35A.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821779,
-          34.056953
-        ],
-        "type": "Point"
-      },
-      "id": "7ed8cb60b8c825febfb9513601174761"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 23 - Aliso Residence Hall",
-        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
-        "picture": "Bg_23.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817699,
-          34.062928
-        ],
-        "type": "Point"
-      },
-      "id": "7ff164aa9227ab917c22c9ecb40fa6c7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 111 - Manor House",
-        "description": "Home to the University President and his family.",
-        "picture": "Bg_111.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822939,
-          34.06051
-        ],
-        "type": "Point"
-      },
-      "id": "833450d6b929bdc48e21ba5522d88a96"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 99 - Storage",
-        "description": "NorthEast of Interim Design Center (Building 89).",
-        "picture": "Bg_99.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.811018,
-          34.061828
-        ],
-        "type": "Point"
-      },
-      "id": "8344b64fd91428821a30cac5c29601bf"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
-        "name": "Building 211 - Agriscapes/Farm Store",
-        "picture": "Bg_211.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819031,
-          34.048336
-        ],
-        "type": "Point"
-      },
-      "id": "84d1457ac3a80f594392a67246affe0e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 31 - Poultry",
-        "description": "Section of farmland used for raising chicken",
-        "picture": "Bg_31.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828353,
-          34.054628
-        ],
-        "type": "Point"
-      },
-      "id": "8515e197da95a0434817592e2e28da3a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 79A - Collins College of Hospitality Management",
-        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
-        "picture": "Bg_79A.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824871,
-          34.055055
-        ],
-        "type": "Point"
-      },
-      "id": "875c904ec3398d667ddd9d3a325258a3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 13 - Art Department and Engineering Annex",
-        "description": "The Art Department's primary mission is teaching excellence and program quality. Educators are committed to building a foundation of creativity to support self-expression and individual intellectual development while meeting career goals and curriculum structure for a competitive student body.",
-        "picture": "Bg_13.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820798,
-          34.058812
-        ],
-        "type": "Point"
-      },
-      "id": "878898f1f96d0d44d0d5ca782d65789f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24E - Temporary Classroom E",
-        "description": "West of Drama Department/Theater (Building 25).",
-        "picture": "Bg_24A_E.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822525,
-          34.055979
-        ],
-        "type": "Point"
-      },
-      "id": "87d6729de1dd4210e55b83070ed47a1f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 35 - Bronco Student Center (BSC)",
-        "description": "The Bronco Student Center (BSC) is the social hub for all things student-related. The BSC is where students are able to eat, meet, study, and play! Whether students need to unwind in the Games Room Etc., grab a bite at the food court, complete homework in the study lounges, or simply hang out with friends, the BSC is the perfect place for all student needs. Indoor and outdoor seating is available. ",
-        "picture": "Bg_35.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821298,
-          34.056182
-        ],
-        "type": "Point"
-      },
-      "id": "885b01c6f3012dadaa9105943273a858"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
-        "name": "Building 209C - Center for Regenerative Studies",
-        "picture": "Bg_209.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824149,
-          34.049694
-        ],
-        "type": "Point"
-      },
-      "id": "8b7b853c6dc5ad459e41cb0529deed68"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 60 - Residence Suites (Vista Bonita)",
-        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
-        "picture": "Bg_60.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818602,
-          34.054868
-        ],
-        "type": "Point"
-      },
-      "id": "8c01a48541b5e1eea654d060e090c6b1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 24F - Temporary Classroom F",
-        "description": "West of Drama Department/Theater (Building 25).",
-        "picture": "Bg_24A_E.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822655,
-          34.056034
-        ],
-        "type": "Point"
-      },
-      "id": "8cd9f240fb5131509bfcac739ec1add6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 43 - Kellogg Gymnasium",
-        "description": "The Kellogg Gymnasium is where the Cal Poly Basketball and Volleyball teams play their games. It also is where the Athletics Department is located, along with all of the offices of the sports coaches at Cal Poly.",
-        "picture": "Bg_43.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819253,
-          34.054223
-        ],
-        "type": "Point"
-      },
-      "id": "8fe971d687dcc36039a2e603e5d2e935"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
-        "name": "Building 209 - Center for Regenerative Studies",
-        "picture": "Bg_209.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824456,
-          34.04961
-        ],
-        "type": "Point"
-      },
-      "id": "90edc59012f971cd04f7c155559bd59e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 61 - Residence Suites (Vista del Sol)",
-        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
-        "picture": "Bg_60.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817943,
-          34.05472
-        ],
-        "type": "Point"
-      },
-      "id": "91817525c003907b4ad1bb00d4c4f6be"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 89 - Interim Design Center",
-        "description": "East of Agricultural Engineering (Builidng 45).",
-        "picture": "Bg_89.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.812327,
-          34.06052
-        ],
-        "type": "Point"
-      },
-      "id": "94a3c6ceeebe6435da8ba2b5c56e3730"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 65 - Pesticide Building",
-        "description": "South of Storage Building (Building 100) and NorthEast of Agricultural Engineering (Building 45).",
-        "picture": "Bg_65.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.810785,
-          34.061619
-        ],
-        "type": "Point"
-      },
-      "id": "950a8c816f76d8b59feafd8565d6e891"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 116 - Child Care Center",
-        "description": "The Children’s Center is designed to create an atmosphere where children can grow emotionally, intellectually, socially, and physically.Our children are regularly provided with opportunities for early literacy, math, and science through various types of books, songs and activities.",
-        "picture": "Bg_116.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819536,
-          34.056042
-        ],
-        "type": "Point"
-      },
-      "id": "9897b8c016b5abdc7ec09b6101608ff7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 58 - Cedritos Residence Hall",
-        "description": "Accommodates approximately 185 students and staffed by five student Resident Advisors (RA) and a professional live-in Hall Coordinator. Each room measures approximately 12' x 14' and has five walls.",
-        "picture": "Bg_58.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.821236,
-          34.061534
-        ],
-        "type": "Point"
-      },
-      "id": "98d9a21bbb05a5230309666d2512ddcf"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
-        "name": "Building 209S - Center for Regenerative Studies",
-        "picture": "Bg_209.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82481,
-          34.049626
-        ],
-        "type": "Point"
-      },
-      "id": "9a745ecb366f1c38b0a9183648cffbb1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "East of Training Center (Building 49) and North of Facilities Management (Building 81).",
-        "name": "Building 82A - Carpenter Shop",
-        "picture": "Bg_82A.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808973,
-          34.060038
-        ],
-        "type": "Point"
-      },
-      "id": "9c46e0f9439c77009e3a7ee3cee79b1d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
-        "name": "Building 209L - Center for Regenerative Studies",
-        "picture": "Bg_209.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824402,
-          34.049684
-        ],
-        "type": "Point"
-      },
-      "id": "9c8bc57553a7a1e494613c9ce7ca548f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 45 - Agricultural Engineering",
-        "description": "The Apparel Technology & Research Center, Apparel Merchandising & Management Department and the Center for Turf, Irrigation & Landscape Technology are all located here in Building 45.",
-        "picture": "Bg_45.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.811145,
-          34.061079
-        ],
-        "type": "Point"
-      },
-      "id": "9cd8338a25bc9fcab61468ea8b3b0ae9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 100 - Storage",
-        "description": "NorthEast of Interim Design Center (Building 89).",
-        "picture": "Bg_100.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.810831,
-          34.062021
-        ],
-        "type": "Point"
-      },
-      "id": "9ed08db78df4ff0cebd3f826db2f1983"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 3 - Science Laboratory",
-        "description": "A special facility where students and faculty from the College of Science conduct experiments",
-        "picture": "Bg_3.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825847,
-          34.058163
-        ],
-        "type": "Point"
-      },
-      "id": "a0fd1e02ee9236ce9e7e9b9ac24f113f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 2 - College of Agriculture",
-        "description": "The College of Agriculture prepares students for careers in a wide variety of positions throughout the agricultural, food, apparel/textile industries, environment, science, and healthcare fields.",
-        "picture": "Bg_2.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.826436,
-          34.057678
-        ],
-        "type": "Point"
-      },
-      "id": "a301f90f227e11b9342f5379f7cdc17d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building One",
-        "description": "There is the Advertising Office, Admissions & Enrollment Services, Communications Department, Cooperative Education, the International Center, Economic Department, the Kellogg Honors College, Office of Research, Philosophy Department, and The Poly Post located in Building One",
-        "picture": "Bg_1.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824144,
-          34.059754
-        ],
-        "type": "Point"
-      },
-      "id": "a3aebfa1d8f4f52b9d9526e33965f793"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "CLA Building",
-        "description": "The Administration Building, officially called the CLA Building and referred to on campus as the “pointy building,” is a unique structure that stands out with its open triangular top. Not only has it become a familiar symbol of Cal Poly Pomona and now part of the school’s logo, but the eight- story CLA Building has also been featured in films and commercials, since Hollywood is not all that far away from campus. The CLA stands for “Classroom/Laboratory/Administration,” as it is used for a variety of departments and services such as Campus Tour Information, Development, Financial Aid and Scholarships, National Student Exchange, Photo ID, and the Registrars Office.\"",
-        "picture": "Bg_98.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820007,
-          34.059366
-        ],
-        "type": "Point"
-      },
-      "id": "a514beb747abeefd933de4a748780a5a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 8 - College of Science",
-        "description": "Building 8 has department offices for Biologiccal Sciences, Chemistry & Biochemistry, Computer Science, Mathematics and Statistics, Geological Sciences, and Physics and Astronomy. In addition, you can find the McNair Scholars Program and the Instructional Support Center (ISC) all in Building 8.",
-        "picture": "Bg_8.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824799,
-          34.058432
-        ],
-        "type": "Point"
-      },
-      "id": "a745fc875a677937c3e205c054721ec9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 71 - Recreation and Maintenance",
-        "description": "East of Residence Hall, Alamitos (Building 22) and SouthEast of Residence Hall, Aliso (Building 23).",
-        "picture": "Bg_71.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816822,
-          34.063027
-        ],
-        "type": "Point"
-      },
-      "id": "a945fcc868f6de45e2abe0d646b2d6e7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 5 - College of Letters, Arts, and Social Sciences",
-        "description": "Building 5 is home to the Department of Education, Geography & Anthropology Department, Psychology and Sociology Department, and the M.A. in Education Department. In addition, there are Quick Print Services and Graphic Communications Services.",
-        "picture": "Bg_5.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824464,
-          34.057758
-        ],
-        "type": "Point"
-      },
-      "id": "ac64504b6b617bb7db685562199a197a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 54 - Residence Suites (Vista de las Estrellas",
-        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
-        "picture": "Bg_54.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818896,
-          34.055515
-        ],
-        "type": "Point"
-      },
-      "id": "b1f2f763dbd79f7e9991ce756f1ddb39"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 86B - English Language Institute",
-        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
-        "picture": "Bg_86B.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820074,
-          34.053503
-        ],
-        "type": "Point"
-      },
-      "id": "b34906165fd2dae4705919252f013de8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 31B - Poultry",
-        "description": "Section of farmland used for raising chicken",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.829016,
-          34.055163
-        ],
-        "type": "Point"
-      },
-      "id": "b7af8e1febf3cab3d8d0d773a06e3896"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Building 81 is where Logistics & Recycling and the Mechanical & Engineering Services are located.",
-        "name": "Building 81 - Facilities Management",
-        "picture": "Bg_81.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808915,
-          34.059376
-        ],
-        "type": "Point"
-      },
-      "id": "b81e3b6523a3b06ec01b2b0a2ae98331"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 31A - Poultry",
-        "description": "Section of farmland used for raising chicken",
-        "picture": ""
-      },
-      "geometry": {
-        "coordinates": [
-          -117.829008,
-          34.054739
-        ],
-        "type": "Point"
-      },
-      "id": "b9f3dee526db99a4defc240e97a7793a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 56 - Storage",
-        "description": "NorthEast of Interim Design Center (Building 89).",
-        "picture": "Bg_56.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.810908,
-          34.061916
-        ],
-        "type": "Point"
-      },
-      "id": "be9d853c17ff6daeb63358747ebea0f5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 25 - Drama Department/Theater",
-        "description": "The Mission of the Department of Theatre and New Dance at Cal Poly Pomona is to prepare students to be current and relevant artists for the 21st century. Students develop critical thinking and disciplinary excellence through a collaborative and interactive learning process that embraces diversity, and interdisciplinary work.",
-        "picture": "Bg_25.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.822107,
-          34.056442
-        ],
-        "type": "Point"
-      },
-      "id": "c0c55e82e962b038d11e34ee8989f58f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 49 - Training Center",
-        "description": "East of Fruit/Crops Unit (Building 28) and NorthWest of Facilities Management (Building 81).",
-        "picture": "Bg_49.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.809271,
-          34.059923
-        ],
-        "type": "Point"
-      },
-      "id": "c15c626a9b47bd0b6352e855acf035ad"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "NorthEast of Facilities Management (Building 81).",
-        "name": "Building 82 - Facilities Mangament Warehouse",
-        "picture": "Bg_82.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808688,
-          34.059773
-        ],
-        "type": "Point"
-      },
-      "id": "c85942501d1e35b47de7ebc44ab8e04d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 47 - Agricultural Engineering Tractor Shop",
-        "description": "North of Auto Shop (Building 83).",
-        "picture": "Bg_47.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808188,
-          34.05983
-        ],
-        "type": "Point"
-      },
-      "id": "c905a894e02bcce0355f22cb5dcb552d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 67 - Equine Research Facility",
-        "description": "NorthEast of W.K. Kellogg Arabian Horse Center (Building 29) and is where the Equine Outreach Program is located",
-        "picture": "Bg_67.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814176,
-          34.059623
-        ],
-        "type": "Point"
-      },
-      "id": "d0c2bfe12a47cc3655874cae7b338d74"
+      "id": "045c77894989185b04294f3525656d24"
     },
     {
       "type": "Feature",
@@ -1598,103 +46,7 @@
         ],
         "type": "Point"
       },
-      "id": "d5d2d519b7de4281b9018bd19017cb23"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 78 - Kellogg West Addition",
-        "description": "NorthEast of Kellogg West Main Lodge (Building 77) and NorthWest of Kellogg West Education/Dining (Building 76).",
-        "picture": "Bg_78.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825715,
-          34.056786
-        ],
-        "type": "Point"
-      },
-      "id": "d7db3c446c7fce159c9c05316167622a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 220B: Center for Training, Technology and Incubation",
-        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
-        "picture": "Bg_220B.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815249,
-          34.050432
-        ],
-        "type": "Point"
-      },
-      "id": "daa2146e67da43c6035d666f4d8437cb"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 33 - Feedmill",
-        "description": "Used processing grains, vegetables, meats, and other raw ingeredients into animal feed",
-        "picture": "Bg_33.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.827517,
-          34.053937
-        ],
-        "type": "Point"
-      },
-      "id": "db40a42a4533883b18ed0a75ffc2ac05"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "East of Facilities Management (Building 81).",
-        "name": "Building 83 - Auto Shop",
-        "picture": "Bg_83.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.808377,
-          34.059327
-        ],
-        "type": "Point"
-      },
-      "id": "db7939275ff6c451bfadc867e252f107"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "description": "Innovation Village at Cal Poly Pomona is a premier corporate research and technology park in the Southern California region.  It is a unique environment that provides opportunity for collaboration with university researchers, students, and administration in an environment that promotes excellence.",
-        "name": "Building 216 - Innovation Village SCE",
-        "picture": "Bg_216.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.813926,
-          34.051057
-        ],
-        "type": "Point"
-      },
-      "id": "dfebdafb16be30617e212db4fe22ce58"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 164 - College of Business Administration",
-        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
-        "picture": "Bg_162.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819814,
-          34.061566
-        ],
-        "type": "Point"
-      },
-      "id": "e54374b11b7a1c6e3d47bac0f6d93b70"
+      "id": "06e3fc2e7b2917990e4741ce889c8553"
     },
     {
       "type": "Feature",
@@ -1710,39 +62,183 @@
         ],
         "type": "Point"
       },
-      "id": "e8cd21370d349d1288b00cf532c96c35"
+      "id": "0a2328eada7b6a9c1ba12daddc63c6a1"
     },
     {
       "type": "Feature",
       "properties": {
-        "description": "",
-        "name": "Buillding 218 - American Red Cross Headquarters",
-        "picture": "Bg_218.jpeg"
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
+        "name": "Building 209S - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.811408,
-          34.053671
+          -117.82481,
+          34.049626
         ],
         "type": "Point"
       },
-      "id": "ea26672797113ac1dcc78434cddaeb08"
+      "id": "0e3f616153c9d7470a04975c4a4b5e03"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 193 - Chilled Water Center Plant",
-        "description": "East of Health Services (Building 46).",
-        "picture": "Bg_193.jpeg"
+        "name": "Building 43 - Kellogg Gymnasium",
+        "description": "The Kellogg Gymnasium is where the Cal Poly Basketball and Volleyball teams play their games. It also is where the Athletics Department is located, along with all of the offices of the sports coaches at Cal Poly.",
+        "picture": "Bg_43.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.829562,
-          34.057089
+          -117.819253,
+          34.054223
         ],
         "type": "Point"
       },
-      "id": "ebb8a236318f39401d026b43945cd712"
+      "id": "11dbaf1476b79cb74cad79b9eb2ff7e9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 32 - Beef Unit",
+        "description": "Section of farmland used for raising cows",
+        "picture": "Bg_32.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827613,
+          34.055427
+        ],
+        "type": "Point"
+      },
+      "id": "126982bac2faa5b29d371c5dd145f26a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 66 - Bronco Bookstore",
+        "description": "The Bronco Bookstore is stocked with all the textbooks you need for classes as well as Cal Poly Pomona gear, school supplies, and computers, including the latest Apple products. If at all possible, the Bookstore tries to provide used textbook options for thrifty purchasing. To further their cost-conscious strategies, students can also rent books by the quarter at a fraction of the price.",
+        "picture": "Bg_66.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820465,
+          34.05596
+        ],
+        "type": "Point"
+      },
+      "id": "17469597c316ef27e6b2c409b4cdfb9c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 47 - Agricultural Engineering Tractor Shop",
+        "description": "North of Auto Shop (Building 83).",
+        "picture": "Bg_47.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808188,
+          34.05983
+        ],
+        "type": "Point"
+      },
+      "id": "19958be02c40f48c2fbd01884b6a7b97"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
+        "name": "Building 209L - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824402,
+          34.049684
+        ],
+        "type": "Point"
+      },
+      "id": "1aa19054eefc1b73b9b7422b14ead9ad"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Building 81 is where Logistics & Recycling and the Mechanical & Engineering Services are located.",
+        "name": "Building 81 - Facilities Management",
+        "picture": "Bg_81.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808915,
+          34.059376
+        ],
+        "type": "Point"
+      },
+      "id": "1bd708a050d8c1700d15ee9befa9616a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 49 - Training Center",
+        "description": "East of Fruit/Crops Unit (Building 28) and NorthWest of Facilities Management (Building 81).",
+        "picture": "Bg_49.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.809271,
+          34.059923
+        ],
+        "type": "Point"
+      },
+      "id": "1ca96a08e65a1bf7e2ca63ae0871fbb8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 92 - Laboratory Facility",
+        "description": "East of College of Agriculture (Building 2) and West of Science Laboratory (Building 3).",
+        "picture": "Bg_92.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826212,
+          34.057873
+        ],
+        "type": "Point"
+      },
+      "id": "1cb670bc402808fefdf090496ee82e9e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24E - Temporary Classroom E",
+        "description": "West of Drama Department/Theater (Building 25).",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822525,
+          34.055979
+        ],
+        "type": "Point"
+      },
+      "id": "2052751ee3959264dd21fa7c63b3d382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 99 - Storage",
+        "description": "NorthEast of Interim Design Center (Building 89).",
+        "picture": "Bg_99.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.811018,
+          34.061828
+        ],
+        "type": "Point"
+      },
+      "id": "2185a69c22f28ae6baa6ff2f3a2f3f44"
     },
     {
       "type": "Feature",
@@ -1758,23 +254,183 @@
         ],
         "type": "Point"
       },
-      "id": "eeed2b24f268553ee1400e65bd5bd0f0"
+      "id": "2227c30691e1482587073b6702c509df"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 63 - Residence Suites (Vista de la Luna)",
-        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
-        "picture": ""
+        "name": "Building 38 - Sheep/Wool Unit",
+        "description": "Section of farmland used for raising sheep",
+        "picture": "Bg_38.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.816959,
-          34.053899
+          -117.822424,
+          34.052235
         ],
         "type": "Point"
       },
-      "id": "ef14cb3238e3917b58236b98049e8587"
+      "id": "2246a334f8675010c3aec3515b8c826c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
+        "name": "Building 209 - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824456,
+          34.04961
+        ],
+        "type": "Point"
+      },
+      "id": "235f781359b24fae5f4bb228d81ccdad"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13D - Pre-College TRIO Programs",
+        "description": "The Federal TRIO Programs (TRIO) are Federal outreach and student services programs designed to identify and provide services for individuals from disadvantaged backgrounds. TRIO includes eight programs targeted to serve and assist low-income individuals, first-generation college students, and individuals with disabilities to progress through the academic pipeline from middle school to postbaccalaureate programs.",
+        "picture": "Bg_13BCD.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82046,
+          34.058493
+        ],
+        "type": "Point"
+      },
+      "id": "23618bf311414efe1079c9715850e212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86 - English Language Institute",
+        "description": "Building 86 is where the Cal Poly English Language Institute and ELS are located.",
+        "picture": "Bg_86.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819704,
+          34.053353
+        ],
+        "type": "Point"
+      },
+      "id": "239fb15bb7f7c66914fa769e89c164bd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
+        "description": "The Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
+        "picture": "Bg_42.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820793,
+          34.054597
+        ],
+        "type": "Point"
+      },
+      "id": "23c1db381ff23bdd137b3faa973851e2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 2 - College of Agriculture",
+        "description": "The College of Agriculture prepares students for careers in a wide variety of positions throughout the agricultural, food, apparel/textile industries, environment, science, and healthcare fields.",
+        "picture": "Bg_2.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.826436,
+          34.057678
+        ],
+        "type": "Point"
+      },
+      "id": "24a7f3b0c6ce1ae445f528d46df11d20"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "The Mexican American Student Association (MASA) was founded in 1965 as a community outreach and tutorial service organization. The Mexican-American Student Association is an I.R.A funded.  Instructionally Related Activities aka (I.R.A.) fee funding support is allocated to certain programs, clubs, and organizations, one of the organizations being M.A.S.A.",
+        "name": "Building 150 - MASA Building",
+        "picture": "Bg_150.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820856,
+          34.057264
+        ],
+        "type": "Point"
+      },
+      "id": "2b1e00a49e1bd733d127f5071171160c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "This is the location at which Cal Poly students partake in building and designing the Rose Float for the Rose Parade every year.",
+        "name": "Building 64 - Rose Float Laboratory",
+        "picture": "Bg_64.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.80825,
+          34.060089
+        ],
+        "type": "Point"
+      },
+      "id": "2c31fafc11f9faab5673578eeb196e24"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "West of Kellogg House Pomona (Building 112).",
+        "name": "Building 113 - Guest House",
+        "picture": "Bg_113.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824758,
+          34.062412
+        ],
+        "type": "Point"
+      },
+      "id": "2e920dc22bfbe336c6292d0631d0a294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
+        "name": "Building 209C - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824149,
+          34.049694
+        ],
+        "type": "Point"
+      },
+      "id": "2f98b816a5a114601f79a8f8d2b5f53a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 78 - Kellogg West Addition",
+        "description": "NorthEast of Kellogg West Main Lodge (Building 77) and NorthWest of Kellogg West Education/Dining (Building 76).",
+        "picture": "Bg_78.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825715,
+          34.056786
+        ],
+        "type": "Point"
+      },
+      "id": "30bfdc80947468580fb0c336238ad91a"
     },
     {
       "type": "Feature",
@@ -1790,119 +446,103 @@
         ],
         "type": "Point"
       },
-      "id": "f1cd55485e5719fe4d640649353859d1"
+      "id": "313c8695ab0bf375ccd6d05c2bc481b5"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 55 - Foundation Administration Offices",
-        "description": "East of Bronco Bookstore (Building 66) and South of University Plaza (Building 26).",
-        "picture": "Bg_55.jpeg"
+        "name": "Building 116 - Child Care Center",
+        "description": "The Children’s Center is designed to create an atmosphere where children can grow emotionally, intellectually, socially, and physically.Our children are regularly provided with opportunities for early literacy, math, and science through various types of books, songs and activities.",
+        "picture": "Bg_116.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.819922,
-          34.056219
+          -117.819536,
+          34.056042
         ],
         "type": "Point"
       },
-      "id": "f380e7452d040a580404a00b4a43d745"
+      "id": "3144b988acfe32e1152394c6a775a59f"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 70 - Los Olivos Commons",
-        "description": "Los Olivos, located in Building 70, is an all-you-care-to-eat dining venue with a large indoor eating area, an outside patio, and numerous choices for any diet including The Mongolian Grill, Vegan Corner, a Deli and many more. Los Olivos hosts special events several times during the academic year, including Cinco de Mayo and Chinese New Year.",
-        "picture": "Bg_70.jpeg"
+        "name": "Building 13C - Army ROTC",
+        "description": "East of Library (Building 15) and Southeast of Art Department and Engineering Annex (Building 13).",
+        "picture": "Bg_13BCD.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.821583,
-          34.062368
+          -117.820679,
+          34.058349
         ],
         "type": "Point"
       },
-      "id": "f49e25fcdf91bf9362ccf20bb9dffe1b"
+      "id": "31e02e61c5e8dc6bc87fa922af500331"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 46 - Health Services",
-        "description": "Health Services is an ambulatory care facility (you have to be able to walk in on your own) offering visits with medical providers by appointment or through Urgent Care for non-life threatening sudden accidents or injuries. 909-869-4000. After-Hours Nurse Advice Line: 855-272-1723. ",
-        "picture": "Bg_46.jpeg"
+        "description": "Innovation Village at Cal Poly Pomona is a premier corporate research and technology park in the Southern California region.  It is a unique environment that provides opportunity for collaboration with university researchers, students, and administration in an environment that promotes excellence.",
+        "name": "Building 216 - Innovation Village SCE",
+        "picture": "Bg_216.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.828086,
-          34.057808
+          -117.813926,
+          34.051057
         ],
         "type": "Point"
       },
-      "id": "f526ba00c51a084f81136364a848dbef"
+      "id": "3b10234c2d6c1aa6dbcfac6e29461263"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Building 41 - Darlene May Gymnasium",
-        "description": "Here in the Darlene May Gymnasium, there is a women's locker room and training room in addition to the Volleyball Office.",
-        "picture": "Bg_41.jpeg"
+        "name": "Building 59 - La Cienega Center (University Housing Services)",
+        "description": "La Cienega Center is the main office of the University Housing services. Students can go here to have questions and concerns about housing answered. Students who live on campus can go here to pick up packages or get help when they get locked out of their rooms. Main number: 909-869-3307",
+        "picture": "Bg_59.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.821249,
-          34.054018
+          -117.821933,
+          34.061008
         ],
         "type": "Point"
       },
-      "id": "f5567d6d606051a8a74346be69979a48"
+      "id": "3b32e0bd63d3d6e4a1836640d7854ec4"
     },
     {
       "type": "Feature",
       "properties": {
+        "name": "Building 8 - College of Science",
+        "description": "Building 8 has department offices for Biologiccal Sciences, Chemistry & Biochemistry, Computer Science, Mathematics and Statistics, Geological Sciences, and Physics and Astronomy. In addition, you can find the McNair Scholars Program and the Instructional Support Center (ISC) all in Building 8.",
+        "picture": "Bg_8.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824799,
+          34.058432
+        ],
+        "type": "Point"
+      },
+      "id": "3f92fb8cf90b53dcb5b6fa0d335cd44a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 164 - College of Business Administration",
         "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
-        "name": "Building 162 - College of Business Administration",
         "picture": "Bg_162.jpeg"
       },
       "geometry": {
         "coordinates": [
-          -117.819627,
-          34.061295
+          -117.819814,
+          34.061566
         ],
         "type": "Point"
       },
-      "id": "f55e5058539124d5345f9cbd6478bf05"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 85 - I Poly High School",
-        "description": "Off of Temple Avenue and University Drive and Southwest of Parking Lot K",
-        "picture": "Bg_85.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819535,
-          34.05099
-        ],
-        "type": "Point"
-      },
-      "id": "f7345afebdd122fc67a25677316687e5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 26 - Union Plaza",
-        "description": "W.K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
-        "picture": "union_plaza.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.820021,
-          34.05699
-        ],
-        "type": "Point"
-      },
-      "id": "f734f5c528e546d5424266b2c3d15e3f"
+      "id": "3fd3c120a2a24afa774e4247d8e36c04"
     },
     {
       "type": "Feature",
@@ -1918,7 +558,7 @@
         ],
         "type": "Point"
       },
-      "id": "f764e7d493151d125b685618cc6bcc4a"
+      "id": "421540c268f95ec360f3665d2b2833d1"
     },
     {
       "type": "Feature",
@@ -1934,7 +574,135 @@
         ],
         "type": "Point"
       },
-      "id": "f884c42cc113f853bdfefc6980de8d93"
+      "id": "4468b29c17cea6fb4968ae4379471ea2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 28 - Fruit/Crops Unit",
+        "description": "The Crops Unit has 70 acres of productive citrus, avocados, grapes, deciduous orchard, and berries. Additional nonbearing acreage for instructional use exists and new plantings are underway. Part of the land is certified organic. Students are encouraged to gain experience and earn income by participation in the enterprise project program or by working for the campus farm.",
+        "picture": "Bg_28.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.81086,
+          34.060009
+        ],
+        "type": "Point"
+      },
+      "id": "454d993dc2767fc15cc2c4f51625299e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 65 - Pesticide Building",
+        "description": "South of Storage Building (Building 100) and NorthEast of Agricultural Engineering (Building 45).",
+        "picture": "Bg_65.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810785,
+          34.061619
+        ],
+        "type": "Point"
+      },
+      "id": "47ff0b667fccfdf41dc9dfa3dffd3f4c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 20 - Residence Hall, Encinitas",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
+        "picture": "Bg_20.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820687,
+          34.062323
+        ],
+        "type": "Point"
+      },
+      "id": "54fec2c1d03cef13a6e44dccc2278df0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 33 - Feedmill",
+        "description": "Used processing grains, vegetables, meats, and other raw ingeredients into animal feed",
+        "picture": "Bg_33.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827517,
+          34.053937
+        ],
+        "type": "Point"
+      },
+      "id": "56823b5ae2392ac48efb645a9e133fc6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79A - Collins College of Hospitality Management",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
+        "picture": "Bg_79A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824871,
+          34.055055
+        ],
+        "type": "Point"
+      },
+      "id": "59ec5ae5c1d97ca50d151faa5caf9659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
+        "name": "Building 163 - College of Business Administration",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820199,
+          34.061241
+        ],
+        "type": "Point"
+      },
+      "id": "5aa790fdee4aa12514c498448d5d12f5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24E - Temporary Classroom E",
+        "description": "West of Drama Department/Theater (Building 25).",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822625,
+          34.056178
+        ],
+        "type": "Point"
+      },
+      "id": "5c3b574022c03e0ff395775e7e3b6955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 56 - Storage",
+        "description": "NorthEast of Interim Design Center (Building 89).",
+        "picture": "Bg_56.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810908,
+          34.061916
+        ],
+        "type": "Point"
+      },
+      "id": "5d263c8f4cc5ac05fd53736a1e330eae"
     },
     {
       "type": "Feature",
@@ -1950,7 +718,1255 @@
         ],
         "type": "Point"
       },
-      "id": "fcd2eed7b6f6e83099e023ff9e3b01e8"
+      "id": "60d27c3874b8543c9a6c9b2386bae81f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 61 - Residence Suites (Vista del Sol)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+        "picture": "Bg_60.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817943,
+          34.05472
+        ],
+        "type": "Point"
+      },
+      "id": "613118bd2b737651bb0112cb7e0bfb0b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24A - Temporary Classroom A",
+        "description": "West of Drama Department/Theater (Building 25).",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822481,
+          34.056289
+        ],
+        "type": "Point"
+      },
+      "id": "614726d4c86e707bf2ad7dc451726c43"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 60 - Residence Suites (Vista Bonita)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+        "picture": "Bg_60.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818602,
+          34.054868
+        ],
+        "type": "Point"
+      },
+      "id": "670f5e376daa565eb564be683ced740f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 29 - W.K. Kellogg Arabian Horse Center",
+        "description": "The W. K. Kellogg Arabian Horse Center is an Arabian breeding facility located on the Cal Poly Pomona. The W.K. Kellogg Arabian Horse Center was established in 1925 by the cereal magnate Will Keith Kellogg of Battle Creek, Michigan.",
+        "picture": "Bg_29.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814642,
+          34.058614
+        ],
+        "type": "Point"
+      },
+      "id": "6952a9a5c1f8c3dde3d736531e5a5952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86B - English Language Institute",
+        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
+        "picture": "Bg_86B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820074,
+          34.053503
+        ],
+        "type": "Point"
+      },
+      "id": "69b3caefc06a6c8f976e45ac544f6655"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 220C: Center for Training, Technology and Incubation",
+        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
+        "picture": "Bg_220C.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814786,
+          34.050203
+        ],
+        "type": "Point"
+      },
+      "id": "69eaa20f3e4c727b657f00e7c3d9ca2e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
+        "name": "Building 215 - Agriscapes",
+        "picture": "Bg_211.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818999,
+          34.047385
+        ],
+        "type": "Point"
+      },
+      "id": "6a5614c681b00e3cbf7b821886b5328f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 26 - Union Plaza",
+        "description": "W.K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
+        "picture": "union_plaza.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820021,
+          34.05699
+        ],
+        "type": "Point"
+      },
+      "id": "6c0172ea64347f0fd67701c42f127c9a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 89 - Interim Design Center",
+        "description": "East of Agricultural Engineering (Builidng 45).",
+        "picture": "Bg_89.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.812327,
+          34.06052
+        ],
+        "type": "Point"
+      },
+      "id": "6d1a77d9afac30b8326053145aea75d2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 35A - Art Gallery",
+        "description": "The W. Keith & Janet Kellogg Gallery was built by the John L. and Helen Kellogg Foundation with support from W. Keith and Janet “Jean” Kellogg in 1988.  This gift was in the spirit of W. Keith’s grandfather, cereal magnate W.K. Kellogg, who donated his land to the State of California for use by Cal Poly in 1949.",
+        "picture": "Bg_35A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821779,
+          34.056953
+        ],
+        "type": "Point"
+      },
+      "id": "6dc9c12c44132100ae81ffd434cd4e05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Orientation promotes academic achievement and personal development through academic advising, class registration and an introduction to student services and resources.",
+        "name": "Building 26A - Student Orientation Center",
+        "picture": "Bg_26A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82057,
+          34.056713
+        ],
+        "type": "Point"
+      },
+      "id": "70a9970d171cc8e28f214701ba5a48c0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
+        "name": "Building 210 - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821636,
+          34.049663
+        ],
+        "type": "Point"
+      },
+      "id": "722a5fc1a99dd368c0f4fadcf00ac1b6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "East of Facilities Management (Building 81).",
+        "name": "Building 83 - Auto Shop",
+        "picture": "Bg_83.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808377,
+          34.059327
+        ],
+        "type": "Point"
+      },
+      "id": "75f34dc17df3a6746de93cb2626ccf3c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13B - Army ROTC",
+        "description": "East of Library (Building 15) and Southeast of Art Department and Engineering Annex (Building 13).",
+        "picture": "Bg_13BCD.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820784,
+          34.058242
+        ],
+        "type": "Point"
+      },
+      "id": "77829a123bb541811505baeb21a9f036"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 15 - Library",
+        "description": "What began as a single reading room has grown into an impressive six-story repository for 2.4 million books and 3,000 periodicals. The University Library underwent a $58.5 million renovation in 2008 to supports its mission to be \\\"the central intellectual and cultural resource of the campus community.\\\" The Library is equipped with many computers and group study rooms, including a 24-hour lab with plenty of tables. It also features classrooms and a large lecture hall, as well as a Starbucks, Media Collections section, and the University Writing Center.",
+        "picture": "Bg_15.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821372,
+          34.057604
+        ],
+        "type": "Point"
+      },
+      "id": "78f570b174b8665f1e45b94f9acef2b4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "NorthEast of Auto Shop (Building 83).",
+        "name": "Building 75 - Procurement/Receiving",
+        "picture": "Bg_75.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808085,
+          34.059471
+        ],
+        "type": "Point"
+      },
+      "id": "7c321958bdcc3026186a76c17bb91332"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "AGRIscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
+        "name": "Building 211 - Agriscapes/Farm Store",
+        "picture": "Bg_211.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819031,
+          34.048336
+        ],
+        "type": "Point"
+      },
+      "id": "819487a12517b89b7c684c2fe20e4bdd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 91 - Student Affairs Information Technology Services",
+        "description": "South of Residence Hall, Montecito (Building 21) and SouthWest of Residence Hall, Alamitos (Building 22).",
+        "picture": "Bg_91.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818629,
+          34.061341
+        ],
+        "type": "Point"
+      },
+      "id": "836ea3981a38c02a6ffedb061cf81a41"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "West of Collins College of Hospitality Management (Bldg. 79A) and South of Kellogg West Main Lodge (Bldg. 77).",
+        "name": "Building 80 - Collins College of Hospitality Management, Marriott Learning Center",
+        "picture": "Bg_80.png"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825449,
+          34.054834
+        ],
+        "type": "Point"
+      },
+      "id": "83b0267ec158dd74d0b0461daed8f0f2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building One",
+        "description": "There is the Advertising Office, Admissions & Enrollment Services, Communications Department, Cooperative Education, the International Center, Economic Department, the Kellogg Honors College, Office of Research, Philosophy Department, and The Poly Post located in Building One",
+        "picture": "Bg_1.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824144,
+          34.059754
+        ],
+        "type": "Point"
+      },
+      "id": "881e3d753aa24ecc29beec44d1bffe37"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24F - Temporary Classroom F",
+        "description": "West of Drama Department/Theater (Building 25).",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822655,
+          34.056034
+        ],
+        "type": "Point"
+      },
+      "id": "8839850686008febe858aa079de01560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "",
+        "name": "Buillding 218 - American Red Cross Headquarters",
+        "picture": "Bg_218.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.811408,
+          34.053671
+        ],
+        "type": "Point"
+      },
+      "id": "8b0916b75a15538d40fafde8fda93072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 97 - Campus Center",
+        "description": "The Campus Center is a multipurpose building for dining, relaxing in front of the big screen television, using the free wireless internet, meeting up with friends, and studying. There are both tables inside and outside, and its close proximity to many other campus buildings makes it a convenient stop on your way to and from wherever you're going. Its Marketplace acts as a food court and is Cal Poly Pomona's most frequented dining facility, with six different dining options such as Taco Bell, Carl's Jr and Panda Express.",
+        "picture": "Bg_97.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823339,
+          34.057707
+        ],
+        "type": "Point"
+      },
+      "id": "90bf7649c39302651540b826fecd3060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 31A - Poultry",
+        "description": "Section of farmland used for raising chicken",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829008,
+          34.054739
+        ],
+        "type": "Point"
+      },
+      "id": "95cd60c460b7f7bf11639ed5ed452ef3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 46 - Health Services",
+        "description": "Health Services is an ambulatory care facility (you have to be able to walk in on your own) offering visits with medical providers by appointment or through Urgent Care for non-life threatening sudden accidents or injuries. 909-869-4000. After-Hours Nurse Advice Line: 855-272-1723. ",
+        "picture": "Bg_46.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828086,
+          34.057808
+        ],
+        "type": "Point"
+      },
+      "id": "96040755cdb8e5987528f4fcf529f026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 70 - Los Olivos Commons",
+        "description": "Los Olivos, located in Building 70, is an all-you-care-to-eat dining venue with a large indoor eating area, an outside patio, and numerous choices for any diet including The Mongolian Grill, Vegan Corner, a Deli and many more. Los Olivos hosts special events several times during the academic year, including Cinco de Mayo and Chinese New Year.",
+        "picture": "Bg_70.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821583,
+          34.062368
+        ],
+        "type": "Point"
+      },
+      "id": "9a86abdbd6bc0f2f5d9b539c6ae4fefd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 31B - Poultry",
+        "description": "Section of farmland used for raising chicken",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829016,
+          34.055163
+        ],
+        "type": "Point"
+      },
+      "id": "9bdc12956a2f3a9992cd1af369f78635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "A complex with a diverse community of students, teacher-scholars, and staff committed to active learning through the application of theory to practice. The College partners with its stakeholders to develop individuals with the knowledge and skills to be successful and to contribute in a dynamic global business environment.",
+        "name": "Building 162 - College of Business Administration",
+        "picture": "Bg_162.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819627,
+          34.061295
+        ],
+        "type": "Point"
+      },
+      "id": "9d96366ee2455f999ce03f1b7f835b0a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Located off of Cypress Lane and Magnolia Lane and North of the Parking Structure (Building 106)",
+        "name": "Building 90 - Medic-1",
+        "picture": "Bg_90.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816607,
+          34.061187
+        ],
+        "type": "Point"
+      },
+      "id": "9e961c356f204b76a1fad0d2d18d8eca"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 71 - Recreation and Maintenance",
+        "description": "East of Residence Hall, Alamitos (Building 22) and SouthEast of Residence Hall, Aliso (Building 23).",
+        "picture": "Bg_71.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816822,
+          34.063027
+        ],
+        "type": "Point"
+      },
+      "id": "9eba92bea4d0a1274b23713aa94b9935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 37 - Swine Unit",
+        "description": "Section of farmland used for raising pigs",
+        "picture": "Bg_37.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822909,
+          34.052188
+        ],
+        "type": "Point"
+      },
+      "id": "a1ce3c2178fa3d7e6a7319dac1facb9f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 220B: Center for Training, Technology and Incubation",
+        "description": "The Center for Training, Technology & Incubation (CTTi) is the unique entrepreneurial anchor of Cal Poly Pomona's business/research park, Innovation Village; offering emerging to medium-size companies the opportunity to lease office and wetlab space designed to expand with company growth; and providing unparalleled access to experts and unique collaborating opportunities.",
+        "picture": "Bg_220B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815249,
+          34.050432
+        ],
+        "type": "Point"
+      },
+      "id": "a25826d0294cbc9e151de0b769936441"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 34 - Meat Laboratory",
+        "description": "A fully functioning plant with the capabilities to involve students in all stages of meat processing from harvesting to packaging. Designed to supplement students’ classroom instruction, the center will give them the opportunity to apply learned principles to industry-like practices and experience.",
+        "picture": "Bg_34.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828116,
+          34.05388
+        ],
+        "type": "Point"
+      },
+      "id": "a3263c7a2147367580023cf455924b8a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 85 - I Poly High School",
+        "description": "Off of Temple Avenue and University Drive and Southwest of Parking Lot K",
+        "picture": "Bg_85.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819535,
+          34.05099
+        ],
+        "type": "Point"
+      },
+      "id": "a5e6b52d0276b6198f5c2f8317b4df07"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "East of Training Center (Building 49) and North of Facilities Management (Building 81).",
+        "name": "Building 82A - Carpenter Shop",
+        "picture": "Bg_82A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808973,
+          34.060038
+        ],
+        "type": "Point"
+      },
+      "id": "adaebb2dfb59a8a345df7d89e877a8c4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 58 - Cedritos Residence Hall",
+        "description": "Accommodates approximately 185 students and staffed by five student Resident Advisors (RA) and a professional live-in Hall Coordinator. Each room measures approximately 12' x 14' and has five walls.",
+        "picture": "Bg_58.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821236,
+          34.061534
+        ],
+        "type": "Point"
+      },
+      "id": "ae629caf469a71efebfdf3b1ad1ac9d2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79 - Collins College of Hospitality Management",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
+        "picture": "Bg_79.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824196,
+          34.055013
+        ],
+        "type": "Point"
+      },
+      "id": "b076591575093d71c5b7c9021879ef42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 94 - University Office Building",
+        "description": "Building 94 is home to the Ethnic & Women's Studies Department, Liberal Studies Department, Political Science Department, Peermentoring Department, and the Undeclared Major Advising center. Along with these departments, there is the E-Business Program and Educational Opportunity Program (EOP).",
+        "picture": "Bg_94.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823214,
+          34.059154
+        ],
+        "type": "Point"
+      },
+      "id": "b1400c9c9d45379d5410c431b3f17ff7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 100 - Storage",
+        "description": "NorthEast of Interim Design Center (Building 89).",
+        "picture": "Bg_100.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.810831,
+          34.062021
+        ],
+        "type": "Point"
+      },
+      "id": "b2455fc0a4d28864721e891b3da617f2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "California State Polytechnic University, Pomona",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.823105,
+          34.055816
+        ],
+        "type": "Point"
+      },
+      "id": "b309d1961ec7d900dcacc978579616b0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 67 - Equine Research Facility",
+        "description": "NorthEast of W.K. Kellogg Arabian Horse Center (Building 29) and is where the Equine Outreach Program is located",
+        "picture": "Bg_67.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814176,
+          34.059623
+        ],
+        "type": "Point"
+      },
+      "id": "b32dca7d4c2589da406789e6a21173d5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 25 - Drama Department/Theater",
+        "description": "The Mission of the Department of Theatre and New Dance at Cal Poly Pomona is to prepare students to be current and relevant artists for the 21st century. Students develop critical thinking and disciplinary excellence through a collaborative and interactive learning process that embraces diversity, and interdisciplinary work.",
+        "picture": "Bg_25.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822107,
+          34.056442
+        ],
+        "type": "Point"
+      },
+      "id": "b341d42245258b8b00688f6ee0279cee"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 30 - Agricultural Unit",
+        "description": "West of Beef Unit/Feed Shed (Building 32). Used for storing seeds and equipment.",
+        "picture": "Bg_30.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828459,
+          34.05512
+        ],
+        "type": "Point"
+      },
+      "id": "b42c8243a7259b556f35ee6890ab1c1c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 68 - Hay Barn",
+        "description": "South the Beef Unit/Feed Shed (Building 32) and North of the Feedmill (Building 33).",
+        "picture": "Bg_68.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827713,
+          34.054217
+        ],
+        "type": "Point"
+      },
+      "id": "b66c80169ccc54eff0587011bc120d75"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 193 - Chilled Water Center Plant",
+        "description": "East of Health Services (Building 46).",
+        "picture": "Bg_193.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829562,
+          34.057089
+        ],
+        "type": "Point"
+      },
+      "id": "b9132f46252e4b821a1b495815e89ffc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 112 - Kellogg House Pomona",
+        "description": "North of Manor House (Building 111)",
+        "picture": "Bg_112.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82441,
+          34.062684
+        ],
+        "type": "Point"
+      },
+      "id": "be51af38002fdaa6a573ab5c9d792e57"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 31 - Poultry",
+        "description": "Section of farmland used for raising chicken",
+        "picture": "Bg_31.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828353,
+          34.054628
+        ],
+        "type": "Point"
+      },
+      "id": "be7a298d4682778d1e47ff6ec334e79b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 21 - Montecito Residence Hall",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
+        "picture": "Bg_21.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819307,
+          34.062194
+        ],
+        "type": "Point"
+      },
+      "id": "bf1412c5ca9af5a0d2be8eeeb376d23a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CLA Building",
+        "description": "The Administration Building, officially called the CLA Building and referred to on campus as the “pointy building,” is a unique structure that stands out with its open triangular top. Not only has it become a familiar symbol of Cal Poly Pomona and now part of the school’s logo, but the eight- story CLA Building has also been featured in films and commercials, since Hollywood is not all that far away from campus. The CLA stands for “Classroom/Laboratory/Administration,” as it is used for a variety of departments and services such as Campus Tour Information, Development, Financial Aid and Scholarships, National Student Exchange, Photo ID, and the Registrars Office.\"",
+        "picture": "Bg_98.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820007,
+          34.059366
+        ],
+        "type": "Point"
+      },
+      "id": "c03087faf3a79bd01d83e19fd2cf57a9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 35 - Bronco Student Center (BSC)",
+        "description": "The Bronco Student Center (BSC) is the social hub for all things student-related. The BSC is where students are able to eat, meet, study, and play! Whether students need to unwind in the Games Room Etc., grab a bite at the food court, complete homework in the study lounges, or simply hang out with friends, the BSC is the perfect place for all student needs. Indoor and outdoor seating is available. ",
+        "picture": "Bg_35.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821289,
+          34.056187
+        ],
+        "type": "Point"
+      },
+      "id": "c0777a7d32caebc65d8d21eacf4e899c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 54 - Residence Suites (Vista de las Estrellas",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+        "picture": "Bg_54.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818896,
+          34.055515
+        ],
+        "type": "Point"
+      },
+      "id": "cbeef57f85ebb72a7fb9d9f227a886f0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kellogg Polytechnic Elementary School",
+        "description": "",
+        "picture": ""
+      },
+      "geometry": {
+        "coordinates": [
+          -117.807609,
+          34.057265
+        ],
+        "type": "Point"
+      },
+      "id": "cde0215b694dcdd6733180acf3b57034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Regenerative Studies is located within easy walking distance or a quick shuttle ride to the academic buildings, library, computer labs, dining areas, student union, and parking lots. These facilities have a laundry room, study areas, recreation room/TV lounge, mailboxes, and a community kitchenette. Satellite television service is provided in each room with Wireless Internet Access. Both residential buildings are co-ed and non-smoking.",
+        "name": "Building 209W - Center for Regenerative Studies",
+        "picture": "Bg_209.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824467,
+          34.049816
+        ],
+        "type": "Point"
+      },
+      "id": "cef803be9e535aece1de8dbfadf05da6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "NorthEast of Facilities Management (Building 81).",
+        "name": "Building 82 - Facilities Mangament Warehouse",
+        "picture": "Bg_82.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808688,
+          34.059773
+        ],
+        "type": "Point"
+      },
+      "id": "d014137759de52edb2b26b6aa0bdcb6f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 9 - College of Engineering",
+        "description": "Inside Building 9 you can find the College of Engineering Department, the Testing Coordinator, a Study Center, the Maintenance Depot and much more. There are many Engineering Electrical and Computer Engineering Labs along with the office for the Maximizing Engineering Potential program.",
+        "picture": "Bg_9.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822243,
+          34.059102
+        ],
+        "type": "Point"
+      },
+      "id": "d364b7ea81a514abfb5972cb5a34541e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24B - Temporary Classroom B",
+        "description": "West of Drama Department/Theater (Building 25).",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822404,
+          34.056168
+        ],
+        "type": "Point"
+      },
+      "id": "d57b47a8d97d428e385e6af353662eb0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 4A - BioTrek Learning Center",
+        "description": "South of College of Agriculture (Building 2) and West of Biotechnology Building (Building 4).",
+        "picture": "Bg_4A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.8261,
+          34.057235
+        ],
+        "type": "Point"
+      },
+      "id": "da7ff2f0f89704730f7b088d71fd34bc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 95 - Cultural Centers",
+        "description": "East of Campus Center (Building 97) and South of College of Education and Integrative Studies (Building 6).",
+        "picture": "Bg_95.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822662,
+          34.057949
+        ],
+        "type": "Point"
+      },
+      "id": "daed3cdbf75a552595d7898b362e518d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 86A: English Language Institute",
+        "description": "West of Kellogg Gymnasium (Building 43) and South of Swimming Pool (Building 44).",
+        "picture": "Bg_86A.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819994,
+          34.053239
+        ],
+        "type": "Point"
+      },
+      "id": "dbc06bca8e8139373f05a05c1dfee49f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 3 - Science Laboratory",
+        "description": "A special facility where students and faculty from the College of Science conduct experiments",
+        "picture": "Bg_3.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825847,
+          34.058163
+        ],
+        "type": "Point"
+      },
+      "id": "ddad59b6d7936707722f7d398f244464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 41 - Darlene May Gymnasium",
+        "description": "Here in the Darlene May Gymnasium, there is a women's locker room and training room in addition to the Volleyball Office.",
+        "picture": "Bg_41.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.821249,
+          34.054018
+        ],
+        "type": "Point"
+      },
+      "id": "de607a232032205027e8a50f3fbcb62a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 13 - Art Department and Engineering Annex",
+        "description": "The Art Department's primary mission is teaching excellence and program quality. Educators are committed to building a foundation of creativity to support self-expression and individual intellectual development while meeting career goals and curriculum structure for a competitive student body.",
+        "picture": "Bg_13.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.820798,
+          34.058812
+        ],
+        "type": "Point"
+      },
+      "id": "e193da717934e2ae892417bbd1f210ee"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 52 - Vista Market",
+        "description": "We are a fully stocked, one-stop-shop neighborhood store with a fun community vibe that offers personal items and the staples needed to prepare home-cooked meals  909-869-5111",
+        "picture": "Bg_52.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817939,
+          34.053962
+        ],
+        "type": "Point"
+      },
+      "id": "e76791370e6f0cd938368cb6301c0975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 111 - Manor House",
+        "description": "Home to the University President and his family.",
+        "picture": "Bg_111.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822939,
+          34.06051
+        ],
+        "type": "Point"
+      },
+      "id": "e8e827693d91e33a2b4fba5b06c1f963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 7 - College of Environmental Design",
+        "description": "Building 7 is where the Architecture Department, Food, Nutrition & Consumer Science Department, Human Nutrition and Food Science Department, Landscape Architecture Department and Urban & Regional Planning Department are located.",
+        "picture": "Bg_7.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.827408,
+          34.057256
+        ],
+        "type": "Point"
+      },
+      "id": "ead7084d5dbcd872cf8bd4fb9d2feda9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 63 - Residence Suites (Vista de la Luna)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+        "picture": "Bg_63.jpg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816959,
+          34.053899
+        ],
+        "type": "Point"
+      },
+      "id": "eb152ad366854cd7ecf3dbb09e849c9b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 109 - Police and Parking Services",
+        "description": "East of Parking Structure (Building 106). Contains the Rideshare office, a program gives priority parking to students who carpool.",
+        "picture": "Bg_109.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815759,
+          34.060733
+        ],
+        "type": "Point"
+      },
+      "id": "ec5cff3f7dff32cfe1cd3231d3722c2f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 48 - Custodial Offices",
+        "description": "South of Auto Shop (Building 83).",
+        "picture": "Bg_48.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.808456,
+          34.059017
+        ],
+        "type": "Point"
+      },
+      "id": "f02e35564f37c5ee74b75f78dba9368e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 200 - University Village",
+        "description": "The University Village is housing owned by the University that is available for rent. The Village is conveniently located across South from the campus. They have shuttle transportation that will take you to and from school. There's a computer lab, pool, and basketball court.",
+        "picture": "Bg_200.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815083,
+          34.04838
+        ],
+        "type": "Point"
+      },
+      "id": "f06b37eed888814ea191c46dc76dc781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 5 - College of Letters, Arts, and Social Sciences",
+        "description": "Building 5 is home to the Department of Education, Geography & Anthropology Department, Psychology and Sociology Department, and the M.A. in Education Department. In addition, there are Quick Print Services and Graphic Communications Services.",
+        "picture": "Bg_5.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824464,
+          34.057758
+        ],
+        "type": "Point"
+      },
+      "id": "f12b5b5e9d6acda3b3f12713d58e1f93"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 23 - Aliso Residence Hall",
+        "description": "One of the four red brick halls that accommodates approximately 212 residents while being staffed by five student Resident Advisors and a professional live-in Hall Coordinator. The majority of floors are coed by alternate male and female wings and each room measures approximately 11' x 15'.",
+        "picture": "Bg_23.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817699,
+          34.062928
+        ],
+        "type": "Point"
+      },
+      "id": "f412f8adf20559a733171965cb49a73d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 24C - Temporary Classroom C",
+        "description": "West of Drama Department/Theater (Building 25).",
+        "picture": "Bg_24A_E.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.822402,
+          34.055913
+        ],
+        "type": "Point"
+      },
+      "id": "f7411a91ccd2b0fed29949145b97f07d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 76A - Kellogg West/Addition",
+        "description": "Northeast of Kellogg West Main Lodge (Building 77) and Northwest of Kellogg West Education/Dining (Building 76).",
+        "picture": "Bg_76.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824725,
+          34.056673
+        ],
+        "type": "Point"
+      },
+      "id": "f92948a964ccfcf1d6d9fd6af19c3400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 45 - Agricultural Engineering",
+        "description": "The Apparel Technology & Research Center, Apparel Merchandising & Management Department and the Center for Turf, Irrigation & Landscape Technology are all located here in Building 45.",
+        "picture": "Bg_45.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.811145,
+          34.061079
+        ],
+        "type": "Point"
+      },
+      "id": "faa2055bbe776ebce4378c199337c222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 79B - Collins College of Hospitality Management",
+        "description": "The Collins College of Hospitality Management is the location of The Restaurant at Kellogg Ranch and the School of Hotel and Restaurant Management.",
+        "picture": "Bg_79B.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824454,
+          34.055298
+        ],
+        "type": "Point"
+      },
+      "id": "fb3a6c55c09dcd4d2d7f2ffed0867577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 55 - Foundation Administration Offices",
+        "description": "East of Bronco Bookstore (Building 66) and South of University Plaza (Building 26).",
+        "picture": "Bg_55.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819922,
+          34.056219
+        ],
+        "type": "Point"
+      },
+      "id": "fb477ea5b56f6daaa649b0d2fc3dbb5d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 62 - Residence Suites (Vista de las Montanas)",
+        "description": "Uniquely designed to meet the needs of today's busy college student, this community offers suite-style accommodations that highlight privacy, comfort, and convenience. Offering beautiful views of the campus and the San Gabriel Mountains. Each floor plan has one interior entrance leading into a living room and kitchenette area, with individual bedrooms offering additional privacy.",
+        "picture": "Bg_62.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817559,
+          34.054328
+        ],
+        "type": "Point"
+      },
+      "id": "fca893b64a78ce270015522298c6bd0d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 77 - Kellogg West Main Lodge",
+        "description": "West of Kellogg West Education/Dining (Building 76) and SouthWest of Kellogg West Addition (Building 78).",
+        "picture": "Bg_77.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.825967,
+          34.056257
+        ],
+        "type": "Point"
+      },
+      "id": "feeb02ee4899c3b7186b1fd5a5fc560f"
     }
   ],
   "type": "FeatureCollection"
