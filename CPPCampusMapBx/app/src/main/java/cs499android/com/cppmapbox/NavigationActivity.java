@@ -33,6 +33,7 @@ import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.constants.MyBearingTracking;
 import com.mapbox.mapboxsdk.constants.MyLocationTracking;
 import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
@@ -65,12 +66,15 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private DirectionsRoute currentRoute;
     private Polyline currentLine;
     private Polyline oldLine;
+    private Marker oldDestination;
     private PermissionsManager permissionsManager;
     private TextToSpeech textToSpeech;
     private StepManeuver nextManeuver;
     private boolean speak;
+    private boolean overview;
 
-    private android.support.design.widget.FloatingActionButton floatingActionButton;
+    private android.support.design.widget.FloatingActionButton cancelButton;
+    private android.support.design.widget.FloatingActionButton cameraView;
 
     ///////////////////////////////////////////////////
     GoogleApiClient mGoogleApiClient;
@@ -101,6 +105,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .build();
         //////////////////////////////////////////////
 
+        overview = false;
         setPermissions();
         CheckNearby.init();
 
@@ -108,10 +113,11 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 map = mapboxMap;
-                map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
+                StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
                         .icon(StaticVariables.destinationMarker.getIcon()));
+                oldDestination = StaticVariables.destinationMarker;
                 speak = true;
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
@@ -130,14 +136,9 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 map.getTrackingSettings().setDismissAllTrackingOnGesture(false);
                 map.getTrackingSettings().setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW);
                 map.getTrackingSettings().setMyBearingTrackingMode(MyBearingTracking.COMPASS);
-                CameraPosition position = new CameraPosition.Builder()
-                        .target(new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude()))
-                        .zoom(18)
-                        .tilt(50)
-                        .build();
-                map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
-                floatingActionButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.navigation_cancel_fab);
-                floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                updateCamera((Position.fromCoordinates(map.getMyLocation().getLongitude(), map.getMyLocation().getLatitude())));
+                cancelButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.navigation_cancel_fab);
+                cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if(StaticVariables.speakDescriptions) {
@@ -149,6 +150,35 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         finish();
                     }
                 });
+                cameraView = (android.support.design.widget.FloatingActionButton) findViewById(R.id.view_fab);
+                cameraView.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view)
+                    {
+                        if(overview)
+                        {
+                            map.getTrackingSettings().setDismissAllTrackingOnGesture(false);
+                            map.getTrackingSettings().setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW);
+                            map.getTrackingSettings().setMyBearingTrackingMode(MyBearingTracking.COMPASS);
+                            updateCamera(Position.fromCoordinates(map.getMyLocation().getLongitude(), map.getMyLocation().getLatitude()));
+                        }
+                        else
+                        {
+//                            LatLngBounds bounds = new LatLngBounds.Builder()
+//                                    .include(new LatLng(StaticVariables.destination.getLatitude(), StaticVariables.destination.getLongitude()))
+//                                    .include(new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude()))
+//                                    .build();
+//                            map.easeCamera(CameraUpdateFactory.newLatLngBounds(bounds, 50));
+                            CameraPosition position = new CameraPosition.Builder()
+                                    .tilt(0)
+                                    .zoom(16)
+                                    .build();
+                            map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
+                            map.getTrackingSettings().setDismissAllTrackingOnGesture(true);
+                        }
+                        overview = !overview;
+                    }
+                });
                 CheckNearby.user = new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude());
             }
         });
@@ -157,23 +187,39 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
-
+            if(oldDestination != StaticVariables.destinationMarker){
+                map.removeMarker(oldDestination);
+                StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
+                        .title(StaticVariables.destinationMarker.getTitle())
+                        .snippet(StaticVariables.destinationMarker.getSnippet())
+                        .icon(StaticVariables.destinationMarker.getIcon()));
+                oldDestination = StaticVariables.destinationMarker;
+            }
             // Move the map camera to where the user location is and then remove the
             // listener so the camera isn't constantly updating when the user location
             // changes. When the user disables and then enables the location again, this
             // listener is registered again and will adjust the camera once again.
             try {
                 Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
-                CameraPosition position = new CameraPosition.Builder()
-                        .target(new LatLng(origin.getLatitude(), origin.getLongitude()))
-                        .build();
-                map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
+                if(!overview) {
+                    updateCamera(origin);
+                }
                 checkNearby(origin);
                 getRoute(origin);
             } catch (ServicesException se) {
                 se.printStackTrace();
             }
         }
+    }
+
+    private void updateCamera(Position p)
+    {
+        CameraPosition position = new CameraPosition.Builder()
+                .target(new LatLng(p.getLatitude(), p.getLongitude()))
+                .zoom(18)
+                .tilt(50)
+                .build();
+        map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
     }
 
     private void checkNearby(Position origin)

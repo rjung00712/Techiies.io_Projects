@@ -22,7 +22,7 @@ public abstract class CheckNearby
     protected static ArrayList<Marker> checked;
     protected static LatLng user;
     protected static Marker marker;
-    private static final double MAX_DISTANCE = 40;
+    private static final double MAX_DISTANCE = 100;
 
     protected static void init()
     {
