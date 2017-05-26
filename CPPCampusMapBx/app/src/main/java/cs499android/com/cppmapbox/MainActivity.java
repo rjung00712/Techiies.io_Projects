@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 ClusterHolder.buildings.setSelected(false);
                 ClusterHolder.food.setSelected(false);
                 ClusterHolder.parking.setSelected(false);
+                ClusterHolder.bathrooms.setSelected(false);
                 ClusterHolder.addMarkers();
                 StaticVariables.map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
@@ -156,6 +157,15 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             @Override
             public void onClick(View view) {
                 ClusterHolder.food.setSelected(!ClusterHolder.food.isSelected());
+                ClusterHolder.updateMarkers();
+            }
+        });
+
+        com.getbase.floatingactionbutton.FloatingActionButton toggleBathroomsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_bathrooms);
+        toggleBathroomsFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClusterHolder.bathrooms.setSelected(!ClusterHolder.bathrooms.isSelected());
                 ClusterHolder.updateMarkers();
             }
         });

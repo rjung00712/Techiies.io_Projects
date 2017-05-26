@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.mapbox.services.commons.models.Position;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
@@ -21,6 +23,7 @@ public class MarkerSelected extends AppCompatActivity
     private TextToSpeech textToSpeech;
     private String title;
     private String description;
+    private String snippet;
     private String type;
 
     @Override
@@ -28,12 +31,17 @@ public class MarkerSelected extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marker_selected);
         title = getIntent().getExtras().getString("Title");
-        description = getIntent().getExtras().getString("Description");
+        snippet = getIntent().getExtras().getString("Description");
         type = getIntent().getExtras().getString("Type");
         EditText editText = (EditText) findViewById(R.id.title);
         editText.setText(title);
         editText = (EditText) findViewById(R.id.description);
-        editText.setText(getDescription(description));
+        description = getDescription(snippet);
+        if(type.equals("Nearby"))
+        {
+            description = "You are nearby " + title + "! " + description + "\nWould you like to go here?";
+        }
+        editText.setText(description);
         editText.setAutoLinkMask(Linkify.PHONE_NUMBERS);
         setPicture();
         setButtons();
@@ -42,7 +50,7 @@ public class MarkerSelected extends AppCompatActivity
                 @Override
                 public void onInit(int status) {
                     textToSpeech.setLanguage(Locale.US);
-                    textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak(description, TextToSpeech.QUEUE_FLUSH, null);
                 }
             });
         }
@@ -50,7 +58,7 @@ public class MarkerSelected extends AppCompatActivity
 
     public void setPicture()
     {
-        String filename = description.substring(description.indexOf("***") + 3);
+        String filename = snippet.substring(snippet.indexOf("***") + 3);
         try {
             InputStream is = getAssets().open(filename);
             Bitmap bitmap = BitmapFactory.decodeStream(is);
@@ -134,22 +142,27 @@ public class MarkerSelected extends AppCompatActivity
     public void goBack(View v)
     {
         if(StaticVariables.speakDescriptions) {
-            if (textToSpeech.isSpeaking()) {
+            if (textToSpeech != null && textToSpeech.isSpeaking()) {
                 textToSpeech.stop();
                 textToSpeech.shutdown();
             }
         }
+        CheckNearby.update();
         finish();
     }
 
     public void goHere(View v)
     {
         if(StaticVariables.speakDescriptions) {
-            if (textToSpeech.isSpeaking()) {
+            if (textToSpeech != null && textToSpeech.isSpeaking()) {
                 textToSpeech.stop();
                 textToSpeech.shutdown();
             }
         }
+        StaticVariables.destinationMarker = CheckNearby.marker;
+        StaticVariables.destination = Position.fromCoordinates(CheckNearby.marker.getPosition().getLongitude(),
+                                                               CheckNearby.marker.getPosition().getLatitude());
+        CheckNearby.init();
         finish();
     }
 
@@ -174,7 +187,7 @@ public class MarkerSelected extends AppCompatActivity
                 @Override
                 public void onInit(int status) {
                     textToSpeech.setLanguage(Locale.US);
-                    textToSpeech.speak(getDescription(description), TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak(description, TextToSpeech.QUEUE_FLUSH, null);
                 }
             });
         }

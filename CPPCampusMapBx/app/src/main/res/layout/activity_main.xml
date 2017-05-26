@@ -75,6 +75,15 @@
             fab:fab_size="mini"
             fab:fab_title="Food Places"/>
 
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_toggle_bathrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#FFFFFF"
+            fab:fab_colorPressed="#000000"
+            fab:fab_size="mini"
+            fab:fab_title="Bathrooms"/>
+
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </android.support.design.widget.CoordinatorLayout>
