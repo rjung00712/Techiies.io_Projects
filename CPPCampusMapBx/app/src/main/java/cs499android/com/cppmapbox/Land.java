@@ -120,10 +120,18 @@ public class Land extends AppCompatActivity{
                  tv.setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View v) {
+                         String name = (String)tv.getText();
+
+                         Marker marker = ClusterHolder.getMarker(name);
+
+                         StaticVariables.destinationMarker = marker;
+                         StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
                          Intent placeSelectedIntent = new Intent(Land.this, MarkerSelected.class);
-                         //MarkerSelectedIntent.putExtra("Title", marker.getTitle());
-                         //MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                         placeSelectedIntent.putExtra("Title", marker.getTitle());
+                         placeSelectedIntent.putExtra("Description", marker.getSnippet());
+                         placeSelectedIntent.putExtra("Type", "Navigate");
                          startActivity(placeSelectedIntent);
+                         finish();
                      }
                  });
 
