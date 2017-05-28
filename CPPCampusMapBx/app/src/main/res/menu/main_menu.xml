@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/nav_admin"
+        android:icon="@drawable/ic_business_center_black_24px"
+        app:showAsAction="never"
+        android:title="@string/administration" />
+    <item
+        android:id="@+id/nav_build"
+        android:icon="@drawable/ic_domain_black_24px"
+        app:showAsAction="never"
+        android:title="@string/buildings" />
+    <item
+        android:id="@+id/nav_dorm"
+        android:icon="@drawable/ic_home_black_24px"
+        app:showAsAction="never"
+        android:title="@string/residential_hall_suite" />
+    <item
+        android:id="@+id/nav_food"
+        android:icon="@drawable/ic_free_breakfast_black_24px"
+        app:showAsAction="never"
+        android:title="@string/food_and_activity" />
+    <item
+        android:id="@+id/nav_park"
+        android:icon="@drawable/ic_local_parking_black_24px"
+        app:showAsAction="never"
+        android:title="@string/parking"/>
+    <item
+        android:id="@+id/nav_land"
+        android:icon="@drawable/ic_terrain_black_24px"
+        app:showAsAction="never"
+        android:title="@string/landmarks" />
+    <item
+        android:id="@+id/nav_bath"
+        android:icon="@drawable/ic_wc_black_24dp"
+        app:showAsAction="never"
+        android:title="@string/Bathroom" />
+
+    <item android:id="@+id/settings"
+        android:title="Settings"/>
+
+</menu>

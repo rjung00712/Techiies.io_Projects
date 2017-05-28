@@ -24,6 +24,13 @@
         </activity>
         <activity android:name=".MarkerSelected" />
         <activity android:name=".NavigationActivity" />
+        <activity android:name=".Admini"></activity>
+        <activity android:name=".Buildings"></activity>
+        <activity android:name=".Dorm"></activity>
+        <activity android:name=".Food"></activity>
+        <activity android:name=".Land"></activity>
+        <activity android:name=".Park"></activity>
+        <activity android:name=".Bathroom"></activity>
         <activity android:name=".Settings"></activity>
     </application>
 

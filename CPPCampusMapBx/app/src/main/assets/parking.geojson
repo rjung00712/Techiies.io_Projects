@@ -5,6 +5,7 @@
       "properties": {
         "name": "Parking Structure 2",
         "description": "Student. Visitor. Faculty and Staff. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_Structure_2.jpeg"
       },
       "geometry": {
@@ -21,6 +22,7 @@
       "properties": {
         "name": "Building 106: Parking Structure",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Bg_106.gif"
       },
       "geometry": {
@@ -37,6 +39,7 @@
       "properties": {
         "name": "Parking Lot E2",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_E2.gif"
       },
       "geometry": {
@@ -53,6 +56,7 @@
       "properties": {
         "name": "Parking Lot G",
         "description": "Faculty and Staff. Resident. Visitor. $1/hour Parking",
+        "category": "parking",
         "picture": "Pk_G.jpeg"
       },
       "geometry": {
@@ -69,6 +73,7 @@
       "properties": {
         "name": "Parking Lot F4",
         "description": "Faculty and Staff. Visitor. Disabled Parking. $1/hour Parking",
+        "category": "parking",
         "picture": "Pk_F4.gif"
       },
       "geometry": {
@@ -85,6 +90,7 @@
       "properties": {
         "name": "Parking Lot B",
         "description": "Designated accessible parking for Kellogg Gym. Faculty and Staff. Student. Visitor. Resident",
+        "category": "parking",
         "picture": "Pk_B.gif"
       },
       "geometry": {
@@ -101,6 +107,7 @@
       "properties": {
         "name": "Parking Lot F5",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_F5.gif"
       },
       "geometry": {
@@ -117,6 +124,7 @@
       "properties": {
         "name": "Parking Lot O",
         "description": "CTTI permit only. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_O.gif"
       },
       "geometry": {
@@ -133,6 +141,7 @@
       "properties": {
         "name": "Parking Lot P",
         "description": "Faculty and Staff. Resident. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_P.jpeg"
       },
       "geometry": {
@@ -149,6 +158,7 @@
       "properties": {
         "name": "Parking Lot F8",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking. Presidential. VIP and Visitor. $1/hour Parking",
+        "category": "parking",
         "picture": "Pk_F8.gif"
       },
       "geometry": {
@@ -165,6 +175,7 @@
       "properties": {
         "name": "Parking Lot R",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_R.gif"
       },
       "geometry": {
@@ -181,6 +192,7 @@
       "properties": {
         "name": "Parking Lot N",
         "description": "Faculty and Staff. Student. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_N.jpeg"
       },
       "geometry": {
@@ -197,6 +209,7 @@
       "properties": {
         "name": "Parking Lot L",
         "description": "Kellogg West permit Only. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_L.gif"
       },
       "geometry": {
@@ -213,6 +226,7 @@
       "properties": {
         "name": "Parking Lot U",
         "description": "Faculty and Staff. Student. Visitor. $1/hour Parking. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_U.gif"
       },
       "geometry": {
@@ -229,6 +243,7 @@
       "properties": {
         "name": "Parking Lot M",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_M.gif"
       },
       "geometry": {
@@ -245,6 +260,7 @@
       "properties": {
         "name": "Parking Lot F2",
         "description": "Faculty and Staff. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_F2.gif"
       },
       "geometry": {
@@ -261,6 +277,7 @@
       "properties": {
         "name": "Parking Lot F10",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_F10.gif"
       },
       "geometry": {
@@ -277,6 +294,7 @@
       "properties": {
         "name": "Overflow Parking Lot",
         "description": "Faculty and Staff. Student",
+        "category": "parking",
         "picture": ""
       },
       "geometry": {
@@ -293,6 +311,7 @@
       "properties": {
         "name": "Parking Lot J",
         "description": "Faculty/Staff: J1 - J2: 7:00AM - 5:30PM; J3 - J8. Student: J1 - J2: After 5:30PM; J3 - J8. Visitor: J1 - J2: After 5:30PM; J3 - J8. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_J.gif"
       },
       "geometry": {
@@ -309,6 +328,7 @@
       "properties": {
         "name": "Parking Lot A",
         "description": "Faculty and Staff. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_A.gif"
       },
       "geometry": {
@@ -325,6 +345,7 @@
       "properties": {
         "name": "Parking Lot E1",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_E1.gif"
       },
       "geometry": {
@@ -341,6 +362,7 @@
       "properties": {
         "name": "Parking Lot I",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_I.gif"
       },
       "geometry": {
@@ -357,6 +379,7 @@
       "properties": {
         "name": "Parking Lot Q",
         "description": "Faculty and Staff. Resident. Disabled Parking",
+        "category": "parking",
         "picture": "Pk_Q.jpeg"
       },
       "geometry": {
@@ -373,6 +396,7 @@
       "properties": {
         "name": "Parking Lot F1",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_F1.gif"
       },
       "geometry": {
@@ -389,6 +413,7 @@
       "properties": {
         "name": "Parking Lot F3",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_F3.gif"
       },
       "geometry": {
@@ -405,6 +430,7 @@
       "properties": {
         "name": "Parking Lot F9",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_F9.gif"
       },
       "geometry": {
@@ -421,6 +447,7 @@
       "properties": {
         "name": "Parking Lot H",
         "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
         "picture": "Pk_H.gif"
       },
       "geometry": {
