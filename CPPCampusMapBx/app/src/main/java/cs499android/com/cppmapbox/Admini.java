@@ -29,9 +29,9 @@ import java.util.Arrays;
  */
 
 public class Admini extends AppCompatActivity{
-
-    ArrayAdapter<String> adapter;
-    TextView tv;
+    private ArrayAdapter<String> adapter;
+    private TextView tv;
+    private final String type = "building";
 
 
     @Override
@@ -49,7 +49,7 @@ public class Admini extends AppCompatActivity{
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-               Marker marker = ClusterHolder.getMarker(adapter.getItem(position));
+               Marker marker = ClusterHolder.getMarker(adapter.getItem(position), type);
 
                StaticVariables.destinationMarker = marker;
                StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
@@ -121,7 +121,7 @@ public class Admini extends AppCompatActivity{
                      public void onClick(View v) {
                          String name = (String)tv.getText();
 
-                         Marker marker = ClusterHolder.getMarker(name);
+                         Marker marker = ClusterHolder.getMarker(name, type);
 
                          StaticVariables.destinationMarker = marker;
                          StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
