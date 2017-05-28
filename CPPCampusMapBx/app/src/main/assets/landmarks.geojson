@@ -5,6 +5,7 @@
       "properties": {
         "name": "University Park",
         "description": "East of Bronco Student Center and North of Bronco Bookstore. This area is very common for clubs and Greek Life to set up booths and sell food and treats buring U-Hour. There are also many events held in this area including Puppies in the Park which always draws a large crowd.",
+        "category": "landmarks",
         "picture": "university_park.jpeg"
       },
       "geometry": {
@@ -21,6 +22,7 @@
       "properties": {
         "name": "Union Plaza Horseshoe Hill",
         "description": "W.K. Kellogg, founder of the famous Kellogg Company known for its cereal production, built Union Plaza in the late 1920's as a horse stable for his collection of Arabian horses. The land that Cal Poly Pomona currently resides on was then Kellogg's sprawling ranch, which was turned over to the government during World War II and eventually back to Kellogg. His generosity is responsible for that same land becoming Cal Poly Pomona, and today's Union Plaza is home to the following plethora of campus services: the Pride Center, Student Life, Multi-Cultural Council, the Native American Resource Center, and the Dean of Students.",
+        "category": "landmarks",
         "picture": "union_plaza.jpeg"
       },
       "geometry": {
@@ -37,6 +39,7 @@
       "properties": {
         "name": "Pumpkin Field",
         "description": "North of Agriscapes/Farm Store (Building 211) and West of University Village (Building 200). This field is filled with pumpkins every year and allows the community to come and pick out a pumpkin for the Holidays. People come out from many different places to be part of such a big event.",
+        "category": "landmarks",
         "picture": "pumpkin_field.jpeg"
       },
       "geometry": {
@@ -53,6 +56,7 @@
       "properties": {
         "name": "BioTrek Ethnobotany Garden",
         "description": "South of College of Agriculture (Building 2).",
+        "category": "landmarks",
         "picture": "biotrek.gif"
       },
       "geometry": {
@@ -69,6 +73,7 @@
       "properties": {
         "name": "Kellogg Track and infield",
         "description": "NorthEast of Parking Lot K and East of Soccer Field. There are soccer games and track meets held here for the Cal Poly Sports teams. Occasionally there are other events that are held at this location including a dog show that is always popular with the students.",
+        "category": "landmarks",
         "picture": "track.jpeg"
       },
       "geometry": {
@@ -85,6 +90,7 @@
       "properties": {
         "name": "Soccer Field",
         "description": "This open area is used by many different clubs and organizations to play different sports like soccer, football, softball, and ultimate frisbee. This field is perfect for those of you that want to go and be active, or just want to go enjoy a nice day laying in the field watching the clouds.",
+        "category": "landmarks",
         "picture": "soccer_field.jpeg"
       },
       "geometry": {
@@ -101,6 +107,7 @@
       "properties": {
         "name": "University Quad",
         "description": "The University Quad is in the center of many of the buildings that host classes and is a perfect spot to meet up with friends and group mates to hangout and discuss different projects in the outdoors. This area is also used for graduation at the end of each year in addition to Career Fair that students can attend and talk with companies they would be interested in working with.",
+        "category": "landmarks",
         "picture": "university_quad.gif"
       },
       "geometry": {
@@ -117,6 +124,7 @@
       "properties": {
         "name": "Voorhis Park",
         "description": "East of Classroom/Laboratory/Administration (C/L/A) (Building 98) and West of Parking Structure (Building 106).",
+        "category": "landmarks",
         "picture": "voorhis_park.gif"
       },
       "geometry": {
@@ -133,6 +141,7 @@
       "properties": {
         "name": "Scolinos Baseball Field",
         "description": "Scolinos Baseball Field is home to the Cal Poly Baseball team the is nationally ranked and competes in the national tournament each year. It is a beautiful field and a great place to go catch a game or two after classes.",
+        "category": "landmarks",
         "picture": "scolinos_field.gif"
       },
       "geometry": {
@@ -149,6 +158,7 @@
       "properties": {
         "name": "Japanese Garden",
         "description": "This beautiful garden is located right next to the CLA, outside the Student Cashiering Services. It is a very tranquil place, full of lovely flowers and trees. There is koi pond where you can see many beautiful Koi fish and adorable turtles",
+        "category": "landmarks",
         "picture": "japanese_garden.gif"
       },
       "geometry": {
@@ -165,6 +175,7 @@
       "properties": {
         "name": "Rose Garden",
         "description": "On the far right of campus is a circular garden, where there are only roses, as the name suggest. There is a gazebo in the center of the garden. The Rose garden was given to Mr. Kellogg's wife from Mr. Kellogg himself and there are seven rings and seven different types of roses because Mr. Kellogg's favorite number was 7.",
+        "category": "landmarks",
         "picture": "rose_garden.gif"
       },
       "geometry": {
@@ -181,6 +192,7 @@
       "properties": {
         "name": "Engineering Meadow",
         "description": "East of College of Engineering (Building 9) and South of Engineering Laboratories (Building 17). The Engineering Meadow is an open field that people constantly meet up and hangout with friends. You can usually spot one or two Engineering students who are surveying the field for a class.",
+        "category": "landmarks",
         "picture": "meadow.gif"
       },
       "geometry": {
@@ -197,6 +209,7 @@
       "properties": {
         "description": "This pond and the walkways surrounding it are full of ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
         "name": "Duck Pond",
+        "category": "landmarks",
         "picture": "duck_pond.jpeg"
       },
       "geometry": {
@@ -212,6 +225,7 @@
       "properties": {
         "description": "West of Soccer Field and NorthWest of Parking Lot K.",
         "name": "Tennis Courts",
+        "category": "landmarks",
         "picture": "tennis_courts.jpg"
       },
       "geometry": {

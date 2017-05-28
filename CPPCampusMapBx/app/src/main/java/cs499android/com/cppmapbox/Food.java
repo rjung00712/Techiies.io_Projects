@@ -64,11 +64,11 @@ public class Food extends AppCompatActivity{
     public void list() {
 
         ListView lv = (ListView) findViewById(R.id.ListView);
-        ArrayList<String> arrayAdmini = new ArrayList<>();
+        ArrayList<String> arrayAdmini = ListHolder.Food;
 
         //admi is an array string of all the buildings. It's under value->strings
-        arrayAdmini.addAll(Arrays.asList(getResources()
-                .getStringArray(R.array.food)));
+//        arrayAdmini.addAll(Arrays.asList(getResources()
+//                .getStringArray(R.array.food)));
 
         adapter = new ArrayAdapter<String>(
                 Food.this,

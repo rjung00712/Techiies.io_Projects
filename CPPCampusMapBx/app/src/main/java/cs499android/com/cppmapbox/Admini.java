@@ -46,6 +46,7 @@ public class Admini extends AppCompatActivity{
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+               ////////////Get a marker for the markerselected activity//////////////////////
 
                //destination = Position.fromCoordinates(mar.getPosition().getLongitude(), marker.getPosition().getLatitude());
               // destinationMarker = marker;
@@ -56,7 +57,6 @@ public class Admini extends AppCompatActivity{
            }
        });
 
-
        list();
    }
 
@@ -64,11 +64,11 @@ public class Admini extends AppCompatActivity{
     public void list() {
 
         ListView lv = (ListView) findViewById(R.id.ListView);
-        ArrayList<String> arrayAdmini = new ArrayList<>();
+        ArrayList<String> arrayAdmini = ListHolder.Admin;
 
         //admi is an array string of all the buildings. It's under value->strings
-        arrayAdmini.addAll(Arrays.asList(getResources()
-                .getStringArray(R.array.admi)));
+//        arrayAdmini.addAll(Arrays.asList(getResources()
+//                .getStringArray(R.array.admi)));
 
         adapter = new ArrayAdapter<String>(
                 Admini.this,

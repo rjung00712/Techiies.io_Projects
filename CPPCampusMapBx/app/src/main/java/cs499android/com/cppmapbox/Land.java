@@ -64,11 +64,11 @@ public class Land extends AppCompatActivity{
     public void list() {
 
         ListView lv = (ListView) findViewById(R.id.ListView);
-        ArrayList<String> arrayAdmini = new ArrayList<>();
+        ArrayList<String> arrayAdmini = ListHolder.Landmarks;
 
         //admi is an array string of all the buildings. It's under value->strings
-        arrayAdmini.addAll(Arrays.asList(getResources()
-                .getStringArray(R.array.land)));
+//        arrayAdmini.addAll(Arrays.asList(getResources()
+//                .getStringArray(R.array.land)));
 
         adapter = new ArrayAdapter<String>(
                 Land.this,

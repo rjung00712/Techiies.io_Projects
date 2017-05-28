@@ -58,6 +58,7 @@ public class MarkerCluster
                 if (icon != null)
                     m.setIcon(icon);
                 markerOptions.add(m);
+                ListHolder.addTo(properties.getString("category"), properties.getString("name"));
             }
         } catch (Exception ex) {
             ex.printStackTrace();

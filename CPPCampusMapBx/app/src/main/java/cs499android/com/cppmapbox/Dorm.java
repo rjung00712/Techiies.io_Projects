@@ -64,11 +64,11 @@ public class Dorm extends AppCompatActivity{
     public void list() {
 
         ListView lv = (ListView) findViewById(R.id.ListView);
-        ArrayList<String> arrayAdmini = new ArrayList<>();
+        ArrayList<String> arrayAdmini = ListHolder.Resident;
 
         //admi is an array string of all the buildings. It's under value->strings
-        arrayAdmini.addAll(Arrays.asList(getResources()
-                .getStringArray(R.array.res)));
+//        arrayAdmini.addAll(Arrays.asList(getResources()
+//                .getStringArray(R.array.res)));
 
         adapter = new ArrayAdapter<String>(
                 Dorm.this,
