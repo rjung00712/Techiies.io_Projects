@@ -4,8 +4,8 @@
 
     <string name="administration">Administration</string>
     <string name="buildings">Buildings</string>
-    <string name="residential_hall_suite">Residential Hall/Suite</string>
-    <string name="food_and_activity">Food and Activity</string>
+    <string name="residential_hall_suite">Residential Halls/Suites</string>
+    <string name="food_and_activity">Food Places</string>
     <string name="parking">Parking</string>
     <string name="landmarks">Landmarks</string>
     <string name="hint">Search...</string>

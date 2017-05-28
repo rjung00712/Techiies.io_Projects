@@ -17,6 +17,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.services.commons.models.Position;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -46,13 +49,16 @@ public class Food extends AppCompatActivity{
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+               Marker marker = ClusterHolder.getMarker(adapter.getItem(position));
 
-               //destination = Position.fromCoordinates(mar.getPosition().getLongitude(), marker.getPosition().getLatitude());
-              // destinationMarker = marker;
+               StaticVariables.destinationMarker = marker;
+               StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
                Intent placeSelectedIntent = new Intent(Food.this, MarkerSelected.class);
-               //placeSelectedIntent.putExtra("Title", marker.getTitle());
-               //placeSelectedIntent.putExtra("Description", marker.getSnippet());
+               placeSelectedIntent.putExtra("Title", marker.getTitle());
+               placeSelectedIntent.putExtra("Description", marker.getSnippet());
+               placeSelectedIntent.putExtra("Type", "Navigate");
                startActivity(placeSelectedIntent);
+               finish();
            }
        });
 
