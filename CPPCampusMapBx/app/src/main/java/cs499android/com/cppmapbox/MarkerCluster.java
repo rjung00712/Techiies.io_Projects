@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class MarkerCluster
 {
     private ArrayList<Marker> markers;
+    private ArrayList<Marker> markersList;
     private ArrayList<MarkerOptions> markerOptions;
     private boolean visible;
     private boolean selected;
@@ -35,6 +36,7 @@ public class MarkerCluster
         this.color = color;
         setIcon(color);
         markers = new ArrayList<>();
+        markersList = new ArrayList<>();
         markerOptions = new ArrayList<>();
         visible = false;
         selected = true;
@@ -58,6 +60,8 @@ public class MarkerCluster
                 if (icon != null)
                     m.setIcon(icon);
                 markerOptions.add(m);
+                markersList.add(new Marker(m));
+                ListHolder.addTo(properties.getString("category"), properties.getString("name"));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -110,6 +114,8 @@ public class MarkerCluster
     public String getColor() {return color;}
 
     public ArrayList<Marker> getMarkers() {return markers;}
+
+    public ArrayList<Marker> getMarkersList() {return markersList;}
 
     public boolean isVisible() {return visible;}
 

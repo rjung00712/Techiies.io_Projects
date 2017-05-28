@@ -4,11 +4,12 @@
 
     <string name="administration">Administration</string>
     <string name="buildings">Buildings</string>
-    <string name="residential_hall_suite">Residential Hall/Suite</string>
-    <string name="food_and_activity">Food and Activity</string>
+    <string name="residential_hall_suite">Residential Halls/Suites</string>
+    <string name="food_and_activity">Food Places</string>
     <string name="parking">Parking</string>
     <string name="landmarks">Landmarks</string>
     <string name="hint">Search...</string>
+    <string name="Bathroom">Bathroom</string>
 
     <string-array name="admi">
         <item>CLA, 98</item>
@@ -142,7 +143,30 @@
         <item>Union Plaza Horseshoe Hill</item>
         <item>Voorhis Ecological Preserve</item>
         <item>Voorhis Park</item>
+    </string-array>
 
+    <string-array name="bath">
+        <item>Building 9 - College of Engineering</item>
+        <item>Building 79B - Collins College of Hospitality Management</item>
+        <item>Building 80 - Collins College of Hospitality Management, Marriott Learning Center</item>
+        <item>Building 79 - Collins College of Hospitality Management</item>
+        <item>Building 97 - Campus Center</item>
+        <item>Building 15 - Library</item>
+        <item>Building 163 - College of Business Administration</item>
+        <item>Building 7 - College of Environmental Design</item>
+        <item>Building 79A - Collins College of Hospitality Management</item>
+        <item>Building 35 - Bronco Student Center (BSC)</item>
+        <item>Building 3 - Science Laboratory</item>
+        <item>Building 2 - College of Agriculture</item>
+        <item>Building One</item>
+        <item>CLA Building</item>
+        <item>Building 8 - College of Science</item>
+        <item>Building 5 - College of Letters, Arts, and Social Sciences</item>
+        <item>Building 164 - College of Business Administration</item>
+        <item>Building 6 - College of Education and Integrative Studies</item>
+        <item>Building 162 - College of Business Administration</item>
+        <item>Building 4 - Biotechnology Building</item>
+        <item>Building 43 - Kellogg Gymnasium</item>
 
     </string-array>
 

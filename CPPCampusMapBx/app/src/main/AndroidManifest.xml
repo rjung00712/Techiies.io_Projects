@@ -30,6 +30,7 @@
         <activity android:name=".Food"></activity>
         <activity android:name=".Land"></activity>
         <activity android:name=".Park"></activity>
+        <activity android:name=".Bathroom"></activity>
         <activity android:name=".Settings"></activity>
     </application>
 

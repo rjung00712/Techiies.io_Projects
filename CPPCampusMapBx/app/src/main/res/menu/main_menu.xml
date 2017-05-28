@@ -36,6 +36,12 @@
         android:icon="@drawable/ic_terrain_black_24px"
         app:showAsAction="never"
         android:title="@string/landmarks" />
+    <item
+        android:id="@+id/nav_bath"
+        android:icon="@drawable/ic_wc_black_24dp"
+        app:showAsAction="never"
+        android:title="@string/Bathroom" />
+
     <item android:id="@+id/settings"
         android:title="Settings"/>
 

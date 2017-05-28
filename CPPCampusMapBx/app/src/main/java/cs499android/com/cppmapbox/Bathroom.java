@@ -21,15 +21,12 @@ import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.services.commons.models.Position;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
 
 /**
- * Created by pungi on 19-May-17.
+ * Created by pungi on 27-May-17.
  */
 
-public class Dorm extends AppCompatActivity{
-
+public class Bathroom extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     TextView tv;
 
@@ -37,50 +34,49 @@ public class Dorm extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_listview);
-
-       
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listview);
 
 
-       final ListView l = (ListView) findViewById(R.id.ListView);
-
-       l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-           @Override
-           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-               Marker marker = ClusterHolder.getMarker(adapter.getItem(position));
-
-               StaticVariables.destinationMarker = marker;
-               StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
-               Intent placeSelectedIntent = new Intent(Dorm.this, MarkerSelected.class);
-               placeSelectedIntent.putExtra("Title", marker.getTitle());
-               placeSelectedIntent.putExtra("Description", marker.getSnippet());
-               placeSelectedIntent.putExtra("Type", "Navigate");
-               startActivity(placeSelectedIntent);
-               finish();
-           }
-       });
 
 
-       list();
-   }
+        final ListView l = (ListView) findViewById(R.id.ListView);
+
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Marker marker = ClusterHolder.getMarker(adapter.getItem(position));
+
+                StaticVariables.destinationMarker = marker;
+                StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                Intent placeSelectedIntent = new Intent(Bathroom.this, MarkerSelected.class);
+                placeSelectedIntent.putExtra("Title", marker.getTitle());
+                placeSelectedIntent.putExtra("Description", marker.getSnippet());
+                placeSelectedIntent.putExtra("Type", "Navigate");
+                startActivity(placeSelectedIntent);
+                finish();
+            }
+        });
+
+        list();
+    }
 
 
     public void list() {
 
         ListView lv = (ListView) findViewById(R.id.ListView);
-        ArrayList<String> arrayAdmini = ListHolder.Resident;
+        ArrayList<String> arrayBath = ListHolder.Bathrooms;
 
-        //admi is an array string of all the buildings. It's under value->strings
-//        arrayAdmini.addAll(Arrays.asList(getResources()
-//                .getStringArray(R.array.res)));
+        //bath is an array string of all the buildings. It's under value->strings
+//        arrayBath.addAll(Arrays.asList(getResources()
+//                .getStringArray(R.array.bath)));
 
         adapter = new ArrayAdapter<String>(
-                Dorm.this,
+                Bathroom.this,
                 R.layout.listview_items,
                 R.id.textview,
-                arrayAdmini);
+                arrayBath);
 
         lv.setAdapter(adapter);
     }
@@ -117,23 +113,23 @@ public class Dorm extends AppCompatActivity{
                 adapter.getFilter().filter(newText);
 
                 tv = (TextView) findViewById(R.id.textview);
-                 tv.setOnClickListener(new View.OnClickListener() {
-                     @Override
-                     public void onClick(View v) {
-                         String name = (String)tv.getText();
+                tv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String name = (String)tv.getText();
 
-                         Marker marker = ClusterHolder.getMarker(name);
+                        Marker marker = ClusterHolder.getMarker(name);
 
-                         StaticVariables.destinationMarker = marker;
-                         StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
-                         Intent placeSelectedIntent = new Intent(Dorm.this, MarkerSelected.class);
-                         placeSelectedIntent.putExtra("Title", marker.getTitle());
-                         placeSelectedIntent.putExtra("Description", marker.getSnippet());
-                         placeSelectedIntent.putExtra("Type", "Navigate");
-                         startActivity(placeSelectedIntent);
-                         finish();
-                     }
-                 });
+                        StaticVariables.destinationMarker = marker;
+                        StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                        Intent placeSelectedIntent = new Intent(Bathroom.this, MarkerSelected.class);
+                        placeSelectedIntent.putExtra("Title", marker.getTitle());
+                        placeSelectedIntent.putExtra("Description", marker.getSnippet());
+                        placeSelectedIntent.putExtra("Type", "Navigate");
+                        startActivity(placeSelectedIntent);
+                        finish();
+                    }
+                });
 
                 Log.w("myApp", "onQueryTextChange ");
                 return false;

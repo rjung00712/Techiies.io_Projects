@@ -99,4 +99,24 @@ public abstract class ClusterHolder
         removeMarkers(null);
         addMarkers();
     }
+
+    protected static Marker getMarker(String name)
+    {
+        for(Marker m : buildings.getMarkersList())
+            if(m.getTitle().equals(name))
+                return m;
+        for(Marker m : landmarks.getMarkersList())
+            if(m.getTitle().equals(name))
+                return m;
+        for(Marker m : parking.getMarkersList())
+            if(m.getTitle().equals(name))
+                return m;
+        for(Marker m : food.getMarkersList())
+            if(m.getTitle().equals(name))
+                return m;
+        for(Marker m : bathrooms.getMarkersList())
+            if(m.getTitle().equals(name))
+                return m;
+        return null;
+    }
 }

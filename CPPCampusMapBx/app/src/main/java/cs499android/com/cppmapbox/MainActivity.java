@@ -425,6 +425,11 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             startActivity(intent);
             return true;
         }
+        if (id == R.id.nav_bath) {
+            Intent intent = new Intent(MainActivity.this, Bathroom.class);
+            startActivity(intent);
+            return true;
+        }
         if (id == R.id.settings){
             Intent SettingsIntent = new Intent(this, Settings.class);
             startActivity(SettingsIntent);

@@ -17,6 +17,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.services.commons.models.Position;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -46,13 +49,16 @@ public class Food extends AppCompatActivity{
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+               Marker marker = ClusterHolder.getMarker(adapter.getItem(position));
 
-               //destination = Position.fromCoordinates(mar.getPosition().getLongitude(), marker.getPosition().getLatitude());
-              // destinationMarker = marker;
+               StaticVariables.destinationMarker = marker;
+               StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
                Intent placeSelectedIntent = new Intent(Food.this, MarkerSelected.class);
-               //placeSelectedIntent.putExtra("Title", marker.getTitle());
-               //placeSelectedIntent.putExtra("Description", marker.getSnippet());
+               placeSelectedIntent.putExtra("Title", marker.getTitle());
+               placeSelectedIntent.putExtra("Description", marker.getSnippet());
+               placeSelectedIntent.putExtra("Type", "Navigate");
                startActivity(placeSelectedIntent);
+               finish();
            }
        });
 
@@ -64,11 +70,11 @@ public class Food extends AppCompatActivity{
     public void list() {
 
         ListView lv = (ListView) findViewById(R.id.ListView);
-        ArrayList<String> arrayAdmini = new ArrayList<>();
+        ArrayList<String> arrayAdmini = ListHolder.Food;
 
         //admi is an array string of all the buildings. It's under value->strings
-        arrayAdmini.addAll(Arrays.asList(getResources()
-                .getStringArray(R.array.food)));
+//        arrayAdmini.addAll(Arrays.asList(getResources()
+//                .getStringArray(R.array.food)));
 
         adapter = new ArrayAdapter<String>(
                 Food.this,
@@ -114,10 +120,18 @@ public class Food extends AppCompatActivity{
                  tv.setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View v) {
+                         String name = (String)tv.getText();
+
+                         Marker marker = ClusterHolder.getMarker(name);
+
+                         StaticVariables.destinationMarker = marker;
+                         StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
                          Intent placeSelectedIntent = new Intent(Food.this, MarkerSelected.class);
-                         //MarkerSelectedIntent.putExtra("Title", marker.getTitle());
-                         //MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
+                         placeSelectedIntent.putExtra("Title", marker.getTitle());
+                         placeSelectedIntent.putExtra("Description", marker.getSnippet());
+                         placeSelectedIntent.putExtra("Type", "Navigate");
                          startActivity(placeSelectedIntent);
+                         finish();
                      }
                  });
 
