@@ -1,6 +1,8 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -11,11 +13,15 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -41,6 +47,7 @@ import java.util.List;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
+import static android.R.attr.id;
 import static cs499android.com.cppmapbox.StaticVariables.BASE_URL;
 
 @SuppressWarnings( {"MissingPermission"})
@@ -349,7 +356,33 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        /*SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item); //item.getActionView();
+
+        searchView.setSearchableInfo( searchManager.getSearchableInfo(getComponentName()));
+        searchView.setQueryHint(getResources().getString(R.string.hint));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.w("myApp", "onQueryTextSubmit ");
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adapter.getFilter().filter(newText);
+                Log.w("myApp", "onQueryTextChange ");
+                return false;
+            }
+        });*/
+
+
         return true;
     }
 
@@ -359,12 +392,80 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
 
-        switch(item.getItemId()) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.nav_admin) {
+            Intent intent = new Intent(MainActivity.this, Admini.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_build) {
+            Intent intent = new Intent(MainActivity.this, Buildings.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_dorm) {
+            Intent intent = new Intent(MainActivity.this, Dorm.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_food) {
+            Intent intent = new Intent(MainActivity.this, Food.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_land) {
+            Intent intent = new Intent(MainActivity.this, Land.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.nav_park) {
+            Intent intent = new Intent(MainActivity.this, Park.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.settings){
+            Intent SettingsIntent = new Intent(this, Settings.class);
+            startActivity(SettingsIntent);
+            return true;
+        }
+
+      /*  switch(item.getItemId()) {
+
+            case R.id.nav_admin:
+                Intent AdminIntent = new Intent(MainActivity.this, Admini.class);
+                startActivity(AdminIntent);
+
+
+            case R.id.nav_build:
+                Intent BuildIntent = new Intent(MainActivity.this, Buildings.class);
+                startActivity(BuildIntent);
+
+            case R.id.nav_dorm:
+                Intent DormIntent = new Intent(MainActivity.this, Dorm.class);
+                startActivity(DormIntent);
+
+            case R.id.nav_food:
+                Intent FoodIntent = new Intent(MainActivity.this, Food.class);
+                startActivity(FoodIntent);
+
+            case R.id.nav_land:
+                Intent LandIntent = new Intent(MainActivity.this, Land.class);
+                startActivity(LandIntent);
+
+            case R.id.nav_park:
+                Intent ParkingIntent = new Intent(MainActivity.this, Park.class);
+                startActivity(ParkingIntent);
+
             case R.id.settings:
                 Intent SettingsIntent = new Intent(this, Settings.class);
                 startActivity(SettingsIntent);
-            default:
+
+            default:*/
                 return super.onOptionsItemSelected(item);
-        }
+        //}
     }
+
+
 }
