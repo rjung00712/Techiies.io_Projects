@@ -43,9 +43,9 @@ public abstract class ListHolder
                 Admin.add(name);
                 Buildings.add(name);
                 break;
-            /*case "bathroom":
+            case "bathroom":
                 Bathrooms.add(name);
-                break;*/
+                break;
             default:
                 break;
         }
