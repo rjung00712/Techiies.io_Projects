@@ -54,7 +54,7 @@
             android:layout_margin="24dp"
             app:srcCompat="@drawable/navigation_cancel"
             tools:ignore="VectorDrawableCompat"
-            app:backgroundTint="#00ffe5"
+            app:backgroundTint="#e4e80d18"
             tools:layout_editor_absoluteY="355dp"
             tools:layout_editor_absoluteX="16dp" />
 
