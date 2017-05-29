@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationSource;
@@ -42,12 +45,16 @@ import com.mapbox.services.api.ServicesException;
 import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
 import com.mapbox.services.commons.models.Position;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import static android.R.attr.id;
 import static cs499android.com.cppmapbox.StaticVariables.BASE_URL;
 
 @SuppressWarnings( {"MissingPermission"})
@@ -97,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 StaticVariables.map = mapboxMap;
-
+                initPolygons();
                 ClusterHolder.createMarkers();
                 ClusterHolder.buildings.setSelected(false);
                 ClusterHolder.food.setSelected(false);
@@ -128,6 +135,60 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 setFloatingButtons();
             }
         });
+    }
+
+    private void initPolygons()
+    {
+        parseJSONFile();
+    }
+
+    private void parseJSONFile()
+    {
+        String json = null;
+        try {
+
+            InputStream is = this.getAssets().open("polygons.geojson");
+
+            int size = is.available();
+
+            byte[] buffer = new byte[size];
+
+            is.read(buffer);
+
+            is.close();
+
+            json = new String(buffer, "UTF-8");
+
+            if(json != null)
+            {
+                try
+                {
+                    JSONObject jsonObject = new JSONObject(json);
+                    JSONArray features = jsonObject.getJSONArray("features");
+                    for(int i = 0; i < features.length(); i++) {
+                        JSONObject feature = features.getJSONObject(i);
+                        JSONObject geometry = feature.getJSONObject("geometry");
+                        JSONArray coordinates = geometry.getJSONArray("coordinates");
+                        JSONArray coords = (JSONArray)coordinates.get(0);
+                        List<LatLng> polygon = new ArrayList<>();
+                        List<Position> positions = new ArrayList<>();
+                        for(int j = 0; j < coords.length(); j++)
+                        {
+                            JSONArray latLng = coords.getJSONArray(j);
+                            polygon.add(new LatLng(latLng.getDouble(1), latLng.getDouble(0)));
+                            positions.add(Position.fromCoordinates(latLng.getDouble(0), latLng.getDouble(1)));
+                        }
+                        StaticVariables.polygons.add(polygon);
+                        StaticVariables.positions.add(positions);
+                        //StaticVariables.map.addPolygon(new PolygonOptions().fillColor(Color.parseColor("#FF8DD0FF")).addAll(polygon));
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void setFloatingButtons()

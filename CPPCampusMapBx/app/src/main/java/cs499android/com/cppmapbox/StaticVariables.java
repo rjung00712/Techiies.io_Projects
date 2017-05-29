@@ -1,8 +1,12 @@
 package cs499android.com.cppmapbox;
 
 import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.services.commons.models.Position;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Richard on 5/3/17.
@@ -19,4 +23,6 @@ public abstract class StaticVariables {
     protected static boolean speakDescriptions = true;
     protected static boolean speakDirections = true;
     protected static MapboxMap map;
+    protected static List<List<LatLng>> polygons = new ArrayList<>();
+    protected static List<List<Position>> positions = new ArrayList<>();
 }

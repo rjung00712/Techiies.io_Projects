@@ -3,291 +3,19 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Parking Structure 2",
-        "description": "Student. Visitor. Faculty and Staff. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_Structure_2.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818687,
-          34.051451
-        ],
-        "type": "Point"
-      },
-      "id": "076c2ebb7825c3a0ddf9e1bcf5ea5df2"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Building 106: Parking Structure",
+        "name": "Parking Lot I",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
         "category": "parking",
-        "picture": "Bg_106.gif"
+        "picture": "Pk_I.gif"
       },
       "geometry": {
         "coordinates": [
-          -117.816881,
-          34.060343
+          -117.819471,
+          34.048834
         ],
         "type": "Point"
       },
-      "id": "0acea1a866e36758ae5c3a35ba8c8618"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot E2",
-        "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_E2.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.812654,
-          34.060719
-        ],
-        "type": "Point"
-      },
-      "id": "11c3bea200a9d3b611e1820d5e8b0bc1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot G",
-        "description": "Faculty and Staff. Resident. Visitor. $1/hour Parking",
-        "category": "parking",
-        "picture": "Pk_G.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.819759,
-          34.055678
-        ],
-        "type": "Point"
-      },
-      "id": "19c8256df02a7eeebc17d26ede7f4c5f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot F4",
-        "description": "Faculty and Staff. Visitor. Disabled Parking. $1/hour Parking",
-        "category": "parking",
-        "picture": "Pk_F4.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817322,
-          34.060923
-        ],
-        "type": "Point"
-      },
-      "id": "27bff91034d7cf5563fdc061e785213d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot B",
-        "description": "Designated accessible parking for Kellogg Gym. Faculty and Staff. Student. Visitor. Resident",
-        "category": "parking",
-        "picture": "Pk_B.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815301,
-          34.052767
-        ],
-        "type": "Point"
-      },
-      "id": "2f86d6ace7e8787307c102adcc17afc6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot F5",
-        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_F5.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815481,
-          34.06155
-        ],
-        "type": "Point"
-      },
-      "id": "3206de125e951d0b476e2dfb17307188"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot O",
-        "description": "CTTI permit only. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_O.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814322,
-          34.050307
-        ],
-        "type": "Point"
-      },
-      "id": "34443b9fc987061f7ebeea1e55a07180"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot P",
-        "description": "Faculty and Staff. Resident. No Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_P.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.815638,
-          34.054563
-        ],
-        "type": "Point"
-      },
-      "id": "348adf5725494a69a5fa089b11d85d4b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot F8",
-        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking. Presidential. VIP and Visitor. $1/hour Parking",
-        "category": "parking",
-        "picture": "Pk_F8.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817116,
-          34.059084
-        ],
-        "type": "Point"
-      },
-      "id": "366184ea977eadd469f7f5d5def98fe4"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot R",
-        "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_R.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.825417,
-          34.063409
-        ],
-        "type": "Point"
-      },
-      "id": "3f86ab0b17d59ef7b910bdb8999a78a1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot N",
-        "description": "Faculty and Staff. Student. No Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_N.jpeg"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.818881,
-          34.05615
-        ],
-        "type": "Point"
-      },
-      "id": "412cd48572b8a63898f0855352259cdc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot L",
-        "description": "Kellogg West permit Only. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_L.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.82541,
-          34.055524
-        ],
-        "type": "Point"
-      },
-      "id": "46eb17acc2251c0187ecdcae8454c8ac"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot U",
-        "description": "Faculty and Staff. Student. Visitor. $1/hour Parking. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_U.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817321,
-          34.049014
-        ],
-        "type": "Point"
-      },
-      "id": "4d2fb3712035b698a804aee71077ffa1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot M",
-        "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_M.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.829146,
-          34.055525
-        ],
-        "type": "Point"
-      },
-      "id": "4e0320df5d8fafcdd8284b2271fad18f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot F2",
-        "description": "Faculty and Staff. Visitor. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_F2.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.817741,
-          34.061493
-        ],
-        "type": "Point"
-      },
-      "id": "5be239559d3fd8fb75764063628e91af"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot F10",
-        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_F10.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.814632,
-          34.061094
-        ],
-        "type": "Point"
-      },
-      "id": "5ffd49c851f035b90491c68c6d765fc6"
+      "id": "107bd5b9a7f5df3e181c7b5bc02c94ef"
     },
     {
       "type": "Feature",
@@ -304,41 +32,7 @@
         ],
         "type": "Point"
       },
-      "id": "76dbddfaa827a1e4a3460296776b41e8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot J",
-        "description": "Faculty/Staff: J1 - J2: 7:00AM - 5:30PM; J3 - J8. Student: J1 - J2: After 5:30PM; J3 - J8. Visitor: J1 - J2: After 5:30PM; J3 - J8. No Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_J.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.828537,
-          34.057372
-        ],
-        "type": "Point"
-      },
-      "id": "78dd58fffc0117270601f4c7225ca3fb"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot A",
-        "description": "Faculty and Staff. Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_A.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.824684,
-          34.060514
-        ],
-        "type": "Point"
-      },
-      "id": "7c2e0500545682e07aa58c3ea1a23be3"
+      "id": "135656250b2ec06b063a86449e705dfa"
     },
     {
       "type": "Feature",
@@ -355,75 +49,58 @@
         ],
         "type": "Point"
       },
-      "id": "8093cb163332d9a54be5e077f0cbdf0f"
+      "id": "14f669326fa9573c8e66bd85da9a9b6e"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Parking Lot I",
+        "name": "Parking Lot R",
         "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
         "category": "parking",
-        "picture": "Pk_I.gif"
+        "picture": "Pk_R.gif"
       },
       "geometry": {
         "coordinates": [
-          -117.819471,
-          34.048834
+          -117.825417,
+          34.063409
         ],
         "type": "Point"
       },
-      "id": "9455e5db478724627840677d24523e8d"
+      "id": "210b83b6a80fe34c2a85fb0ab5726685"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Parking Lot Q",
-        "description": "Faculty and Staff. Resident. Disabled Parking",
+        "name": "Parking Lot F8",
+        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking. Presidential. VIP and Visitor. $1/hour Parking",
         "category": "parking",
-        "picture": "Pk_Q.jpeg"
+        "picture": "Pk_F8.gif"
       },
       "geometry": {
         "coordinates": [
-          -117.816646,
-          34.054756
+          -117.817116,
+          34.059084
         ],
         "type": "Point"
       },
-      "id": "a2e8835ab80202b27bd68b779da1d52e"
+      "id": "210f13a437c9aa0709c89c3d7ac62f58"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Parking Lot F1",
-        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "name": "Parking Lot F4",
+        "description": "Faculty and Staff. Visitor. Disabled Parking. $1/hour Parking",
         "category": "parking",
-        "picture": "Pk_F1.gif"
+        "picture": "Pk_F4.gif"
       },
       "geometry": {
         "coordinates": [
-          -117.816955,
-          34.062268
+          -117.817322,
+          34.060923
         ],
         "type": "Point"
       },
-      "id": "ce551586f6543b6ef27cfae979ba121a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Parking Lot F3",
-        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
-        "category": "parking",
-        "picture": "Pk_F3.gif"
-      },
-      "geometry": {
-        "coordinates": [
-          -117.816244,
-          34.062002
-        ],
-        "type": "Point"
-      },
-      "id": "db634cb21146c11d3bf25dc4dfbb5ef5"
+      "id": "216d36a8e68fc9749ddee25315ec54fd"
     },
     {
       "type": "Feature",
@@ -440,7 +117,160 @@
         ],
         "type": "Point"
       },
-      "id": "e352ff5967f2db4c2dff380bc3af8be9"
+      "id": "2230801b3d9f401583efe0bb850b6eba"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Structure 2",
+        "description": "Student. Visitor. Faculty and Staff. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_Structure_2.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818687,
+          34.051451
+        ],
+        "type": "Point"
+      },
+      "id": "2599df6bd333205bc3659cebf8f78512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot M",
+        "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_M.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.829146,
+          34.055525
+        ],
+        "type": "Point"
+      },
+      "id": "2c149fd4b64e60f4b28b70b366a5a94b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot Q",
+        "description": "Faculty and Staff. Resident. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_Q.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816646,
+          34.054756
+        ],
+        "type": "Point"
+      },
+      "id": "32e506a8864a700cfbbcea5921f5214c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot B",
+        "description": "Designated accessible parking for Kellogg Gym. Faculty and Staff. Student. Visitor. Resident",
+        "category": "parking",
+        "picture": "Pk_B.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815301,
+          34.052767
+        ],
+        "type": "Point"
+      },
+      "id": "336c908e5e27435bc9a3b9ca38c33061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot J",
+        "description": "Faculty/Staff: J1 - J2: 7:00AM - 5:30PM; J3 - J8. Student: J1 - J2: After 5:30PM; J3 - J8. Visitor: J1 - J2: After 5:30PM; J3 - J8. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_J.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.828537,
+          34.057372
+        ],
+        "type": "Point"
+      },
+      "id": "43f1f22cd56670966d5663c715a745e2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot N",
+        "description": "Faculty and Staff. Student. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_N.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.818872,
+          34.056193
+        ],
+        "type": "Point"
+      },
+      "id": "4834a4d41356a09672d68cd39595fdc7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot P",
+        "description": "Faculty and Staff. Resident. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_P.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815638,
+          34.054563
+        ],
+        "type": "Point"
+      },
+      "id": "53ef5b239c0abd88807d6c8695e88f72"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot E2",
+        "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_E2.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.812654,
+          34.060719
+        ],
+        "type": "Point"
+      },
+      "id": "5f4a9ab067e41660cbc8c3b5557ceb19"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot F3",
+        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_F3.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816244,
+          34.062002
+        ],
+        "type": "Point"
+      },
+      "id": "6dce844513ddab4676534ad28a46ab3b"
     },
     {
       "type": "Feature",
@@ -457,7 +287,177 @@
         ],
         "type": "Point"
       },
-      "id": "f49d2e6c17951c5a720eb0c068ab3bb8"
+      "id": "6ee092315a69e89d3482edccc504cb5b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot F10",
+        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_F10.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814632,
+          34.061094
+        ],
+        "type": "Point"
+      },
+      "id": "71688c0bfe7a7c01397a365d10642fb9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot F2",
+        "description": "Faculty and Staff. Visitor. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_F2.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817741,
+          34.061493
+        ],
+        "type": "Point"
+      },
+      "id": "73ff7f105f894648ae3cbe2dd67bb1dc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot O",
+        "description": "CTTI permit only. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_O.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.814322,
+          34.050307
+        ],
+        "type": "Point"
+      },
+      "id": "99a3da8bcab34a687ba44297e964ced4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot F1",
+        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_F1.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816955,
+          34.062268
+        ],
+        "type": "Point"
+      },
+      "id": "a3e9231148c35b3c47fd70232c3cd0d3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot G",
+        "description": "Faculty and Staff. Resident. Visitor. $1/hour Parking",
+        "category": "parking",
+        "picture": "Pk_G.jpeg"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.819759,
+          34.055678
+        ],
+        "type": "Point"
+      },
+      "id": "ac6b847408a91eb2008b46840212c62f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Building 106: Parking Structure",
+        "description": "Faculty and Staff. Student. Visitor. Disabled Parking",
+        "category": "parking",
+        "picture": "Bg_106.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.816881,
+          34.060343
+        ],
+        "type": "Point"
+      },
+      "id": "bfcd0a1424188bfb0505f54541eb766d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot A",
+        "description": "Faculty and Staff. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_A.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.824684,
+          34.060514
+        ],
+        "type": "Point"
+      },
+      "id": "d28bb0c9cbd6edf6c49f7a7ee08cdada"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot F5",
+        "description": "Faculty and Staff. Student. Visitor. No Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_F5.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.815481,
+          34.06155
+        ],
+        "type": "Point"
+      },
+      "id": "dcf461d8ab1f9657293d58464bbcdca7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot L",
+        "description": "Kellogg West permit Only. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_L.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.82541,
+          34.055524
+        ],
+        "type": "Point"
+      },
+      "id": "f3d210e09c01de59db39f8dfac9bfb36"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parking Lot U",
+        "description": "Faculty and Staff. Student. Visitor. $1/hour Parking. Disabled Parking",
+        "category": "parking",
+        "picture": "Pk_U.gif"
+      },
+      "geometry": {
+        "coordinates": [
+          -117.817321,
+          34.049014
+        ],
+        "type": "Point"
+      },
+      "id": "f739c3182bab36ac7b9faff39c404d9f"
     }
   ],
   "type": "FeatureCollection"

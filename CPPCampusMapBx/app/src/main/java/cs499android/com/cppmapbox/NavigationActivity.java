@@ -24,8 +24,11 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.annotations.Polygon;
+import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.annotations.Polyline;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
@@ -45,6 +48,7 @@ import com.mapbox.services.api.directions.v5.MapboxDirections;
 import com.mapbox.services.api.directions.v5.models.DirectionsResponse;
 import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
 import com.mapbox.services.api.directions.v5.models.StepManeuver;
+import com.mapbox.services.api.utils.turf.TurfJoins;
 import com.mapbox.services.commons.geojson.LineString;
 import com.mapbox.services.commons.models.Position;
 
@@ -72,6 +76,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private StepManeuver nextManeuver;
     private boolean speak;
     private boolean overview;
+    private Polygon polygon;
 
     private android.support.design.widget.FloatingActionButton cancelButton;
     private android.support.design.widget.FloatingActionButton cameraView;
@@ -113,8 +118,9 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
-                        .icon(StaticVariables.destinationMarker.getIcon()));
+                        .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.ic_location_on_red_18dp)));
                 oldDestination = StaticVariables.destinationMarker;
+                colorDestination();
                 speak = true;
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
@@ -181,6 +187,30 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         });
     }
 
+    private void colorDestination()
+    {
+        Marker temp = StaticVariables.destinationMarker;
+        boolean within = false;
+        int i;
+        for(i = 0; i < StaticVariables.positions.size(); i++)
+        {
+            within = TurfJoins.inside(Position.fromCoordinates(temp.getPosition().getLongitude(),
+                    temp.getPosition().getLatitude()), StaticVariables.positions.get(i));
+            if(within)
+                break;
+        }
+        if(within)
+            drawPolygon(i);
+    }
+
+    private void drawPolygon(int i)
+    {
+        if(this.polygon != null)
+            map.removePolygon(this.polygon);
+        List<LatLng> polygon = StaticVariables.polygons.get(i);
+        this.polygon = map.addPolygon(new PolygonOptions().addAll(polygon).fillColor(Color.parseColor("#1CCC13")));
+    }
+
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
@@ -189,7 +219,9 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
-                        .icon(StaticVariables.destinationMarker.getIcon()));
+                        .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.ic_location_on_red_18dp)));
+                map.removePolygon(polygon);
+                colorDestination();
                 oldDestination = StaticVariables.destinationMarker;
             }
             // Move the map camera to where the user location is and then remove the
