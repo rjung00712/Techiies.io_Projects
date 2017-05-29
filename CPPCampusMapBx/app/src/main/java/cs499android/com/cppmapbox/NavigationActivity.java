@@ -118,7 +118,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
-                        .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.ic_location_on_red_18dp)));
+                        .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.destination_reached_24px)));
                 oldDestination = StaticVariables.destinationMarker;
                 colorDestination();
                 speak = true;
@@ -219,7 +219,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
-                        .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.ic_location_on_red_18dp)));
+                        .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.destination_reached_24px)));
                 map.removePolygon(polygon);
                 colorDestination();
                 oldDestination = StaticVariables.destinationMarker;
