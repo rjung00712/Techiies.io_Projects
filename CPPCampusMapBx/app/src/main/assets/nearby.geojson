@@ -4,6 +4,7 @@
       "type": "Feature",
       "properties": {
         "name": "BioTrek Ethnobotany Garden",
+        "category": "nearby",
         "description": "South of College of Agriculture (Building 2).",
         "picture": "biotrek.gif"
       },
@@ -20,6 +21,7 @@
       "type": "Feature",
       "properties": {
         "name": "Japanese Garden",
+        "category": "nearby",
         "description": "This beautiful garden is located right next to the CLA, outside the Student Cashiering Services. It is a very tranquil place, full of lovely flowers and trees. There is koi pond where you can see many beautiful Koi fish and adorable turtles",
         "picture": "japanese_garden.gif"
       },
@@ -36,6 +38,7 @@
       "type": "Feature",
       "properties": {
         "name": "Rose Garden",
+        "category": "nearby",
         "description": "On the far right of campus is a circular garden, where there are only roses, as the name suggest. There is a gazebo in the center of the garden. The Rose garden was given to Mr. Kellogg's wife from Mr. Kellogg himself and there are seven rings and seven different types of roses because Mr. Kellogg's favorite number was 7.",
         "picture": "rose_garden.gif"
       },
@@ -51,6 +54,7 @@
     {
       "type": "Feature",
       "properties": {
+        "category": "nearby",
         "description": "This pond and the walkways surrounding it are filled with ducks and turtles. It is a great place to relax and watch the animals swim in this beautiful pond.",
         "name": "Duck Pond",
         "picture": "duck_pond.jpeg"
@@ -67,6 +71,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 35 - Bronco Student Center (BSC)",
+        "category": "nearby",
         "description": "The Bronco Student Center (BSC) is the social hub for all things student-related. The BSC is where students are able to eat, meet, study, and play! Whether students need to unwind in the Games Room Etc., grab a bite at the food court, complete homework in the study lounges, or simply hang out with friends, the BSC is the perfect place for all student needs. Indoor and outdoor seating is available. ",
         "picture": "Bg_35.jpeg"
       },
@@ -83,6 +88,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 42 - Bronco Recreation Intramural Complex (BRIC)",
+        "category": "nearby",
         "description": "The Bronco Recreation and Intramural Complex (BRIC) is a 165,000 square-foot recreation center with leisure and lap pools, a 53’ climbing wall, five multipurpose fitness studios, two racquetball courts, indoor jogging track, and much more. A full-service Jamba Juice is located at the BRIC with service windows inside and outside the building, as well as one outside on the pool deck. Outdoor seating is available.",
         "picture": "Bg_42.jpeg"
       },
@@ -99,6 +105,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 15 - Library",
+        "category": "nearby",
         "description": "What began as a single reading room has grown into an impressive six-story repository for 2.4 million books and 3,000 periodicals. The University Library underwent a $58.5 million renovation in 2008 to supports its mission to be \\\"the central intellectual and cultural resource of the campus community.\\\" The Library is equipped with many computers and group study rooms, including a 24-hour lab with plenty of tables. It also features classrooms and a large lecture hall, as well as a Starbucks, Media Collections section, and the University Writing Center.",
         "picture": "Bg_15.jpeg"
       },
@@ -115,6 +122,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 111 - Manor House",
+        "category": "nearby",
         "description": "Home to the University President and his family.",
         "picture": "Bg_111.jpeg"
       },
@@ -130,6 +138,7 @@
     {
       "type": "Feature",
       "properties": {
+        "category": "nearby",
         "description": "Agriscapes was created in 2001 as an Educational Outreach branch of the Don B. Huntley College of Agriculture at Cal Poly Pomona. Located West of the main campus on Temple Avenue, AGRIscapes occupies 20 acres of farmland and facilities.",
         "name": "Building 211 - Agriscapes/Farm Store",
         "picture": "Bg_211.jpeg"
@@ -147,6 +156,7 @@
       "type": "Feature",
       "properties": {
         "name": "Innovation Brew Works",
+        "category": "nearby",
         "description": "Innovation Brew Works offers fresh, made-to-order pizzas, sandwiches, salads, and desserts. Beers produced at Innovation Brew Works are original recipes made with ingredients grown on the Cal Poly Pomona campus. All beers are named after Cal Poly Pomona and Pomona Valley historical figures and places.  909-869-2925",
         "picture": "innovation_brew_works.jpeg"
       },
@@ -163,6 +173,7 @@
       "type": "Feature",
       "properties": {
         "name": "Building 97 - Campus Center",
+        "category": "nearby",
         "description": "The Campus Center is a multipurpose building for dining, relaxing in front of the big screen television, using the free wireless internet, meeting up with friends, and studying. There are both tables inside and outside, and its close proximity to many other campus buildings makes it a convenient stop on your way to and from wherever you're going. Its Marketplace acts as a food court and is Cal Poly Pomona's most frequented dining facility, with six different dining options such as Taco Bell, Carl's Jr and Panda Express.",
         "picture": "Bg_97.jpeg"
       },
