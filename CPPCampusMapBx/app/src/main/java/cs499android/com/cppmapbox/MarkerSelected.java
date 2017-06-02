@@ -1,8 +1,10 @@
 package cs499android.com.cppmapbox;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.LocationManager;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.mapbox.services.commons.models.Position;
 
@@ -134,9 +137,28 @@ public class MarkerSelected extends AppCompatActivity
                 textToSpeech.shutdown();
             }
         }
-        Intent NavigationIntent = new Intent(MarkerSelected.this, NavigationActivity.class);
-        startActivity(NavigationIntent);
-        finish();
+        checkSettings();
+    }
+
+    private void checkSettings()
+    {
+        LocationManager lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        boolean gpsEnabled = false;
+
+        try {
+            gpsEnabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch(Exception ex) {}
+
+        if(gpsEnabled)
+        {
+            Intent NavigationIntent = new Intent(MarkerSelected.this, NavigationActivity.class);
+            startActivity(NavigationIntent);
+            finish();
+        }
+        else
+        {
+            Toast.makeText(this, "Location settings are off. Please turn them on to get directions.", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void goBack(View v)
