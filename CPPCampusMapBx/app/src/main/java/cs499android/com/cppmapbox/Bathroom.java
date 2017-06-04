@@ -113,23 +113,25 @@ public class Bathroom extends AppCompatActivity {
                 adapter.getFilter().filter(newText);
 
                 tv = (TextView) findViewById(R.id.textview);
-                tv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String name = (String)tv.getText();
+                if(tv != null) {
+                    tv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String name = (String) tv.getText();
 
-                        Marker marker = ClusterHolder.getMarker(name, type);
+                            Marker marker = ClusterHolder.getMarker(name, type);
 
-                        StaticVariables.destinationMarker = marker;
-                        StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
-                        Intent placeSelectedIntent = new Intent(Bathroom.this, MarkerSelected.class);
-                        placeSelectedIntent.putExtra("Title", marker.getTitle());
-                        placeSelectedIntent.putExtra("Description", marker.getSnippet());
-                        placeSelectedIntent.putExtra("Type", "Navigate");
-                        startActivity(placeSelectedIntent);
-                        finish();
-                    }
-                });
+                            StaticVariables.destinationMarker = marker;
+                            StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                            Intent placeSelectedIntent = new Intent(Bathroom.this, MarkerSelected.class);
+                            placeSelectedIntent.putExtra("Title", marker.getTitle());
+                            placeSelectedIntent.putExtra("Description", marker.getSnippet());
+                            placeSelectedIntent.putExtra("Type", "Navigate");
+                            startActivity(placeSelectedIntent);
+                            finish();
+                        }
+                    });
+                }
 
                 Log.w("myApp", "onQueryTextChange ");
                 return false;
