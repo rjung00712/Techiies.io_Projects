@@ -10,6 +10,7 @@
     <string name="landmarks">Landmarks</string>
     <string name="hint">Search...</string>
     <string name="Bathroom">Bathroom</string>
+    <string name="search">Search</string>
 
     <string-array name="admi">
         <item>CLA, 98</item>
