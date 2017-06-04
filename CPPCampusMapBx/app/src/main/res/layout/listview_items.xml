@@ -29,4 +29,12 @@
         android:layout_marginBottom="10dp"
         app:srcCompat = "@drawable/ic_chevron_right_black_24px"/>
 
+    <TextView
+        android:id="@+id/txtEmptyList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="No result"
+        android:visibility="gone"
+        />
+
 </LinearLayout>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -16,12 +17,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.services.commons.models.Position;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static android.R.attr.duration;
+import static cs499android.com.cppmapbox.R.id.textview;
+import static cs499android.com.cppmapbox.R.id.txtEmptyList;
 
 
 /**
@@ -31,6 +37,7 @@ import java.util.Arrays;
 public class Admini extends AppCompatActivity{
     private ArrayAdapter<String> adapter;
     private TextView tv;
+    private TextView txtE;
     private final String type = "building";
 
 
@@ -40,10 +47,7 @@ public class Admini extends AppCompatActivity{
        super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_listview);
 
-       
-
-
-       final ListView l = (ListView) findViewById(R.id.ListView);
+     final ListView l = (ListView) findViewById(R.id.ListView);
 
        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
@@ -78,7 +82,7 @@ public class Admini extends AppCompatActivity{
         adapter = new ArrayAdapter<String>(
                 Admini.this,
                 R.layout.listview_items,
-                R.id.textview,
+                textview,
                 arrayAdmini);
 
         lv.setAdapter(adapter);
@@ -103,43 +107,57 @@ public class Admini extends AppCompatActivity{
         searchView.setSearchableInfo( searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint(getResources().getString(R.string.hint));
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Log.w("myApp", "onQueryTextSubmit ");
-                return false;
-            }
+        
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    Log.w("myApp", "onQueryTextSubmit ");
+                    return false;
+                }
 
-                adapter.getFilter().filter(newText);
-
-                tv = (TextView) findViewById(R.id.textview);
-                 tv.setOnClickListener(new View.OnClickListener() {
-                     @Override
-                     public void onClick(View v) {
-                         String name = (String)tv.getText();
-
-                         Marker marker = ClusterHolder.getMarker(name, type);
-
-                         StaticVariables.destinationMarker = marker;
-                         StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
-                         Intent placeSelectedIntent = new Intent(Admini.this, MarkerSelected.class);
-                         placeSelectedIntent.putExtra("Title", marker.getTitle());
-                         placeSelectedIntent.putExtra("Description", marker.getSnippet());
-                         placeSelectedIntent.putExtra("Type", "Navigate");
-                         startActivity(placeSelectedIntent);
-                         finish();
-                     }
-                 });
-
-                Log.w("myApp", "onQueryTextChange ");
-                return false;
-            }
-        });
+                @Override
+                public boolean onQueryTextChange(final String newText) {
 
 
-        return true; //super.onCreateOptionsMenu(menu);
+
+                        adapter.getFilter().filter(newText);
+
+                        tv = (TextView) findViewById(textview);
+                        tv.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String name = (String) tv.getText();
+
+                                Marker marker = ClusterHolder.getMarker(name, type);
+
+                                StaticVariables.destinationMarker = marker;
+                                StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
+                                Intent placeSelectedIntent = new Intent(Admini.this, MarkerSelected.class);
+                                placeSelectedIntent.putExtra("Title", marker.getTitle());
+                                placeSelectedIntent.putExtra("Description", marker.getSnippet());
+                                placeSelectedIntent.putExtra("Type", "Navigate");
+                                startActivity(placeSelectedIntent);
+                                finish();
+
+
+
+                            }
+
+                            //}
+
+                        });
+
+                        Log.w("myApp", "onQueryTextChange ");
+
+
+                    return false;
+                }
+            });
+
+
+
+        //return true;
+        return super.onCreateOptionsMenu(menu);
     }
 }
