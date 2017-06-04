@@ -331,7 +331,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
             @Override
             public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
                 Log.e(TAG, "Error: " + throwable.getMessage());
-                Toast.makeText(NavigationActivity.this, "Error: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(NavigationActivity.this, "Error: " + throwable.getMessage() + ". Make sure that you have a network connection", Toast.LENGTH_SHORT).show();
             }
         });
     }
