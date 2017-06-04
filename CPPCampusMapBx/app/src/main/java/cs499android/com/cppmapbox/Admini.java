@@ -107,7 +107,7 @@ public class Admini extends AppCompatActivity{
         searchView.setSearchableInfo( searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint(getResources().getString(R.string.hint));
 
-        
+
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
                 @Override
