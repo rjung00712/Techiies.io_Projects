@@ -20,7 +20,7 @@ public abstract class ListHolder
     {
         switch (category)
         {
-            case "buildings":
+            case "building":
                 Buildings.add(name);
                 break;
             case "food":
@@ -42,9 +42,6 @@ public abstract class ListHolder
             case "admin":
                 Admin.add(name);
                 Buildings.add(name);
-                break;
-            case "bathroom":
-                Bathrooms.add(name);
                 break;
             default:
                 break;
