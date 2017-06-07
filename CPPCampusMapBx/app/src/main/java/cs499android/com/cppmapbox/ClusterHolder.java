@@ -13,6 +13,7 @@ import java.io.InputStream;
 public abstract class ClusterHolder
 {
     protected static Activity activity;
+    //Clusters for the specific filters
     protected static MarkerCluster buildings;
     protected static MarkerCluster landmarks;
     protected static MarkerCluster parking;
@@ -20,6 +21,7 @@ public abstract class ClusterHolder
     protected static MarkerCluster bathrooms;
     protected static MarkerCluster nearby;
 
+    //Creates all of the clusters
     protected static void createMarkers()
     {
         buildings = new MarkerCluster(activity, "cpp_buildings.geojson", "red");
@@ -35,6 +37,8 @@ public abstract class ClusterHolder
         createMarkers(bathrooms);
         createMarkers(nearby);
     }
+
+    //Creates a json string from the geojson files
     private static void createMarkers(MarkerCluster markerCluster) {
         String json = null;
         try {
@@ -60,6 +64,7 @@ public abstract class ClusterHolder
         }
     }
 
+    //Adds the markers to the map if the cluster is selected from the filter
     protected static void addMarkers()
     {
         try{
@@ -80,6 +85,7 @@ public abstract class ClusterHolder
         }
     }
 
+    //Removes the clusters from the map
     protected static void removeMarkers(Marker marker)
     {
         try{
@@ -94,12 +100,14 @@ public abstract class ClusterHolder
         }
     }
 
+    //Removes and then adds the marker cluster to the map
     protected static void updateMarkers()
     {
         removeMarkers(null);
         addMarkers();
     }
 
+    //Gets a specific marker based on the name
     protected static Marker getMarker(String name, String type)
     {
         if(type.equals("building"))

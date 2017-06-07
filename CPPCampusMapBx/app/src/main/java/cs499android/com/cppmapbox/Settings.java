@@ -17,6 +17,7 @@ public class Settings extends AppCompatActivity {
         ((CheckBox)findViewById(R.id.speakDirection)).setChecked(StaticVariables.speakDirections);
     }
 
+    //Saves the settings as they are using sharedPreferences
     public void apply(View view)
     {
         StaticVariables.speakDescriptions = ((CheckBox)findViewById(R.id.speakDescription)).isChecked();
@@ -27,6 +28,7 @@ public class Settings extends AppCompatActivity {
         finish();
     }
 
+    //Closes the Settings page
     public void cancel(View view)
     {
         finish();

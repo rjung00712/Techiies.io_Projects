@@ -36,7 +36,6 @@ import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.constants.MyBearingTracking;
 import com.mapbox.mapboxsdk.constants.MyLocationTracking;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
@@ -65,25 +64,25 @@ import static cs499android.com.cppmapbox.StaticVariables.TAG;
 public class NavigationActivity extends AppCompatActivity implements PermissionsListener,
         LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
 {
-    private MapView mapView;
-    private MapboxMap map;
-    private DirectionsRoute currentRoute;
-    private Polyline currentLine;
-    private Polyline oldLine;
-    private Marker oldDestination;
-    private PermissionsManager permissionsManager;
-    private TextToSpeech textToSpeech;
-    private StepManeuver nextManeuver;
-    private boolean speak;
-    private boolean overview;
-    private Polygon polygon;
+    private MapView mapView;        //Holds the Map view
+    private MapboxMap map;          //Holds the map that the user sees. The Markers and route are added to this map
+    private DirectionsRoute currentRoute;   //Holds the current route the user is following
+    private Polyline currentLine;       //This is the polyline that corresponds to the currentRoute
+    private Polyline oldLine;           //This is the last polyline for the route
+    private Marker oldDestination;      //This is the destination that was originally set when the user started the navigation
+    private PermissionsManager permissionsManager;  //This allows for us to make sure we have the correct permissions
+    private TextToSpeech textToSpeech;      //Allows for the directions to be spoken
+    private StepManeuver nextManeuver;      //This Allows for us to show the user what direction they will do next and in how many feet
+    private boolean speak;      //Checks if the directions should be spoken
+    private boolean overview;   //Checks if the user wants to see an overview of the map
+    private Polygon polygon;    //Holds the polygon of the current destination
 
-    private android.support.design.widget.FloatingActionButton cancelButton;
-    private android.support.design.widget.FloatingActionButton cameraView;
+    private android.support.design.widget.FloatingActionButton cancelButton;    //This is the button to cancel navigation
+    private android.support.design.widget.FloatingActionButton cameraView;      //This is the button to change the camera angle
 
     ///////////////////////////////////////////////////
-    GoogleApiClient mGoogleApiClient;
-    LocationRequest mLocationRequest;
+    GoogleApiClient mGoogleApiClient;       //Used for the user's location
+    LocationRequest mLocationRequest;       //Used for the user's location
     static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
     @Override
@@ -91,15 +90,15 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-        Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
+        Mapbox.getInstance(this, getString(R.string.mapbox_access_token));      //Sets up MapBox
 
         // Setup the MapView
-        mapView = (MapView) findViewById(R.id.navigationMapView);
+        mapView = (MapView) findViewById(R.id.navigationMapView);   //Finds the view the map will be shown in
         mapView.onCreate(savedInstanceState);
-        mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(3000);
-        mLocationRequest.setFastestInterval(1000);
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest = new LocationRequest();   //Allows us to continue to get the user's location
+        mLocationRequest.setInterval(3000);         //Gets the user's location every 3 seconds
+        mLocationRequest.setFastestInterval(1000);      //Cannot get the user's location faster than 1 second
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);   //To be as accurate as possible
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -107,21 +106,23 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 .build();
         //////////////////////////////////////////////
 
-        overview = false;
-        setPermissions();
-        CheckNearby.init();
+        overview = false;   //Initialize the view as the angled view
+        setPermissions();   //Sets up the appropriate permissions
+        CheckNearby.init();     //Sets up the list of nearby places
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
-                map = mapboxMap;
+                map = mapboxMap;    //The map is set to the map that is ready to be used
+                //Adds the destination marker to the map and sets this as the destination marker
                 StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
                         .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.destination_reached_24px)));
-                oldDestination = StaticVariables.destinationMarker;
-                colorDestination();
-                speak = true;
+                oldDestination = StaticVariables.destinationMarker;     //This becomes the old destination incase the user goes to a nearby location
+                colorDestination(); //Adds the green polygon to the map
+                speak = true;       //Makes sure to speak the first direction
+                //We do not want the marker to show any information when it is clicked
                 map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
@@ -135,12 +136,13 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         return false;
                     }
                 });
-                map.setMyLocationEnabled(true);
-                map.getTrackingSettings().setDismissAllTrackingOnGesture(false);
-                map.getTrackingSettings().setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW);
-                map.getTrackingSettings().setMyBearingTrackingMode(MyBearingTracking.COMPASS);
-                updateCamera((Position.fromCoordinates(map.getMyLocation().getLongitude(), map.getMyLocation().getLatitude())));
+                map.setMyLocationEnabled(true);     //Show the user on the map
+                map.getTrackingSettings().setDismissAllTrackingOnGesture(false);    //User cannot move around the screen
+                map.getTrackingSettings().setMyLocationTrackingMode(MyLocationTracking.TRACKING_FOLLOW);    //Follows the user
+                map.getTrackingSettings().setMyBearingTrackingMode(MyBearingTracking.COMPASS);      //Shows the direction the user is facing
+                updateCamera((Position.fromCoordinates(map.getMyLocation().getLongitude(), map.getMyLocation().getLatitude())));    //updates the camera based on the user's location
                 cancelButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.navigation_cancel_fab);
+                //Ends the navigation when the user clicks the cancel button
                 cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -154,6 +156,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                     }
                 });
                 cameraView = (android.support.design.widget.FloatingActionButton) findViewById(R.id.view_fab);
+                //Changes the view when the user clicks this button
                 cameraView.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view)
@@ -167,11 +170,6 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         }
                         else
                         {
-//                            LatLngBounds bounds = new LatLngBounds.Builder()
-//                                    .include(new LatLng(StaticVariables.destination.getLatitude(), StaticVariables.destination.getLongitude()))
-//                                    .include(new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude()))
-//                                    .build();
-//                            map.easeCamera(CameraUpdateFactory.newLatLngBounds(bounds, 50));
                             CameraPosition position = new CameraPosition.Builder()
                                     .tilt(0)
                                     .zoom(16)
@@ -182,7 +180,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                         overview = !overview;
                     }
                 });
-                CheckNearby.user = new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude());
+                CheckNearby.user = new LatLng(map.getMyLocation().getLatitude(), map.getMyLocation().getLongitude());   //Updates the user's location in the CheckNearby class
             }
         });
     }
@@ -190,51 +188,52 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private void colorDestination()
     {
         Marker temp = StaticVariables.destinationMarker;
-        boolean within = false;
+        boolean within = false;     //Used to see if the destination is in a certain polygon
         int i;
-        for(i = 0; i < StaticVariables.positions.size(); i++)
+        for(i = 0; i < StaticVariables.positions.size(); i++)   //Iterates through the list of polygons to find the one that needs to be drawn out
         {
             within = TurfJoins.inside(Position.fromCoordinates(temp.getPosition().getLongitude(),
-                    temp.getPosition().getLatitude()), StaticVariables.positions.get(i));
+                    temp.getPosition().getLatitude()), StaticVariables.positions.get(i));   //If the destination is in the polygon then it is the one selected
             if(within)
                 break;
         }
         if(within)
-            drawPolygon(i);
+            drawPolygon(i); //Draws the correct polygon
     }
 
     private void drawPolygon(int i)
     {
         if(this.polygon != null)
-            map.removePolygon(this.polygon);
-        List<LatLng> polygon = StaticVariables.polygons.get(i);
-        this.polygon = map.addPolygon(new PolygonOptions().addAll(polygon).fillColor(Color.parseColor("#1CCC13")));
+            map.removePolygon(this.polygon);    //Removes the old polygon
+        List<LatLng> polygon = StaticVariables.polygons.get(i);     //Gets the correct polygon to draw
+        this.polygon = map.addPolygon(new PolygonOptions().addAll(polygon).fillColor(Color.parseColor("#1CCC13"))); //Draws the polygon on the map
     }
 
     @Override
+    //Called when the user's location is changed
     public void onLocationChanged(Location location) {
         if (location != null) {
+            //Checks if the user is going to a new destination (Going to a nearby location)
             if(oldDestination != StaticVariables.destinationMarker){
-                map.removeMarker(oldDestination);
+                map.removeMarker(oldDestination);   //Removes the old destination
+                //Adds the new destination marker
                 StaticVariables.destinationMarker = map.addMarker(new MarkerOptions().position(StaticVariables.destinationMarker.getPosition())
                         .title(StaticVariables.destinationMarker.getTitle())
                         .snippet(StaticVariables.destinationMarker.getSnippet())
                         .icon(IconFactory.getInstance(NavigationActivity.this).fromResource(R.drawable.destination_reached_24px)));
-                map.removePolygon(polygon);
-                colorDestination();
-                oldDestination = StaticVariables.destinationMarker;
+                map.removePolygon(polygon); //Removes the old polygon
+                colorDestination(); //Draws the new polygon
+                oldDestination = StaticVariables.destinationMarker;     //Updates the old position
             }
-            // Move the map camera to where the user location is and then remove the
-            // listener so the camera isn't constantly updating when the user location
-            // changes. When the user disables and then enables the location again, this
-            // listener is registered again and will adjust the camera once again.
+
             try {
-                Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
+                Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude()); //Find the origin point of the route
+                //If the user is not in the overview mode then update the camera
                 if(!overview) {
                     updateCamera(origin);
                 }
-                checkNearby(origin);
-                getRoute(origin);
+                checkNearby(origin);    //Check for a nearby location
+                getRoute(origin);       //Get a route for the user to follow
             } catch (ServicesException se) {
                 se.printStackTrace();
             }
@@ -244,17 +243,18 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private void updateCamera(Position p)
     {
         CameraPosition position = new CameraPosition.Builder()
-                .target(new LatLng(p.getLatitude(), p.getLongitude()))
-                .zoom(18)
-                .tilt(50)
+                .target(new LatLng(p.getLatitude(), p.getLongitude()))  //Points to the user's location
+                .zoom(18)       //Zoomed in to see the user and the immediate surroundings
+                .tilt(50)       //Tilted to a 50 degree angle
                 .build();
-        map.moveCamera(CameraUpdateFactory.newCameraPosition(position));
+        map.moveCamera(CameraUpdateFactory.newCameraPosition(position));    //Updates the camera to the specified settings
     }
 
     private void checkNearby(Position origin)
     {
         CheckNearby.user = new LatLng(origin.getLatitude(), origin.getLongitude());
-        Marker marker = CheckNearby.getNearby();
+        Marker marker = CheckNearby.getNearby();    //Gets a marker from the CheckNearby Class (Can be null meaning nothing is there
+        //If there is a marker nearby notify the user
         if(marker != null) {
             Intent nearbyIntent = new Intent(this, MarkerSelected.class);
             nearbyIntent.putExtra("Title", marker.getTitle())
@@ -264,13 +264,15 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         }
     }
 
+    //Checks to see if the directions should be spoken
     private void updateSpeaking(StepManeuver newManeuver)
     {
         //Same direction
+        //If the user is headed to the same waypoint
         if(equal(newManeuver))
         {
-            double distance = currentRoute.getLegs().get(0).getSteps().get(1).getDistance();
-            //Check how far the user is from the next maneuver
+            double distance = currentRoute.getLegs().get(0).getSteps().get(1).getDistance();    //Check how far the user is from the next maneuver
+            //if the user is within 5 meters let them know
             if(distance <= 5)
                 speak = true;
             else
@@ -283,6 +285,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         }
     }
 
+    //Checks if two maneuvers are equal
     private boolean equal(StepManeuver newManeuver)
     {
         if(nextManeuver == null)
@@ -296,9 +299,11 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
         return true;
     }
 
+    //Gets a route based on the user's location and the set destination
     private void getRoute(Position origin) throws ServicesException
     {
         Position destination = StaticVariables.destination;
+        //Creates a route based on walking directions from the origin to the destination, getting all of the steps
         MapboxDirections client = new MapboxDirections.Builder()
                 .setOrigin(origin)
                 .setDestination(destination)
@@ -320,12 +325,12 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                     return;
                 }
                 // Print some info about the curRoute
-                currentRoute = response.body().getRoutes().get(0);
+                currentRoute = response.body().getRoutes().get(0);  //Sets the current route to the route that was found
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
 
                 // Draw the curRoute on the map
-                drawRoute(currentRoute);
-                updateDirections();
+                drawRoute(currentRoute);    //Draws the route
+                updateDirections();     //Updates the directions based on the new route
             }
 
             @Override
@@ -339,6 +344,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     private void drawRoute(DirectionsRoute route) {
         // Convert LineString coordinates into LatLng[]
         LineString lineString = LineString.fromPolyline(route.getGeometry(), 6);
+        //Gets the coordinate points for each maneuver
         List<Position> coordinates = lineString.getCoordinates();
         LatLng[] points = new LatLng[coordinates.size()];
         for (int i = 0; i < coordinates.size(); i++) {
@@ -347,27 +353,30 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                     coordinates.get(i).getLongitude());
         }
 
-        // Draw Points on MapView
+        // Draw the route on the map as a polyline
         currentLine = map.addPolyline(new PolylineOptions()
                 .add(points)
                 .color(Color.parseColor("#009688"))
                 .width(5));
+        //Remove the old polyline (shortens the route as the user moves)
         if(oldLine != null)
             map.removePolyline(oldLine);
         oldLine = currentLine;
     }
 
+    //Updates the directions that are shown to the user
     private void updateDirections()
     {
         try {
-            StepManeuver newManeuver = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver();
-            updateSpeaking(newManeuver);
-            String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();
-            double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();
-            int distanceInFeet = convertToFeet(distance);
+            StepManeuver newManeuver = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver();   //Gets the next maneuver from the route
+            updateSpeaking(newManeuver);    //Checks if it should be spoken or not
+            String instruction = currentRoute.getLegs().get(0).getSteps().get(1).getManeuver().getInstruction();    //Gets the instruction (i.e. "Turn Left")
+            double distance = currentRoute.getLegs().get(0).getSteps().get(0).getDistance();    //Gets the distance to the next maneuver
+            int distanceInFeet = convertToFeet(distance);   //Converts this value from meters to feet
             final EditText directions = (EditText) findViewById(R.id.directionsText);
-            directions.setText(instruction + " in " + distanceInFeet + " feet.");
+            directions.setText(instruction + " in " + distanceInFeet + " feet.");   //Sets the direction to the instruction
             ImageView imageView = (ImageView) findViewById(R.id.directionPic);
+            //Speaks the direction if it should be spoken
             if(StaticVariables.speakDirections && speak) {
                 textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                     @Override
@@ -378,6 +387,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
                 });
             }
 
+            //Sets the picture to the appropriate image for the instruction
             if(instruction.toLowerCase().contains("destination"))
                 imageView.setImageResource(R.drawable.destination_reached);
             else if(instruction.toLowerCase().contains("straight"))
@@ -405,12 +415,14 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 
     private int convertToFeet(double distance)
     {
+        //Converts the distance to feet and rounds appropriately to the nearest foot
         if((distance * 10) % 10 < 5)
             return (int)(distance * 3.28084);
         else
             return (int)(distance * 3.28084) + 1;
     }
 
+    //Sets the permissions needed
     public void setPermissions() {
         permissionsManager = new PermissionsManager(this);
         if (!PermissionsManager.areLocationPermissionsGranted(this)) {
@@ -441,7 +453,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStart() {
         super.onStart();
         mapView.onStart();
-        mGoogleApiClient.connect();
+        mGoogleApiClient.connect(); //Connect to get the user's location
     }
 
     @Override
@@ -477,6 +489,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
     protected void onStop() {
         super.onStop();
         mapView.onStop();
+        //Stops the directions from being spoken
         if(StaticVariables.speakDescriptions) {
             if (textToSpeech!= null && textToSpeech.isSpeaking()) {
                 textToSpeech.stop();
@@ -488,6 +501,7 @@ public class NavigationActivity extends AppCompatActivity implements Permissions
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
+        //Gets the appropriate permissions
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED

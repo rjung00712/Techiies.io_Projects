@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public abstract class ListHolder
 {
+    //Lists Separated by the search categories
     protected static ArrayList<String> Buildings = new ArrayList<>();
     protected static ArrayList<String> Admin = new ArrayList<>();
     protected static ArrayList<String> Resident = new ArrayList<>();
@@ -18,6 +19,7 @@ public abstract class ListHolder
 
     protected static void addTo(String category, String name)
     {
+        //Adds the name to the appropriate list
         switch (category)
         {
             case "building":
@@ -29,7 +31,7 @@ public abstract class ListHolder
             case "parking":
                 Parking.add(name);
                 break;
-            case "residence":
+            case "residence":   //Residence halls are still considered buildings as well
                 Resident.add(name);
                 Buildings.add(name);
                 break;
@@ -39,7 +41,7 @@ public abstract class ListHolder
             case "bathrooms":
                 Bathrooms.add(name);
                 break;
-            case "admin":
+            case "admin":   //Administration buildings are buildings as well
                 Admin.add(name);
                 Buildings.add(name);
                 break;

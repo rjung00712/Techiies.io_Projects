@@ -1,12 +1,9 @@
 package cs499android.com.cppmapbox;
 
 import android.Manifest;
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,22 +11,15 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
-import com.mapbox.mapboxsdk.annotations.MarkerOptions;
-import com.mapbox.mapboxsdk.annotations.PolygonOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationSource;
@@ -42,7 +32,6 @@ import com.mapbox.services.android.telemetry.location.LocationEngineListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsListener;
 import com.mapbox.services.android.telemetry.permissions.PermissionsManager;
 import com.mapbox.services.api.ServicesException;
-import com.mapbox.services.api.directions.v5.models.DirectionsRoute;
 import com.mapbox.services.commons.models.Position;
 
 import org.json.JSONArray;
@@ -61,7 +50,6 @@ import static cs499android.com.cppmapbox.StaticVariables.BASE_URL;
 public class MainActivity extends AppCompatActivity implements PermissionsListener
 {
     private MapView mapView;
-    private DirectionsRoute currentRoute;
 
     private LocationEngine locationEngine;
     private LocationEngineListener locationEngineListener;
@@ -144,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     private void parseJSONFile()
     {
-        String json = null;
+        String json;
         try {
 
             InputStream is = this.getAssets().open("polygons.geojson");
@@ -180,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         }
                         StaticVariables.polygons.add(polygon);
                         StaticVariables.positions.add(positions);
-                        //StaticVariables.map.addPolygon(new PolygonOptions().fillColor(Color.parseColor("#FF8DD0FF")).addAll(polygon));
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -255,7 +242,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             if (!StaticVariables.userLocationEnabled) {
                 permissionsManager.requestLocationPermissions(this);
             } else {
-                //ClusterHolder.removeMarkers(destinationMarker);
                 enableLocation(true);
             }
         } else {
@@ -297,25 +283,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
                     @Override
                     public void onLocationChanged(Location location) {
-//                        if (location != null)
-//                        {
                             // Move the map camera to where the user location is and then remove the
                             // listener so the camera isn't constantly updating when the user location
                             // changes. When the user disables and then enables the location again, this
                             // listener is registered again and will adjust the camera once again.
                             StaticVariables.map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location), 16));
-//                            Toast.makeText(MainActivity.this, "Position Updated", Toast.LENGTH_SHORT).show();
                             locationEngine.removeLocationEngineListener(this);
-//                            try {
-//                                Position origin = Position.fromLngLat(location.getLongitude(), location.getLatitude());
-//                                List<Polyline> list = StaticVariables.map.getPolylines();
-//                                for(int i = 0; i < list.size(); i++)
-//                                    StaticVariables.map.removePolyline(list.get(i));
-//                                getRoute(origin, StaticVariables.destination);
-//                            } catch (ServicesException se) {
-//                               se.printStackTrace();
-//                            }
-//                        }
                     }
                 };
                 locationEngine.addLocationEngineListener(locationEngineListener);
@@ -370,8 +343,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         super.onDestroy();
         mapView.onDestroy();
 
-        // Ensure no memory leak occurs if we register the location listener but the call hasn't
-        // been made yet.
+        // Ensure no memory leak occurs if we register the location listener but the call hasn't been made yet.
         if (locationEngineListener != null) {
             locationEngine.removeLocationEngineListener(locationEngineListener);
         }
@@ -418,32 +390,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
-        /*SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-
-        MenuItem item = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item); //item.getActionView();
-
-        searchView.setSearchableInfo( searchManager.getSearchableInfo(getComponentName()));
-        searchView.setQueryHint(getResources().getString(R.string.hint));
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Log.w("myApp", "onQueryTextSubmit ");
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                adapter.getFilter().filter(newText);
-                Log.w("myApp", "onQueryTextChange ");
-                return false;
-            }
-        });*/
-
-
         return true;
     }
 
@@ -496,41 +442,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             startActivity(SettingsIntent);
             return true;
         }
-
-      /*  switch(item.getItemId()) {
-
-            case R.id.nav_admin:
-                Intent AdminIntent = new Intent(MainActivity.this, Admini.class);
-                startActivity(AdminIntent);
-
-
-            case R.id.nav_build:
-                Intent BuildIntent = new Intent(MainActivity.this, Buildings.class);
-                startActivity(BuildIntent);
-
-            case R.id.nav_dorm:
-                Intent DormIntent = new Intent(MainActivity.this, Dorm.class);
-                startActivity(DormIntent);
-
-            case R.id.nav_food:
-                Intent FoodIntent = new Intent(MainActivity.this, Food.class);
-                startActivity(FoodIntent);
-
-            case R.id.nav_land:
-                Intent LandIntent = new Intent(MainActivity.this, Land.class);
-                startActivity(LandIntent);
-
-            case R.id.nav_park:
-                Intent ParkingIntent = new Intent(MainActivity.this, Park.class);
-                startActivity(ParkingIntent);
-
-            case R.id.settings:
-                Intent SettingsIntent = new Intent(this, Settings.class);
-                startActivity(SettingsIntent);
-
-            default:*/
-                return super.onOptionsItemSelected(item);
-        //}
+        return super.onOptionsItemSelected(item);
     }
 
 
