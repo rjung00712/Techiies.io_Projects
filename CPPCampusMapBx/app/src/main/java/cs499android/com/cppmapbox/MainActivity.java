@@ -49,13 +49,13 @@ import static cs499android.com.cppmapbox.StaticVariables.BASE_URL;
 @SuppressWarnings( {"MissingPermission"})
 public class MainActivity extends AppCompatActivity implements PermissionsListener
 {
-    private MapView mapView;
+    private MapView mapView;    //View that shows the map
 
-    private LocationEngine locationEngine;
-    private LocationEngineListener locationEngineListener;
-    private PermissionsManager permissionsManager;
+    private LocationEngine locationEngine;  //Used for the user's location
+    private LocationEngineListener locationEngineListener;  //Used for when the user's location is updated
+    private PermissionsManager permissionsManager;  //Used to get the permissions that are needed
 
-    private android.support.design.widget.FloatingActionButton floatingActionButton;
+    private android.support.design.widget.FloatingActionButton floatingActionButton;    //Toggles on and off the user's location
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +70,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         // object or in the same activity which contains the mapview.
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
 
-        ///////////////////////////////////
         final MapboxNavigation navigation = new MapboxNavigation(this, StaticVariables.MAPBOX_ACCESS_TOKEN);
-        //////////////////////////////////
 
         // This contains the MapView in XML and needs to be called after the account manager
         setContentView(R.layout.activity_main);
@@ -86,29 +84,32 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         mapView.onCreate(savedInstanceState);
 
         ClusterHolder.activity = MainActivity.this;
-        setPermissions();
+        setPermissions();   //Set the permissions that are needed
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 StaticVariables.map = mapboxMap;
-                initPolygons();
-                ClusterHolder.createMarkers();
-                ClusterHolder.buildings.setSelected(false);
-                ClusterHolder.food.setSelected(false);
-                ClusterHolder.parking.setSelected(false);
-                ClusterHolder.bathrooms.setSelected(false);
-                ClusterHolder.addMarkers();
+                initPolygons();     //Creates the list of polygons of all locations
+                ClusterHolder.createMarkers();  //Gets all of the marker clusters created
+                ClusterHolder.buildings.setSelected(false); //Do not show the buildings
+                ClusterHolder.food.setSelected(false);  //Do not show the food places
+                ClusterHolder.parking.setSelected(false);   //Do not show the parking lots/structures
+                ClusterHolder.bathrooms.setSelected(false); //Do not show the bathrooms
+                ClusterHolder.addMarkers(); //Add the markers that should be shown to the map
+                //Start the markerSelected activity when a marker is clicked. Don't show any info window when a marker is clicked
                 StaticVariables.map.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
+                        //Sets the destination to the selected marker
                         StaticVariables.destination = Position.fromCoordinates(marker.getPosition().getLongitude(), marker.getPosition().getLatitude());
                         StaticVariables.destinationMarker = marker;
                         Intent MarkerSelectedIntent = new Intent(MainActivity.this, MarkerSelected.class);
-                        MarkerSelectedIntent.putExtra("Title", marker.getTitle());
-                        MarkerSelectedIntent.putExtra("Description", marker.getSnippet());
-                        MarkerSelectedIntent.putExtra("Type", "Navigate");
+                        MarkerSelectedIntent.putExtra("Title", marker.getTitle());  //Passes the name of the location selected
+                        MarkerSelectedIntent.putExtra("Description", marker.getSnippet());  //Passes the snippet of the location selected
+                        MarkerSelectedIntent.putExtra("Type", "Navigate");  //Passes navigation as the type
                         startActivity(MarkerSelectedIntent);
+                        //No info windo will show up
                         StaticVariables.map.setInfoWindowAdapter(new MapboxMap.InfoWindowAdapter() {
                             @Nullable
                             @Override
@@ -120,16 +121,18 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     }
                 });
 
-                setFloatingButtons();
+                setFloatingButtons();   //Sets up all of the floatingActionButtons
             }
         });
     }
 
+    //Initializes the list of polygons
     private void initPolygons()
     {
         parseJSONFile();
     }
 
+    //Parses the geojson file for the polygons
     private void parseJSONFile()
     {
         String json;
@@ -152,22 +155,24 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 try
                 {
                     JSONObject jsonObject = new JSONObject(json);
-                    JSONArray features = jsonObject.getJSONArray("features");
+                    JSONArray features = jsonObject.getJSONArray("features");   //Gets each location as a feature from the geojson file
+                    //iterates through each location
                     for(int i = 0; i < features.length(); i++) {
                         JSONObject feature = features.getJSONObject(i);
-                        JSONObject geometry = feature.getJSONObject("geometry");
-                        JSONArray coordinates = geometry.getJSONArray("coordinates");
+                        JSONObject geometry = feature.getJSONObject("geometry");    //Gets the geometry of the location
+                        JSONArray coordinates = geometry.getJSONArray("coordinates");   //Gets the list of coordinates of the location
                         JSONArray coords = (JSONArray)coordinates.get(0);
                         List<LatLng> polygon = new ArrayList<>();
                         List<Position> positions = new ArrayList<>();
+                        //Iterates through the list of coordinates
                         for(int j = 0; j < coords.length(); j++)
                         {
-                            JSONArray latLng = coords.getJSONArray(j);
-                            polygon.add(new LatLng(latLng.getDouble(1), latLng.getDouble(0)));
-                            positions.add(Position.fromCoordinates(latLng.getDouble(0), latLng.getDouble(1)));
+                            JSONArray latLng = coords.getJSONArray(j); //Gets the latLng points at the current position in the array of coordinates
+                            polygon.add(new LatLng(latLng.getDouble(1), latLng.getDouble(0)));  //Adds the point to the polygon list
+                            positions.add(Position.fromCoordinates(latLng.getDouble(0), latLng.getDouble(1)));  //Creates a position from the point and adds it to the position list
                         }
-                        StaticVariables.polygons.add(polygon);
-                        StaticVariables.positions.add(positions);
+                        StaticVariables.polygons.add(polygon);  //Adds the polygon
+                        StaticVariables.positions.add(positions);   //Adds the list of positions
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -178,8 +183,10 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         }
     }
 
+    //Sets the FloatingActionButtons to the appropriate onClickListeners
     private void setFloatingButtons()
     {
+        //Toggles the buildings markers
         com.getbase.floatingactionbutton.FloatingActionButton toggleBuildingsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_buildings);
         toggleBuildingsFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +196,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
 
+        //Toggles the parking lot markers
         com.getbase.floatingactionbutton.FloatingActionButton toggleParkingFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_parking);
         toggleParkingFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,6 +206,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
 
+        //Toggles the landmark markers
         com.getbase.floatingactionbutton.FloatingActionButton toggleLandmarksFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_landmarks);
         toggleLandmarksFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,6 +216,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
 
+        //Toggles the food places markers
         com.getbase.floatingactionbutton.FloatingActionButton toggleFoodFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_food);
         toggleFoodFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -216,6 +226,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
 
+        //Toggles the bathroom markers
         com.getbase.floatingactionbutton.FloatingActionButton toggleBathroomsFab = (com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.fab_toggle_bathrooms);
         toggleBathroomsFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             }
         });
 
+        //Toggles the user's location
         floatingActionButton = (android.support.design.widget.FloatingActionButton) findViewById(R.id.location_toggle_fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -236,6 +248,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         });
     }
 
+    //Toggles the user's location
     private void toggleGps(boolean enableGps) {
         if (enableGps) {
             // Check if user has granted location permission
@@ -250,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         }
     }
 
+    //Enables the location of the user if passed true
     private void enableLocation(boolean enabled) {
         if (enabled) {
             // If we have the last location of the user, we can move the camera to that position.
@@ -292,13 +306,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     }
                 };
                 locationEngine.addLocationEngineListener(locationEngineListener);
-                floatingActionButton.setImageResource(R.drawable.ic_location_disabled_24dp);
+                floatingActionButton.setImageResource(R.drawable.ic_location_disabled_24dp);    //Change the icon for the location button
             }
         } else {
-            floatingActionButton.setImageResource(R.drawable.ic_my_location_24dp);
+            floatingActionButton.setImageResource(R.drawable.ic_my_location_24dp);  //Change the icon for the location button
         }
         // Enable or disable the location layer on the map
-        StaticVariables.map.setMyLocationEnabled(enabled);
+        StaticVariables.map.setMyLocationEnabled(enabled);  //Show the user as a marker on the map
     }
 
     // Add the mapView lifecycle to the activity's lifecycle methods
@@ -312,6 +326,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     protected void onStart() {
         super.onStart();
         mapView.onStart();
+        //Load the settings from SharedPreferences
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         StaticVariables.speakDescriptions = sharedPreferences.getBoolean("speakDescriptions", true);
         StaticVariables.speakDirections = sharedPreferences.getBoolean("speakDirections", true);
@@ -321,6 +336,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     protected void onStop() {
         super.onStop();
         mapView.onStop();
+        //Save the settings to SharedPreferences
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.edit().putBoolean("speakDescriptions", StaticVariables.speakDescriptions).commit();
         sharedPreferences.edit().putBoolean("speakDirections", StaticVariables.speakDirections).commit();

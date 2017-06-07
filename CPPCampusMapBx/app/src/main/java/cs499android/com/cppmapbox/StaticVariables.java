@@ -24,6 +24,6 @@ public abstract class StaticVariables {
     protected static boolean speakDescriptions = true;  //Used to check if Descriptions should be spoken
     protected static boolean speakDirections = true;    //Used to check if the directions should be spoken
     protected static MapboxMap map;     //Map used in the main activity
-    protected static List<List<LatLng>> polygons = new ArrayList<>();   //List of polygons
-    protected static List<List<Position>> positions = new ArrayList<>();    //List of positions
+    protected static List<List<LatLng>> polygons = new ArrayList<>();   //List of polygons for drawing the location
+    protected static List<List<Position>> positions = new ArrayList<>();    //List of positions for checking if the marker is inside the polygon
 }
